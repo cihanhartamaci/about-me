@@ -40,69 +40,76 @@
     </nav>
 
     <main class="container">
-        <header class="page-header">
-            <h1 class="page-title">Integration Methodology</h1>
-            <p class="page-subtitle">Standardized approaches for data interchange, translation, and orchestration.</p>
-        </header>
+        <section class="page-header">
+            <h1 class="page-title">> INTEGRATION_PATTERNS</h1>
+            <p class="page-subtitle">Standardized visual blueprints for enterprise connectivity.</p>
+        </section>
+
+        <!-- Lightbox Container -->
+        <div id="diagram-lightbox" class="hidden" onclick="closeLightbox()">
+            <div id="lightbox-content" onclick="event.stopPropagation()">
+                <!-- Cloned SVG goes here -->
+            </div>
+            <div style="position:fixed; top:20px; right:30px; color:white; font-size:2rem; cursor:pointer;"
+                onclick="closeLightbox()">&times;</div>
+        </div>
 
         <div class="grid-cards">
             <!-- Pattern 1: EDI Flow -->
-            <div class="tech-card" style="grid-column: span 2; min-width: 100%;">
+            <div class="tech-card" style="cursor: zoom-in;" onclick="openLightbox(this)" title="Click to Expand">
                 <div
                     style="margin-bottom:1rem; font-family:var(--font-mono); color:var(--text-secondary); font-size:0.8rem;">
-                    REF: EDI-STD-01 // ORDER-TO-CASH FLOW</div>
-                <h3>Standard EDI Architecture</h3>
+                    REF: EDI-STD-01</div>
+                <h3>Order to Cash (X12)</h3>
                 <div class="mermaid">
                     graph LR
-                    A[Shopify] -->|Order JSON| B(Middleware)
-                    B -->|Map to 850| C{EDI Translator}
-                    C -->|X12 850| D[NetSuite ERP]
-                    D -->|Fulfill| E[WMS]
-                    E -->|X12 856| C
-                    C -->|ASN JSON| A
-                    style A fill:#0d1117,stroke:#58a6ff,stroke-width:2px
-                    style D fill:#0d1117,stroke:#7ee787,stroke-width:2px
+                    A([ERP System]) -- "JSON Order" --> B[Integration Layer]
+                    B -- "Translate" --> C{EDI Mapper}
+                    C -- "850 PO" --> D[Trading Partner]
+                    D -- "997 ACK" --> C
+                    style A fill:#161b22,stroke:#2f81f7,stroke-width:2px
+                    style D fill:#161b22,stroke:#3fb950,stroke-width:2px
                 </div>
             </div>
 
             <!-- Pattern 2: API Gateway -->
-            <div class="tech-card">
+            <div class="tech-card" style="cursor: zoom-in;" onclick="openLightbox(this)" title="Click to Expand">
                 <div
                     style="margin-bottom:1rem; font-family:var(--font-mono); color:var(--text-secondary); font-size:0.8rem;">
-                    REF: API-ORCH-02</div>
-                <h3>API Gateway Pattern</h3>
+                    REF: API-GW-02</div>
+                <h3>Secure API Gateway</h3>
                 <div class="mermaid">
-                    sequenceDiagram
-                    Client->>Gateway: POST /orders
-                    Gateway->>Auth: Validate Token
-                    Auth-->>Gateway: OK
-                    Gateway->>Service: Forward Request
-                    Service-->>Gateway: 200 OK
-                    Gateway-->>Client: 200 Created
+                    graph LR
+                    Client([Mobile App]) -- "OAuth2" --> GW{API Gateway}
+                    GW -- "Validate" --> Auth[Auth Service]
+                    GW -- "Proxy" --> Svc1[Order Service]
+                    GW -- "Proxy" --> Svc2[Inventory Service]
+                    style GW fill:#0b1015,stroke:#d29922,stroke-width:2px
                 </div>
             </div>
 
-            <!-- Pattern 3: Hybrid Strings -->
-            <div class="tech-card">
+            <!-- Pattern 3: Hybrid Sync -->
+            <div class="tech-card" style="cursor: zoom-in;" onclick="openLightbox(this)" title="Click to Expand">
                 <div
                     style="margin-bottom:1rem; font-family:var(--font-mono); color:var(--text-secondary); font-size:0.8rem;">
                     REF: HYB-SYNC-03</div>
-                <h3>Hybrid Sync Logic</h3>
+                <h3>Hybrid Data Sync</h3>
                 <div class="mermaid">
-                    stateDiagram-v2
-                    [*] --> Idle
-                    Idle --> Polling : Interval 5m
-                    Polling --> Syncing : Data Found
-                    Syncing --> Error : Network Fail
-                    Error --> Retry : Exponential Backoff
-                    Retry --> Syncing
-                    Syncing --> Idle : Complete
+                    graph LR
+                    OnPrem[(Legacy DB)] <--> Agent[Connect Agent]
+                        Agent <--> Cloud[Cloud Bus]
+                            Cloud --> Lake[(Data Lake)]
+                            style OnPrem fill:#161b22,stroke:#f85149
+                            style Lake fill:#161b22,stroke:#2f81f7
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Scripts -->
+    <!-- Command Palette -->
+    <script src="js/cmd-palette.js"></script>
+    <script src="js/theme-manager.js"></script>
+    <script type="module" src="js/tracker.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>
         mermaid.initialize({
@@ -110,12 +117,28 @@
             theme: 'dark',
             fontFamily: 'Fira Code'
         });
-    </script>
-    <script src="js/theme-manager.js"></script>
 
-    <!-- Command Palette -->
-    <script src="js/cmd-palette.js"></script>
-    <script type="module" src="js/tracker.js"></script>
+        function openLightbox(card) {
+            const lightbox = document.getElementById('diagram-lightbox');
+            const content = document.getElementById('lightbox-content');
+            const originalSvg = card.querySelector('svg');
+
+            if (originalSvg) {
+                content.innerHTML = ''; // Clear previous
+                const clone = originalSvg.cloneNode(true);
+                // Remove fixed dimmensions to let CSS scale it
+                clone.removeAttribute('height');
+                clone.removeAttribute('width');
+                clone.style.maxWidth = '100%';
+                content.appendChild(clone);
+                lightbox.classList.remove('hidden');
+            }
+        }
+
+        function closeLightbox() {
+            document.getElementById('diagram-lightbox').classList.add('hidden');
+        }
+    </script>
 </body>
 
 </html>
