@@ -1,0 +1,286 @@
+:root {
+    /* PRO ARCHITECT PALETTE */
+    --bg-body: #05090d;
+    /* Pitch Dark */
+    --bg-card: rgba(22, 27, 34, 0.65);
+    /* Glass Base */
+    --bg-nav: rgba(13, 17, 23, 0.85);
+
+    --border-color: rgba(60, 66, 75, 0.5);
+
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+
+    /* Neon Accents */
+    --accent-blue: #2f81f7;
+    --accent-green: #3fb950;
+    --accent-orange: #d29922;
+    --accent-red: #f85149;
+
+    --font-mono: 'Fira Code', monospace;
+    --font-sans: 'Inter', sans-serif;
+    --nav-height: 70px;
+    /* Taller, more substantial nav */
+
+    --glass-blur: blur(16px);
+    /* Heavy Blur */
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    --glass-button: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-body);
+    background-image: url('../assets/bg-pro.svg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+.mono-font {
+    font-family: var(--font-mono);
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-blue);
+    transition: all 0.2s;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #58a6ff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/*--- GLASS NAVIGATION ---*/
+.top-nav {
+    background: var(--bg-nav);
+    backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--border-color);
+    height: var(--nav-height);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent-green);
+    letter-spacing: -1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-blue);
+    box-shadow: 0 0 10px var(--accent-blue);
+}
+
+/*--- GLASS CARDS ---*/
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.tech-card {
+    background: var(--bg-card);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: var(--glass-shadow);
+}
+
+.tech-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 20px 40px -10px rgba(47, 129, 247, 0.2);
+}
+
+.tech-card h3 {
+    color: var(--accent-blue);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+/*--- BUTTONS ---*/
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.8rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-blue), #1f6feb);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(47, 129, 247, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(47, 129, 247, 0.5);
+}
+
+.btn-outline {
+    background: var(--glass-button);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+.btn-outline:hover {
+    border-color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/*--- LIGHTBOX ---*/
+#diagram-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#diagram-lightbox.active {
+    display: flex;
+    opacity: 1;
+}
+
+#lightbox-wrapper {
+    background: var(--bg-body);
+    border: 1px solid var(--accent-blue);
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 90vw;
+    max-height: 85vh;
+    overflow: auto;
+    box-shadow: 0 0 50px rgba(47, 129, 247, 0.3);
+}
+
+#lightbox-wrapper svg {
+    width: 100% !important;
+    height: auto !important;
+    max-width: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.close-btn:hover {
+    transform: scale(1.1);
+    color: var(--accent-red);
+}
+
+/*--- MERMAID ---*/
+.mermaid {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    transition: background 0.3s;
+}
+
+.tech-card:hover .mermaid {
+    background: rgba(47, 129, 247, 0.05);
+    cursor: zoom-in;
+}
+
+/*--- THEMES (Consistent Glass) ---*/
+body.theme-matrix {
+    --bg-body: #000000;
+    --accent-blue: #00ff00;
+    --accent-green: #00ff00;
+    --accent-orange: #00cc00;
+    --bg-card: rgba(0, 20, 0, 0.8);
+    --border-color: #004400;
+}
+
+body.theme-nord {
+    --bg-body: #242933;
+    --accent-blue: #88c0d0;
+    --accent-green: #a3be8c;
+    --accent-orange: #d08770;
+    --bg-card: rgba(46, 52, 64, 0.8);
+    --border-color: #4c566a;
+}
+
+body.theme-solar {
+    --bg-body: #002b36;
+    --accent-blue: #268bd2;
+    --accent-green: #859900;
+    --accent-orange: #cb4b16;
+    --bg-card: rgba(7, 54, 66, 0.8);
+    --border-color: #586e75;
+}

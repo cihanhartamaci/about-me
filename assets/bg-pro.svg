@@ -1,0 +1,35 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="streamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2f81f7;stop-opacity:0.05" />
+      <stop offset="50%" style="stop-color:#3fb950;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#2f81f7;stop-opacity:0.05" />
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2f81f7" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+    <filter id="glow">
+        <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+        <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Base Grid -->
+  <rect width="100%" height="100%" fill="url(#grid)" />
+
+  <!-- Data Streams (Curved Paths) -->
+  <path d="M-100,500 C150,200 350,600 900,100" stroke="url(#streamGrad)" stroke-width="2" fill="none" />
+  <path d="M-100,200 C250,500 450,100 900,400" stroke="url(#streamGrad)" stroke-width="2" fill="none" />
+  
+  <!-- Tech Keywords (Part of BG) -->
+  <text x="100" y="150" font-family="monospace" font-size="12" fill="#2f81f7" opacity="0.3">ISA*00*AUTHORIZATION</text>
+  <text x="500" y="450" font-family="monospace" font-size="12" fill="#3fb950" opacity="0.3">{ "event": "order.created" }</text>
+  <text x="200" y="550" font-family="monospace" font-size="12" fill="#d29922" opacity="0.2">&lt;IDOC type="ORDERS05"&gt;</text>
+  
+  <!-- Floating Nodes -->
+  <circle cx="200" cy="365" r="4" fill="#2f81f7" opacity="0.4" filter="url(#glow)" />
+  <circle cx="600" cy="225" r="4" fill="#3fb950" opacity="0.4" filter="url(#glow)" />
+</svg>
