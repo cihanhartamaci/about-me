@@ -1,13 +1,17 @@
 :root {
-    /* PREMIUM EDI ARCHITECT PALETTE (Midnight Blue & Electric Teal) */
+    /* PREMIUM EDI ARCHITECT PALETTE */
     --bg-body: #0b1015;
     /* Deep Slate Blue */
-    --bg-card: #151b23;
-    --border-color: #30363d;
+    --bg-card: rgba(22, 27, 34, 0.7);
+    /* Glassy Card */
+    --bg-nav: rgba(13, 17, 23, 0.85);
+    /* Glassy Nav */
+    --border-color: rgba(48, 54, 61, 0.6);
+
     --text-primary: #e6edf3;
     --text-secondary: #8b949e;
 
-    /* Data Colors */
+    /* Neon Data Accents */
     --accent-blue: #2f81f7;
     /* Structural/Links */
     --accent-green: #3fb950;
@@ -17,12 +21,15 @@
     --accent-red: #f85149;
     /* Error */
     --accent-teal: #1f6feb;
-    /* Connectivity (New) */
+    /* Connectivity */
 
     --text-muted: #6e7681;
     --font-mono: 'Fira Code', monospace;
     --font-sans: 'Inter', sans-serif;
     --nav-height: 60px;
+
+    --glass-blur: blur(12px);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 * {
@@ -33,13 +40,9 @@
 
 body {
     background-color: var(--bg-body);
-    /* Professional Network Grid Background */
-    background-image:
-        radial-gradient(circle at 1px 1px, rgba(126, 231, 135, 0.05) 1px, transparent 0),
-        linear-gradient(to right, rgba(48, 54, 61, 0.2) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(48, 54, 61, 0.2) 1px, transparent 1px);
-    background-size: 40px 40px;
-    /* Grid spacing */
+    /* Detailed EDI Stream Background - Ensures expertise visibility */
+    background-image: url('assets/bg-stream.svg');
+    background-size: 400px 400px;
     background-attachment: fixed;
 
     color: var(--text-primary);
@@ -81,9 +84,10 @@ a:hover {
     font-size: 0.9em;
 }
 
-/* Navigation - File Tab Style */
+/* Glassmorphism Navigation */
 .top-nav {
-    background: var(--bg-card);
+    background: var(--bg-nav);
+    backdrop-filter: var(--glass-blur);
     border-bottom: 1px solid var(--border-color);
     height: var(--nav-height);
     position: sticky;
@@ -108,7 +112,6 @@ a:hover {
 .nav-links {
     display: flex;
     gap: 1px;
-    /* border separation */
 }
 
 .nav-link {
@@ -119,22 +122,21 @@ a:hover {
     align-items: center;
     font-family: var(--font-mono);
     font-size: 0.9rem;
+    transition: all 0.2s;
     border-right: 1px solid transparent;
     border-left: 1px solid transparent;
 }
 
 .nav-link:hover {
-    background: rgba(255, 255, 255, 0.02);
-    text-decoration: none;
+    background: rgba(255, 255, 255, 0.05);
+    /* Slight highlight */
     color: var(--text-primary);
 }
 
 .nav-link.active {
-    background: var(--bg-body);
+    background: rgba(255, 255, 255, 0.05);
     border-top: 2px solid var(--accent-orange);
     color: var(--text-primary);
-    border-right: 1px solid var(--border-color);
-    border-left: 1px solid var(--border-color);
 }
 
 /* Page Headers */
@@ -155,30 +157,51 @@ a:hover {
     max-width: 600px;
 }
 
-/* Cards (Standard) */
+/* Glassmorphism Cards */
 .grid-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    /* Slightly wider for diagrams */
     gap: 2rem;
     margin: 2rem 0;
 }
 
 .tech-card {
     background: var(--bg-card);
+    backdrop-filter: var(--glass-blur);
     border: 1px solid var(--border-color);
     padding: 1.5rem;
-    border-radius: 6px;
-    transition: transform 0.2s, border-color 0.2s;
+    border-radius: 8px;
+    /* More rounded */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--glass-shadow);
+    overflow: hidden;
 }
 
 .tech-card:hover {
-    transform: translateY(-2px);
+    transform: translateY(-5px);
     border-color: var(--accent-blue);
+    box-shadow: 0 12px 40px rgba(47, 129, 247, 0.15);
 }
 
 .tech-card h3 {
     color: var(--accent-blue);
     margin-bottom: 1rem;
+}
+
+/* Diagram Specifics */
+.tech-card .mermaid {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    /* Darken bg for diagram contrast */
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.tech-card[onclick]:hover .mermaid {
+    background: rgba(47, 129, 247, 0.1);
+    cursor: zoom-in;
 }
 
 /* Buttons */
@@ -188,7 +211,6 @@ a:hover {
     border-radius: 6px;
     font-family: var(--font-mono);
     font-weight: 600;
-    text-decoration: none;
     cursor: pointer;
 }
 
@@ -199,7 +221,6 @@ a:hover {
 
 .btn-primary:hover {
     background: #3a8ee6;
-    text-decoration: none;
 }
 
 .btn-outline {
@@ -211,7 +232,7 @@ a:hover {
     border-color: var(--text-primary);
 }
 
-/* --- COMMAND PALETTE (CTRL+K) --- */
+/* Command Palette */
 .cmd-overlay {
     position: fixed;
     top: 0;
@@ -219,10 +240,8 @@ a:hover {
     width: 100%;
     height: 100%;
     background: rgba(10, 25, 47, 0.85);
-    /* Glass dark */
     backdrop-filter: blur(5px);
     z-index: 99999;
-    /* Top most */
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -239,7 +258,6 @@ a:hover {
 
 .cmd-modal {
     background: var(--bg-card);
-    /* Use existing card-bg */
     width: 600px;
     max-width: 90%;
     border-radius: 8px;
@@ -269,12 +287,6 @@ a:hover {
     background: rgba(255, 255, 255, 0.02);
 }
 
-.cmd-header i {
-    color: var(--text-muted);
-    font-size: 1.2rem;
-    margin-right: 1rem;
-}
-
 #cmd-input {
     background: transparent;
     border: none;
@@ -285,34 +297,8 @@ a:hover {
     outline: none;
 }
 
-.cmd-badge {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--text-muted);
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.7rem;
-    font-family: sans-serif;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
 .cmd-results {
-    /* max-height: 400px; */
-    /* overflow-y: auto; */
     padding: 0.5rem;
-}
-
-.cmd-placeholder {
-    padding: 2rem;
-    text-align: center;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
-
-.cmd-key {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 2px 5px;
-    border-radius: 3px;
-    color: #fff;
 }
 
 .cmd-item {
@@ -326,61 +312,28 @@ a:hover {
     border-left: 2px solid transparent;
 }
 
-.cmd-item:hover,
-.cmd-item:focus {
+.cmd-item:hover {
     background: rgba(100, 255, 218, 0.05);
-    /* Tint of primary */
     border-left-color: var(--accent-blue);
-}
-
-.cmd-item-icon {
-    width: 30px;
-    text-align: center;
-    color: var(--text-muted);
-    margin-right: 1rem;
-    font-size: 0.9rem;
-}
-
-.cmd-item:hover .cmd-item-icon {
-    color: var(--accent-blue);
-}
-
-.cmd-item-info {
-    flex: 1;
 }
 
 .cmd-item-title {
     color: var(--text-primary);
     font-weight: 500;
-    font-size: 0.95rem;
 }
 
 .cmd-item-type {
     color: var(--text-muted);
     font-size: 0.75rem;
     text-transform: uppercase;
-    margin-top: 2px;
 }
 
-.cmd-arrow {
-    opacity: 0;
-    color: var(--accent-blue);
-    transform: translateX(-10px);
-    transition: all 0.2s;
-}
-
-.cmd-item:hover .cmd-arrow {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* --- TERMINAL WIZARD --- */
+/* Terminal Wizard */
 .terminal-window {
     background: #0a192f;
     border: 1px solid rgba(100, 255, 218, 0.2);
     border-radius: 6px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
     font-family: 'Fira Code', monospace;
     margin: 2rem 0;
     max-width: 800px;
@@ -414,24 +367,11 @@ a:hover {
     background: #27c93f;
 }
 
-.terminal-title {
-    margin-left: 10px;
-    color: var(--text-muted);
-    font-size: 0.8rem;
-}
-
 .terminal-body {
     padding: 1rem;
     height: 350px;
-    /* Fixed height for scroll */
     overflow-y: auto;
     color: var(--text-primary);
-    font-size: 0.95rem;
-}
-
-.msg {
-    margin-bottom: 0.5rem;
-    line-height: 1.5;
 }
 
 .msg.system {
@@ -453,12 +393,6 @@ a:hover {
     align-items: center;
 }
 
-.terminal-input-line .prompt {
-    color: var(--accent-blue);
-    margin-right: 10px;
-    font-weight: bold;
-}
-
 #wizard-input {
     background: transparent;
     border: none;
@@ -466,57 +400,9 @@ a:hover {
     font-family: 'Fira Code', monospace;
     flex: 1;
     outline: none;
-    font-size: 1rem;
 }
 
-#wizard-input.hidden {
-    display: none;
-}
-
-/* --- DASHBOARD NAVBAR FIX --- */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    /* Added horizontal padding */
-    margin-bottom: 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-    z-index: 10001;
-}
-
-.navbar .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--accent-blue);
-    text-decoration: none;
-}
-
-.navbar .nav-links {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.navbar .nav-links li {
-    display: inline-block;
-}
-
-.navbar .nav-links a {
-    color: var(--text-primary);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s;
-}
-
-.navbar .nav-links a:hover {
-    color: var(--accent-blue);
-}
-
-/* --- TYPEWRITER EFFECT --- */
+/* Typewriter */
 .typing-cursor {
     display: inline-block;
     width: 8px;
@@ -537,26 +423,21 @@ a:hover {
     }
 }
 
-/* --- HUMANIZED EDI PARSER --- */
+/* Humanized EDI */
 .edi-label {
     display: block;
     font-size: 0.6rem;
     color: var(--accent-orange);
     text-transform: uppercase;
-    margin-bottom: 2px;
     font-family: var(--font-sans);
-    letter-spacing: 0.5px;
 }
 
 .humanized .ele {
     display: none;
-    /* Hide the [1] index indicators when humanized */
 }
 
-/* Adjust segment layout for humanized view to handle taller items */
 .humanized .segment-node {
     align-items: flex-start;
-    /* Align top since labels add height */
 }
 
 .humanized .ele-val-wrapper {
@@ -566,80 +447,78 @@ a:hover {
     vertical-align: top;
 }
 
-/* --- MULTI-THEME DEFINITIONS --- */
+/* --- MULTI-THEME GLASS DEFINITIONS (The User Requested Consistency) --- */
 
-/* 1. MATRIX (Hacker Green) */
+/* 1. MATRIX (Hacker Glass) */
 body.theme-matrix {
     --bg-body: #000000;
-    --bg-card: #0a0a0a;
-    --border-color: #003300;
+    --bg-card: rgba(0, 20, 0, 0.75);
+    --bg-nav: rgba(0, 15, 0, 0.9);
+    --border-color: #004400;
     --text-primary: #00cc00;
     --text-secondary: #008800;
     --accent-blue: #00ff00;
     --accent-green: #00ff00;
     --accent-orange: #00aa00;
-    --accent-red: #cc0000;
     --text-muted: #004400;
+    --glass-button: inset 0 0 10px rgba(0, 255, 0, 0.2);
 }
 
 body.theme-matrix .nav-link:hover {
-    background: rgba(0, 255, 0, 0.1);
+    background: rgba(0, 255, 0, 0.15);
+    box-shadow: var(--glass-button);
 }
 
 body.theme-matrix .tech-card:hover {
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
     border-color: #00ff00;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
 }
 
-body.theme-matrix ::selection {
-    background: #00ff00;
-    color: #000000;
-}
-
-/* 2. NORD (Cool Blue/Grey) */
+/* 2. NORD (Arctic Glass) */
 body.theme-nord {
-    --bg-body: #2e3440;
-    --bg-card: #3b4252;
+    --bg-body: #242933;
+    --bg-card: rgba(46, 52, 64, 0.75);
+    --bg-nav: rgba(46, 52, 64, 0.9);
     --border-color: #4c566a;
     --text-primary: #d8dee9;
     --text-secondary: #81a1c1;
     --accent-blue: #88c0d0;
     --accent-green: #a3be8c;
     --accent-orange: #d08770;
-    --accent-red: #bf616a;
     --text-muted: #4c566a;
 }
 
 body.theme-nord .nav-link:hover {
-    background: rgba(136, 192, 208, 0.1);
+    background: rgba(136, 192, 208, 0.15);
 }
 
 body.theme-nord .tech-card:hover {
     border-color: #88c0d0;
 }
 
-/* 3. SOLARIZED (Warm Earth Tones) */
+/* 3. SOLARIZED (Warm Glass) */
 body.theme-solar {
     --bg-body: #002b36;
-    --bg-card: #073642;
+    --bg-card: rgba(7, 54, 66, 0.75);
+    --bg-nav: rgba(7, 54, 66, 0.9);
     --border-color: #586e75;
     --text-primary: #839496;
     --text-secondary: #586e75;
     --accent-blue: #268bd2;
     --accent-green: #859900;
     --accent-orange: #cb4b16;
-    --accent-red: #dc322f;
     --text-muted: #586e75;
 }
 
 body.theme-solar .nav-link:hover {
-    background: rgba(38, 139, 210, 0.1);
+    background: rgba(38, 139, 210, 0.15);
 }
 
 body.theme-solar .tech-card:hover {
     border-color: #268bd2;
 }
-/* --- LIGHTBOX --- */
+
+/* --- LIGHTBOX (For Diagrams) --- */
 #diagram-lightbox {
     position: fixed;
     top: 0;
@@ -649,7 +528,8 @@ body.theme-solar .tech-card:hover {
     background: rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(5px);
     z-index: 100000;
-    display: none; /* Hidden by default */
+    display: none;
+    /* Hidden by default */
     align-items: center;
     justify-content: center;
     padding: 2rem;
@@ -675,10 +555,15 @@ body.theme-solar .tech-card:hover {
 #lightbox-content svg {
     width: 100% !important;
     height: auto !important;
-    max-width: none !important; /* Allow growing */
+    max-width: none !important;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

@@ -7,11 +7,6 @@
     <title>Integration Patterns | Cihan Hartamaci</title>
     <meta name="description"
         content="Standardized specs for ANSI X12, EDIFACT, and Hybrid Cloud architectures. Explore integration patterns.">
-    <meta property="og:title" content="Integration Patterns // EDI.HUB">
-    <meta property="og:description" content="Technical documentation for ANSI X12, EDIFACT and Hybrid Architectures.">
-    <meta property="og:image" content="https://edi-developer-hub.netlify.app/assets/social-preview.png">
-    <meta property="og:url" content="https://edi-developer-hub.netlify.app/patterns.html">
-    <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -45,30 +40,43 @@
             <p class="page-subtitle">Standardized visual blueprints for enterprise connectivity.</p>
         </section>
 
-        <!-- Lightbox Container -->
+        <!-- Lightbox Overlay -->
         <div id="diagram-lightbox" class="hidden" onclick="closeLightbox()">
             <div id="lightbox-content" onclick="event.stopPropagation()">
                 <!-- Cloned SVG goes here -->
             </div>
-            <div style="position:fixed; top:20px; right:30px; color:white; font-size:2rem; cursor:pointer;"
+            <!-- Close Button -->
+            <div style="position:fixed; top:20px; right:30px; color:white; font-size:3rem; cursor:pointer;"
                 onclick="closeLightbox()">&times;</div>
         </div>
 
         <div class="grid-cards">
-            <!-- Pattern 1: EDI Flow -->
+            <!-- Pattern 1: EDI Interaction -->
             <div class="tech-card" style="cursor: zoom-in;" onclick="openLightbox(this)" title="Click to Expand">
                 <div
                     style="margin-bottom:1rem; font-family:var(--font-mono); color:var(--text-secondary); font-size:0.8rem;">
-                    REF: EDI-STD-01</div>
+                    REF: EDI-STD-01 // ORDER-TO-CASH FLOW</div>
                 <h3>Order to Cash (X12)</h3>
                 <div class="mermaid">
                     graph LR
-                    A([ERP System]) -- "JSON Order" --> B[Integration Layer]
-                    B -- "Translate" --> C{EDI Mapper}
-                    C -- "850 PO" --> D[Trading Partner]
+                    classDef system fill:#161b22,stroke:#58a6ff,stroke-width:2px,color:#fff
+                    classDef process fill:#161b22,stroke:#d29922,stroke-width:2px,stroke-dasharray: 5 5,color:#fff
+                    classDef partner fill:#161b22,stroke:#3fb950,stroke-width:2px,color:#fff
+
+                    subgraph Enterprise ["My Enterprise"]
+                    A[(ERP System)] -- "JSON Order" --> B[Integration Layer]
+                    B -- "Map" --> C{{EDI Translator}}
+                    end
+
+                    subgraph External ["Trading Partner"]
+                    C -- "850 PO" --> D([Supplier System])
                     D -- "997 ACK" --> C
-                    style A fill:#161b22,stroke:#2f81f7,stroke-width:2px
-                    style D fill:#161b22,stroke:#3fb950,stroke-width:2px
+                    end
+
+                    class A system
+                    class B process
+                    class C process
+                    class D partner
                 </div>
             </div>
 
@@ -80,15 +88,25 @@
                 <h3>Secure API Gateway</h3>
                 <div class="mermaid">
                     graph LR
-                    Client([Mobile App]) -- "OAuth2" --> GW{API Gateway}
+                    classDef client fill:#05090d,stroke:#f85149,stroke-width:2px,color:#fff
+                    classDef gateway fill:#161b22,stroke:#39c5bb,stroke-width:4px,color:#fff
+                    classDef service fill:#161b22,stroke:#2f81f7,stroke-width:1px,color:#fff
+
+                    Mobile([Mobile App]) -- "OAuth2" --> GW{{API Gateway}}
+
+                    subgraph Internal ["Microservices Mesh"]
                     GW -- "Validate" --> Auth[Auth Service]
-                    GW -- "Proxy" --> Svc1[Order Service]
-                    GW -- "Proxy" --> Svc2[Inventory Service]
-                    style GW fill:#0b1015,stroke:#d29922,stroke-width:2px
+                    GW -- "Proxy" --> Order[Order Service]
+                    GW -- "Proxy" --> Inv[Inventory]
+                    end
+
+                    class Mobile client
+                    class GW gateway
+                    class Auth,Order,Inv service
                 </div>
             </div>
 
-            <!-- Pattern 3: Hybrid Sync -->
+            <!-- Pattern 3: Hybrid Connectivity -->
             <div class="tech-card" style="cursor: zoom-in;" onclick="openLightbox(this)" title="Click to Expand">
                 <div
                     style="margin-bottom:1rem; font-family:var(--font-mono); color:var(--text-secondary); font-size:0.8rem;">
@@ -96,11 +114,22 @@
                 <h3>Hybrid Data Sync</h3>
                 <div class="mermaid">
                     graph LR
-                    OnPrem[(Legacy DB)] <--> Agent[Connect Agent]
-                        Agent <--> Cloud[Cloud Bus]
-                            Cloud --> Lake[(Data Lake)]
-                            style OnPrem fill:#161b22,stroke:#f85149
-                            style Lake fill:#161b22,stroke:#2f81f7
+                    classDef legacy fill:#161b22,stroke:#8b949e,stroke-width:2px,color:#fff
+                    classDef agent fill:#161b22,stroke:#d29922,stroke-width:2px,color:#fff
+                    classDef cloud fill:#161b22,stroke:#3fb950,stroke-width:2px,color:#fff
+
+                    subgraph OnPrem ["On-Premise DC"]
+                    DB[(Legacy SQL)] <--> Agent[Connect Agent]
+                        end
+
+                        subgraph Cloud ["Cloud Platform"]
+                        Agent <--> Bus{{Message Bus}}
+                            Bus --> Lake[(Data Lake)]
+                            end
+
+                            class DB legacy
+                            class Agent agent
+                            class Bus,Lake cloud
                 </div>
             </div>
         </div>
@@ -124,9 +153,8 @@
             const originalSvg = card.querySelector('svg');
 
             if (originalSvg) {
-                content.innerHTML = ''; // Clear previous
+                content.innerHTML = '';
                 const clone = originalSvg.cloneNode(true);
-                // Remove fixed dimmensions to let CSS scale it
                 clone.removeAttribute('height');
                 clone.removeAttribute('width');
                 clone.style.maxWidth = '100%';
