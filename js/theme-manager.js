@@ -1,11 +1,10 @@
 /**
- * Theme Manager & System Status Footer
- * Handles Matrix Mode toggle and injecting the status footer.
+ * Theme Manager
+ * Handles Matrix Mode toggle.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
-    injectStatusFooter();
     injectNavExtras();
 });
 
@@ -24,83 +23,56 @@ function toggleTheme() {
     // Update button icon/text if it exists
     const btn = document.getElementById('btn-theme-toggle');
     if (btn) {
-        btn.innerHTML = isMatrix ? '<i class="fas fa-terminal"></i>' : '<i class="fas fa-moon"></i>';
-        btn.title = isMatrix ? "Disable Matrix Mode" : "Enable Matrix Mode";
+        updateToggleButton(btn, isMatrix);
     }
 }
 
-function injectStatusFooter() {
-    const footer = document.createElement('div');
-    footer.className = 'sys-footer';
-
-    // Random latency generator
-    const latDB = Math.floor(Math.random() * 20) + 10;
-    const latAPI = Math.floor(Math.random() * 50) + 20;
-
-    footer.innerHTML = `
-        <div class="status-group">
-            <div class="status-item" title="Database Connection: Active">
-                <div class="status-dot"></div>
-                <span>DB: ${latDB}ms</span>
-            </div>
-            <div class="status-item" title="API Gateway: Operational">
-                <div class="status-dot"></div>
-                <span>API: ${latAPI}ms</span>
-            </div>
-            <div class="status-item" title="EDI Translators: Online">
-                <div class="status-dot"></div>
-                <span>EDI-X12</span>
-            </div>
-        </div>
-        <div class="status-group">
-            <div class="status-item">
-                <span>V.2.4.0-STABLE</span>
-            </div>
-        </div>
-    `;
-
-    document.body.appendChild(footer);
-
-    // Adjust body padding so footer doesn't hide content
-    document.body.style.paddingBottom = "40px";
+function updateToggleButton(btn, isMatrix) {
+    // Ensure visibility by forcing inline styles high contrast
+    btn.innerHTML = isMatrix ? '<i class="fas fa-terminal"></i>' : '<i class="fas fa-moon"></i>';
+    btn.title = isMatrix ? "Disable Matrix Mode" : "Enable Matrix Mode";
+    btn.style.color = isMatrix ? '#00ff00' : 'var(--text-secondary)';
 }
 
 function injectNavExtras() {
-    // Inject "Vault" link and "Theme Toggle" into .nav-links
+    // Inject "Theme Toggle" into .nav-links
+    // Try to find the container. 
+    // Most pages: .nav-links (div) inside .top-nav
+    // Dashboard: .nav-links (ul) inside .navbar
+
     const navLinks = document.querySelector('.nav-links');
-    if (!navLinks) return;
-
-    // Check if Vault already exists (to prevent dupes if hardcoded later)
-    if (!document.querySelector('a[href="vault.html"]')) {
-        const vaultLink = document.createElement('a');
-        vaultLink.href = 'vault.html';
-        vaultLink.className = 'nav-link';
-        vaultLink.textContent = 'Vault';
-
-        // Insert before Contact or Dashboard
-        const contactLink = document.querySelector('a[href="contact.html"]');
-        if (contactLink) {
-            navLinks.insertBefore(vaultLink, contactLink);
-        } else {
-            navLinks.appendChild(vaultLink);
-        }
+    if (!navLinks) {
+        console.warn("Theme Manager: .nav-links not found, cannot inject toggle.");
+        return;
     }
 
     // Theme Toggle
     if (!document.getElementById('btn-theme-toggle')) {
+        // Create list item for Dashboard (ul) or direct link for others (div)
+        const isList = navLinks.tagName === 'UL';
+
         const toggleBtn = document.createElement('button');
         toggleBtn.id = 'btn-theme-toggle';
         toggleBtn.className = 'nav-link';
+        // Reset button styles to match links
         toggleBtn.style.background = 'transparent';
         toggleBtn.style.border = 'none';
         toggleBtn.style.cursor = 'pointer';
         toggleBtn.style.fontSize = '1rem';
+        toggleBtn.style.padding = '0 1rem'; // Match nav-link padding
+        toggleBtn.style.display = 'flex';
+        toggleBtn.style.alignItems = 'center';
         toggleBtn.onclick = toggleTheme;
 
         const isMatrix = document.body.classList.contains('matrix-mode');
-        toggleBtn.innerHTML = isMatrix ? '<i class="fas fa-terminal"></i>' : '<i class="fas fa-moon"></i>';
-        toggleBtn.title = isMatrix ? "Disable Matrix Mode" : "Enable Matrix Mode";
+        updateToggleButton(toggleBtn, isMatrix);
 
-        navLinks.appendChild(toggleBtn);
+        if (isList) {
+            const li = document.createElement('li');
+            li.appendChild(toggleBtn);
+            navLinks.appendChild(li);
+        } else {
+            navLinks.appendChild(toggleBtn);
+        }
     }
 }
