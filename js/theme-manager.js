@@ -26,11 +26,7 @@ function applyTheme(themeName) {
     // Save preference
     localStorage.setItem('theme', themeName);
 
-    // Sync UI if exists
-    const select = document.getElementById('theme-select');
-    if (select) {
-        select.value = themeName;
-    }
+
 }
 
 function injectNavExtras() {
