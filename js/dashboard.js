@@ -23,14 +23,13 @@ function initAuth() {
     onAuthStateChanged(auth, (user) => {
         if (user) {
             console.log('Auth: User logged in', user.email);
-            overlay.classList.add('hidden');
+            overlay.style.display = 'none';
             initRealtimeListener();
             initInboxListener();
         } else {
             console.log('Auth: User logged out');
-            overlay.classList.remove('hidden');
+            overlay.style.display = 'flex';
             if (unsubscribeSnapshot) unsubscribeSnapshot();
-            // Optional: Clear dashboard data for security visuals
         }
     });
 
@@ -44,18 +43,19 @@ function initAuth() {
         try {
             await signInWithEmailAndPassword(auth, email, password);
             msg.textContent = "";
-            // onAuthStateChanged will handle the UI update
         } catch (error) {
             console.error("Login failed", error);
             msg.textContent = "Access Denied: Invalid credentials.";
         }
     });
 
-    // Logout Action
+    // Logout Action - FIXED: Redirects to home
     logoutBtn.addEventListener('click', async (e) => {
         e.preventDefault();
         try {
             await signOut(auth);
+            // Redirect to home page after logout
+            window.location.href = 'index.html';
         } catch (error) {
             console.error("Logout failed", error);
         }
@@ -79,7 +79,6 @@ function initRealtimeListener() {
         console.error("Firestore Error:", error);
         if (error.code === 'permission-denied') {
             document.getElementById('login-msg').textContent = "Session expired. Please login again.";
-            // Force logout if permission lost
             signOut(auth);
         }
     });
@@ -165,8 +164,8 @@ function updateInbox(messages) {
 
         // Project Type color
         let typeColor = 'var(--text-main)';
-        if (msg.project_type === 'SAP IDOC') typeColor = '#f0a500'; // Yellowish
-        if (msg.project_type === 'NetSuite') typeColor = '#0070e0'; // Blueish
+        if (msg.project_type === 'SAP IDOC') typeColor = '#f0a500';
+        if (msg.project_type === 'NetSuite') typeColor = '#0070e0';
 
         row.innerHTML = `
             <td style="font-size: 0.8em; color: var(--text-muted);">${dateStr}</td>

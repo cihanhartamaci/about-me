@@ -14,150 +14,6 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <style>
-        .dashboard-container {
-            padding-top: 100px;
-            padding-bottom: 50px;
-            min-height: 100vh;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .stat-card {
-            background: rgba(17, 34, 64, 0.7);
-            border: 1px solid rgba(100, 255, 218, 0.1);
-            padding: 1.5rem;
-            border-radius: 4px;
-            text-align: center;
-            font-family: 'Fira Code', monospace;
-        }
-
-        .stat-card h3 {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-        }
-
-        .stat-card .value {
-            font-size: 2.5rem;
-            color: var(--primary);
-            font-weight: 700;
-        }
-
-        .data-table-container {
-            background: rgba(17, 34, 64, 0.5);
-            border-radius: 4px;
-            padding: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            color: var(--text-main);
-            font-size: 0.9rem;
-            font-family: 'Fira Code', monospace;
-        }
-
-        th,
-        td {
-            text-align: left;
-            padding: 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        th {
-            color: var(--primary);
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-        }
-
-        tr:hover {
-            background: rgba(100, 255, 218, 0.05);
-        }
-
-        .status-dot {
-            height: 8px;
-            width: 8px;
-            background-color: var(--primary);
-            border-radius: 50%;
-            display: inline-block;
-            margin-right: 8px;
-        }
-
-        /* Auth Overlay */
-        #auth-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(13, 17, 23, 0.85);
-            /* Dark dimmed background */
-            backdrop-filter: blur(5px);
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-
-        .login-box {
-            background: #161b22;
-            /* --bg-card equivalent */
-            padding: 2.5rem;
-            border-radius: 4px;
-            border: 1px solid var(--primary);
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-            box-shadow: 0 0 20px rgba(100, 255, 218, 0.1);
-        }
-
-        .login-box h2 {
-            font-family: 'Fira Code', monospace;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .login-box input {
-            background: var(--bg-dark);
-            border: 1px solid var(--text-muted);
-            padding: 1rem;
-            color: var(--white);
-            margin-bottom: 1rem;
-            border-radius: 2px;
-            width: 100%;
-            font-family: 'Fira Code', monospace;
-        }
-
-        .login-box button {
-            width: 100%;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .hidden {
-            display: none !important;
-        }
-
-        /* FORCE NETLIFY WIDGET ON TOP */
-        iframe[id^="netlify-identity-widget"] {
-            z-index: 10000 !important;
-        }
-
-        div[class^="netlify-identity"] {
-            z-index: 10001 !important;
-        }
-    </style>
 </head>
 
 <body>
@@ -178,88 +34,171 @@
         </div>
     </div>
 
-    <nav class="navbar">
-        <div class="logo">EDI.HUB <span style="font-size: 0.6em; color: var(--text-muted);">// ANALYTICS</span></div>
-        <ul class="nav-links">
-            <li><a href="index.html">Exit to Hub</a></li>
-            <li><a href="tools.html">Tools</a></li>
-            <li><a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-        </ul>
-    </nav>
+    <!-- DASHBOARD CONTAINER -->
+    <div class="container" style="padding-top: 100px; padding-bottom: 50px; min-height: 100vh;">
 
-    <div class="container dashboard-container">
-        <header style="margin-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem;">
-            <h1 class="section-title" style="margin-bottom: 0.5rem;">System Statistics</h1>
+        <!-- IMPROVED HEADER - Daha Belirgin ve Ayrık -->
+        <div class="dashboard-header">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <!-- Sol Taraf: Logo ve Navigasyon -->
+                <div>
+                    <div class="logo" style="margin-bottom: 1rem;">
+                        EDI.HUB <span style="color: var(--text-muted); font-size: 0.9rem;">// ANALYTICS</span>
+                    </div>
+                    <div class="nav-links" style="border: none; margin: 0; padding: 0;">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-home" style="margin-right: 0.5rem;"></i>Home
+                        </a>
+                        <a href="tools.html" class="nav-link">
+                            <i class="fas fa-tools" style="margin-right: 0.5rem;"></i>Tools
+                        </a>
+                        <a href="#" class="nav-link" id="logout-btn">
+                            <i class="fas fa-sign-out-alt" style="margin-right: 0.5rem;"></i>Logout
+                        </a>
+                    </div>
+                </div>
+                <!-- Sağ Taraf: Theme Selector -->
+                <div>
+                    <select id="theme-selector"
+                        style="background: rgba(0,0,0,0.3); color: var(--text-primary); border: 1px solid var(--border-color); 
+                               padding: 0.5rem 1rem; border-radius: 4px; font-family: var(--font-mono); cursor: pointer;">
+                        <option value="">Standard</option>
+                        <option value="theme-matrix">Matrix</option>
+                        <option value="theme-nord">Nord</option>
+                        <option value="theme-solar">Solarized</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- SYSTEM STATISTICS -->
+        <header style="margin-bottom: 2.5rem; margin-top: 2rem;">
+            <h1 class="mono-font" style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary);">System
+                Statistics</h1>
             <p style="color: var(--text-muted);">Monitoring visitor traffic and geographic distribution.</p>
         </header>
 
         <!-- Stats Grid -->
-        <div class="stats-grid">
-            <div class="stat-card">
-                <h3>Total Hits</h3>
-                <div class="value" id="total-visits">0</div>
+        <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+            <div class="tech-card" style="text-align: center;">
+                <h3
+                    style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase;">
+                    Total Hits</h3>
+                <div style="font-size: 2.5rem; color: var(--accent-blue); font-weight: 700;" id="total-visits">0</div>
             </div>
-            <div class="stat-card">
-                <h3>Unique IPs</h3>
-                <div class="value" id="unique-visitors">0</div>
+            <div class="tech-card" style="text-align: center;">
+                <h3
+                    style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase;">
+                    Unique IPs</h3>
+                <div style="font-size: 2.5rem; color: var(--accent-green); font-weight: 700;" id="unique-ips">0</div>
             </div>
-            <div class="stat-card">
-                <h3>Top Region</h3>
-                <div class="value" id="top-country">-</div>
+            <div class="tech-card" style="text-align: center;">
+                <h3
+                    style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase;">
+                    Top Region</h3>
+                <div style="font-size: 2.5rem; color: var(--accent-orange); font-weight: 700;" id="top-region">N/A</div>
             </div>
-            <div class="stat-card">
-                <h3>Last Ping</h3>
-                <div class="value" id="last-active" style="font-size: 1.5rem;">-</div>
+            <div class="tech-card" style="text-align: center;">
+                <h3
+                    style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase;">
+                    Last Ping</h3>
+                <div style="font-size: 2.5rem; color: var(--text-secondary); font-weight: 700;" id="last-ping">Never
+                </div>
             </div>
         </div>
 
-        <!-- Inbox Section -->
-        <h2 style="margin-bottom: 1rem; font-size: 1.2rem; font-family: 'Fira Code', monospace; margin-top: 2rem;">
-            <i class="fas fa-envelope"></i> Inbox (Messages)
-        </h2>
-        <div class="data-table-container" style="margin-bottom: 3rem;">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>From</th>
-                        <th>Type</th>
-                        <th>Message</th>
-                    </tr>
-                </thead>
-                <tbody id="inbox-table-body">
-                    <!-- Rows injected by JS -->
-                </tbody>
-            </table>
-        </div>
+        <!-- Inbox (Messages) -->
+        <section style="margin-bottom: 3rem;">
+            <h2 class="mono-font" style="font-size: 1.5rem; margin-bottom: 1rem;">Inbox (Messages)</h2>
+            <div class="tech-card" style="padding: 1.5rem; overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <th
+                                style="text-align: left; padding: 0.75rem; color: var(--text-secondary); text-transform: uppercase; font-size: 0.8rem;">
+                                Date</th>
+                            <th
+                                style="text-align: left; padding: 0.75rem; color: var(--text-secondary); text-transform: uppercase; font-size: 0.8rem;">
+                                From</th>
+                            <th
+                                style="text-align: left; padding: 0.75rem; color: var(--text-secondary); text-transform: uppercase; font-size: 0.8rem;">
+                                Type</th>
+                            <th
+                                style="text-align: left; padding: 0.75rem; color: var(--text-secondary); text-transform: uppercase; font-size: 0.8rem;">
+                                Message</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inbox-table">
+                        <tr>
+                            <td colspan="4" style="padding: 2rem; text-align: center; color: var(--text-muted);">
+                                <i class="fas fa-inbox"
+                                    style="font-size: 2rem; margin-bottom: 0.5rem; opacity: 0.5;"></i><br>
+                                No messages yet
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-        <!-- Recent Visits Table -->
-        <h2 style="margin-bottom: 1rem; font-size: 1.2rem; font-family: 'Fira Code', monospace;">
-            <i class="fas fa-terminal"></i> Recent Access Logs
-        </h2>
-        <div class="data-table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Timestamp</th>
-                        <th>Origin</th>
-                        <th>IP Node</th>
-                        <th>Target</th>
-                        <th>Client</th>
-                    </tr>
-                </thead>
-                <tbody id="visits-table-body">
-                    <!-- Rows injected by JS -->
-                </tbody>
-            </table>
-        </div>
+        <!-- Recent Access Logs -->
+        <section>
+            <h2 class="mono-font" style="font-size: 1.5rem; margin-bottom: 1rem;">Recent Access Logs</h2>
+            <div class="tech-card" style="padding: 1.5rem; overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <th
+                                style="text-align: left; padding: 0.75rem; color: var(--text-secondary); text-transform: uppercase; font-size: 0.8rem;">
+                                Timestamp</th>
+                            <th
+                                style="text-align: left; padding: 0.75rem; color: var(--text-secondary); text-transform: uppercase; font-size: 0.8rem;">
+                                IP Address</th>
+                            <th
+                                style="text-align: left; padding: 0.75rem; color: var(--text-secondary); text-transform: uppercase; font-size: 0.8rem;">
+                                Location</th>
+                            <th
+                                style="text-align: left; padding: 0.75rem; color: var(--text-secondary); text-transform: uppercase; font-size: 0.8rem;">
+                                Page</th>
+                        </tr>
+                    </thead>
+                    <tbody id="logs-table">
+                        <tr>
+                            <td colspan="4" style="padding: 2rem; text-align: center; color: var(--text-muted);">
+                                <i class="fas fa-chart-line"
+                                    style="font-size: 2rem; margin-bottom: 0.5rem; opacity: 0.5;"></i><br>
+                                Loading analytics...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
     </div>
 
-    <!-- Netlify Identity Removed -->
-    <!-- Command Palette -->
-    <script src="js/cmd-palette.js"></script>
-    <script src="js/theme-manager.js"></script>
-    <script type="module" src="js/dashboard.js"></script>
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script>
+        // Theme Selector Handler
+        document.getElementById('theme-selector').addEventListener('change', function (e) {
+            const theme = e.target.value;
+            document.body.classList.remove('theme-matrix', 'theme-nord', 'theme-solar');
+            if (theme) {
+                document.body.classList.add(theme);
+            }
+            localStorage.setItem('selectedTheme', theme);
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('selectedTheme');
+        if (savedTheme) {
+            document.body.classList.add(savedTheme);
+            document.getElementById('theme-selector').value = savedTheme;
+        }
+    </script>
 </body>
 
 </html>

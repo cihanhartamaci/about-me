@@ -109,6 +109,44 @@ a:hover {
     font-size: 1.2rem;
 }
 
+/* Dashboard Header - Daha Belirgin */
+.dashboard-header {
+    background: rgba(13, 17, 23, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--accent-blue);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 20px rgba(47, 129, 247, 0.2);
+}
+
+.dashboard-header .logo {
+    font-size: 1.5rem;
+    color: var(--accent-blue);
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-header .nav-links {
+    gap: 1.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.dashboard-header .nav-link {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    height: auto;
+    background: rgba(47, 129, 247, 0.1);
+    border: 1px solid transparent;
+}
+
+.dashboard-header .nav-link:hover {
+    background: rgba(47, 129, 247, 0.2);
+    border: 1px solid var(--accent-blue);
+}
+
+
 .nav-links {
     display: flex;
     gap: 1px;
