@@ -154,15 +154,25 @@
 
             if (originalSvg) {
                 content.innerHTML = '';
+
+                // 1. Force Container Size (Critical for "Zoom")
+                content.style.width = '90vw';
+                content.style.height = '85vh';
+                content.style.maxWidth = 'none';
+                content.style.maxHeight = 'none';
+                content.style.display = 'flex';
+                content.style.alignItems = 'center';
+                content.style.justifyContent = 'center';
+
                 const clone = originalSvg.cloneNode(true);
 
-                // Aggressively remove constraints
+                // 2. Strip Mermaid Constraints
                 clone.removeAttribute('height');
                 clone.removeAttribute('width');
-                clone.removeAttribute('style'); // Remove inline styles (max-width often here)
-                clone.removeAttribute('id');    // Prevent ID collision
+                clone.removeAttribute('style'); // Removes max-width
+                clone.removeAttribute('id');
 
-                // Force full size
+                // 3. Force SVG to Fill Container
                 clone.style.width = '100%';
                 clone.style.height = '100%';
                 clone.style.maxWidth = 'none';
