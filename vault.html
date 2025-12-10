@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Vault | Cihan Hartamaci</title>
+    <meta name="description" content="Reusable EDI and SuiteScript code snippets.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Copy Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="top-nav">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">CH.integrate()</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="patterns.html" class="nav-link">Patterns</a>
+                <a href="tools.html" class="nav-link">Tools</a>
+                <!-- vault and toggle injected by JS -->
+                <a href="insights.html" class="nav-link">Insights</a>
+                <a href="expertise.html" class="nav-link">Expertise</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="dashboard.html" class="nav-link" style="color:var(--accent-green);"><i class="fas fa-lock"></i>
+                    Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="page-header">
+            <h1 class="page-title">Code Vault</h1>
+            <p class="page-subtitle">Production-hardened snippets for immediate deployment.</p>
+        </header>
+
+        <script>
+            function copyCode(btn) {
+                const pre = btn.parentElement.nextElementSibling;
+                const code = pre.textContent;
+                navigator.clipboard.writeText(code).then(() => {
+                    const original = btn.innerHTML;
+                    btn.innerHTML = '<i class="fas fa-check"></i> Copied';
+                    setTimeout(() => btn.innerHTML = original, 2000);
+                });
+            }
+        </script>
+
+        <!-- Snippet 1 -->
+        <div class="vault-header">
+            <h3 class="mono-font">> ANSI X12 ISA Envelope</h3>
+            <span class="mono-tag">EDI / X12</span>
+        </div>
+        <div class="code-block-wrapper">
+            <div class="code-header">
+                <span>x12_envelope_wrapper.txt</span>
+                <button class="btn-copy" onclick="copyCode(this)"><i class="far fa-copy"></i> Copy</button>
+            </div>
+            <div class="code-content"><span class="token keyword">ISA</span>*00* *00* *ZZ*<span
+                    class="token string">SENDERID</span> *ZZ*<span class="token string">RECEIVERID</span> *<span
+                    class="token number">231209</span>*<span class="token number">1025</span>*U*00401*<span
+                    class="token number">000000101</span>*0*P*>~
+                <span class="token comment">/* Functional Group Header */</span>
+                <span class="token keyword">GS</span>*PO*SENDERID*RECEIVERID*20231209*1025*101*X*004010~
+                <span class="token comment">/* Transaction Set */</span>
+                <span class="token keyword">ST</span>*850*0001~
+                ...
+                <span class="token keyword">SE</span>*8*0001~
+                <span class="token keyword">GE</span>*1*101~
+                <span class="token keyword">IEA</span>*1*000000101~
+            </div>
+        </div>
+
+        <!-- Snippet 2 -->
+        <div class="vault-header">
+            <h3 class="mono-font">> NetSuite Restlet Template</h3>
+            <span class="mono-tag">JS / SuiteScript 2.1</span>
+        </div>
+        <div class="code-block-wrapper">
+            <div class="code-header">
+                <span>restlet_template.js</span>
+                <button class="btn-copy" onclick="copyCode(this)"><i class="far fa-copy"></i> Copy</button>
+            </div>
+            <div class="code-content"><span class="token comment">/**
+                    * @NApiVersion 2.1
+                    * @NScriptType Restlet
+                    */</span>
+                <span class="token keyword">define</span>(['N/record', 'N/search'], <span
+                    class="token function">function</span>(record, search) {
+                <span class="token function">function</span> <span class="token function">post</span>(context) {
+                <span class="token keyword">try</span> {
+                <span class="token keyword">const</span> orderId = context.orderId;
+                <span class="token keyword">if</span> (!orderId) <span class="token keyword">throw</span> "Missing
+                orderId";
+
+                <span class="token comment">// Logic here</span>
+                <span class="token keyword">return</span> { status: "success", id: orderId };
+
+                } <span class="token keyword">catch</span> (e) {
+                <span class="token keyword">return</span> { status: "error", message: e.message };
+                }
+                }
+
+                <span class="token keyword">return</span> {
+                post: post
+                };
+                });
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/cmd-palette.js"></script>
+    <script src="js/theme-manager.js"></script>
+    <script type="module" src="js/tracker.js"></script>
+</body>
+
+</html>

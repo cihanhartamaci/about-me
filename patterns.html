@@ -45,49 +45,72 @@
         </header>
 
         <div class="grid-cards">
-            <!-- Pattern 1 -->
-            <div class="tech-card">
+            <!-- Pattern 1: EDI Flow -->
+            <div class="tech-card" style="grid-column: span 2; min-width: 100%;">
                 <div
                     style="margin-bottom:1rem; font-family:var(--font-mono); color:var(--text-secondary); font-size:0.8rem;">
-                    REF: EDI-STD-01</div>
-                <h3>EDI Standards</h3>
-                <p style="margin-bottom:1rem;">Expert handling of ANSI X12 & EDIFACT formats for supply chain
-                    automation. Seamless translation to internal ERP structures.</p>
-                <div>
-                    <span class="mono-tag">PO (850/ORDERS)</span>
-                    <span class="mono-tag">ASN (856/DESADV)</span>
+                    REF: EDI-STD-01 // ORDER-TO-CASH FLOW</div>
+                <h3>Standard EDI Architecture</h3>
+                <div class="mermaid">
+                    graph LR
+                    A[Shopify] -->|Order JSON| B(Middleware)
+                    B -->|Map to 850| C{EDI Translator}
+                    C -->|X12 850| D[NetSuite ERP]
+                    D -->|Fulfill| E[WMS]
+                    E -->|X12 856| C
+                    C -->|ASN JSON| A
+                    style A fill:#0d1117,stroke:#58a6ff,stroke-width:2px
+                    style D fill:#0d1117,stroke:#7ee787,stroke-width:2px
                 </div>
             </div>
 
-            <!-- Pattern 2 -->
+            <!-- Pattern 2: API Gateway -->
             <div class="tech-card">
                 <div
                     style="margin-bottom:1rem; font-family:var(--font-mono); color:var(--text-secondary); font-size:0.8rem;">
                     REF: API-ORCH-02</div>
-                <h3>API Orchestration</h3>
-                <p style="margin-bottom:1rem;">Designing modern RESTful & SOAP architectures. Secure, scalable
-                    microservices integration using robust gateways.</p>
-                <div>
-                    <span class="mono-tag">OAuth2</span>
-                    <span class="mono-tag">Swagger</span>
+                <h3>API Gateway Pattern</h3>
+                <div class="mermaid">
+                    sequenceDiagram
+                    Client->>Gateway: POST /orders
+                    Gateway->>Auth: Validate Token
+                    Auth-->>Gateway: OK
+                    Gateway->>Service: Forward Request
+                    Service-->>Gateway: 200 OK
+                    Gateway-->>Client: 200 Created
                 </div>
             </div>
 
-            <!-- Pattern 3 -->
+            <!-- Pattern 3: Hybrid Strings -->
             <div class="tech-card">
                 <div
                     style="margin-bottom:1rem; font-family:var(--font-mono); color:var(--text-secondary); font-size:0.8rem;">
                     REF: HYB-SYNC-03</div>
-                <h3>Hybrid Sync</h3>
-                <p style="margin-bottom:1rem;">Bridging legacy mainframes with cloud-native apps. Real-time data
-                    synchronization with fault-tolerant retry logic.</p>
-                <div>
-                    <span class="mono-tag">Retry Logic</span>
-                    <span class="mono-tag">Queueing</span>
+                <h3>Hybrid Sync Logic</h3>
+                <div class="mermaid">
+                    stateDiagram-v2
+                    [*] --> Idle
+                    Idle --> Polling : Interval 5m
+                    Polling --> Syncing : Data Found
+                    Syncing --> Error : Network Fail
+                    Error --> Retry : Exponential Backoff
+                    Retry --> Syncing
+                    Syncing --> Idle : Complete
                 </div>
             </div>
         </div>
     </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            fontFamily: 'Fira Code'
+        });
+    </script>
+    <script src="js/theme-manager.js"></script>
 
     <!-- Command Palette -->
     <script src="js/cmd-palette.js"></script>
