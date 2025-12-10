@@ -155,27 +155,28 @@
             if (originalSvg) {
                 content.innerHTML = '';
 
-                // 1. Force Container Size (Critical for "Zoom")
+                // Container sizing - large display area
                 content.style.width = '90vw';
                 content.style.height = '85vh';
-                content.style.maxWidth = 'none';
-                content.style.maxHeight = 'none';
                 content.style.display = 'flex';
                 content.style.alignItems = 'center';
                 content.style.justifyContent = 'center';
 
                 const clone = originalSvg.cloneNode(true);
 
-                // 2. Strip Mermaid Constraints
+                // Remove restrictive attributes from Mermaid
                 clone.removeAttribute('height');
                 clone.removeAttribute('width');
-                clone.removeAttribute('style'); // Removes max-width
+                clone.removeAttribute('style');
                 clone.removeAttribute('id');
 
-                // 3. Force SVG to Fill Container
-                clone.style.width = '100%';
-                clone.style.height = '100%';
-                clone.style.maxWidth = 'none';
+                // KEY FIX: Use auto with max constraints to prevent distortion
+                // This allows natural scaling without forcing aspect ratio mismatch
+                clone.style.width = 'auto';
+                clone.style.height = 'auto';
+                clone.style.maxWidth = '90vw';
+                clone.style.maxHeight = '80vh';
+                clone.style.objectFit = 'contain';
 
                 content.appendChild(clone);
                 lightbox.classList.remove('hidden');
