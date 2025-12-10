@@ -1,6 +1,6 @@
 /**
  * Theme Manager
- * Handles Matrix Mode toggle.
+ * Handles Multi-Theme switching (Standard, Matrix, Nord, Solarized).
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,70 +9,96 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initTheme() {
-    // Check local storage
-    const theme = localStorage.getItem('theme');
-    if (theme === 'matrix') {
-        document.body.classList.add('matrix-mode');
-    }
+    // Check local storage for saved theme
+    const theme = localStorage.getItem('theme') || 'standard';
+    applyTheme(theme);
 }
 
-function toggleTheme() {
-    const isMatrix = document.body.classList.toggle('matrix-mode');
-    localStorage.setItem('theme', isMatrix ? 'matrix' : 'default');
+function applyTheme(themeName) {
+    // Remove all theme classes
+    document.body.classList.remove('theme-matrix', 'theme-nord', 'theme-solar');
 
-    // Update button icon/text if it exists
-    const btn = document.getElementById('btn-theme-toggle');
-    if (btn) {
-        updateToggleButton(btn, isMatrix);
+    // Apply new theme if not standard
+    if (themeName !== 'standard') {
+        document.body.classList.add(`theme-${themeName}`);
     }
-}
 
-function updateToggleButton(btn, isMatrix) {
-    // Ensure visibility by forcing inline styles high contrast
-    btn.innerHTML = isMatrix ? '<i class="fas fa-terminal"></i>' : '<i class="fas fa-moon"></i>';
-    btn.title = isMatrix ? "Disable Matrix Mode" : "Enable Matrix Mode";
-    btn.style.color = isMatrix ? '#00ff00' : 'var(--text-secondary)';
+    // Save preference
+    localStorage.setItem('theme', themeName);
+
+    // Sync UI if exists
+    const select = document.getElementById('theme-select');
+    if (select) {
+        select.value = themeName;
+    }
 }
 
 function injectNavExtras() {
-    // Inject "Theme Toggle" into .nav-links
-    // Try to find the container. 
-    // Most pages: .nav-links (div) inside .top-nav
-    // Dashboard: .nav-links (ul) inside .navbar
-
+    // Inject Theme Select Dropdown into .nav-links
     const navLinks = document.querySelector('.nav-links');
     if (!navLinks) {
-        console.warn("Theme Manager: .nav-links not found, cannot inject toggle.");
+        console.warn("Theme Manager: .nav-links not found, cannot inject controls.");
         return;
     }
 
-    // Theme Toggle
-    if (!document.getElementById('btn-theme-toggle')) {
-        // Create list item for Dashboard (ul) or direct link for others (div)
-        const isList = navLinks.tagName === 'UL';
+    // Prevent duplicate injection
+    if (document.getElementById('theme-select')) return;
 
-        const toggleBtn = document.createElement('button');
-        toggleBtn.id = 'btn-theme-toggle';
-        toggleBtn.className = 'nav-link';
-        // Reset button styles to match links
-        toggleBtn.style.background = 'transparent';
-        toggleBtn.style.border = 'none';
-        toggleBtn.style.cursor = 'pointer';
-        toggleBtn.style.fontSize = '1rem';
-        toggleBtn.style.padding = '0 1rem'; // Match nav-link padding
-        toggleBtn.style.display = 'flex';
-        toggleBtn.style.alignItems = 'center';
-        toggleBtn.onclick = toggleTheme;
+    // Create container for the select (optional, but good for styling)
+    const container = document.createElement('div');
+    container.style.display = 'flex';
+    container.style.alignItems = 'center';
+    container.style.marginLeft = '10px';
 
-        const isMatrix = document.body.classList.contains('matrix-mode');
-        updateToggleButton(toggleBtn, isMatrix);
+    // Create Select Element
+    const select = document.createElement('select');
+    select.id = 'theme-select';
+    select.title = "Select UI Theme";
 
-        if (isList) {
-            const li = document.createElement('li');
-            li.appendChild(toggleBtn);
-            navLinks.appendChild(li);
-        } else {
-            navLinks.appendChild(toggleBtn);
-        }
+    // Style the dropdown to match the dark aesthetic
+    select.style.background = 'var(--bg-card)';
+    select.style.color = 'var(--text-primary)';
+    select.style.border = '1px solid var(--border-color)';
+    select.style.borderRadius = '4px';
+    select.style.padding = '4px 8px';
+    select.style.fontSize = '0.8rem';
+    select.style.fontFamily = 'var(--font-mono)';
+    select.style.cursor = 'pointer';
+    select.style.outline = 'none';
+
+    // Options
+    const themes = [
+        { val: 'standard', label: 'Standard' },
+        { val: 'matrix', label: 'Matrix' },
+        { val: 'nord', label: 'Nord' },
+        { val: 'solar', label: 'Solarized' }
+    ];
+
+    themes.forEach(t => {
+        const opt = document.createElement('option');
+        opt.value = t.val;
+        opt.textContent = t.label;
+        select.appendChild(opt);
+    });
+
+    // Set initial value
+    const currentTheme = localStorage.getItem('theme') || 'standard';
+    select.value = currentTheme;
+
+    // Event Listener
+    select.addEventListener('change', (e) => {
+        applyTheme(e.target.value);
+    });
+
+    container.appendChild(select);
+
+    // Append to Nav
+    const isList = navLinks.tagName === 'UL';
+    if (isList) {
+        const li = document.createElement('li');
+        li.appendChild(container);
+        navLinks.appendChild(li);
+    } else {
+        navLinks.appendChild(container);
     }
 }

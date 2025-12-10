@@ -546,8 +546,10 @@ a:hover {
     vertical-align: top;
 }
 
-/* --- MATRIX MODE CSS VARS --- */
-body.matrix-mode {
+/* --- MULTI-THEME DEFINITIONS --- */
+
+/* 1. MATRIX (Hacker Green) */
+body.theme-matrix {
     --bg-body: #000000;
     --bg-card: #0a0a0a;
     --border-color: #003300;
@@ -560,17 +562,60 @@ body.matrix-mode {
     --text-muted: #004400;
 }
 
-body.matrix-mode .nav-link:hover {
+body.theme-matrix .nav-link:hover {
     background: rgba(0, 255, 0, 0.1);
 }
 
-body.matrix-mode .tech-card:hover {
+body.theme-matrix .tech-card:hover {
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
     border-color: #00ff00;
 }
 
-body.matrix-mode ::selection {
+body.theme-matrix ::selection {
     background: #00ff00;
     color: #000000;
 }
 
+/* 2. NORD (Cool Blue/Grey) */
+body.theme-nord {
+    --bg-body: #2e3440;
+    --bg-card: #3b4252;
+    --border-color: #4c566a;
+    --text-primary: #d8dee9;
+    --text-secondary: #81a1c1;
+    --accent-blue: #88c0d0;
+    --accent-green: #a3be8c;
+    --accent-orange: #d08770;
+    --accent-red: #bf616a;
+    --text-muted: #4c566a;
+}
+
+body.theme-nord .nav-link:hover {
+    background: rgba(136, 192, 208, 0.1);
+}
+
+body.theme-nord .tech-card:hover {
+    border-color: #88c0d0;
+}
+
+/* 3. SOLARIZED (Warm Earth Tones) */
+body.theme-solar {
+    --bg-body: #002b36;
+    --bg-card: #073642;
+    --border-color: #586e75;
+    --text-primary: #839496;
+    --text-secondary: #586e75;
+    --accent-blue: #268bd2;
+    --accent-green: #859900;
+    --accent-orange: #cb4b16;
+    --accent-red: #dc322f;
+    --text-muted: #586e75;
+}
+
+body.theme-solar .nav-link:hover {
+    background: rgba(38, 139, 210, 0.1);
+}
+
+body.theme-solar .tech-card:hover {
+    border-color: #268bd2;
+}
