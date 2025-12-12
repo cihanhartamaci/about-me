@@ -133,6 +133,328 @@
                 </div>
             </div>
         </div>
+
+        <!-- Technical Articles Section -->
+        <section style="margin-top: 4rem;">
+            <h2 class="mono-font" style="font-size: 1.8rem; margin-bottom: 2rem; color: var(--accent-blue);">>
+                INTEGRATION_INSIGHTS</h2>
+
+            <!-- Article 1: EDI Best Practices -->
+            <article class="tech-card" style="margin-bottom: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                    <h3 style="color: var(--accent-blue); font-size: 1.3rem;">EDI Transaction Set Design: Best Practices
+                        for X12 and EDIFACT</h3>
+                    <span class="mono-tag">STANDARDS</span>
+                </div>
+
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">
+                    Proper EDI transaction set design is critical for ensuring interoperability between trading
+                    partners.
+                    Here are proven strategies for building robust EDI implementations.
+                </p>
+
+                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                    1. Standardization Over Customization</h4>
+                <p style="line-height: 1.7; margin-bottom: 1rem;">
+                    While X12 and EDIFACT standards allow for optional segments and elements, resist the temptation to
+                    create
+                    heavily customized transaction sets. <strong>Stick to industry-standard implementation
+                        guides</strong>
+                    (like VICS for retail or CIDX for chemical industry) whenever possible. Custom fields should be
+                    documented
+                    in detailed implementation guides and shared with all trading partners.
+                </p>
+
+                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                    2. Mandatory vs. Optional Elements</h4>
+                <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong style="color: var(--accent-green);">ISA/IEA Headers:</strong> Always include full
+                        qualifier sets (ISA05, ISA07) for proper routing</li>
+                    <li><strong style="color: var(--accent-green);">Functional Groups:</strong> Use GS/GE envelopes even
+                        for single-transaction batches</li>
+                    <li><strong style="color: var(--accent-green);">Control Numbers:</strong> Implement sequential
+                        numbering with proper rollover logic (ISA13, GS06, ST02)</li>
+                </ul>
+
+                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                    3. Validation Layers</h4>
+                <pre
+                    style="background: rgba(0,0,0,0.4); padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;">
+<code style="color: var(--accent-green); font-family: var(--font-mono); font-size: 0.9rem;">// Multi-layer EDI validation approach
+1. Syntax Validation → Check segment structure, element count
+2. Semantic Validation → Verify business logic (dates, amounts)
+3. Partner Validation → Confirm trading partner agreements
+4. Data Validation → Validate against internal business rules</code></pre>
+
+                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                    4. Error Handling Best Practices</h4>
+                <p style="line-height: 1.7;">
+                    Always generate <code
+                        style="background: rgba(255,255,255,0.1); padding: 0.2rem 0.4rem; border-radius: 3px;">997 Functional Acknowledgments</code>
+                    for X12 or <code
+                        style="background: rgba(255,255,255,0.1); padding: 0.2rem 0.4rem; border-radius: 3px;">CONTRL</code>
+                    for EDIFACT.
+                    Include detailed error codes (AK403, AK502) to help partners diagnose issues quickly. Implement
+                    retry logic with exponential backoff
+                    for transient failures.
+                </p>
+            </article>
+
+            <!-- Article 2: API Design Patterns -->
+            <article class="tech-card" style="margin-bottom: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                    <h3 style="color: var(--accent-blue); font-size: 1.3rem;">RESTful API Design Patterns for
+                        Integration Platforms</h3>
+                    <span class="mono-tag">API DESIGN</span>
+                </div>
+
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">
+                    Modern integration platforms require well-designed APIs that are intuitive, scalable, and
+                    maintainable.
+                    These patterns have proven effective across enterprise integrations.
+                </p>
+
+                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                    Resource-Oriented Design</h4>
+                <pre
+                    style="background: rgba(0,0,0,0.4); padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;">
+<code style="color: var(--accent-green); font-family: var(--font-mono); font-size: 0.85rem;">// Good: Resource-based URIs
+GET    /api/v1/orders/{orderId}
+POST   /api/v1/orders
+PUT    /api/v1/orders/{orderId}/status
+DELETE /api/v1/orders/{orderId}
+
+// Avoid: Action-based URIs
+POST /api/v1/createOrder  ❌
+GET  /api/v1/getOrder    ❌</code></pre>
+
+                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                    Pagination & Filtering</h4>
+                <p style="line-height: 1.7; margin-bottom: 1rem;">
+                    For large datasets, implement cursor-based pagination for better performance than offset-based
+                    approaches:
+                </p>
+                <pre
+                    style="background: rgba(0,0,0,0.4); padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;">
+<code style="color: var(--accent-green); font-family: var(--font-mono); font-size: 0.85rem;">GET /api/v1/transactions?limit=100&cursor=eyJ0aW1lc3...
+Response:
+{
+  "data": [...],
+  "pagination": {
+    "next_cursor": "eyJpZCI6MTIzNDU2...",
+    "has_more": true
+  }
+}</code></pre>
+
+                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                    Idempotency Keys</h4>
+                <p style="line-height: 1.7;">
+                    For <code
+                        style="background: rgba(255,255,255,0.1); padding: 0.2rem 0.4rem; border-radius: 3px;">POST</code>
+                    requests that create resources,
+                    support idempotency keys to prevent duplicate processing in case of network retries.
+                    This is critical for payment and order processing integrations.
+                </p>
+
+                <pre
+                    style="background: rgba(0,0,0,0.4); padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;">
+<code style="color: var(--accent-green); font-family: var(--font-mono); font-size: 0.85rem;">POST /api/v1/payments
+Headers:
+  Idempotency-Key: unique-transaction-id-12345
+  
+// Subsequent requests with same key return same response
+// without creating duplicate payment</code></pre>
+
+                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                    Versioning Strategy</h4>
+                <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong style="color: var(--accent-green);">URL Versioning:</strong>
+                        <code>/api/v1/resource</code> - Simple and explicit</li>
+                    <li><strong style="color: var(--accent-green);">Header Versioning:</strong>
+                        <code>Accept: application/vnd.myapi.v2+json</code> - Cleaner URLs</li>
+                    <li><strong style="color: var(--accent-green);">Backward Compatibility:</strong> Maintain previous
+                        versions for at least 12 months</li>
+                </ul>
+            </article>
+
+            <!-- Article 3: Event-Driven Architecture -->
+            <article class="tech-card" style="margin-bottom: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                    <h3 style="color: var(--accent-blue); font-size: 1.3rem;">Event-Driven Integration: Pub/Sub vs.
+                        Message Queue Patterns</h3>
+                    <span class="mono-tag">ARCHITECTURE</span>
+                </div>
+
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">
+                    Event-driven architectures enable loose coupling and real-time data synchronization across
+                    distributed systems.
+                    Understanding when to use publish/subscribe vs. message queues is crucial.
+                </p>
+
+                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                    Pub/Sub Pattern (Many Consumers)</h4>
+                <p style="line-height: 1.7; margin-bottom: 1rem;">
+                    Use publish/subscribe when multiple independent services need to react to the same event:
+                </p>
+                <pre
+                    style="background: rgba(0,0,0,0.4); padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;">
+<code style="color: var(--accent-green); font-family: var(--font-mono); font-size: 0.85rem;">Event: order.created
+├─> Inventory Service (reduces stock)
+├─> Notification Service (sends email)
+├─> Analytics Service (tracks metrics)
+└─> Accounting Service (creates invoice)</code></pre>
+
+                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                    Message Queue Pattern (Single Consumer)</h4>
+                <p style="line-height: 1.7; margin-bottom: 1rem;">
+                    Use message queues when only one consumer should process each message, with guaranteed delivery and
+                    ordering:
+                </p>
+                <pre
+                    style="background: rgba(0,0,0,0.4); padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;">
+<code style="color: var(--accent-green); font-family: var(--font-mono); font-size: 0.85rem;">Queue: payment_processing
+Message: { orderId: 123, amount: 99.99 }
+→ One worker processes payment
+→ Acknowledgment after successful processing
+→ Retry on failure (with dead letter queue)</code></pre>
+
+                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                    Event Schema Design</h4>
+                <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong style="color: var(--accent-green);">CloudEvents Standard:</strong> Use standardized
+                        envelope format</li>
+                    <li><strong style="color: var(--accent-green);">Schema Registry:</strong> Version and validate event
+                        payloads</li>
+                    <li><strong style="color: var(--accent-green);">Event Sourcing:</strong> Store events as source of
+                        truth for system state</li>
+                </ul>
+            </article>
+
+            <!-- Article 4: Data Transformation -->
+            <article class="tech-card" style="margin-bottom: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                    <h3 style="color: var(--accent-blue); font-size: 1.3rem;">Data Transformation Strategies: Mapping
+                        Legacy Systems to Modern APIs</h3>
+                    <span class="mono-tag">DATA MAPPING</span>
+                </div>
+
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">
+                    Bridging legacy systems and modern APIs requires sophisticated data transformation logic.
+                    These strategies minimize technical debt while ensuring data integrity.
+                </p>
+
+                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                    Field-Level Transformations</h4>
+                <pre
+                    style="background: rgba(0,0,0,0.4); padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;">
+<code style="color: var(--accent-green); font-family: var(--font-mono); font-size: 0.85rem;">// Legacy System (Fixed-width)
+CUST_NAME    : "SMITH    JOHN      "
+ORDER_AMT    : "0000099950"       // Cents
+SHIP_DATE    : "20231215"
+
+// Modern API (JSON)
+{
+  "customer": {
+    "firstName": "John",
+    "lastName": "Smith"
+  },
+  "amount": 999.50,
+  "shipmentDate": "2023-12-15T00:00:00Z"
+}</code></pre>
+
+                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                    Lookup Table Pattern</h4>
+                <p style="line-height: 1.7; margin-bottom: 1rem;">
+                    When codes differ between systems, maintain lookup tables for bidirectional translation:
+                </p>
+                <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong style="color: var(--accent-green);">Product Codes:</strong> SAP Material # ↔ NetSuite
+                        Item ID</li>
+                    <li><strong style="color: var(--accent-green);">Location Codes:</strong> Warehouse IDs ↔ EDI
+                        Location Qualifiers</li>
+                    <li><strong style="color: var(--accent-green);">Status Codes:</strong> Internal workflow states ↔
+                        Trading partner statuses</li>
+                </ul>
+
+                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                    Canonical Data Model</h4>
+                <p style="line-height: 1.7;">
+                    For complex integrations involving multiple systems, define a <strong>canonical data model</strong>
+                    as an intermediary format.
+                    Each system's adapter transforms to/from this universal format, reducing the number of
+                    transformation maps from N² to 2N.
+                </p>
+            </article>
+
+            <!-- Article 5: Error Handling & Monitoring -->
+            <article class="tech-card" style="margin-bottom: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                    <h3 style="color: var(--accent-blue); font-size: 1.3rem;">Integration Error Handling: Building
+                        Resilient Data Pipelines</h3>
+                    <span class="mono-tag">RELIABILITY</span>
+                </div>
+
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">
+                    Production integrations must handle failures gracefully. A well-designed error handling strategy
+                    prevents data loss and enables automated recovery.
+                </p>
+
+                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                    Circuit Breaker Pattern</h4>
+                <p style="line-height: 1.7; margin-bottom: 1rem;">
+                    Prevent cascading failures by implementing circuit breakers for external service calls:
+                </p>
+                <pre
+                    style="background: rgba(0,0,0,0.4); padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;">
+<code style="color: var(--accent-green); font-family: var(--font-mono); font-size: 0.85rem;">States:
+CLOSED  → Normal operation, requests pass through
+OPEN    → Too many failures, reject requests immediately  
+HALF-OPEN → Test if service recovered, limited requests
+
+Thresholds:
+- Failure rate: 50% over 10 requests
+- Open duration: 30 seconds
+- Half-open test: 3 requests</code></pre>
+
+                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                    Dead Letter Queue (DLQ)</h4>
+                <p style="line-height: 1.7; margin-bottom: 1rem;">
+                    Route failed messages to a DLQ after retry exhaustion. Monitor DLQ depth as a critical metric:
+                </p>
+                <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong style="color: var(--accent-green);">Retry Strategy:</strong> 3 attempts with exponential
+                        backoff (1s, 4s, 16s)</li>
+                    <li><strong style="color: var(--accent-green);">DLQ Processing:</strong> Manual review or automated
+                        reprocessing after fix</li>
+                    <li><strong style="color: var(--accent-green);">Alerting:</strong> Trigger PagerDuty when DLQ depth
+                        >100 messages</li>
+                </ul>
+
+                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                    Monitoring & Observability</h4>
+                <pre
+                    style="background: rgba(0,0,0,0.4); padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;">
+<code style="color: var(--accent-green); font-family: var(--font-mono); font-size: 0.85rem;">Key Metrics:
+├─ Throughput: Messages/second processed
+├─ Latency: p50, p95, p99 processing times  
+├─ Error Rate: Failed transactions / Total
+├─ Queue Depth: Backlog size
+└─ Circuit Breaker State: Open/Closed/Half-Open
+
+Logging Strategy:
+- Structured JSON logs with correlation IDs
+- Full payload logging for failed transactions
+- Distributed tracing (OpenTelemetry)</code></pre>
+
+                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                    Idempotent Processing</h4>
+                <p style="line-height: 1.7;">
+                    Design integrations to handle duplicate messages safely. Store processed message IDs in a
+                    cache/database
+                    and skip already-processed messages. This enables safe retries without data corruption.
+                </p>
+            </article>
+        </section>
     </main>
 
     <!-- Command Palette -->
