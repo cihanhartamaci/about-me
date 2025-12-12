@@ -120,61 +120,80 @@ function initInboxListener() {
 }
 
 function updateDashboard(visits) {
-    // Store all visits for filtering
-    allVisits = visits;
+    try {
+        console.log('updateDashboard called with', visits ? visits.length : 0, 'visits');
 
-    // Apply current filter
-    const filteredVisits = applyDateFilter(visits);
-
-    // 1. Calculate Stats (use all visits, not filtered)
-    document.getElementById('total-visits').textContent = visits.length + "+";
-
-    const uniqueIPs = new Set(visits.map(v => v.ip)).size;
-
-    // Top Country
-    const countries = {};
-    visits.forEach(v => {
-        const c = v.location.split(',')[1]?.trim() || 'Unknown';
-        countries[c] = (countries[c] || 0) + 1;
-    });
-    const topCountry = Object.keys(countries).sort((a, b) => countries[b] - countries[a])[0] || '-';
-
-    // Last Active
-    let lastActive = '-';
-    if (visits.length > 0) {
-        lastActive = timeAgo(visits[0].timestamp);
-    }
-
-    // 2. Update DOM
-    document.getElementById('unique-visitors').textContent = uniqueIPs;
-    document.getElementById('top-country').textContent = topCountry;
-    document.getElementById('last-active').textContent = lastActive;
-
-    // 3. Render Table (use filtered visits)
-    const tbody = document.getElementById('visits-table-body');
-    if (tbody) {
-        tbody.innerHTML = '';
-
-        if (filteredVisits.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="4" style="padding: 2rem; text-align: center; color: var(--text-muted);"><i class="fas fa-filter" style="font-size: 2rem; margin-bottom: 0.5rem; opacity: 0.5;"></i><br>No visits match the selected filter</td></tr>';
+        // Safety check
+        if (!visits || !Array.isArray(visits)) {
+            console.error('Invalid visits data');
             return;
         }
 
-        filteredVisits.forEach(visit => {
-            const row = document.createElement('tr');
-            const dateStr = visit.timestamp.toLocaleString();
+        // Store all visits for filtering
+        allVisits = visits;
 
-            const pageName = visit.page === '/' || visit.page === '/index.html' ? 'Home' : visit.page.replace(/^\//, '');
+        // Apply current filter
+        console.log('Current filter:', currentFilter);
+        const filteredVisits = applyDateFilter(visits);
+        console.log('Filtered visits:', filteredVisits ? filteredVisits.length : 0);
 
-            row.innerHTML = `
-                <td><div class="status-dot"></div>${dateStr}</td>
-                <td>${visit.location}</td>
-                <td class="mono-text">${visit.ip}</td>
-                <td>${pageName}</td>
-                <td>${visit.device || 'Desktop'}</td>
-            `;
-            tbody.appendChild(row);
+        // 1. Calculate Stats (use all visits, not filtered)
+        document.getElementById('total-visits').textContent = visits.length + "+";
+
+        const uniqueIPs = new Set(visits.map(v => v.ip)).size;
+
+        // Top Country
+        const countries = {};
+        visits.forEach(v => {
+            const c = v.location.split(',')[1]?.trim() || 'Unknown';
+            countries[c] = (countries[c] || 0) + 1;
         });
+        const topCountry = Object.keys(countries).sort((a, b) => countries[b] - countries[a])[0] || '-';
+
+        // Last Active
+        let lastActive = '-';
+        if (visits.length > 0) {
+            lastActive = timeAgo(visits[0].timestamp);
+        }
+
+        // 2. Update DOM
+        document.getElementById('unique-visitors').textContent = uniqueIPs;
+        document.getElementById('top-country').textContent = topCountry;
+        document.getElementById('last-active').textContent = lastActive;
+
+        // 3. Render Table (use filtered visits)
+        const tbody = document.getElementById('visits-table-body');
+        if (tbody) {
+            tbody.innerHTML = '';
+
+            if (!filteredVisits || filteredVisits.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4" style="padding: 2rem; text-align: center; color: var(--text-muted);"><i class="fas fa-filter" style="font-size: 2rem; margin-bottom: 0.5rem; opacity: 0.5;"></i><br>No visits match the selected filter</td></tr>';
+                return;
+            }
+
+            filteredVisits.forEach(visit => {
+                const row = document.createElement('tr');
+                const dateStr = visit.timestamp.toLocaleString();
+
+                const pageName = visit.page === '/' || visit.page === '/index.html' ? 'Home' : visit.page.replace(/^\//, '');
+
+                row.innerHTML = `
+                    <td><div class="status-dot"></div>${dateStr}</td>
+                    <td>${visit.location}</td>
+                    <td class="mono-text">${visit.ip}</td>
+                    <td>${pageName}</td>
+                    <td>${visit.device || 'Desktop'}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+    } catch (error) {
+        console.error('Error in updateDashboard:', error);
+        // Show error message to user
+        const tbody = document.getElementById('visits-table-body');
+        if (tbody) {
+            tbody.innerHTML = '<tr><td colspan="4" style="padding: 2rem; text-align: center; color: #ff6b6b;"><i class="fas fa-exclamation-triangle"></i><br>Error loading dashboard: ' + error.message + '</td></tr>';
+        }
     }
 }
 
@@ -224,19 +243,25 @@ function initFilterControls() {
     todayBtn.addEventListener('click', () => {
         currentFilter = 'today';
         updateFilterButtons();
-        updateDashboard(allVisits);
+        if (allVisits && allVisits.length > 0) {
+            updateDashboard(allVisits);
+        }
     });
 
     weekBtn.addEventListener('click', () => {
         currentFilter = 'week';
         updateFilterButtons();
-        updateDashboard(allVisits);
+        if (allVisits && allVisits.length > 0) {
+            updateDashboard(allVisits);
+        }
     });
 
     allBtn.addEventListener('click', () => {
         currentFilter = 'all';
         updateFilterButtons();
-        updateDashboard(allVisits);
+        if (allVisits && allVisits.length > 0) {
+            updateDashboard(allVisits);
+        }
     });
 
     // Custom date range
@@ -264,7 +289,9 @@ function initFilterControls() {
 
         currentFilter = 'custom';
         updateFilterButtons();
-        updateDashboard(allVisits);
+        if (allVisits && allVisits.length > 0) {
+            updateDashboard(allVisits);
+        }
     });
 
     // Set default filter to all time (already set in state, just update UI)
@@ -293,31 +320,48 @@ function updateFilterButtons() {
 
 // Apply date filter to visits
 function applyDateFilter(visits) {
-    if (currentFilter === 'all') {
-        return visits;
-    }
+    try {
+        // Safety check
+        if (!visits || !Array.isArray(visits)) {
+            console.error('applyDateFilter: Invalid visits array');
+            return [];
+        }
 
-    const now = new Date();
-    let startDate;
-
-    if (currentFilter === 'today') {
-        // Last 24 hours
-        startDate = new Date(now.getTime() - 24 * 60 * 60 * 1000);
-    } else if (currentFilter === 'week') {
-        // Last 7 days
-        startDate = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
-    } else if (currentFilter === 'custom') {
-        // Custom range
-        if (!customStartDate || !customEndDate) {
+        if (currentFilter === 'all') {
             return visits;
         }
-        return visits.filter(visit => {
-            const visitDate = visit.timestamp;
-            return visitDate >= customStartDate && visitDate <= customEndDate;
-        });
-    }
 
-    return visits.filter(visit => visit.timestamp >= startDate);
+        const now = new Date();
+        let startDate;
+
+        if (currentFilter === 'today') {
+            // Last 24 hours
+            startDate = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+        } else if (currentFilter === 'week') {
+            // Last 7 days
+            startDate = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+        } else if (currentFilter === 'custom') {
+            // Custom range
+            if (!customStartDate || !customEndDate) {
+                console.warn('Custom filter selected but dates not set');
+                return visits;
+            }
+            return visits.filter(visit => {
+                if (!visit || !visit.timestamp) return false;
+                const visitDate = visit.timestamp;
+                return visitDate >= customStartDate && visitDate <= customEndDate;
+            });
+        }
+
+        return visits.filter(visit => {
+            if (!visit || !visit.timestamp) return false;
+            return visit.timestamp >= startDate;
+        });
+    } catch (error) {
+        console.error('Error in applyDateFilter:', error);
+        // On error, return all visits unfiltered
+        return visits || [];
+    }
 }
 
 function timeAgo(date) {
