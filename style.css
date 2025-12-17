@@ -159,7 +159,8 @@ a:hover {
 
 .nav-link {
     color: var(--text-secondary);
-    padding: 0 1.5rem;
+    padding: 0 1rem;
+    /* Reduced from 1.5rem to fit more items */
     height: var(--nav-height);
     display: flex;
     align-items: center;
@@ -169,6 +170,8 @@ a:hover {
     border-right: 1px solid transparent;
     border-left: 1px solid transparent;
 }
+
+/* ... existing hover styles ... */
 
 .nav-link:hover {
     background: rgba(255, 255, 255, 0.05);
@@ -192,7 +195,12 @@ a:hover {
     margin-left: 1rem;
     border: 1px solid var(--text-secondary);
     border-radius: 4px;
-    white-space: nowrap;
+    white-space: nowrap !important;
+    /* Force single line */
+    width: auto;
+    min-width: max-content;
+    flex-shrink: 0;
+    /* Prevent shrinking */
     color: var(--text-secondary);
     font-size: 0.85rem;
     transition: all 0.2s ease;
