@@ -7,7 +7,12 @@
         "expertise": "Uzmanlık",
         "contact": "İletişim",
         "dashboard": "Panel",
+        "logout": "Çıkış Yap",
         "switchPersonal": "Kişisel Siteye Geç"
+    },
+    "dashboard": {
+        "title": "Sistem İstatistikleri",
+        "subtitle": "Ziyaretçi trafiğini ve coğrafi dağılımı izleme."
     },
     "hero": {
         "typing": "> SİSTEM BAŞLATILIYOR...",
@@ -25,6 +30,33 @@
         "insightsDesc": "Netsuite SuiteScript, SAP IDOC'ler ve API Güvenliği konularında derinlemesine incelemeler.",
         "systemStatsTitle": "Sistem İstatistikleri",
         "systemStatsDesc": "6+ Yıl Deneyim. 100+ Proje. Çalıştığım Firmalar: Logiwa, Beko."
+    },
+    "patterns": {
+        "title": "> ENTEGRASYON_DESENLERI",
+        "subtitle": "Kurumsal bağlantı için standartlaştırılmış görsel taslaklar."
+    },
+    "tools": {
+        "title": "> GELISTIRICI_ARACLARI",
+        "subtitle": "Entegrasyon geliştirme ve hata ayıklama için tarayıcı tabanlı araçlar.",
+        "tabs": {
+            "edi": "EDI Ayrıştırıcı",
+            "api": "API Test Edici",
+            "regex": "Regex Aracı",
+            "cron": "Cron Oluşturucu",
+            "webhook": "Webhook Denetçisi"
+        }
+    },
+    "insights": {
+        "title": "Teknik Bilgiler",
+        "subtitle": "Teknik dökümanlar, mimari kararlar ve kod parçacıkları."
+    },
+    "expertise": {
+        "title": "Uzmanlık ve Geçmiş",
+        "subtitle": "Teknoloji yığını özellikleri ve kariyer zaman çizelgesi."
+    },
+    "contact": {
+        "title": "> PROTOKOLU_BAŞLAT",
+        "subtitle": "Yeni bir güvenli iletişim kanalı başlatın."
     },
     "common": {
         "language": "Dil",

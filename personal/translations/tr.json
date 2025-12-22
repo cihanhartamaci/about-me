@@ -13,8 +13,49 @@
         "tiktok": "TikTok"
     },
     "recentThoughts": "Son Düşünceler",
+    "allArticles": "Tüm Yazılar",
     "readArticle": "Yazıyı Oku",
     "comingSoon": "Yakında",
     "backToPosts": "← Tüm yazılara dön",
+    "blog": {
+        "welcome": {
+            "title": "Yeni Kuruluma Hoş Geldiniz",
+            "excerpt": "Profesyonel işimi kişisel ilgi alanlarımdan ayırmak gerekli bir adımdı. İşte neden çift modlu bir web sitesi kurmaya karar verdiğim.",
+            "p1": "Uzun süre her şeyi tek bir dijital kimliğe sığdırmaya çalıştım. Bir EDI Entegrasyon Mimarı olarak profesyonel işim belirli bir hassasiyet, teknik derinlik ve açıkçası biraz ciddi bir yüz gerektiriyor.",
+            "p2": "Ama ben sadece bundan ibaret değilim. Yaşam tarzı, teknoloji trendleri ve sosyal medya gibi her zaman bir 'Geliştirici Portalı' estetiğine uymayan ilgi alanlarım da var.",
+            "h2": "Çift Mod Çözümü",
+            "p3": "Bu yüzden farkı bölmeye karar verdim. Daha doğrusu siteyi böldüm.",
+            "p4": "Mod 1: Profesyonel, dijital CV'm ve teknik dokümantasyon merkezim olmaya devam ediyor. Karanlık, monospace yazı tipli ve koda odaklanmış durumda.",
+            "p5": "Mod 2: Kişisel (şu an bulunduğunuz yer) diğer her şey için. Aydınlık, okunabilir ve daha geniş konulara açık.",
+            "p6": "Navigasyon çubuğundaki butonu kullanarak bunlar arasında geçiş yapabilirsiniz. Umarım bu, kodun arkasındaki kişinin tam bir resmini verir."
+        },
+        "moments": {
+            "title": "Önemli Anlar",
+            "subtitle": "Dostluk, seyahat hayalleri ve dengeyi bulma üzerine düşünceler",
+            "excerpt": "Dostluk, seyahat hayalleri ve hızlı dünyada dengeyi bulma üzerine düşünceler.",
+            "p1": "Ekranlardan ve kod satırlarından uzaklaşmanın özgürleştirici bir tarafı var. Günlerimin çoğunu karmaşık sistemler tasarlayarak ve entegrasyon akışlarındaki hataları gidererek geçiren biri olarak, en iyi anların genellikle hiçbir şeyi optimize etmediğiniz zamanlarda gerçekleştiğini öğrendim.",
+            "p2": "Sadece var olmak. Sadece orada olmak.",
+            "h2a": "Dünya Bekliyor",
+            "p3": "Geçenlerde bu güzel dünya haritası enstalasyonuna rastladım ve bana önemli bir şeyi hatırlattı: Günlük rutinlerimizin dışında koca bir dünya var. Her kıtanın, her ülkenin keşfedilmeyi bekleyen kendi hikayeleri, kültürleri ve deneyimleri var.",
+            "p4": "Teknik problemleri çözmeyi ve sistemler arasında dijital köprüler kurmayı ne kadar sevsem de, geçmek istediğim fiziksel köprüleri - keşfetmek istediğim yerleri, anlamak istediğim farklı bakış açılarını - asla gözden kaçırmak istemiyorum.",
+            "p5": "Seyahat sadece varış noktalarıyla ilgili değildir. Konfor alanınızın dışına çıkmak, varsayımlarınızı sorgulamak ve eve dünya hakkında daha geniş bir bakış açısıyla dönmekle ilgilidir.",
+            "h2b": "Sizi Dengede Tutan İnsanlar",
+            "p6": "Genellikle sonsuz bulmacaları çözmek gibi hissettiren bir kariyerde, sizi dengede tutan insanlara sahip olmak esastır. Bunlar son dağıtımınızı veya yeni optimize ettiğiniz API'yi umursamayan arkadaşlardır. Onlar sizi umursarlar.",
+            "p7": "Tatil sezonu bunu benim için her zaman odak noktasına getirir. Işıklar, toplantılar, paylaşılan kahkahalar - bana her şeyi değerli kılanın bağlantı olduğunu hatırlatırlar.",
+            "p8": "İster küçük zaferleri kutlayalım ister sadece kahve içip sohbet edelim, arkadaşlarla geçirilen bu anlar beni hiçbir hafta sonunun yapamayacağı şekilde şarj ediyor.",
+            "h2c": "Dengeyi Bulmak",
+            "p9": "Eskiden 'iş-yaşam dengesi'nin zamanınızı iş ve geri kalan her şey arasında eşit olarak bölmek olduğunu düşünürdüm. Ancak bunun bundan daha karmaşık olduğunu fark ettim.",
+            "p10": "Mesele niyetli olmakla ilgili. Bir entegrasyon projesi üzerinde çalışırken tamamen oradayım, problemleri çözüyorum ve sistemleri sınırlarına kadar zorluyorum. Ancak arkadaşlarımla olduğumda, yeni yerler keşfettiğimde veya sadece bir kafede dinlendiğimde, bu anlarda da aynı şekilde oradayım.",
+            "p11": "Anahtar zamanı 50/50 bölmek değil. Önemli olan, iş dışındaki hayatınızı yaşarken gerçekten yaşıyor olmanızdır - zihinsel olarak kod ayıklamıyor veya bir sonraki sprintinizi planlamıyor olmanızdır.",
+            "h2d": "İleriye Doğru",
+            "p12": "Bu yılı kapatırken, gerçekten neyin önemli olduğunu düşünüyorum. Evet, aştığım teknik zorluklarla ve kurduğum sistemlerle gurur duyuyorum. Ancak sürdürdüğüm dostluklarla, yarattığım deneyimlerle ve hala çözmeye çalıştığım dengeyle de aynı derecede gurur duyuyorum.",
+            "p13": "Daha fazla spontane anlara, gerçek gezilere dönüşen daha fazla seyahat planlarına ve her şeyi değerli kılan insanlarla geçirilen daha fazla zamana.",
+            "p14": "Çünkü günün sonunda, entegre ettiğiniz API sayısı veya düzelttiğiniz hatalarla ölçülmezsiniz. Yaşadığınız anlarla ve kurduğunuz bağlantılarla ölçülürsünüz."
+        },
+        "workflow": {
+            "title": "İş Akışı Optimizasyonu",
+            "excerpt": "Tükenmişlik yaşamadan üretken kalmak için kullandığım araçlar."
+        }
+    },
     "footer": "© 2025 Cihan Hartamaci."
 }

@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/lang-switcher.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="../script.js" defer></script>
 </head>
@@ -27,9 +28,20 @@
                 <span></span>
             </button>
             <div class="nav-links" id="navLinks">
-                <a href="../index.html" class="nav-link">Home</a>
-                <a href="../blog.html" class="nav-link active">Blog</a>
-                <a href="../../index.html" class="mode-switch">Switch to Professional</a>
+                <a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a>
+                <a href="../blog.html" class="nav-link active" data-i18n="nav.blog">Blog</a>
+                <a href="../../index.html" class="mode-switch" data-i18n="nav.switchProfessional">Switch to
+                    Professional</a>
+                <div class="lang-switcher">
+                    <select id="language-selector">
+                        <option value="en">🇬🇧 English</option>
+                        <option value="tr">🇹🇷 Türkçe</option>
+                        <option value="es">🇪🇸 Español</option>
+                        <option value="it">🇮🇹 Italiano</option>
+                        <option value="ru">🇷🇺 Русский</option>
+                        <option value="zh">🇨🇳 中文</option>
+                    </select>
+                </div>
             </div>
         </div>
     </nav>
@@ -38,8 +50,10 @@
         <article class="single-post">
             <header style="text-align:center; margin-bottom:3rem;">
                 <p style="color:var(--text-muted); margin-bottom:0.5rem;">December 22, 2025</p>
-                <h1 style="font-size:2.5rem; margin-bottom:1rem;">Moments That Matter</h1>
-                <p style="color:var(--text-secondary); font-size:1.1rem;">Reflections on friendship, travel dreams, and
+                <h1 style="font-size:2.5rem; margin-bottom:1rem;" data-i18n="blog.moments.title">Moments That Matter
+                </h1>
+                <p style="color:var(--text-secondary); font-size:1.1rem;" data-i18n="blog.moments.subtitle">Reflections
+                    on friendship, travel dreams, and
                     finding balance</p>
             </header>
 
@@ -50,104 +64,106 @@
                         style="width:100%; border-radius:12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                 </figure>
 
-                <p style="margin-bottom:1.5rem;">
+                <p style="margin-bottom:1.5rem;" data-i18n="blog.moments.p1">
                     There's something liberating about stepping away from the screens and lines of code. As someone who
                     spends most of my days architecting complex systems and debugging integration flows, I've learned
                     that the best moments often happen when you're not optimizing anything at all.
                 </p>
 
-                <p style="margin-bottom:1.5rem;">
+                <p style="margin-bottom:1.5rem;" data-i18n="blog.moments.p2">
                     Just existing. Just being present.
                 </p>
 
-                <h2 style="font-size:1.8rem; margin:2rem 0 1rem;">The World Is Waiting</h2>
+                <h2 style="font-size:1.8rem; margin:2rem 0 1rem;" data-i18n="blog.moments.h2a">The World Is Waiting</h2>
 
                 <figure style="margin: 2rem 0;">
                     <img src="../../assets/blog-moments-2.jpg" alt="World map wall art"
                         style="width:100%; border-radius:12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                 </figure>
 
-                <p style="margin-bottom:1.5rem;">
+                <p style="margin-bottom:1.5rem;" data-i18n="blog.moments.p3">
                     I came across this beautiful world map installation recently, and it reminded me of something
                     important:
                     there's a whole world outside our daily routines. Each continent, each country has its own stories,
                     cultures, and experiences waiting to be discovered.
                 </p>
 
-                <p style="margin-bottom:1.5rem;">
+                <p style="margin-bottom:1.5rem;" data-i18n="blog.moments.p4">
                     As much as I love solving technical problems and building digital bridges between systems, I never
                     want
                     to lose sight of the physical bridges I want to cross – the places I want to explore, the diverse
                     perspectives I want to understand.
                 </p>
 
-                <p style="margin-bottom:1.5rem;">
+                <p style="margin-bottom:1.5rem;" data-i18n="blog.moments.p5">
                     Travel isn't just about the destinations. It's about stepping outside your comfort zone, challenging
                     your assumptions, and returning home with a broader view of the world.
                 </p>
 
-                <h2 style="font-size:1.8rem; margin:2rem 0 1rem;">The People Who Ground You</h2>
+                <h2 style="font-size:1.8rem; margin:2rem 0 1rem;" data-i18n="blog.moments.h2b">The People Who Ground You
+                </h2>
 
                 <figure style="margin: 2rem 0;">
                     <img src="../../assets/blog-moments-3.jpg" alt="Friends by Christmas tree"
                         style="width:100%; border-radius:12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                 </figure>
 
-                <p style="margin-bottom:1.5rem;">
+                <p style="margin-bottom:1.5rem;" data-i18n="blog.moments.p6">
                     In a career that often feels like solving endless puzzles, having people who ground you is
                     essential.
                     These are the friends who don't care about your latest deployment or the API you just optimized.
                     They care about <em>you</em>.
                 </p>
 
-                <p style="margin-bottom:1.5rem;">
+                <p style="margin-bottom:1.5rem;" data-i18n="blog.moments.p7">
                     The holiday season always brings this into focus for me. The lights, the gatherings, the shared
                     laughter – they remind me that connection is what makes everything else worthwhile.
                 </p>
 
-                <p style="margin-bottom:1.5rem;">
+                <p style="margin-bottom:1.5rem;" data-i18n="blog.moments.p8">
                     Whether we're celebrating small wins or just hanging out over coffee, these moments with friends
                     recharge me in ways that no weekend ever could.
                 </p>
 
-                <h2 style="font-size:1.8rem; margin:2rem 0 1rem;">Finding Balance</h2>
+                <h2 style="font-size:1.8rem; margin:2rem 0 1rem;" data-i18n="blog.moments.h2c">Finding Balance</h2>
 
                 <figure style="margin: 2rem 0;">
                     <img src="../../assets/blog-moments-4.jpg" alt="Relaxing at a cafe"
                         style="width:100%; border-radius:12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                 </figure>
 
-                <p style="margin-bottom:1.5rem;">
+                <p style="margin-bottom:1.5rem;" data-i18n="blog.moments.p9">
                     I used to think "work-life balance" was about dividing your time equally between work and everything
                     else. But I've realized it's more nuanced than that.
                 </p>
 
-                <p style="margin-bottom:1.5rem;">
+                <p style="margin-bottom:1.5rem;" data-i18n="blog.moments.p10">
                     It's about being intentional. When I'm working on an integration project, I'm fully present, solving
                     problems and pushing systems to their limits. But when I'm with friends, exploring new places, or
                     simply unwinding at a café, I'm equally present in those moments.
                 </p>
 
-                <p style="margin-bottom:1.5rem;">
+                <p style="margin-bottom:1.5rem;" data-i18n="blog.moments.p11">
                     The key isn't splitting time 50/50. It's about ensuring that when you're living your life outside
                     of work, you're <strong>actually living it</strong> – not mentally debugging code or planning your
                     next sprint.
                 </p>
 
-                <h2 style="font-size:1.8rem; margin:2rem 0 1rem;">Moving Forward</h2>
+                <h2 style="font-size:1.8rem; margin:2rem 0 1rem;" data-i18n="blog.moments.h2d">Moving Forward</h2>
 
-                <p style="margin-bottom:1.5rem;">
+                <p style="margin-bottom:1.5rem;" data-i18n="blog.moments.p12">
                     As we close out this year, I'm reflecting on what really matters. Yes, I'm proud of the technical
                     challenges I've overcome and the systems I've built. But I'm equally proud of the friendships I've
                     maintained, the experiences I've created, and the balance I'm still figuring out.
                 </p>
 
-                <p style="margin-bottom:1.5rem;">
+                <p style="margin-bottom:1.5rem;" data-i18n="blog.moments.p13">
                     Here's to more spontaneous moments, more travel plans turning into actual trips, and more time with
                     the people who make it all worthwhile.
                 </p>
 
-                <p style="margin-bottom:1.5rem; font-style:italic; color:var(--text-secondary);">
+                <p style="margin-bottom:1.5rem; font-style:italic; color:var(--text-secondary);"
+                    data-i18n="blog.moments.p14">
                     Because at the end of the day, you're not measured by the number of APIs you've integrated or the
                     bugs you've fixed. You're measured by the moments you've lived and the connections you've made.
                 </p>
@@ -156,14 +172,18 @@
         </article>
 
         <div style="text-align:center; margin-top:4rem; padding-top:2rem; border-top:1px solid #eee;">
-            <a href="../blog.html" style="font-weight:600;">&larr; Back to all posts</a>
+            <a href="../blog.html" style="font-weight:600;" data-i18n="backToPosts">&larr; Back to all posts</a>
         </div>
     </main>
 
-    <footer style="text-align:center; padding: 2rem 0; color:var(--text-muted); font-size:0.85rem;">
+    <footer style="text-align:center; padding: 2rem 0; color:var(--text-muted); font-size:0.85rem;" data-i18n="footer">
         &copy; 2025 Cihan Hartamaci.
     </footer>
 
+    <script src="../js/i18n.js"></script>
+    <script>
+        i18n.init('en', '../translations/');
+    </script>
 </body>
 
 </html>

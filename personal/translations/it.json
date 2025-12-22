@@ -13,8 +13,49 @@
         "tiktok": "TikTok"
     },
     "recentThoughts": "Pensieri Recenti",
+    "allArticles": "Tutti gli Articoli",
     "readArticle": "Leggi Articolo",
     "comingSoon": "Prossimamente",
     "backToPosts": "← Torna a tutti i post",
+    "blog": {
+        "welcome": {
+            "title": "Benvenuto alla Nuova Configurazione",
+            "excerpt": "Separare il mio lavoro professionale dai miei interessi personali è stato un passo necessario. Ecco perché ho deciso di costruire un sito web a doppia modalità.",
+            "p1": "Per molto tempo ho cercato di far stare tutto in un'unica identità digitale. Il mio lavoro professionale come Architetto di Integrazione EDI richiede un certo livello di precisione, profondità tecnica e, francamente, un volto un po' serio.",
+            "p2": "Ma non è tutto qui quello che sono. Ho interessi per lo stile di vita, le tendenze tecnologiche e i social media che non sempre si adattano a un'estetica da 'Portale dello Sviluppatore'.",
+            "h2": "La Soluzione a Doppia Modalità",
+            "p3": "Quindi, ho deciso di dividere la differenza. O meglio, dividere il sito.",
+            "p4": "Modalità 1: Professionale rimane il mio CV digitale e il mio hub di documentazione tecnica. È scuro, monospaziato e focalizzato sul codice.",
+            "p5": "Modalità 2: Personale (dove ti trovi ora) è per tutto il resto. È chiaro, leggibile e aperto a argomenti più ampi.",
+            "p6": "Sentiti libero di passare da uno all'altro usando il pulsante nella barra di navigazione. Spero che questo ti dia un'immagine migliore della persona completa dietro al codice."
+        },
+        "moments": {
+            "title": "Momenti che Contano",
+            "subtitle": "Riflessioni sull'amicizia, i sogni di viaggio e la ricerca dell'equilibrio",
+            "excerpt": "Riflessioni su amicizia, sogni di viaggio e ricerca dell'equilibrio in un mondo in rapida evoluzione.",
+            "p1": "C'è qualcosa di liberatorio nell'allontanarsi dagli schermi e dalle linee di codice. Come persona che trascorre la maggior parte delle mie giornate a progettare sistemi complessi e a fare il debug dei flussi di integrazione, ho imparato che i momenti migliori spesso accadono quando non stai ottimizzando proprio nulla.",
+            "p2": "Semplicemente esistere. Semplicemente essere presenti.",
+            "h2a": "Il Mondo sta Aspettando",
+            "p3": "Recentemente ho incontrato questa bellissima installazione di una mappa del mondo e mi ha ricordato qualcosa di importante: c'è un intero mondo fuori dalle nostre routine quotidiane. Ogni continente, ogni paese ha le sue storie, culture ed esperienze che aspettano di essere scoperte.",
+            "p4": "Per quanto ami risolvere problemi tecnici e costruire ponti digitali tra i sistemi, non voglio mai perdere di vista i ponti fisici che voglio attraversare: i luoghi che voglio esplorare, le diverse prospettive che voglio capire.",
+            "p5": "Viaggiare non riguarda solo le destinazioni. Riguarda l'uscire dalla propria zona di comfort, sfidare i propri presupposti e tornare a casa con una visione del mondo più ampia.",
+            "h2b": "Le Persone che ti Mantengono con i Piedi per Terra",
+            "p6": "In una carriera che spesso sembra risolvere infiniti puzzle, avere persone che ti mantengono con i piedi per terra è essenziale. Questi sono gli amici a cui non importa del tuo ultimo deployment o dell'API che hai appena ottimizzato. Si preoccupano di *te*.",
+            "p7": "Il periodo delle feste mette sempre questo a fuoco per me. Le luci, le raduni, le risate condivise: mi ricordano che la connessione è ciò che rende tutto il resto degno di nota.",
+            "p8": "Sia che stiamo celebrando piccole vittorie o semplicemente passando del tempo davanti a un caffè, questi momenti con gli amici mi ricaricano in modi che nessun weekend potrebbe fare.",
+            "h2c": "Trovare l'Equilibrio",
+            "p9": "Un tempo pensavo che l'equilibrio tra lavoro e vita privata consistesse nel dividere il tempo equamente tra il lavoro e tutto il resto. Ma ho capito che è più sfumato di così.",
+            "p10": "Si tratta di essere intenzionali. Quando sto lavorando a un progetto di integrazione, sono pienamente presente, risolvo problemi e spingo i sistemi ai loro limiti. Ma quando sono con gli amici, esploro nuovi posti o semplicemente mi rilasso in un caffè, sono ugualmente presente in quei momenti.",
+            "p11": "La chiave non è dividere il tempo 50/50. Si tratta di assicurarsi che quando vivi la tua vita fuori dal lavoro, la stai **vivendo davvero**, non facendo il debug del codice mentalmente o pianificando il tuo prossimo sprint.",
+            "h2d": "Andare Avanti",
+            "p12": "Mentre chiudiamo quest'anno, rifletto su ciò che conta davvero. Sì, sono orgoglioso delle sfide tecniche che ho superato e dei sistemi che ho costruito. Ma sono altrettanto orgoglioso delle amicizie che ho mantenuto, delle esperienze che ho creato e dell'equilibrio che sto ancora cercando di capire.",
+            "p13": "A altri momenti spontanei, a altri piani di viaggio che si trasformano in viaggi reali e a più tempo con le persone che rendono tutto degno di nota.",
+            "p14": "Perché alla fine della giornata, non vieni misurato dal numero di API che hai integrato o dai bug che hai risolto. Vieni misurato dai momenti che hai vissuto e dalle connessioni che hai creato."
+        },
+        "workflow": {
+            "title": "Ottimizzazione del Flusso di Lavoro",
+            "excerpt": "Strumenti che uso per rimanere produttivo senza esaurirmi."
+        }
+    },
     "footer": "© 2025 Cihan Hartamaci."
 }

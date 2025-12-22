@@ -7,7 +7,12 @@
         "expertise": "Competenza",
         "contact": "Contatto",
         "dashboard": "Dashboard",
+        "logout": "Logout",
         "switchPersonal": "Passa a Personale"
+    },
+    "dashboard": {
+        "title": "Statistiche di Sistema",
+        "subtitle": "Monitoraggio del traffico visitatori e distribuzione geografica."
     },
     "hero": {
         "typing": "> INIZIALIZZAZIONE SISTEMA...",
@@ -25,6 +30,33 @@
         "insightsDesc": "Analisi approfondite su Netsuite SuiteScript, SAP IDOC e Sicurezza API.",
         "systemStatsTitle": "Statistiche del Sistema",
         "systemStatsDesc": "6+ Anni di Esperienza. 100+ Progetti. Stack: Logiwa, Beko."
+    },
+    "patterns": {
+        "title": "> MODELLI_DI_INTEGRAZIONE",
+        "subtitle": "Nacchette visive standardizzate per la connettività aziendale."
+    },
+    "tools": {
+        "title": "> STRUMENTI_DI_SVILUPPO",
+        "subtitle": "Utility basate su browser per lo sviluppo e il debug delle integrazioni.",
+        "tabs": {
+            "edi": "Parser EDI",
+            "api": "Tester API",
+            "regex": "Strumento Regex",
+            "cron": "Costruttore Cron",
+            "webhook": "Ispettore Webhook"
+        }
+    },
+    "insights": {
+        "title": "Approfondimenti Tecnici",
+        "subtitle": "Libri bianchi, decisioni architettoniche e frammenti di codice."
+    },
+    "expertise": {
+        "title": "Competenza e Storia",
+        "subtitle": "Specifiche dello stack tecnologico e cronologia della carriera."
+    },
+    "contact": {
+        "title": "> INIZIALIZZA_PROTOCOLLO",
+        "subtitle": "Avvia un nuovo canale di comunicazione sicuro."
     },
     "common": {
         "language": "Lingua",

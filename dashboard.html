@@ -13,6 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Inter:wght@300;400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/lang-switcher.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
@@ -62,19 +63,29 @@
                 <div style="display: flex; gap: 1rem; align-items: center;">
                     <!-- Navigation Buttons -->
                     <div class="nav-links" style="border: none; margin: 0; padding: 0; display:flex; gap:0.5rem;">
-                        <a href="index.html" class="nav-link-btn">
+                        <a href="index.html" class="nav-link-btn" data-i18n="nav.home">
                             <i class="fas fa-home"></i> Home
                         </a>
-                        <a href="tools.html" class="nav-link-btn">
+                        <a href="tools.html" class="nav-link-btn" data-i18n="nav.tools">
                             <i class="fas fa-tools"></i> Tools
                         </a>
-                        <a href="#" class="nav-link-btn danger" id="logout-btn">
+                        <a href="#" class="nav-link-btn danger" id="logout-btn" data-i18n="nav.logout">
                             <i class="fas fa-sign-out-alt"></i> Logout
                         </a>
-                        <a href="personal/index.html" class="nav-link-btn"
+                        <a href="personal/index.html" class="nav-link-btn" data-i18n="nav.switchPersonal"
                             style="border: 1px solid var(--text-secondary); white-space: nowrap !important; min-width: max-content; flex-shrink: 0;">
                             <i class="fas fa-user-circle"></i> Switch to Personal
                         </a>
+                        <div class="lang-switcher" style="margin-left: 0.5rem;">
+                            <select id="language-selector" style="height: 36px; padding: 0 0.5rem;">
+                                <option value="en">🇬🇧 English</option>
+                                <option value="tr">🇹🇷 Türkçe</option>
+                                <option value="es">🇪🇸 Español</option>
+                                <option value="it">🇮🇹 Italiano</option>
+                                <option value="ru">🇷🇺 Русский</option>
+                                <option value="zh">🇨🇳 中文</option>
+                            </select>
+                        </div>
                     </div>
 
                     <!-- Theme Selector -->
@@ -92,9 +103,11 @@
 
         <!-- SYSTEM STATISTICS -->
         <header style="margin-bottom: 2.5rem; margin-top: 2rem;">
-            <h1 class="mono-font" style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary);">System
+            <h1 class="mono-font" style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary);"
+                data-i18n="dashboard.title">System
                 Statistics</h1>
-            <p style="color: var(--text-muted);">Monitoring visitor traffic and geographic distribution.</p>
+            <p style="color: var(--text-muted);" data-i18n="dashboard.subtitle">Monitoring visitor traffic and
+                geographic distribution.</p>
         </header>
 
         <!-- Stats Grid -->
@@ -384,6 +397,10 @@
             document.body.classList.add(savedTheme);
             document.getElementById('theme-selector').value = savedTheme;
         }
+    </script>
+    <script src="js/i18n.js"></script>
+    <script>
+        i18n.init('en', 'translations/');
     </script>
 </body>
 

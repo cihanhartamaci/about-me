@@ -17,6 +17,7 @@
         href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Inter:wght@300;400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/lang-switcher.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -26,23 +27,34 @@
         <div class="container nav-container">
             <a href="index.html" class="logo">CH.integrate()</a>
             <div class="nav-links">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="patterns.html" class="nav-link">Patterns</a>
-                <a href="tools.html" class="nav-link">Tools</a>
-                <a href="insights.html" class="nav-link">Insights</a>
-                <a href="expertise.html" class="nav-link">Expertise</a>
-                <a href="contact.html" class="nav-link active">Contact</a>
+                <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+                <a href="patterns.html" class="nav-link" data-i18n="nav.patterns">Patterns</a>
+                <a href="tools.html" class="nav-link" data-i18n="nav.tools">Tools</a>
+                <a href="insights.html" class="nav-link" data-i18n="nav.insights">Insights</a>
+                <a href="expertise.html" class="nav-link" data-i18n="nav.expertise">Expertise</a>
+                <a href="contact.html" class="nav-link active" data-i18n="nav.contact">Contact</a>
                 <a href="dashboard.html" class="nav-link" style="color:var(--accent-green);"><i class="fas fa-lock"></i>
-                    Dashboard</a>
-                <a href="personal/index.html" class="nav-btn-switch">Switch to Personal</a>
+                    <span data-i18n="nav.dashboard">Dashboard</span></a>
+                <a href="personal/index.html" class="nav-btn-switch" data-i18n="nav.switchPersonal">Switch to
+                    Personal</a>
+                <div class="lang-switcher">
+                    <select id="language-selector">
+                        <option value="en">🇬🇧 English</option>
+                        <option value="tr">🇹🇷 Türkçe</option>
+                        <option value="es">🇪🇸 Español</option>
+                        <option value="it">🇮🇹 Italiano</option>
+                        <option value="ru">🇷🇺 Русский</option>
+                        <option value="zh">🇨🇳 中文</option>
+                    </select>
+                </div>
             </div>
         </div>
     </nav>
 
     <main class="container">
         <section class="page-header">
-            <h1 class="page-title">> INITIALIZE_PROTOCOL</h1>
-            <p class="page-subtitle">Start a new secure communication channel.</p>
+            <h1 class="page-title" data-i18n="contact.title">> INITIALIZE_PROTOCOL</h1>
+            <p class="page-subtitle" data-i18n="contact.subtitle">Start a new secure communication channel.</p>
         </section>
 
         <!-- Direct Contact Options -->
@@ -96,6 +108,10 @@
     <script src="js/theme-manager.js"></script>
     <script type="module" src="js/wizard.js"></script>
     <script type="module" src="js/tracker.js"></script>
+    <script src="js/i18n.js"></script>
+    <script>
+        i18n.init('en', 'translations/');
+    </script>
 </body>
 
 </html>

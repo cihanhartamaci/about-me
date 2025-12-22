@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/lang-switcher.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="script.js" defer></script>
 </head>
@@ -26,55 +27,72 @@
                 <span></span>
             </button>
             <div class="nav-links" id="navLinks">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="blog.html" class="nav-link active">Blog</a>
-                <a href="../index.html" class="mode-switch">Switch to Professional</a>
+                <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+                <a href="blog.html" class="nav-link active" data-i18n="nav.blog">Blog</a>
+                <a href="../index.html" class="mode-switch" data-i18n="nav.switchProfessional">Switch to
+                    Professional</a>
+                <div class="lang-switcher">
+                    <select id="language-selector">
+                        <option value="en">🇬🇧 English</option>
+                        <option value="tr">🇹🇷 Türkçe</option>
+                        <option value="es">🇪🇸 Español</option>
+                        <option value="it">🇮🇹 Italiano</option>
+                        <option value="ru">🇷🇺 Русский</option>
+                        <option value="zh">🇨🇳 中文</option>
+                    </select>
+                </div>
             </div>
         </div>
     </nav>
 
     <main class="container" style="padding-top:4rem;">
-        <h1 class="hero-title" style="font-size:2.5rem; margin-bottom: 3rem;">All Articles</h1>
+        <h1 class="hero-title" style="font-size:2.5rem; margin-bottom: 3rem;" data-i18n="allArticles">All Articles</h1>
 
         <div class="blog-grid">
             <!-- Blog Post 1 - New -->
             <article class="blog-card">
                 <p class="blog-meta">December 22, 2025</p>
-                <h3 class="blog-title"><a href="posts/moments-that-matter.html">Moments That Matter</a></h3>
-                <p class="blog-excerpt">
+                <h3 class="blog-title"><a href="posts/moments-that-matter.html" data-i18n="blog.moments.title">Moments
+                        That Matter</a></h3>
+                <p class="blog-excerpt" data-i18n="blog.moments.excerpt">
                     Reflections on friendship, travel dreams, and finding balance in a fast-paced world.
                     Sometimes the best moments happen when you're not optimizing anything at all.
                 </p>
-                <a href="posts/moments-that-matter.html" class="btn-read">Read Article</a>
+                <a href="posts/moments-that-matter.html" class="btn-read" data-i18n="readArticle">Read Article</a>
             </article>
 
             <!-- Blog Post 2 -->
             <article class="blog-card">
                 <p class="blog-meta">December 17, 2025</p>
-                <h3 class="blog-title"><a href="posts/welcome.html">Welcome to the New Setup</a></h3>
-                <p class="blog-excerpt">
+                <h3 class="blog-title"><a href="posts/welcome.html" data-i18n="blog.welcome.title">Welcome to the New
+                        Setup</a></h3>
+                <p class="blog-excerpt" data-i18n="blog.welcome.excerpt">
                     Separating my professional work from my personal interests was a necessary step.
                     Here's why I decided to build a dual-mode website.
                 </p>
-                <a href="posts/welcome.html" class="btn-read">Read Article</a>
+                <a href="posts/welcome.html" class="btn-read" data-i18n="readArticle">Read Article</a>
             </article>
 
             <!-- More placeholders can go here -->
             <article class="blog-card">
                 <p class="blog-meta">December 12, 2025</p>
-                <h3 class="blog-title">Workflow Optimization</h3>
-                <p class="blog-excerpt">
+                <h3 class="blog-title" data-i18n="blog.workflow.title">Workflow Optimization</h3>
+                <p class="blog-excerpt" data-i18n="blog.workflow.excerpt">
                     Tools I use to stay productive without burning out.
                 </p>
-                <span class="btn-read" style="color:#ccc;">Coming Soon</span>
+                <span class="btn-read" style="color:#ccc;" data-i18n="comingSoon">Coming Soon</span>
             </article>
         </div>
     </main>
 
-    <footer style="text-align:center; padding: 2rem 0; color:var(--text-muted); font-size:0.85rem;">
+    <footer style="text-align:center; padding: 2rem 0; color:var(--text-muted); font-size:0.85rem;" data-i18n="footer">
         &copy; 2025 Cihan Hartamaci.
     </footer>
 
+    <script src="js/i18n.js"></script>
+    <script>
+        i18n.init('en', 'translations/');
+    </script>
 </body>
 
 </html>

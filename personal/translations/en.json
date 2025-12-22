@@ -13,8 +13,49 @@
         "tiktok": "TikTok"
     },
     "recentThoughts": "Recent Thoughts",
+    "allArticles": "All Articles",
     "readArticle": "Read Article",
     "comingSoon": "Coming Soon",
     "backToPosts": "← Back to all posts",
+    "blog": {
+        "welcome": {
+            "title": "Welcome to the New Setup",
+            "excerpt": "Separating my professional work from my personal interests was a necessary step. Here's why I decided to build a dual-mode website.",
+            "p1": "For the longest time, I tried to cram everything into one digital identity. My professional work as an EDI Integration Architect requires a certain level of precision, technical depth, and frankly, a bit of a serious face.",
+            "p2": "But that's not all of who I am. I have interests in lifestyle, technology trends, and social media that don't always fit into a 'Developer Portal' aesthetic.",
+            "h2": "The Dual Mode Solution",
+            "p3": "So, I decided to split the difference. Or rather, split the site.",
+            "p4": "Mode 1: Professional remains my digital CV and technical documentation hub. It's dark, monospaced, and focused on code.",
+            "p5": "Mode 2: Personal (where you are right now) is for everything else. It's light, readable, and open to broader topics.",
+            "p6": "Feel free to toggle between them using the button in the navigation bar. I hope this gives you a better picture of the whole person behind the code."
+        },
+        "moments": {
+            "title": "Moments That Matter",
+            "subtitle": "Reflections on friendship, travel dreams, and finding balance",
+            "excerpt": "Reflections on friendship, travel dreams, and finding balance in a fast-paced world.",
+            "p1": "There's something liberating about stepping away from the screens and lines of code. As someone who spends most of my days architecting complex systems and debugging integration flows, I've learned that the best moments often happen when you're not optimizing anything at all.",
+            "p2": "Just existing. Just being present.",
+            "h2a": "The World Is Waiting",
+            "p3": "I came across this beautiful world map installation recently, and it reminded me of something important: there's a whole world outside our daily routines. Each continent, each country has its own stories, cultures, and experiences waiting to be discovered.",
+            "p4": "As much as I love solving technical problems and building digital bridges between systems, I never want to lose sight of the physical bridges I want to cross – the places I want to explore, the diverse perspectives I want to understand.",
+            "p5": "Travel isn't just about the destinations. It's about stepping outside your comfort zone, challenging your assumptions, and returning home with a broader view of the world.",
+            "h2b": "The People Who Ground You",
+            "p6": "In a career that often feels like solving endless puzzles, having people who ground you is essential. These are the friends who don't care about your latest deployment or the API you just optimized. They care about you.",
+            "p7": "The holiday season always brings this into focus for me. The lights, the gatherings, the shared laughter – they remind me that connection is what makes everything else worthwhile.",
+            "p8": "Whether we're celebrating small wins or just hanging out over coffee, these moments with friends recharge me in ways that no weekend ever could.",
+            "h2c": "Finding Balance",
+            "p9": "I used to think 'work-life balance' was about dividing your time equally between work and everything else. But I've realized it's more nuanced than that.",
+            "p10": "It's about being intentional. When I'm working on an integration project, I'm fully present, solving problems and pushing systems to their limits. But when I'm with friends, exploring new places, or simply unwinding at a café, I'm equally present in those moments.",
+            "p11": "The key isn't splitting time 50/50. It's about ensuring that when you're living your life outside of work, you're actually living it – not mentally debugging code or planning your next sprint.",
+            "h2d": "Moving Forward",
+            "p12": "As we close out this year, I'm reflecting on what really matters. Yes, I'm proud of the technical challenges I've overcome and the systems I've built. But I'm equally proud of the friendships I've maintained, the experiences I've created, and the balance I'm still figuring out.",
+            "p13": "Here's to more spontaneous moments, more travel plans turning into actual trips, and more time with the people who make it all worthwhile.",
+            "p14": "Because at the end of the day, you're not measured by the number of APIs you've integrated or the bugs you've fixed. You're measured by the moments you've lived and the connections you've made."
+        },
+        "workflow": {
+            "title": "Workflow Optimization",
+            "excerpt": "Tools I use to stay productive without burning out."
+        }
+    },
     "footer": "© 2025 Cihan Hartamaci."
 }
