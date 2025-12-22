@@ -1,0 +1,33 @@
+{
+    "nav": {
+        "home": "Inicio",
+        "patterns": "Patrones",
+        "tools": "Herramientas",
+        "insights": "Perspectivas",
+        "expertise": "Experiencia",
+        "contact": "Contacto",
+        "dashboard": "Panel",
+        "switchPersonal": "Cambiar a Personal"
+    },
+    "hero": {
+        "typing": "> INICIALIZANDO SISTEMA...",
+        "name": "Cihan Hartamaci",
+        "title": "Arquitecto de Integración y Desarrollador",
+        "subtitle": "Arquitecturando puentes EDI de alto rendimiento y APIs RESTful para empresas globales.",
+        "btnDocs": "Leer Documentación",
+        "btnContact": "Iniciar Proyecto"
+    },
+    "home": {
+        "selectModule": "> SELECCIONAR_MÓDULO",
+        "integrationTitle": "Patrones de Integración",
+        "integrationDesc": "Especificaciones estandarizadas para ANSI X12, EDIFACT y arquitecturas de Nube Híbrida.",
+        "insightsTitle": "Perspectivas Técnicas",
+        "insightsDesc": "Análisis profundos de Netsuite SuiteScript, SAP IDOCs y Seguridad de API.",
+        "systemStatsTitle": "Estadísticas del Sistema",
+        "systemStatsDesc": "6+ Años de Experiencia. 100+ Proyectos. Stack: Logiwa, Beko."
+    },
+    "common": {
+        "language": "Idioma",
+        "loading": "Cargando..."
+    }
+}

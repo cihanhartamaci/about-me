@@ -1,0 +1,33 @@
+{
+    "nav": {
+        "home": "Home",
+        "patterns": "Modelli",
+        "tools": "Strumenti",
+        "insights": "Approfondimenti",
+        "expertise": "Competenza",
+        "contact": "Contatto",
+        "dashboard": "Dashboard",
+        "switchPersonal": "Passa a Personale"
+    },
+    "hero": {
+        "typing": "> INIZIALIZZAZIONE SISTEMA...",
+        "name": "Cihan Hartamaci",
+        "title": "Architetto di Integrazione e Sviluppatore",
+        "subtitle": "Progettazione di ponti EDI ad alte prestazioni e API RESTful per aziende globali.",
+        "btnDocs": "Leggi Documentazione",
+        "btnContact": "Avvia Progetto"
+    },
+    "home": {
+        "selectModule": "> SELEZIONA_MODULO",
+        "integrationTitle": "Modelli di Integrazione",
+        "integrationDesc": "Specifiche standardizzate per ANSI X12, EDIFACT e architetture Cloud Ibride.",
+        "insightsTitle": "Approfondimenti Tecnici",
+        "insightsDesc": "Analisi approfondite su Netsuite SuiteScript, SAP IDOC e Sicurezza API.",
+        "systemStatsTitle": "Statistiche del Sistema",
+        "systemStatsDesc": "6+ Anni di Esperienza. 100+ Progetti. Stack: Logiwa, Beko."
+    },
+    "common": {
+        "language": "Lingua",
+        "loading": "Caricamento..."
+    }
+}

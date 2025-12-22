@@ -1,0 +1,20 @@
+{
+    "nav": {
+        "home": "Ana Sayfa",
+        "blog": "Blog",
+        "switchProfessional": "Profesyonel Siteye Geç"
+    },
+    "hero": {
+        "greeting": "Merhaba, ben Cihan.",
+        "subtitle": "Teknoloji, yaşam tarzı ve sürekli öğrenmenin kesiştiği noktayı keşfediyorum. Kişisel alanıma hoş geldiniz."
+    },
+    "social": {
+        "instagram": "Instagram",
+        "tiktok": "TikTok"
+    },
+    "recentThoughts": "Son Düşünceler",
+    "readArticle": "Yazıyı Oku",
+    "comingSoon": "Yakında",
+    "backToPosts": "← Tüm yazılara dön",
+    "footer": "© 2025 Cihan Hartamaci."
+}

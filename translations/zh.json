@@ -1,0 +1,33 @@
+{
+    "nav": {
+        "home": "主页",
+        "patterns": "模式",
+        "tools": "工具",
+        "insights": "见解",
+        "expertise": "专业知识",
+        "contact": "联系",
+        "dashboard": "仪表板",
+        "switchPersonal": "切换到个人"
+    },
+    "hero": {
+        "typing": "> 系统初始化中...",
+        "name": "Cihan Hartamaci",
+        "title": "集成架构师与开发者",
+        "subtitle": "为全球企业构建高性能EDI桥梁和RESTful API。",
+        "btnDocs": "阅读文档",
+        "btnContact": "启动项目"
+    },
+    "home": {
+        "selectModule": "> 选择_模块",
+        "integrationTitle": "集成模式",
+        "integrationDesc": "ANSI X12、EDIFACT和混合云架构的标准化规范。",
+        "insightsTitle": "技术见解",
+        "insightsDesc": "深入探讨Netsuite SuiteScript、SAP IDOC和API安全。",
+        "systemStatsTitle": "系统统计",
+        "systemStatsDesc": "6+年经验。100+项目。技术栈：Logiwa、Beko。"
+    },
+    "common": {
+        "language": "语言",
+        "loading": "加载中..."
+    }
+}

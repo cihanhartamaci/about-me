@@ -1,0 +1,20 @@
+{
+    "nav": {
+        "home": "Home",
+        "blog": "Blog",
+        "switchProfessional": "Switch to Professional"
+    },
+    "hero": {
+        "greeting": "Hello, I'm Cihan.",
+        "subtitle": "I explore the intersection of technology, lifestyle, and continuous learning. Welcome to my personal space."
+    },
+    "social": {
+        "instagram": "Instagram",
+        "tiktok": "TikTok"
+    },
+    "recentThoughts": "Recent Thoughts",
+    "readArticle": "Read Article",
+    "comingSoon": "Coming Soon",
+    "backToPosts": "← Back to all posts",
+    "footer": "© 2025 Cihan Hartamaci."
+}

@@ -1,0 +1,33 @@
+{
+    "nav": {
+        "home": "Ana Sayfa",
+        "patterns": "Desenler",
+        "tools": "Araçlar",
+        "insights": "Teknik Bilgiler",
+        "expertise": "Uzmanlık",
+        "contact": "İletişim",
+        "dashboard": "Panel",
+        "switchPersonal": "Kişisel Siteye Geç"
+    },
+    "hero": {
+        "typing": "> SİSTEM BAŞLATILIYOR...",
+        "name": "Cihan Hartamaci",
+        "title": "Entegrasyon Mimarı & Geliştirici",
+        "subtitle": "Küresel kurumlar için yüksek performanslı EDI köprüleri ve RESTful API'ler mimarl and designing.",
+        "btnDocs": "Dokümantasyonu Oku",
+        "btnContact": "Proje Başlat"
+    },
+    "home": {
+        "selectModule": "> MODÜL_SEÇ",
+        "integrationTitle": "Entegrasyon Desenleri",
+        "integrationDesc": "ANSI X12, EDIFACT ve Hibrit intent Bulut mimarileri için standartlaştırılmış specs.",
+        "insightsTitle": "Teknik Bilgiler",
+        "insightsDesc": "Netsuite SuiteScript, SAP IDOC'ler ve API Güvenliği konularında derinlemesine incelemeler.",
+        "systemStatsTitle": "Sistem İstatistikleri",
+        "systemStatsDesc": "6+ Yıl Deneyim. 100+ Proje. Çalıştığım Firmalar: Logiwa, Beko."
+    },
+    "common": {
+        "language": "Dil",
+        "loading": "Yükleniyor..."
+    }
+}

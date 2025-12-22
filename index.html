@@ -19,6 +19,7 @@
         href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Inter:wght@300;400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/lang-switcher.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
@@ -28,15 +29,26 @@
         <div class="container nav-container">
             <a href="index.html" class="logo">CH.integrate()</a>
             <div class="nav-links">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="patterns.html" class="nav-link">Patterns</a>
-                <a href="tools.html" class="nav-link">Tools</a>
-                <a href="insights.html" class="nav-link">Insights</a>
-                <a href="expertise.html" class="nav-link">Expertise</a>
-                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+                <a href="patterns.html" class="nav-link" data-i18n="nav.patterns">Patterns</a>
+                <a href="tools.html" class="nav-link" data-i18n="nav.tools">Tools</a>
+                <a href="insights.html" class="nav-link" data-i18n="nav.insights">Insights</a>
+                <a href="expertise.html" class="nav-link" data-i18n="nav.expertise">Expertise</a>
+                <a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
                 <a href="dashboard.html" class="nav-link" style="color:var(--accent-green);"><i class="fas fa-lock"></i>
-                    Dashboard</a>
-                <a href="personal/index.html" class="nav-btn-switch">Switch to Personal</a>
+                    <span data-i18n="nav.dashboard">Dashboard</span></a>
+                <a href="personal/index.html" class="nav-btn-switch" data-i18n="nav.switchPersonal">Switch to
+                    Personal</a>
+                <div class="lang-switcher">
+                    <select id="language-selector">
+                        <option value="en">🇬🇧 English</option>
+                        <option value="tr">🇹🇷 Türkçe</option>
+                        <option value="es">🇪🇸 Español</option>
+                        <option value="it">🇮🇹 Italiano</option>
+                        <option value="ru">🇷🇺 Русский</option>
+                        <option value="zh">🇨🇳 中文</option>
+                    </select>
+                </div>
             </div>
         </div>
     </nav>
@@ -46,15 +58,16 @@
         <section class="page-header" style="border:none; padding: 6rem 0;">
             <p class="mono-tag" style="display:inline-block; margin-bottom:1rem; height: 1.5em;"><span
                     id="typing-text">> INITIALIZING SYSTEM...</span></p>
-            <h1 class="page-title" style="font-size:3.5rem;">Cihan Hartamaci</h1>
-            <h2 style="color:var(--text-secondary); margin-bottom:2rem;">Integration Architect & Developer</h2>
-            <p class="page-subtitle" style="margin-bottom:2rem;">
+            <h1 class="page-title" style="font-size:3.5rem;" data-i18n="hero.name">Cihan Hartamaci</h1>
+            <h2 style="color:var(--text-secondary); margin-bottom:2rem;" data-i18n="hero.title">Integration Architect &
+                Developer</h2>
+            <p class="page-subtitle" style="margin-bottom:2rem;" data-i18n="hero.subtitle">
                 Architecting high-performance <span style="color:var(--accent-green)">EDI</span> bridges and
-                <span style="color:var(--accent-blue)">RESTful APIs</span> for detailed global enterprises.
+                <span style="color:var(--accent-blue)">RESTful APIs</span> for global enterprises.
             </p>
             <div style="display:flex; gap:1rem;">
-                <a href="patterns.html" class="btn btn-primary">Read Documentation</a>
-                <a href="contact.html" class="btn btn-outline">Start Project</a>
+                <a href="patterns.html" class="btn btn-primary" data-i18n="hero.btnDocs">Read Documentation</a>
+                <a href="contact.html" class="btn btn-outline" data-i18n="hero.btnContact">Start Project</a>
             </div>
         </section>
 
@@ -62,21 +75,24 @@
 
         <!-- Quick Links Grid -->
         <section>
-            <h3 class="mono-font" style="margin-bottom:2rem;">> SELECT_MODULE</h3>
+            <h3 class="mono-font" style="margin-bottom:2rem;" data-i18n="home.selectModule">> SELECT_MODULE</h3>
             <div class="grid-cards">
                 <a href="patterns.html" class="tech-card">
-                    <h3>Integration Patterns</h3>
-                    <p style="color:var(--text-secondary)">Standardized specs for ANSI X12, EDIFACT, and Hybrid Cloud
+                    <h3 data-i18n="home.integrationTitle">Integration Patterns</h3>
+                    <p style="color:var(--text-secondary)" data-i18n="home.integrationDesc">Standardized specs for ANSI
+                        X12, EDIFACT, and Hybrid Cloud
                         architectures.</p>
                 </a>
                 <a href="insights.html" class="tech-card">
-                    <h3>Technical Insights</h3>
-                    <p style="color:var(--text-secondary)">Deep dives into Netsuite SuiteScript, SAP IDOCs, and API
+                    <h3 data-i18n="home.insightsTitle">Technical Insights</h3>
+                    <p style="color:var(--text-secondary)" data-i18n="home.insightsDesc">Deep dives into Netsuite
+                        SuiteScript, SAP IDOCs, and API
                         Security.</p>
                 </a>
                 <a href="expertise.html" class="tech-card">
-                    <h3>System Stats</h3>
-                    <p style="color:var(--text-secondary)">6+ Years Experience. 100+ Projects. Stack trace: Logiwa,
+                    <h3 data-i18n="home.systemStatsTitle">System Stats</h3>
+                    <p style="color:var(--text-secondary)" data-i18n="home.systemStatsDesc">6+ Years Experience. 100+
+                        Projects. Stack trace: Logiwa,
                         Beko.</p>
                 </a>
             </div>
@@ -86,6 +102,11 @@
     <!-- Netlify Identity (Needed for Auth Callbacks) -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <!-- Command Palette -->
+    <script src="js/i18n.js"></script>
+    <script>
+        // Initialize i18n
+        i18n.init('en', 'translations/');
+    </script>
     <script src="js/cmd-palette.js"></script>
     <script src="js/typewriter.js"></script>
     <script src="js/theme-manager.js"></script>

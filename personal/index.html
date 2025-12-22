@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/lang-switcher.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="script.js" defer></script>
 </head>
@@ -26,9 +27,20 @@
                 <span></span>
             </button>
             <div class="nav-links" id="navLinks">
-                <a href="index.html" class="nav-link active">Home</a>
-                <a href="blog.html" class="nav-link">Blog</a>
-                <a href="../index.html" class="mode-switch">Switch to Professional</a>
+                <a href="index.html" class="nav-link active" data-i18n="nav.home">Home</a>
+                <a href="blog.html" class="nav-link" data-i18n="nav.blog">Blog</a>
+                <a href="../index.html" class="mode-switch" data-i18n="nav.switchProfessional">Switch to
+                    Professional</a>
+                <div class="lang-switcher">
+                    <select id="language-selector">
+                        <option value="en">🇬🇧 English</option>
+                        <option value="tr">🇹🇷 Türkçe</option>
+                        <option value="es">🇪🇸 Español</option>
+                        <option value="it">🇮🇹 Italiano</option>
+                        <option value="ru">🇷🇺 Русский</option>
+                        <option value="zh">🇨🇳 中文</option>
+                    </select>
+                </div>
             </div>
         </div>
     </nav>
@@ -40,8 +52,8 @@
             <img src="../assets/cihan-profile.jpg" alt="Cihan Hartamaci" class="profile-img"
                 style="border-radius: 50%; object-fit: cover;">
 
-            <h1 class="hero-title">Hello, I'm Cihan.</h1>
-            <p class="hero-subtitle">
+            <h1 class="hero-title" data-i18n="hero.greeting">Hello, I'm Cihan.</h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">
                 I explore the intersection of technology, lifestyle, and continuous learning.
                 Welcome to my personal space.
             </p>
@@ -64,7 +76,7 @@
 
         <!-- Recent Thoughts / Blog Preview -->
         <section>
-            <h2 style="margin-bottom:2rem; text-align:center;">Recent Thoughts</h2>
+            <h2 style="margin-bottom:2rem; text-align:center;" data-i18n="recentThoughts">Recent Thoughts</h2>
             <div class="blog-grid">
                 <!-- Blog Post 1 - New -->
                 <article class="blog-card">
@@ -74,7 +86,7 @@
                         Reflections on friendship, travel dreams, and finding balance in a fast-paced world.
                         Sometimes the best moments happen when you're not optimizing anything at all.
                     </p>
-                    <a href="posts/moments-that-matter.html" class="btn-read">Read Article</a>
+                    <a href="posts/moments-that-matter.html" class="btn-read" data-i18n="readArticle">Read Article</a>
                 </article>
 
                 <!-- Blog Post 2 -->
@@ -85,7 +97,7 @@
                         Separating my professional work from my personal interests was a necessary step.
                         Here's why I decided to build a dual-mode website.
                     </p>
-                    <a href="posts/welcome.html" class="btn-read">Read Article</a>
+                    <a href="posts/welcome.html" class="btn-read" data-i18n="readArticle">Read Article</a>
                 </article>
 
                 <!-- Placeholder Post 2 -->
@@ -102,10 +114,15 @@
 
     </main>
 
-    <footer style="text-align:center; padding: 2rem 0; color:var(--text-muted); font-size:0.85rem;">
+    <footer style="text-align:center; padding: 2rem 0; color:var(--text-muted); font-size:0.85rem;" data-i18n="footer">
         &copy; 2025 Cihan Hartamaci.
     </footer>
 
+    <script src="js/i18n.js"></script>
+    <script>
+        // Initialize i18n
+        i18n.init('en', 'translations/');
+    </script>
 </body>
 
 </html>

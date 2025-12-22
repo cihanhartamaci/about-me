@@ -1,0 +1,33 @@
+{
+    "nav": {
+        "home": "Главная",
+        "patterns": "Шаблоны",
+        "tools": "Инструменты",
+        "insights": "Аналитика",
+        "expertise": "Экспертиза",
+        "contact": "Контакт",
+        "dashboard": "Панель",
+        "switchPersonal": "Перейти к Личному"
+    },
+    "hero": {
+        "typing": "> ИНИЦИАЛИЗАЦИЯ СИСТЕМЫ...",
+        "name": "Чихан Хартамачи",
+        "title": "Архитектор Интеграции и Разработчик",
+        "subtitle": "Проектирование высокопроизводительных EDI-мостов и RESTful API для глобальных предприятий.",
+        "btnDocs": "Читать Документацию",
+        "btnContact": "Начать Проект"
+    },
+    "home": {
+        "selectModule": "> ВЫБРАТЬ_МОДУЛЬ",
+        "integrationTitle": "Шаблоны Инте грации",
+        "integrationDesc": "Стандартизированные спецификации для ANSI X12, EDIFACT и гибридных облачных архитектур.",
+        "insightsTitle": "Техническая Аналитика",
+        "insightsDesc": "Глубокие погружения в Netsuite SuiteScript, SAP IDOC и безопасность API.",
+        "systemStatsTitle": "Системная Статистика",
+        "systemStatsDesc": "6+ лет опыта. 100+ проектов. Технологический стек: Logiwa, Beko."
+    },
+    "common": {
+        "language": "Язык",
+        "loading": "Загрузка..."
+    }
+}

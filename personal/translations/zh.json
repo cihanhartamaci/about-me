@@ -1,0 +1,20 @@
+{
+    "nav": {
+        "home": "主页",
+        "blog": "博客",
+        "switchProfessional": "切换到专业"
+    },
+    "hero": {
+        "greeting": "你好，我是Cihan。",
+        "subtitle": "我探索技术、生活方式和持续学习的交汇点。欢迎来到我的个人空间。"
+    },
+    "social": {
+        "instagram": "Instagram",
+        "tiktok": "TikTok"
+    },
+    "recentThoughts": "最近的想法",
+    "readArticle": "阅读文章",
+    "comingSoon": "即将推出",
+    "backToPosts": "← 返回所有文章",
+    "footer": "© 2025 Cihan Hartamaci."
+}
