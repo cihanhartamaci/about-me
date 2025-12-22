@@ -16,6 +16,12 @@
     },
     "hero": {
         "typing": "> INITIALIZING SYSTEM...",
+        "typing_phrases": [
+            "> INITIALIZING SYSTEM...",
+            "> CONNECTING NODES...",
+            "> LOADING INTEGRATION PATTERNS...",
+            "> SYSTEM READY."
+        ],
         "name": "Cihan Hartamaci",
         "title": "Integration Architect & Developer",
         "subtitle": "Architecting high-performance EDI bridges and RESTful APIs for global enterprises.",
@@ -33,7 +39,17 @@
     },
     "patterns": {
         "title": "> INTEGRATION_PATTERNS",
-        "subtitle": "Standardized visual blueprints for enterprise connectivity."
+        "subtitle": "Standardized visual blueprints for enterprise connectivity.",
+        "otc": {
+            "title": "Order to Cash (X12)"
+        },
+        "gateway": {
+            "title": "Secure API Gateway"
+        },
+        "hybrid": {
+            "title": "Hybrid Data Sync"
+        },
+        "insights_title": "> INTEGRATION_INSIGHTS"
     },
     "tools": {
         "title": "> DEVELOPER_TOOLS",
@@ -44,15 +60,53 @@
             "regex": "Regex Tool",
             "cron": "Cron Builder",
             "webhook": "Webhook Inspector"
+        },
+        "edi": {
+            "input_title": "Raw EDI Payload",
+            "placeholder": "Paste EDI segment string here... (ISA*00*... or UNA:+.?)",
+            "output_title": "Segment Inspector",
+            "waiting": "Waiting for input stream..."
+        },
+        "api": {
+            "config_title": "Request Configuration",
+            "method_label": "HTTP Method",
+            "url_label": "URL",
+            "headers_label": "Headers (one per line: Key: Value)",
+            "headers_placeholder": "Content-Type: application/json\nAuthorization: Bearer token123",
+            "body_label": "Request Body (JSON, XML, etc.)",
+            "body_placeholder": "{\"key\": \"value\"}",
+            "response_title": "Response",
+            "waiting": "No response yet. Configure request and click \"Send Request\"."
+        },
+        "regex": {
+            "pattern_label": "Regular Expression Pattern"
         }
     },
     "insights": {
         "title": "Technical Insights",
-        "subtitle": "Whitepapers, architectural decisions, and code snippets."
+        "subtitle": "Whitepapers, architectural decisions, and code snippets.",
+        "erp": {
+            "title": "Netsuite ERP Integration",
+            "desc": "Leveraging SuiteTalk (SOAP/REST) for external connectivity. Strategies for syncing Orders and Inventory using User Event Scripts and Map/Reduce jobs."
+        },
+        "modern": {
+            "title": "Modernizing Legacy EDI",
+            "desc": "Strategies for wrapping legacy X12/EDIFACT systems with modern RESTful layers to allow microservices usage while properly handling translation."
+        },
+        "gateway": {
+            "title": "Secure B2B Gateways",
+            "desc": "Implementing robust AS2 and SFTP gateways. Advanced security protocols including mTLS and payload encryption for mission-critical data."
+        }
     },
     "expertise": {
         "title": "Expertise & History",
-        "subtitle": "Tech stack specifications and career timeline."
+        "subtitle": "Tech stack specifications and career timeline.",
+        "skills": {
+            "edi": "EDI & Integration",
+            "dev": "Development",
+            "method": "Methodologies"
+        },
+        "gitLog": "git log --oneline"
     },
     "contact": {
         "title": "> INITIALIZE_PROTOCOL",

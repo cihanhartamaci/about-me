@@ -269,10 +269,6 @@
                     <select id="language-selector">
                         <option value="en">🇬🇧 English</option>
                         <option value="tr">🇹🇷 Türkçe</option>
-                        <option value="es">🇪🇸 Español</option>
-                        <option value="it">🇮🇹 Italiano</option>
-                        <option value="ru">🇷🇺 Русский</option>
-                        <option value="zh">🇨🇳 中文</option>
                     </select>
                 </div>
             </div>
@@ -304,7 +300,7 @@
             <div class="tool-container">
                 <div class="editor-box">
                     <div class="editor-header">
-                        <span class="editor-title">Raw EDI Payload</span>
+                        <span class="editor-title" data-i18n="tools.edi.input_title">Raw EDI Payload</span>
                         <div class="btn-group">
                             <button class="btn btn-outline btn-sm" onclick="loadSample('850')">Load 850</button>
                             <button class="btn btn-outline btn-sm" onclick="loadSample('DESADV')">Load DESADV</button>
@@ -312,13 +308,14 @@
                     </div>
                     <div class="editor-content">
                         <textarea class="tool-input" id="edi-input" style="min-height: 100%;"
+                            data-i18n-placeholder="tools.edi.placeholder"
                             placeholder="Paste EDI segment string here... (ISA*00*... or UNA:+.?)"></textarea>
                     </div>
                 </div>
 
                 <div class="editor-box">
                     <div class="editor-header">
-                        <span class="editor-title">Segment Inspector</span>
+                        <span class="editor-title" data-i18n="tools.edi.output_title">Segment Inspector</span>
                         <div style="display: flex; gap: 1rem; align-items: center;">
                             <span class="editor-title" id="detected-format">FORMAT: UNKNOWN</span>
                             <button id="btn-humanize" class="btn btn-outline btn-sm" onclick="toggleHumanize()">
@@ -327,7 +324,8 @@
                         </div>
                     </div>
                     <div class="editor-content tree-view" id="edi-output">
-                        <div style="color:var(--text-muted); text-align:center; padding-top:2rem;">
+                        <div style="color:var(--text-muted); text-align:center; padding-top:2rem;"
+                            data-i18n="tools.edi.waiting">
                             Waiting for input stream...
                         </div>
                     </div>
@@ -340,7 +338,7 @@
             <div class="tool-container">
                 <div class="editor-box">
                     <div class="editor-header">
-                        <span class="editor-title">Request Configuration</span>
+                        <span class="editor-title" data-i18n="tools.api.config_title">Request Configuration</span>
                         <div class="btn-group">
                             <button class="btn btn-outline btn-sm" onclick="loadSampleAPI()">Load Sample</button>
                             <button class="btn btn-primary btn-sm" onclick="sendAPIRequest()">Send Request</button>
@@ -349,7 +347,7 @@
                     </div>
                     <div class="editor-content">
                         <div class="form-group">
-                            <label class="form-label">HTTP Method</label>
+                            <label class="form-label" data-i18n="tools.api.method_label">HTTP Method</label>
                             <select id="api-method" class="tool-input">
                                 <option value="GET">GET</option>
                                 <option value="POST">POST</option>
@@ -359,30 +357,35 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">URL</label>
+                            <label class="form-label" data-i18n="tools.api.url_label">URL</label>
                             <input type="text" id="api-url" class="tool-input"
                                 placeholder="https://api.example.com/endpoint">
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Headers (one per line: Key: Value)</label>
-                            <textarea id="api-headers" class="tool-input" placeholder="Content-Type: application/json
+                            <label class="form-label" data-i18n="tools.api.headers_label">Headers (one per line: Key:
+                                Value)</label>
+                            <textarea id="api-headers" class="tool-input"
+                                data-i18n-placeholder="tools.api.headers_placeholder" placeholder="Content-Type: application/json
 Authorization: Bearer token123"></textarea>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Request Body (JSON, XML, etc.)</label>
-                            <textarea id="api-body" class="tool-input" placeholder='{"key": "value"}'></textarea>
+                            <label class="form-label" data-i18n="tools.api.body_label">Request Body (JSON, XML,
+                                etc.)</label>
+                            <textarea id="api-body" class="tool-input"
+                                data-i18n-placeholder="tools.api.body_placeholder"
+                                placeholder='{"key": "value"}'></textarea>
                         </div>
                     </div>
                 </div>
 
                 <div class="editor-box">
                     <div class="editor-header">
-                        <span class="editor-title">Response</span>
+                        <span class="editor-title" data-i18n="tools.api.response_title">Response</span>
                         <span id="api-status" class="status-badge">Ready</span>
                     </div>
                     <div class="editor-content">
-                        <pre id="api-response"
-                            style="margin: 0; white-space: pre-wrap; word-wrap: break-word;">No response yet. Configure request and click "Send Request".</pre>
+                        <pre id="api-response" style="margin: 0; white-space: pre-wrap; word-wrap: break-word;"
+                            data-i18n="tools.api.waiting">No response yet. Configure request and click "Send Request".</pre>
                     </div>
                 </div>
             </div>
@@ -403,7 +406,8 @@ Authorization: Bearer token123"></textarea>
                     </div>
                     <div class="editor-content">
                         <div class="form-group">
-                            <label class="form-label">Regular Expression Pattern</label>
+                            <label class="form-label" data-i18n="tools.regex.pattern_label">Regular Expression
+                                Pattern</label>
                             <input type="text" id="regex-pattern" class="tool-input" placeholder="\d{3}-\d{2}-\d{4}">
                         </div>
                         <div class="form-group">
@@ -441,23 +445,30 @@ Authorization: Bearer token123"></textarea>
             <div class="tool-container">
                 <div class="editor-box">
                     <div class="editor-header">
-                        <span class="editor-title">Schedule Configuration</span>
+                        <span class="editor-title" data-i18n="tools.cron.config_title">Schedule Configuration</span>
                         <div class="btn-group">
-                            <button class="btn btn-outline btn-sm" onclick="loadCronPreset('hourly')">Hourly</button>
-                            <button class="btn btn-outline btn-sm" onclick="loadCronPreset('daily')">Daily</button>
-                            <button class="btn btn-outline btn-sm" onclick="loadCronPreset('weekly')">Weekly</button>
-                            <button class="btn btn-primary btn-sm" onclick="updateCronExpression()">Update</button>
-                            <button class="btn btn-outline btn-sm" onclick="copyCronExpression()">Copy</button>
+                            <button class="btn btn-outline btn-sm" onclick="loadCronPreset('hourly')"
+                                data-i18n="tools.cron.btn_hourly">Hourly</button>
+                            <button class="btn btn-outline btn-sm" onclick="loadCronPreset('daily')"
+                                data-i18n="tools.cron.btn_daily">Daily</button>
+                            <button class="btn btn-outline btn-sm" onclick="loadCronPreset('weekly')"
+                                data-i18n="tools.cron.btn_weekly">Weekly</button>
+                            <button class="btn btn-primary btn-sm" onclick="updateCronExpression()"
+                                data-i18n="tools.cron.btn_update">Update</button>
+                            <button class="btn btn-outline btn-sm" onclick="copyCronExpression()"
+                                data-i18n="tools.cron.btn_copy">Copy</button>
                         </div>
                     </div>
                     <div class="editor-content">
                         <div class="form-group">
-                            <label class="form-label">Minute (0-59, * for every minute)</label>
+                            <label class="form-label" data-i18n="tools.cron.minute_label">Minute (0-59, * for every
+                                minute)</label>
                             <input type="text" id="cron-minute" class="tool-input" placeholder="*"
                                 oninput="updateCronExpression()">
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Hour (0-23, * for every hour)</label>
+                            <label class="form-label" data-i18n="tools.cron.hour_label">Hour (0-23, * for every
+                                hour)</label>
                             <input type="text" id="cron-hour" class="tool-input" placeholder="*"
                                 oninput="updateCronExpression()">
                         </div>
@@ -481,7 +492,7 @@ Authorization: Bearer token123"></textarea>
 
                 <div class="editor-box">
                     <div class="editor-header">
-                        <span class="editor-title">Generated Expression</span>
+                        <span class="editor-title" data-i18n="tools.cron.output_title">Generated Expression</span>
                     </div>
                     <div class="editor-content">
                         <div class="form-group">
@@ -508,8 +519,9 @@ Authorization: Bearer token123"></textarea>
         <!-- Webhook Inspector Tool -->
         <div id="webhook-inspector" class="tool-panel">
             <div class="info-card">
-                <h4><i class="fas fa-info-circle"></i> Webhook Inspector - Server Required</h4>
-                <p style="color: var(--text-secondary); line-height: 1.7;">
+                <h4 data-i18n="tools.webhook.title"><i class="fas fa-info-circle"></i> Webhook Inspector - Server
+                    Required</h4>
+                <p style="color: var(--text-secondary); line-height: 1.7;" data-i18n="tools.webhook.desc">
                     A webhook inspector requires a backend server to receive and store HTTP requests.
                     Since this is a static site, this tool is not available in the browser.
                 </p>

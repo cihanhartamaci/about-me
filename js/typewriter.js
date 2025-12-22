@@ -2,12 +2,21 @@
  * Typewriter Effect for Hero Section
  */
 
-const phrases = [
+let phrases = [
     "> INITIALIZING SYSTEM...",
     "> CONNECTING NODES...",
     "> LOADING INTEGRATION PATTERNS...",
     "> SYSTEM READY."
 ];
+
+function updatePhrases() {
+    if (window.i18n && window.i18n.translations[window.i18n.currentLang]) {
+        const translatedPhrases = window.i18n.t('hero.typing_phrases');
+        if (Array.isArray(translatedPhrases)) {
+            phrases = translatedPhrases;
+        }
+    }
+}
 
 let partIndex = 0;
 let phraseIndex = 0;
@@ -24,9 +33,19 @@ cursor.className = 'typing-cursor';
 cursor.textContent = '_';
 
 if (targetElement) {
+    updatePhrases();
     targetElement.appendChild(cursor);
     setInterval(wordFlick, speed);
 }
+
+// Listen for language changes
+window.addEventListener('languageChanged', (e) => {
+    updatePhrases();
+    // Optionally reset animation
+    phraseIndex = 0;
+    offset = 0;
+    forwards = true;
+});
 
 function wordFlick() {
     if (!targetElement) return;
@@ -55,18 +74,9 @@ function wordFlick() {
         if (forwards) {
             offset++;
         } else {
-            // offset--; // Uncomment to delete text back
-            // For this specific design, we might want it to stay or just clear. 
-            // Let's make it clear after a pause for the loop effect, or just stop at the last one if we want "Boot up" feel.
-            // But standard loop is usually safer for engagement.
-
-            // Actually, let's just loop:
             offset--;
         }
     }
-
-    // Special case for the last "READY" state - maybe pause longer or stop?
-    // For now, infinite loop is dynamic.
 
     targetElement.textContent = part;
     targetElement.appendChild(cursor);

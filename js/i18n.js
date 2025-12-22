@@ -17,7 +17,7 @@
             const browserLang = navigator.language.split('-')[0];
 
             // Determine initial language
-            const supportedLangs = ['en', 'tr', 'es', 'it', 'ru', 'zh'];
+            const supportedLangs = ['en', 'tr'];
             let initialLang = defaultLang;
 
             if (savedLang && supportedLangs.includes(savedLang)) {
@@ -42,6 +42,13 @@
                     localStorage.setItem('preferredLanguage', lang);
                     this.applyTranslations();
                     this.updateHtmlLang();
+
+                    // Update selector if it exists
+                    const langSelector = document.getElementById('language-selector');
+                    if (langSelector) {
+                        langSelector.value = lang;
+                    }
+
                     return lang;
                 })
                 .catch(error => {
@@ -115,6 +122,12 @@
                 const key = elem.getAttribute('data-i18n-aria');
                 elem.setAttribute('aria-label', this.t(key));
             });
+
+            // Sync selector value again just in case
+            const langSelector = document.getElementById('language-selector');
+            if (langSelector) {
+                langSelector.value = this.currentLang;
+            }
         },
 
         // Update HTML lang attribute

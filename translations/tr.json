@@ -16,16 +16,22 @@
     },
     "hero": {
         "typing": "> SİSTEM BAŞLATILIYOR...",
+        "typing_phrases": [
+            "> SİSTEM BAŞLATILIYOR...",
+            "> DÜĞÜMLER BAĞLANIYOR...",
+            "> ENTEGRASYON DESENLERİ YÜKLENİYOR...",
+            "> SİSTEM HAZIR."
+        ],
         "name": "Cihan Hartamaci",
         "title": "Entegrasyon Mimarı & Geliştirici",
-        "subtitle": "Küresel kurumlar için yüksek performanslı EDI köprüleri ve RESTful API'ler mimarl and designing.",
+        "subtitle": "Küresel kurumlar için yüksek performanslı EDI köprüleri ve RESTful API'ler tasarlıyor ve geliştiriyorum.",
         "btnDocs": "Dokümantasyonu Oku",
         "btnContact": "Proje Başlat"
     },
     "home": {
         "selectModule": "> MODÜL_SEÇ",
         "integrationTitle": "Entegrasyon Desenleri",
-        "integrationDesc": "ANSI X12, EDIFACT ve Hibrit intent Bulut mimarileri için standartlaştırılmış specs.",
+        "integrationDesc": "ANSI X12, EDIFACT ve Hibrit Bulut mimarileri için standartlaştırılmış özellikler.",
         "insightsTitle": "Teknik Bilgiler",
         "insightsDesc": "Netsuite SuiteScript, SAP IDOC'ler ve API Güvenliği konularında derinlemesine incelemeler.",
         "systemStatsTitle": "Sistem İstatistikleri",
@@ -33,10 +39,37 @@
     },
     "patterns": {
         "title": "> ENTEGRASYON_DESENLERI",
-        "subtitle": "Kurumsal bağlantı için standartlaştırılmış görsel taslaklar."
+        "subtitle": "Kurumsal bağlantı için standartlaştırılmış görsel taslaklar.",
+        "otc": {
+            "title": "Siparişten Nakite (X12)"
+        },
+        "gateway": {
+            "title": "Güvenli API Ağ Geçidi"
+        },
+        "hybrid": {
+            "title": "Hibrit Veri Senkronizasyonu"
+        },
+        "insights_title": "> ENTEGRASYON_BİLGİLERİ",
+        "articles": {
+            "design": {
+                "title": "EDI İşlem Kümesi Tasarımı: X12 ve EDIFACT için En İyi Uygulamalar",
+                "p1": "Doğru EDI işlem kümesi tasarımı, ticari ortaklar arasında birlikte çalışabilirliği sağlamak için kritiktir. İşte sağlam EDI uygulamaları oluşturmak için kanıtlanmış stratejiler.",
+                "h1": "1. Özelleştirme Yerine Standartlaştırma",
+                "p2": "X12 ve EDIFACT standartları isteğe bağlı segmentlere ve öğelere izin verirken, yoğun şekilde özelleştirilmiş işlem kümeleri oluşturma isteğine direnin. Mümkün olduğunda sektör standardı uygulama kılavuzlarına sadık kalın.",
+                "h3": "4. Hata Yönetimi En İyi Uygulamaları"
+            },
+            "api": {
+                "title": "Entegrasyon Platformları için RESTful API Tasarım Desenleri",
+                "h1": "Kaynak Odaklı Tasarım",
+                "h2": "Sayfalandırma ve Filtreleme"
+            },
+            "event": {
+                "title": "Olay Güdümlü Entegrasyon: Yayınla/Abone Ol ve Mesaj Kuyruğu Desenleri"
+            }
+        }
     },
     "tools": {
-        "title": "> GELISTIRICI_ARACLARI",
+        "title": "> GELİŞTİRİCİ_ARAÇLARI",
         "subtitle": "Entegrasyon geliştirme ve hata ayıklama için tarayıcı tabanlı araçlar.",
         "tabs": {
             "edi": "EDI Ayrıştırıcı",
@@ -44,15 +77,68 @@
             "regex": "Regex Aracı",
             "cron": "Cron Oluşturucu",
             "webhook": "Webhook Denetçisi"
+        },
+        "edi": {
+            "input_title": "Ham EDI Verisi",
+            "placeholder": "EDI segment dizisini buraya yapıştırın... (ISA*00*... veya UNA:+.?)",
+            "output_title": "Segment Denetçisi",
+            "waiting": "Giriş akışı bekleniyor..."
+        },
+        "api": {
+            "config_title": "İstek Yapılandırması",
+            "method_label": "HTTP Metodu",
+            "url_label": "URL",
+            "headers_label": "Başlıklar (her satırda bir: Anahtar: Değer)",
+            "headers_placeholder": "Content-Type: application/json\nAuthorization: Bearer token123",
+            "body_label": "İstek Gövdesi (JSON, XML, vb.)",
+            "body_placeholder": "{\"anahtar\": \"değer\"}",
+            "response_title": "Yanıt",
+            "waiting": "Henüz yanıt yok. İsteği yapılandırın ve \"İstek Gönder\"e tıklayın."
+        },
+        "regex": {
+            "pattern_label": "Düzenli İfade (Regex) Deseni"
+        },
+        "cron": {
+            "config_title": "Zamanlama Yapılandırması",
+            "btn_hourly": "Saatlik",
+            "btn_daily": "Günlük",
+            "btn_weekly": "Haftalık",
+            "btn_update": "Güncelle",
+            "btn_copy": "Kopyala",
+            "minute_label": "Dakika (0-59, * her dakika için)",
+            "hour_label": "Saat (0-23, * her saat için)",
+            "output_title": "Oluşturulan İfade"
+        },
+        "webhook": {
+            "title": "Webhook Denetçisi - Sunucu Gereklidir",
+            "desc": "Bir webhook denetçisi, HTTP isteklerini almak ve saklamak için bir arka uç sunucusu gerektirir. Bu statik bir site olduğundan, bu araç tarayıcıda kullanılamaz."
         }
     },
     "insights": {
         "title": "Teknik Bilgiler",
-        "subtitle": "Teknik dökümanlar, mimari kararlar ve kod parçacıkları."
+        "subtitle": "Teknik dökümanlar, mimari kararlar ve kod parçacıkları.",
+        "erp": {
+            "title": "Netsuite ERP Entegrasyonu",
+            "desc": "Dış bağlantı için SuiteTalk (SOAP/REST) kullanımı. User Event Script'leri ve Map/Reduce işleri kullanarak Sipariş ve Envanter senkronizasyonu stratejileri."
+        },
+        "modern": {
+            "title": "Modernize Edilmiş Eski EDI",
+            "desc": "Eski X12/EDIFACT sistemlerini modern RESTful katmanlarıyla sarmalayarak, çeviriyi düzgün yaparken mikroservis kullanımına olanak sağlayan stratejiler."
+        },
+        "gateway": {
+            "title": "Güvenli B2B Ağ Geçitleri",
+            "desc": "Güçlü AS2 ve SFTP ağ geçitlerinin uygulanması. Kritik veriler için mTLS ve yük şifreleme dahil gelişmiş güvenlik protokolleri."
+        }
     },
     "expertise": {
         "title": "Uzmanlık ve Geçmiş",
-        "subtitle": "Teknoloji yığını özellikleri ve kariyer zaman çizelgesi."
+        "subtitle": "Teknoloji yığını özellikleri ve kariyer zaman çizelgesi.",
+        "skills": {
+            "edi": "EDI ve Entegrasyon",
+            "dev": "Geliştirme",
+            "method": "Metodolojiler"
+        },
+        "gitLog": "git log --oneline"
     },
     "contact": {
         "title": "> PROTOKOLU_BAŞLAT",

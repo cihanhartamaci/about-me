@@ -37,10 +37,6 @@
                     <select id="language-selector">
                         <option value="en">🇬🇧 English</option>
                         <option value="tr">🇹🇷 Türkçe</option>
-                        <option value="es">🇪🇸 Español</option>
-                        <option value="it">🇮🇹 Italiano</option>
-                        <option value="ru">🇷🇺 Русский</option>
-                        <option value="zh">🇨🇳 中文</option>
                     </select>
                 </div>
             </div>
@@ -70,7 +66,7 @@
                 <div
                     style="margin-bottom:1rem; font-family:var(--font-mono); color:var(--text-secondary); font-size:0.8rem;">
                     REF: EDI-STD-01 // ORDER-TO-CASH FLOW</div>
-                <h3>Order to Cash (X12)</h3>
+                <h3 data-i18n="patterns.otc.title">Order to Cash (X12)</h3>
                 <div class="mermaid">
                     graph LR
                     classDef system fill:#161b22,stroke:#58a6ff,stroke-width:2px,color:#fff
@@ -99,7 +95,7 @@
                 <div
                     style="margin-bottom:1rem; font-family:var(--font-mono); color:var(--text-secondary); font-size:0.8rem;">
                     REF: API-GW-02</div>
-                <h3>Secure API Gateway</h3>
+                <h3 data-i18n="patterns.gateway.title">Secure API Gateway</h3>
                 <div class="mermaid">
                     graph LR
                     classDef client fill:#05090d,stroke:#f85149,stroke-width:2px,color:#fff
@@ -125,7 +121,7 @@
                 <div
                     style="margin-bottom:1rem; font-family:var(--font-mono); color:var(--text-secondary); font-size:0.8rem;">
                     REF: HYB-SYNC-03</div>
-                <h3>Hybrid Data Sync</h3>
+                <h3 data-i18n="patterns.hybrid.title">Hybrid Data Sync</h3>
                 <div class="mermaid">
                     graph LR
                     classDef legacy fill:#161b22,stroke:#8b949e,stroke-width:2px,color:#fff
@@ -150,26 +146,30 @@
 
         <!-- Technical Articles Section -->
         <section style="margin-top: 4rem;">
-            <h2 class="mono-font" style="font-size: 1.8rem; margin-bottom: 2rem; color: var(--accent-blue);">>
+            <h2 class="mono-font" style="font-size: 1.8rem; margin-bottom: 2rem; color: var(--accent-blue);"
+                data-i18n="patterns.insights_title">>
                 INTEGRATION_INSIGHTS</h2>
 
             <!-- Article 1: EDI Best Practices -->
             <article class="tech-card" style="margin-bottom: 2rem;">
                 <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                    <h3 style="color: var(--accent-blue); font-size: 1.3rem;">EDI Transaction Set Design: Best Practices
+                    <h3 style="color: var(--accent-blue); font-size: 1.3rem;"
+                        data-i18n="patterns.articles.design.title">EDI Transaction Set Design: Best Practices
                         for X12 and EDIFACT</h3>
                     <span class="mono-tag">STANDARDS</span>
                 </div>
 
-                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8;"
+                    data-i18n="patterns.articles.design.p1">
                     Proper EDI transaction set design is critical for ensuring interoperability between trading
                     partners.
                     Here are proven strategies for building robust EDI implementations.
                 </p>
 
-                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;"
+                    data-i18n="patterns.articles.design.h1">
                     1. Standardization Over Customization</h4>
-                <p style="line-height: 1.7; margin-bottom: 1rem;">
+                <p style="line-height: 1.7; margin-bottom: 1rem;" data-i18n="patterns.articles.design.p2">
                     While X12 and EDIFACT standards allow for optional segments and elements, resist the temptation to
                     create
                     heavily customized transaction sets. <strong>Stick to industry-standard implementation
@@ -200,7 +200,8 @@
 3. Partner Validation → Confirm trading partner agreements
 4. Data Validation → Validate against internal business rules</code></pre>
 
-                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;"
+                    data-i18n="patterns.articles.design.h3">
                     4. Error Handling Best Practices</h4>
                 <p style="line-height: 1.7;">
                     Always generate <code
@@ -217,7 +218,8 @@
             <!-- Article 2: API Design Patterns -->
             <article class="tech-card" style="margin-bottom: 2rem;">
                 <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                    <h3 style="color: var(--accent-blue); font-size: 1.3rem;">RESTful API Design Patterns for
+                    <h3 style="color: var(--accent-blue); font-size: 1.3rem;" data-i18n="patterns.articles.api.title">
+                        RESTful API Design Patterns for
                         Integration Platforms</h3>
                     <span class="mono-tag">API DESIGN</span>
                 </div>
@@ -228,7 +230,8 @@
                     These patterns have proven effective across enterprise integrations.
                 </p>
 
-                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;"
+                    data-i18n="patterns.articles.api.h1">
                     Resource-Oriented Design</h4>
                 <pre
                     style="background: rgba(0,0,0,0.4); padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;">
@@ -296,7 +299,8 @@ Headers:
             <!-- Article 3: Event-Driven Architecture -->
             <article class="tech-card" style="margin-bottom: 2rem;">
                 <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                    <h3 style="color: var(--accent-blue); font-size: 1.3rem;">Event-Driven Integration: Pub/Sub vs.
+                    <h3 style="color: var(--accent-blue); font-size: 1.3rem;" data-i18n="patterns.articles.event.title">
+                        Event-Driven Integration: Pub/Sub vs.
                         Message Queue Patterns</h3>
                     <span class="mono-tag">ARCHITECTURE</span>
                 </div>
