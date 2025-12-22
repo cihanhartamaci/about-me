@@ -13,21 +13,18 @@
             this.basePath = basePath;
             this.fallbackLang = defaultLang;
 
-            // Get saved language or browser language
+            // Get saved language or force defaultLang (ignoring browser language)
             const savedLang = localStorage.getItem('preferredLanguage');
-            const browserLang = navigator.language.split('-')[0];
 
             // Determine initial language
             const supportedLangs = ['en', 'tr'];
-            let initialLang = defaultLang;
+            let initialLang = defaultLang; // Default to English as requested
 
             if (savedLang && supportedLangs.includes(savedLang)) {
                 initialLang = savedLang;
-            } else if (supportedLangs.includes(browserLang)) {
-                initialLang = browserLang;
             }
 
-            // Immediately set currentLang and sync selector to prevent visual reset
+            // Immediately set currentLang and attempt to sync selector to prevent visual reset
             this.currentLang = initialLang;
             this.syncSelector();
 
@@ -36,6 +33,9 @@
 
         // Load translation file
         loadLanguage: function (lang) {
+            this.currentLang = lang;
+            this.syncSelector(); // Sync UI immediately
+
             const url = this.basePath + lang + '.json';
             return fetch(url)
                 .then(response => {
@@ -44,14 +44,10 @@
                 })
                 .then(translations => {
                     this.translations[lang] = translations;
-                    this.currentLang = lang;
                     localStorage.setItem('preferredLanguage', lang);
                     this.applyTranslations();
                     this.updateHtmlLang();
-
-                    // Update selector if it exists
-                    this.syncSelector();
-
+                    this.syncSelector(); // Sync again after applying
                     return lang;
                 })
                 .catch(error => {
@@ -59,6 +55,7 @@
                     if (lang !== this.fallbackLang) {
                         return this.loadLanguage(this.fallbackLang);
                     }
+                    this.syncSelector(); // Final sync on failure
                 });
         },
 
@@ -185,9 +182,11 @@
 
     // Auto-initialize language selector if exists
     function initSelector() {
+        // Double sync to ensure correct visual state
+        i18n.syncSelector();
+
         const langSelector = document.getElementById('language-selector');
         if (langSelector) {
-            langSelector.value = i18n.getCurrentLanguage();
             langSelector.removeEventListener('change', onLanguageChange);
             langSelector.addEventListener('change', onLanguageChange);
         }
@@ -196,6 +195,9 @@
     function onLanguageChange(e) {
         i18n.changeLanguage(e.target.value);
     }
+
+    // Run sync as soon as possible, then again on DOMContentLoaded
+    initSelector();
 
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initSelector);
