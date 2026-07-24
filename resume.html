@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cihan Hartamacı - Professional Resume</title>
+    <meta name="description" content="Professional Resume of Cihan Hartamacı">
+    
+    <!-- Global Site Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/lang-switcher.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- Modern Font: Poppins for CV -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons (already included above, but the user's specific version here) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Modernized CSS Variables for CV */
+        :root {
+            --cv-primary-bg: #0f172a; /* Deep Slate */
+            --cv-primary-text: #f8fafc;
+            --cv-accent-color: #3b82f6; /* Modern Blue */
+            --cv-accent-hover: #2563eb;
+            --cv-main-bg: #ffffff;
+            --cv-main-text: #334155;
+            --cv-light-text: #64748b;
+            --cv-border-color: #e2e8f0;
+            --cv-tag-bg: rgba(59, 130, 246, 0.1);
+        }
+
+        .cv-wrapper {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f1f5f9;
+            color: var(--cv-main-text);
+            line-height: 1.6;
+            padding: 50px 20px;
+            margin-top: 60px; /* Space for the fixed nav */
+        }
+
+        .cv-wrapper * {
+            box-sizing: border-box;
+        }
+
+        /* Container with elegant shadow */
+        .cv-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: var(--cv-main-bg);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            display: flex;
+            border-radius: 16px;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        /* Sidebar Styling */
+        .cv-sidebar {
+            width: 34%;
+            background-color: var(--cv-primary-bg);
+            color: var(--cv-primary-text);
+            padding: 50px 40px;
+            position: relative;
+        }
+
+        .profile-photo-container {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .profile-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--cv-accent-color);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        }
+
+        .profile-name {
+            font-size: 2.1em;
+            font-weight: 700;
+            margin-bottom: 5px;
+            line-height: 1.2;
+            color: #ffffff;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+        
+        .profile-title {
+            font-size: 1.05em;
+            color: var(--cv-accent-color);
+            margin-bottom: 35px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .cv-sidebar h2 {
+            font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .contact-list, .skills-list, .languages-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .contact-list li {
+            margin-bottom: 16px;
+            font-size: 0.95em;
+            display: flex;
+            align-items: center;
+            color: #e2e8f0;
+        }
+
+        .contact-icon {
+            width: 25px;
+            margin-right: 12px;
+            font-size: 1.1em;
+            color: var(--cv-accent-color);
+            text-align: center;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .skill-tag {
+            background-color: rgba(255,255,255,0.05);
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.85em;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background-color: var(--cv-accent-color);
+            border-color: var(--cv-accent-color);
+            cursor: default;
+        }
+
+        .languages-list li {
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .lang-level {
+            background-color: rgba(255,255,255,0.1);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            color: #cbd5e1;
+        }
+
+        /* Main Content Styling */
+        .cv-main-content {
+            width: 66%;
+            padding: 60px 55px;
+            background-color: var(--cv-main-bg);
+        }
+
+        .cv-main-content h2 {
+            font-size: 1.4em;
+            color: var(--cv-primary-bg);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+        }
+
+        .cv-main-content h2 i {
+            margin-right: 12px;
+            color: var(--cv-accent-color);
+            font-size: 1.1em;
+        }
+
+        .cv-section {
+            margin-bottom: 45px;
+        }
+
+        .about-text {
+            text-align: justify;
+            font-size: 0.98em;
+            color: var(--cv-main-text);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 30px;
+        }
+
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 8px;
+        }
+
+        .company-name {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: var(--cv-primary-bg);
+        }
+
+        .duration-location {
+            font-size: 0.85em;
+            color: var(--cv-light-text);
+            font-weight: 500;
+            background: #f8fafc;
+            padding: 4px 10px;
+            border-radius: 20px;
+            border: 1px solid var(--cv-border-color);
+        }
+
+        .role-block {
+            margin-left: 20px;
+            padding-left: 25px;
+            border-left: 2px solid var(--cv-border-color);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .role-block::before {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 7px;
+            width: 12px;
+            height: 12px;
+            background-color: var(--cv-main-bg);
+            border: 3px solid var(--cv-accent-color);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .role-block:hover::before {
+            background-color: var(--cv-accent-color);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+        }
+
+        .role-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .role-date {
+            font-size: 0.85em;
+            color: var(--cv-accent-color);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .role-skills {
+            font-size: 0.9em;
+            color: var(--cv-light-text);
+            margin-top: 5px;
+            background: #f8fafc;
+            padding: 8px 12px;
+            border-radius: 6px;
+            display: inline-block;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .role-skills strong {
+            color: #475569;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .cv-container {
+                flex-direction: column;
+            }
+            .cv-sidebar, .cv-main-content {
+                width: 100%;
+            }
+            .cv-sidebar {
+                padding: 40px 30px;
+            }
+            .cv-main-content {
+                padding: 40px 30px;
+            }
+            .company-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .duration-location {
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Global Navigation -->
+    <nav class="top-nav">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">CH.integrate()</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+                <a href="patterns.html" class="nav-link" data-i18n="nav.patterns">Patterns</a>
+                <a href="tools.html" class="nav-link" data-i18n="nav.tools">Tools</a>
+                <a href="insights.html" class="nav-link" data-i18n="nav.insights">Insights</a>
+                <a href="expertise.html" class="nav-link" data-i18n="nav.expertise">Expertise</a>
+                <a href="resume.html" class="nav-link active" data-i18n="nav.resume">Resume</a>
+                <a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
+                <a href="dashboard.html" class="nav-link" style="color:var(--accent-green);"><i class="fas fa-lock"></i>
+                    <span data-i18n="nav.dashboard">Dashboard</span></a>
+                <a href="personal/index.html" class="nav-btn-switch" data-i18n="nav.switchPersonal">Switch to
+                    Personal</a>
+                <div class="lang-switcher">
+                    <select id="language-selector">
+                        <option value="en">🇺🇸 English</option>
+                        <option value="tr">🇹🇷 Türkçe</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CV Content Wrapper -->
+    <div class="cv-wrapper">
+        <div class="cv-container">
+            
+            <!-- LEFT SIDEBAR -->
+            <div class="cv-sidebar">
+                <!-- Profile Photo Added -->
+                <div class="profile-photo-container">
+                    <img src="https://media.licdn.com/dms/image/v2/D5603AQEwNzgXupNBBA/profile-displayphoto-scale_400_400/B56ZtCFbhsIYAk-/0/1766340281259?e=1786579200&v=beta&t=jbc3fWpmfI8kJLW5WdDr7IchXTlViYfplVIpdM_CJyU" alt="Cihan Hartamacı" class="profile-photo">
+                </div>
+
+                <div class="profile-name">Cihan Hartamacı</div>
+                <div class="profile-title">Senior API/EDI Consultant & Developer</div>
+                
+                <h2>Contact</h2>
+                <ul class="contact-list">
+                    <li><i class="fa-solid fa-location-dot contact-icon"></i> Ordu, Turkey</li>
+                    <li><i class="fa-solid fa-envelope contact-icon"></i> cihanhartamaci@gmail.com</li>
+                    <li><i class="fa-solid fa-phone contact-icon"></i> +90 535 255 21 49</li>
+                    <li><i class="fa-brands fa-linkedin contact-icon"></i> linkedin.com/in/cihanhartamaci</li>
+                </ul>
+
+                <h2>Skills & Tech</h2>
+                <div class="skills-container">
+                    <span class="skill-tag">EDI</span>
+                    <span class="skill-tag">Web Services API</span>
+                    <span class="skill-tag">Mulesoft</span>
+                    <span class="skill-tag">SAP ERP</span>
+                    <span class="skill-tag">Netsuite</span>
+                    <span class="skill-tag">CData</span>
+                    <span class="skill-tag">Integration Architecture</span>
+                    <span class="skill-tag">Agile Project Mgmt</span>
+                    <span class="skill-tag">Data Mapping & Analysis</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">JIRA / Atlas</span>
+                </div>
+
+                <h2>Languages</h2>
+                <ul class="languages-list">
+                    <li><span>Turkish</span> <span class="lang-level">Native</span></li>
+                    <li><span>English</span> <span class="lang-level">Professional</span></li>
+                    <li><span>German</span> <span class="lang-level">Beginner</span></li>
+                </ul>
+            </div>
+
+            <!-- RIGHT MAIN CONTENT -->
+            <div class="cv-main-content">
+                
+                <!-- Summary / About -->
+                <div class="cv-section">
+                    <h2><i class="fa-solid fa-user-tie"></i> Professional Summary</h2>
+                    <p class="about-text">
+                        In my role at Logiwa, I develop integration projects and processes utilizing my expertise in EDI and API technologies. I hold a Bachelor's degree in Computer Engineering and Control & Automation Engineering from Istanbul Technical University, and I have completed my Master's degree in Engineering Management at Marmara University.
+                    </p>
+                </div>
+
+                <!-- Experience -->
+                <div class="cv-section">
+                    <h2><i class="fa-solid fa-briefcase"></i> Experience</h2>
+                    
+                    <!-- Logiwa -->
+                    <div class="timeline-item">
+                        <div class="company-header">
+                            <div class="company-name">Logiwa</div>
+                            <div class="duration-location"><i class="fa-solid fa-globe"></i> Remote • 2 yrs 3 mos</div>
+                        </div>
+                        
+                        <div class="role-block">
+                            <div class="role-title">Senior Integration Engineer</div>
+                            <div class="role-date">Nov 2025 - Present (9 mos)</div>
+                            <div class="role-skills"><strong>Technologies:</strong> EDI, Web Services API, Netsuite, CData</div>
+                        </div>
+                        
+                        <div class="role-block">
+                            <div class="role-title">Integration Engineer</div>
+                            <div class="role-date">May 2024 - Nov 2025 (1 yr 7 mos)</div>
+                            <div class="role-skills"><strong>Focus Areas:</strong> Electronic Data Interchange (EDI), Development of integration processes</div>
+                        </div>
+                    </div>
+
+                    <!-- Beko -->
+                    <div class="timeline-item">
+                        <div class="company-header">
+                            <div class="company-name">Beko (Beko Corporate)</div>
+                            <div class="duration-location"><i class="fa-solid fa-building"></i> Istanbul, Turkey • 2 yrs 5 mos</div>
+                        </div>
+                        
+                        <div class="role-block">
+                            <div class="role-title">Senior EDI/SAP/API Integration Developer</div>
+                            <div class="role-date">Jul 2022 - May 2024 (1 yr 11 mos)</div>
+                            <div class="role-skills"><strong>Technologies:</strong> SAP ERP, Agile Project Management, Mulesoft, Data Analysis</div>
+                        </div>
+
+                        <div class="role-block">
+                            <div class="role-title">Specialist - IT Common Tools & Integration Services</div>
+                            <div class="role-date">Jan 2022 - Jun 2022 (6 mos)</div>
+                        </div>
+                    </div>
+
+                    <!-- Map Elektronik -->
+                    <div class="timeline-item">
+                        <div class="company-header">
+                            <div class="company-name">Map Elektronik Ticaret ve Veri Hizmetleri A.Ş.</div>
+                            <div class="duration-location"><i class="fa-solid fa-building"></i> 2 yrs 5 mos</div>
+                        </div>
+                        
+                        <div class="role-block">
+                            <div class="role-title">Integration Engineer</div>
+                            <div class="role-date">Sep 2020 - Dec 2021 (1 yr 4 mos)</div>
+                            <div class="role-skills"><strong>Technologies:</strong> MySQL, Data Analysis, Integration Processes</div>
+                        </div>
+
+                        <div class="role-block">
+                            <div class="role-title">Integration Specialist (Freelance)</div>
+                            <div class="role-date">Oct 2019 - Aug 2020 (11 mos)</div>
+                        </div>
+
+                        <div class="role-block">
+                            <div class="role-title">Intern</div>
+                            <div class="role-date">Aug 2019 - Sep 2019 (2 mos)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="cv-section">
+                    <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+                    
+                    <div class="timeline-item">
+                        <div class="company-name">Marmara University</div>
+                        <div class="role-title" style="margin-top: 5px;">Master's Degree, Engineering Management</div>
+                        <div class="role-date">Feb 2022 - Jun 2023</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="company-name">Istanbul Technical University</div>
+                        <div class="role-title" style="margin-top: 5px;">Bachelor's Degree, Computer Engineering & Control and Automation Engineering</div>
+                        <div class="role-date">2017 - 2021</div>
+                        <div class="role-skills" style="margin-top: 5px;"><strong>Highlighted Skills:</strong> Linux, Python</div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="cv-section">
+                    <h2><i class="fa-solid fa-certificate"></i> Licenses & Certifications</h2>
+                    
+                    <div class="timeline-item" style="margin-bottom: 10px;">
+                        <div class="role-title">Agile Methodologies Certificate</div>
+                        <div class="role-date">ACM Agile Turkey</div>
+                        <div class="role-skills" style="margin-top: 5px;"><strong>Related Skill:</strong> Agile Project Management</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/cmd-palette.js"></script>
+    <script src="js/theme-manager.js"></script>
+    <script type="module" src="js/tracker.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/mobile-nav.js" defer></script>
+    <script>
+        i18n.init('en', 'translations/');
+    </script>
+</body>
+</html>
