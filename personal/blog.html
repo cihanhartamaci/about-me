@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Cihan Hartamaci</title>
-    <meta name="description" content="Personal thoughts and stories.">
+    <title>Journal | Cihan Hartamacı</title>
+    <meta name="description" content="Short notes and stories from off the clock.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/lang-switcher.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -20,7 +22,7 @@
 
     <nav class="top-nav">
         <div class="container nav-container">
-            <a href="index.html" class="logo">Cihan Hartamaci</a>
+            <a href="index.html" class="logo">Cihan</a>
             <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"
                 aria-controls="navLinks">
                 <span></span>
@@ -29,7 +31,10 @@
             </button>
             <div class="nav-links" id="navLinks">
                 <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
-                <a href="blog.html" class="nav-link active" data-i18n="nav.blog">Blog</a>
+                <a href="index.html#photos" class="nav-link" data-i18n="nav.photos">Photos</a>
+                <a href="blog.html" class="nav-link active" data-i18n="nav.blog">Journal</a>
+                <a href="https://www.instagram.com/cihanhartamaci/" class="nav-link nav-instagram" rel="me noopener noreferrer"
+                    target="_blank">@cihanhartamaci</a>
                 <a href="../index.html" class="mode-switch" data-i18n="nav.switchProfessional">Switch to
                     Professional</a>
                 <div class="lang-switcher">
@@ -43,48 +48,32 @@
         </div>
     </nav>
 
-    <main class="container" style="padding-top:4rem;">
-        <h1 class="hero-title" style="font-size:2.5rem; margin-bottom: 3rem;" data-i18n="allArticles">All Articles</h1>
+    <main class="container journal-preview" style="padding-top:4rem;">
+        <h1 class="hero-title" style="text-align:left; font-size:2.4rem; margin-bottom: 2rem;" data-i18n="allArticles">Journal</h1>
 
-        <div class="blog-grid">
-            <!-- Blog Post 1 - New -->
-            <article class="blog-card">
-                <p class="blog-meta">December 22, 2025</p>
-                <h3 class="blog-title"><a href="posts/moments-that-matter.html" data-i18n="blog.moments.title">Moments
-                        That Matter</a></h3>
-                <p class="blog-excerpt" data-i18n="blog.moments.excerpt">
-                    Reflections on friendship, travel dreams, and finding balance in a fast-paced world.
-                    Sometimes the best moments happen when you're not optimizing anything at all.
-                </p>
-                <a href="posts/moments-that-matter.html" class="btn-read" data-i18n="readArticle">Read Article</a>
-            </article>
-
-            <!-- Blog Post 2 -->
-            <article class="blog-card">
-                <p class="blog-meta">December 17, 2025</p>
-                <h3 class="blog-title"><a href="posts/welcome.html" data-i18n="blog.welcome.title">Welcome to the New
-                        Setup</a></h3>
-                <p class="blog-excerpt" data-i18n="blog.welcome.excerpt">
-                    Separating my professional work from my personal interests was a necessary step.
-                    Here's why I decided to build a dual-mode website.
-                </p>
-                <a href="posts/welcome.html" class="btn-read" data-i18n="readArticle">Read Article</a>
-            </article>
-
-            <!-- More placeholders can go here -->
-            <article class="blog-card">
-                <p class="blog-meta">December 12, 2025</p>
-                <h3 class="blog-title" data-i18n="blog.workflow.title">Workflow Optimization</h3>
-                <p class="blog-excerpt" data-i18n="blog.workflow.excerpt">
-                    Tools I use to stay productive without burning out.
-                </p>
-                <span class="btn-read" style="color:#ccc;" data-i18n="comingSoon">Coming Soon</span>
-            </article>
+        <div class="journal-grid">
+            <a class="journal-card" href="posts/moments-that-matter.html">
+                <img src="../assets/blog-moments-3.jpg" alt="">
+                <div class="journal-body">
+                    <p class="blog-meta" data-i18n="blog.moments.date">December 22, 2025</p>
+                    <h3 data-i18n="blog.moments.title">Moments That Matter</h3>
+                    <p data-i18n="blog.moments.excerpt">Friendship, travel, and the hours that are not a sprint.</p>
+                </div>
+            </a>
+            <a class="journal-card" href="posts/welcome.html">
+                <img src="../assets/cihan-profile.jpg" alt="">
+                <div class="journal-body">
+                    <p class="blog-meta" data-i18n="blog.welcome.date">December 17, 2025</p>
+                    <h3 data-i18n="blog.welcome.title">Welcome to the New Setup</h3>
+                    <p data-i18n="blog.welcome.excerpt">Why this site has a personal mode at all.</p>
+                </div>
+            </a>
         </div>
     </main>
 
-    <footer style="text-align:center; padding: 2rem 0; color:var(--text-muted); font-size:0.85rem;" data-i18n="footer">
-        &copy; 2025 Cihan Hartamaci.
+    <footer class="site-footer">
+        <p data-i18n="footer">&copy; 2026 Cihan Hartamacı</p>
+        <a href="https://www.instagram.com/cihanhartamaci/" rel="me noopener noreferrer" target="_blank">instagram.com/cihanhartamaci</a>
     </footer>
 
     <script src="../js/i18n.js"></script>

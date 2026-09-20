@@ -1,19 +1,30 @@
 {
     "nav": {
         "home": "Home",
-        "blog": "Blog",
+        "blog": "Journal",
+        "photos": "Photos",
         "switchProfessional": "Switch to Professional"
     },
     "hero": {
-        "greeting": "Hello, I'm Cihan.",
-        "subtitle": "I explore the intersection of technology, lifestyle, and continuous learning. Welcome to my personal space."
+        "greeting": "Cihan Hartamacı",
+        "subtitle": "Istanbul, friends, the road, a table at a cafe. This page is the off-the-clock notebook."
     },
     "social": {
         "instagram": "Instagram",
-        "tiktok": "TikTok"
+        "tiktok": "TikTok",
+        "followIg": "Follow on Instagram",
+        "followTt": "TikTok"
     },
-    "recentThoughts": "Recent Thoughts",
-    "allArticles": "All Articles",
+    "photos": {
+        "title": "Moments",
+        "seeIg": "Open Instagram",
+        "cap1": "Not too much.",
+        "cap2": "The world is waiting.",
+        "cap3": "The people who stay.",
+        "cap4": "Just being here."
+    },
+    "recentThoughts": "Notebook",
+    "allArticles": "Journal",
     "readArticle": "Read Article",
     "comingSoon": "Coming Soon",
     "backToPosts": "← Back to all posts",
@@ -60,5 +71,5 @@
             "date": "December 10, 2025"
         }
     },
-    "footer": "© 2025 Cihan Hartamaci."
+    "footer": "© 2026 Cihan Hartamacı"
 }
