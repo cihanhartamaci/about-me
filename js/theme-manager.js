@@ -40,27 +40,13 @@ function injectNavExtras() {
     // Prevent duplicate injection
     if (document.getElementById('theme-select')) return;
 
-    // Create container for the select (optional, but good for styling)
     const container = document.createElement('div');
-    container.style.display = 'flex';
-    container.style.alignItems = 'center';
-    container.style.marginLeft = '10px';
+    container.className = 'theme-switcher';
 
-    // Create Select Element
     const select = document.createElement('select');
     select.id = 'theme-select';
-    select.title = "Select UI Theme";
-
-    // Style the dropdown to match the dark aesthetic
-    select.style.background = 'var(--bg-card)';
-    select.style.color = 'var(--text-primary)';
-    select.style.border = '1px solid var(--border-color)';
-    select.style.borderRadius = '4px';
-    select.style.padding = '4px 8px';
-    select.style.fontSize = '0.8rem';
-    select.style.fontFamily = 'var(--font-mono)';
-    select.style.cursor = 'pointer';
-    select.style.outline = 'none';
+    select.title = 'Select UI Theme';
+    select.setAttribute('aria-label', 'Theme');
 
     // Options
     const themes = [

@@ -20,7 +20,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/lang-switcher.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -28,27 +28,27 @@
     <nav class="top-nav">
         <div class="container nav-container">
             <a href="index.html" class="logo">CH.integrate()</a>
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="navLinks">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <div class="nav-links" id="navLinks">
-                <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+                <a href="index.html" class="nav-link active" data-i18n="nav.home">Home</a>
                 <a href="patterns.html" class="nav-link" data-i18n="nav.patterns">Patterns</a>
                 <a href="tools.html" class="nav-link" data-i18n="nav.tools">Tools</a>
                 <a href="insights.html" class="nav-link" data-i18n="nav.insights">Insights</a>
                 <a href="expertise.html" class="nav-link" data-i18n="nav.expertise">Expertise</a>
                 <a href="resume.html" class="nav-link" data-i18n="nav.resume">Resume</a>
                 <a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
-                <a href="dashboard.html" class="nav-link" style="color:var(--accent-green);"><i class="fas fa-lock"></i>
-                    <span data-i18n="nav.dashboard">Dashboard</span></a>
                 <a href="personal/index.html" class="nav-btn-switch" data-i18n="nav.switchPersonal">Switch to
                     Personal</a>
                 <div class="lang-switcher">
+                    <label class="visually-hidden" for="language-selector">Language</label>
                     <select id="language-selector">
-                        <option value="en">🇺🇸 English</option>
-                        <option value="tr">🇹🇷 Türkçe</option>
+                        <option value="en">EN</option>
+                        <option value="tr">TR</option>
                     </select>
                 </div>
             </div>
@@ -57,17 +57,15 @@
 
     <main class="container">
         <!-- Hero Terminal Effect -->
-        <section class="page-header" style="border:none; padding: 6rem 0;">
-            <p class="mono-tag" style="display:inline-block; margin-bottom:1rem; height: 1.5em;"><span
-                    id="typing-text">> INITIALIZING SYSTEM...</span></p>
-            <h1 class="page-title" style="font-size:3.5rem;" data-i18n="hero.name">Cihan Hartamaci</h1>
-            <h2 style="color:var(--text-secondary); margin-bottom:2rem;" data-i18n="hero.title">Integration Architect &
-                Developer</h2>
-            <p class="page-subtitle" style="margin-bottom:2rem;" data-i18n="hero.subtitle">
-                Architecting high-performance <span style="color:var(--accent-green)">EDI</span> bridges and
-                <span style="color:var(--accent-blue)">RESTful APIs</span> for global enterprises.
+        <section class="page-header hero-header">
+            <p class="mono-tag hero-status"><span id="typing-text">> INITIALIZING SYSTEM...</span></p>
+            <h1 class="page-title hero-name" data-i18n="hero.name">Cihan Hartamaci</h1>
+            <h2 class="hero-role" data-i18n="hero.title">Integration Architect & Developer</h2>
+            <p class="page-subtitle hero-lead" data-i18n-html="hero.subtitle">
+                Architecting high-performance <span class="accent-green">EDI</span> bridges and
+                <span class="accent-blue">RESTful APIs</span> for global enterprises.
             </p>
-            <div style="display:flex; gap:1rem;">
+            <div class="hero-actions">
                 <a href="patterns.html" class="btn btn-primary" data-i18n="hero.btnDocs">Read Documentation</a>
                 <a href="contact.html" class="btn btn-outline" data-i18n="hero.btnContact">Start Project</a>
             </div>
@@ -81,22 +79,21 @@
             <div class="grid-cards">
                 <a href="patterns.html" class="tech-card">
                     <h3 data-i18n="home.integrationTitle">Integration Patterns</h3>
-                    <p style="color:var(--text-secondary)" data-i18n="home.integrationDesc">Standardized specs for ANSI
-                        X12, EDIFACT, and Hybrid Cloud
+                    <p data-i18n="home.integrationDesc">Standardized specs for ANSI X12, EDIFACT, and Hybrid Cloud
                         architectures.</p>
+                </a>
+                <a href="tools.html" class="tech-card">
+                    <h3 data-i18n="home.toolsTitle">Developer Tools</h3>
+                    <p data-i18n="home.toolsDesc">Browser-based EDI parser, API tester, regex, and cron utilities.</p>
                 </a>
                 <a href="insights.html" class="tech-card">
                     <h3 data-i18n="home.insightsTitle">Technical Insights</h3>
-                    <p style="color:var(--text-secondary)" data-i18n="home.insightsDesc">Deep dives into Netsuite
-                        SuiteScript, SAP IDOCs, and API
+                    <p data-i18n="home.insightsDesc">Deep dives into Netsuite SuiteScript, SAP IDOCs, and API
                         Security.</p>
                 </a>
                 <a href="expertise.html" class="tech-card">
-                <a href="resume.html" class="nav-link" data-i18n="nav.resume">Resume</a>
-                    <h3 data-i18n="home.systemStatsTitle">System Stats</h3>
-                    <p style="color:var(--text-secondary)" data-i18n="home.systemStatsDesc">6+ Years Experience. 100+
-                        Projects. Stack trace: Logiwa,
-                        Beko.</p>
+                    <h3 data-i18n="home.systemStatsTitle">Expertise</h3>
+                    <p data-i18n="home.systemStatsDesc">6+ years of EDI, SAP, and NetSuite work across Logiwa and Beko.</p>
                 </a>
             </div>
         </section>

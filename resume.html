@@ -13,12 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/lang-switcher.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Modern Font: Poppins for CV -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons (already included above, but the user's specific version here) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         /* Modernized CSS Variables for CV */
@@ -320,7 +318,8 @@
     <nav class="top-nav">
         <div class="container nav-container">
             <a href="index.html" class="logo">CH.integrate()</a>
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="navLinks">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -333,14 +332,13 @@
                 <a href="expertise.html" class="nav-link" data-i18n="nav.expertise">Expertise</a>
                 <a href="resume.html" class="nav-link active" data-i18n="nav.resume">Resume</a>
                 <a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
-                <a href="dashboard.html" class="nav-link" style="color:var(--accent-green);"><i class="fas fa-lock"></i>
-                    <span data-i18n="nav.dashboard">Dashboard</span></a>
                 <a href="personal/index.html" class="nav-btn-switch" data-i18n="nav.switchPersonal">Switch to
                     Personal</a>
                 <div class="lang-switcher">
+                    <label class="visually-hidden" for="language-selector">Language</label>
                     <select id="language-selector">
-                        <option value="en">🇺🇸 English</option>
-                        <option value="tr">🇹🇷 Türkçe</option>
+                        <option value="en">EN</option>
+                        <option value="tr">TR</option>
                     </select>
                 </div>
             </div>
@@ -355,7 +353,7 @@
             <div class="cv-sidebar">
                 <!-- Profile Photo Added -->
                 <div class="profile-photo-container">
-                    <img src="https://media.licdn.com/dms/image/v2/D5603AQEwNzgXupNBBA/profile-displayphoto-scale_400_400/B56ZtCFbhsIYAk-/0/1766340281259?e=1786579200&v=beta&t=jbc3fWpmfI8kJLW5WdDr7IchXTlViYfplVIpdM_CJyU" alt="Cihan Hartamacı" class="profile-photo">
+                    <img src="assets/cihan-profile.jpg" alt="Cihan Hartamacı" class="profile-photo">
                 </div>
 
                 <div class="profile-name">Cihan Hartamacı</div>

@@ -21,7 +21,8 @@
     <nav class="top-nav">
         <div class="container nav-container">
             <a href="index.html" class="logo">Cihan Hartamaci</a>
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="navLinks">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -32,9 +33,10 @@
                 <a href="../index.html" class="mode-switch" data-i18n="nav.switchProfessional">Switch to
                     Professional</a>
                 <div class="lang-switcher">
+                    <label class="visually-hidden" for="language-selector">Language</label>
                     <select id="language-selector">
-                        <option value="en">🇺🇸 English</option>
-                        <option value="tr">🇹🇷 Türkçe</option>
+                        <option value="en">EN</option>
+                        <option value="tr">TR</option>
                     </select>
                 </div>
             </div>
@@ -45,8 +47,7 @@
         <!-- Hero -->
         <section class="hero">
             <!-- Updated Profile Image -->
-            <img src="../assets/cihan-profile.jpg" alt="Cihan Hartamaci" class="profile-img"
-                style="border-radius: 50%; object-fit: cover;">
+            <img src="../assets/cihan-profile.jpg" alt="Cihan Hartamaci" class="profile-img" width="120" height="120">
 
             <h1 class="hero-title" data-i18n="hero.greeting">Hello, I'm Cihan.</h1>
             <p class="hero-subtitle" data-i18n="hero.subtitle">

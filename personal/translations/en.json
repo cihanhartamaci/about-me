@@ -21,6 +21,7 @@
         "welcome": {
             "title": "Welcome to the New Setup",
             "excerpt": "Separating my professional work from my personal interests was a necessary step. Here's why I decided to build a dual-mode website.",
+            "date": "December 17, 2025",
             "p1": "For the longest time, I tried to cram everything into one digital identity. My professional work as an EDI Integration Architect requires a certain level of precision, technical depth, and frankly, a bit of a serious face.",
             "p2": "But that's not all of who I am. I have interests in lifestyle, technology trends, and social media that don't always fit into a 'Developer Portal' aesthetic.",
             "h2": "The Dual Mode Solution",
@@ -33,6 +34,7 @@
             "title": "Moments That Matter",
             "subtitle": "Reflections on friendship, travel dreams, and finding balance",
             "excerpt": "Reflections on friendship, travel dreams, and finding balance in a fast-paced world.",
+            "date": "December 22, 2025",
             "p1": "There's something liberating about stepping away from the screens and lines of code. As someone who spends most of my days architecting complex systems and debugging integration flows, I've learned that the best moments often happen when you're not optimizing anything at all.",
             "p2": "Just existing. Just being present.",
             "h2a": "The World Is Waiting",
@@ -54,7 +56,8 @@
         },
         "workflow": {
             "title": "Workflow Optimization",
-            "excerpt": "Tools I use to stay productive without burning out."
+            "excerpt": "Tools I use to stay productive without burning out.",
+            "date": "December 10, 2025"
         }
     },
     "footer": "© 2025 Cihan Hartamaci."

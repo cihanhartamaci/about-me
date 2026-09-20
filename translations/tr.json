@@ -25,7 +25,7 @@
         ],
         "name": "Cihan Hartamaci",
         "title": "Entegrasyon Mimarı & Geliştirici",
-        "subtitle": "Küresel kurumlar için yüksek performanslı EDI köprüleri ve RESTful API'ler tasarlıyor ve geliştiriyorum.",
+        "subtitle": "Küresel kurumlar için yüksek performanslı <span class=\"accent-green\">EDI</span> köprüleri ve <span class=\"accent-blue\">RESTful API</span>'ler tasarlıyor ve geliştiriyorum.",
         "btnDocs": "Dokümantasyonu Oku",
         "btnContact": "Proje Başlat"
     },
@@ -35,8 +35,10 @@
         "integrationDesc": "ANSI X12, EDIFACT ve Hibrit Bulut mimarileri için standartlaştırılmış özellikler.",
         "insightsTitle": "Teknik Bilgiler",
         "insightsDesc": "Netsuite SuiteScript, SAP IDOC'ler ve API Güvenliği konularında derinlemesine incelemeler.",
-        "systemStatsTitle": "Sistem İstatistikleri",
-        "systemStatsDesc": "6+ Yıl Deneyim. 100+ Proje. Çalıştığım Firmalar: Logiwa, Beko."
+        "systemStatsTitle": "Uzmanlık",
+        "systemStatsDesc": "Logiwa ve Beko'da 6+ yıllık EDI, SAP ve NetSuite deneyimi.",
+        "toolsTitle": "Geliştirici Araçları",
+        "toolsDesc": "Tarayıcı tabanlı EDI parser, API tester, regex ve cron araçları."
     },
     "patterns": {
         "title": "> ENTEGRASYON_DESENLERI",
