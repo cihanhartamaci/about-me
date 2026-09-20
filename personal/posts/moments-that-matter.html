@@ -10,7 +10,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../css/lang-switcher.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -21,7 +23,7 @@
 
     <nav class="top-nav">
         <div class="container nav-container">
-            <a href="../index.html" class="logo">Cihan Hartamaci</a>
+            <a href="../index.html" class="logo">Cihan</a>
             <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"
                 aria-controls="navLinks">
                 <span></span>
@@ -30,7 +32,10 @@
             </button>
             <div class="nav-links" id="navLinks">
                 <a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a>
-                <a href="../blog.html" class="nav-link active" data-i18n="nav.blog">Blog</a>
+                <a href="../index.html#photos" class="nav-link" data-i18n="nav.photos">Photos</a>
+                <a href="../blog.html" class="nav-link active" data-i18n="nav.blog">Journal</a>
+                <a href="https://www.instagram.com/cihanhartamaci/" class="nav-link nav-instagram" rel="me noopener noreferrer"
+                    target="_blank">@cihanhartamaci</a>
                 <a href="../../index.html" class="mode-switch" data-i18n="nav.switchProfessional">Switch to
                     Professional</a>
                 <div class="lang-switcher">
@@ -170,12 +175,19 @@
         </article>
 
         <div style="text-align:center; margin-top:4rem; padding-top:2rem; border-top:1px solid #eee;">
-            <a href="../blog.html" style="font-weight:600;" data-i18n="backToPosts">&larr; Back to all posts</a>
+            <a href="https://www.instagram.com/cihanhartamaci/" class="btn-follow instagram" rel="me noopener noreferrer"
+                target="_blank" style="margin-bottom:1.25rem;">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+                <span>@cihanhartamaci</span>
+            </a>
+            <div>
+                <a href="../blog.html" style="font-weight:600;" data-i18n="backToPosts">&larr; Back to all posts</a>
+            </div>
         </div>
     </main>
 
-    <footer style="text-align:center; padding: 2rem 0; color:var(--text-muted); font-size:0.85rem;" data-i18n="footer">
-        &copy; 2025 Cihan Hartamaci.
+    <footer class="site-footer">
+        <p data-i18n="footer">&copy; 2026 Cihan Hartamacı</p>
     </footer>
 
     <script src="../../js/i18n.js"></script>

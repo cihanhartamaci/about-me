@@ -1,23 +1,21 @@
 :root {
-    /* MODERN MINIMALIST PALETTE */
-    --bg-body: #fafafa;
-    --bg-card: #ffffff;
-    --bg-nav: rgba(255, 255, 255, 0.9);
+    --bg-body: #f4efe8;
+    --bg-card: #fffaf4;
+    --bg-nav: rgba(244, 239, 232, 0.92);
 
-    --text-primary: #111111;
-    --text-secondary: #555555;
-    --text-muted: #888888;
+    --text-primary: #1c1916;
+    --text-secondary: #5c534b;
+    --text-muted: #8a7f74;
 
-    --accent-color: #000000;
-    /* Sophisticated Black */
-    --accent-subtle: #eaeaea;
+    --accent-color: #1c1916;
+    --accent-subtle: #e4d9cc;
+    --accent-warm: #c45c26;
 
-    --font-heading: 'Inter', sans-serif;
+    --font-heading: 'Fraunces', Georgia, serif;
     --font-body: 'Inter', sans-serif;
 
     --nav-height: 70px;
-    --container-width: 900px;
-    /* Tighter for reading */
+    --container-width: 980px;
 }
 
 * {
@@ -87,7 +85,8 @@ a:hover {
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    align-items: center;
+    gap: 1.25rem;
 }
 
 .nav-link {
@@ -118,32 +117,225 @@ a:hover {
 
 /* Hero Section */
 .hero {
-    padding: 6rem 0 4rem;
+    padding: 4.5rem 0 2.5rem;
     text-align: center;
 }
 
 .profile-img {
-    width: 120px;
-    height: 120px;
+    width: 168px;
+    height: 168px;
     border-radius: 50%;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     object-fit: cover;
+    object-position: 50% 20%;
     background-color: #ccc;
-    /* Placeholder */
+    border: 3px solid #fff;
+    box-shadow: 0 12px 30px rgba(28, 25, 22, 0.12);
+}
+
+.hero-motto {
+    font-family: var(--font-heading);
+    font-style: italic;
+    letter-spacing: 0.04em;
+    color: var(--accent-warm);
+    margin-bottom: 0.35rem;
 }
 
 .hero-title {
-    font-size: 3rem;
+    font-size: clamp(2.1rem, 5vw, 3.2rem);
+    margin-bottom: 0.25rem;
+}
+
+.hero-handle {
+    color: var(--text-muted);
+    font-weight: 500;
     margin-bottom: 1rem;
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
-    max-width: 600px;
+    margin-bottom: 1.75rem;
+    max-width: 34rem;
     margin-left: auto;
     margin-right: auto;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.btn-follow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.15rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    opacity: 1;
+}
+
+.btn-follow.instagram {
+    background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
+    color: #fff;
+}
+
+.btn-follow.tiktok {
+    background: var(--text-primary);
+    color: #fff;
+}
+
+.btn-follow:hover {
+    opacity: 0.88;
+}
+
+.photos-section {
+    padding: 2rem 0 3rem;
+}
+
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.section-head h2 {
+    font-size: 1.7rem;
+}
+
+.section-head a {
+    color: var(--accent-warm);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+}
+
+.photo-tile {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.photo-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.photo-tile:hover img {
+    transform: scale(1.04);
+}
+
+.photo-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2.2rem 0.85rem 0.75rem;
+    background: linear-gradient(transparent, rgba(20, 16, 12, 0.72));
+    color: #fff;
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.journal-preview {
+    padding-bottom: 4rem;
+}
+
+.journal-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+.journal-card {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--accent-subtle);
+    border-radius: 14px;
+    overflow: hidden;
+    opacity: 1;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.journal-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(28, 25, 22, 0.08);
+}
+
+.journal-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 140px;
+    object-fit: cover;
+}
+
+.journal-body {
+    padding: 1rem 1rem 1rem 0;
+}
+
+.journal-body h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.35rem;
+}
+
+.journal-body p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 2rem 1rem 3rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.site-footer a {
+    display: inline-block;
+    margin-top: 0.35rem;
+    color: var(--text-muted);
+}
+
+.nav-instagram {
+    font-weight: 600;
+}
+
+@media (min-width: 800px) {
+    .journal-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .journal-card {
+        grid-template-columns: 1fr;
+    }
+
+    .journal-card img {
+        height: 220px;
+        min-height: 0;
+    }
+
+    .journal-body {
+        padding: 1.1rem 1.2rem 1.3rem;
+    }
 }
 
 /* Social Links */
@@ -292,6 +484,15 @@ a:hover {
 @media (max-width: 768px) {
     .hero-title {
         font-size: 2rem;
+    }
+
+    .photo-caption {
+        font-size: 0.8rem;
+        padding-bottom: 0.55rem;
+    }
+
+    .journal-card {
+        grid-template-columns: 96px 1fr;
     }
 
     .hamburger {

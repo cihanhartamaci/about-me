@@ -4,12 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cihan Hartamaci | Personal</title>
-    <meta name="description" content="Personal blog and social links for Cihan Hartamaci.">
+    <title>Cihan Hartamacı | Personal</title>
+    <meta name="description"
+        content="Off-the-clock notes and photos from Cihan Hartamacı — Istanbul, friends, travel. Temet nosce.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/lang-switcher.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -20,7 +23,7 @@
 
     <nav class="top-nav">
         <div class="container nav-container">
-            <a href="index.html" class="logo">Cihan Hartamaci</a>
+            <a href="index.html" class="logo">Cihan</a>
             <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"
                 aria-controls="navLinks">
                 <span></span>
@@ -29,7 +32,10 @@
             </button>
             <div class="nav-links" id="navLinks">
                 <a href="index.html" class="nav-link active" data-i18n="nav.home">Home</a>
-                <a href="blog.html" class="nav-link" data-i18n="nav.blog">Blog</a>
+                <a href="#photos" class="nav-link" data-i18n="nav.photos">Photos</a>
+                <a href="blog.html" class="nav-link" data-i18n="nav.blog">Journal</a>
+                <a href="https://www.instagram.com/cihanhartamaci/" class="nav-link nav-instagram" rel="me noopener noreferrer"
+                    target="_blank">@cihanhartamaci</a>
                 <a href="../index.html" class="mode-switch" data-i18n="nav.switchProfessional">Switch to
                     Professional</a>
                 <div class="lang-switcher">
@@ -43,84 +49,91 @@
         </div>
     </nav>
 
-    <main class="container">
-        <!-- Hero -->
-        <section class="hero">
-            <!-- Updated Profile Image -->
-            <img src="../assets/cihan-profile.jpg" alt="Cihan Hartamaci" class="profile-img" width="120" height="120">
-
-            <h1 class="hero-title" data-i18n="hero.greeting">Hello, I'm Cihan.</h1>
+    <main>
+        <section class="hero container">
+            <img src="../assets/blog-moments-4.jpg" alt="Cihan Hartamacı" class="profile-img" width="168" height="168">
+            <p class="hero-motto">Temet nosce</p>
+            <h1 class="hero-title" data-i18n="hero.greeting">Cihan Hartamacı</h1>
+            <p class="hero-handle">@cihanhartamaci</p>
             <p class="hero-subtitle" data-i18n="hero.subtitle">
-                I explore the intersection of technology, lifestyle, and continuous learning.
-                Welcome to my personal space.
+                Istanbul, friends, the road, a table at a cafe. This page is the off-the-clock notebook.
             </p>
-
-            <div class="social-links">
-                <a href="https://instagram.com/cihanhartamaci" target="_blank" class="social-card" title="Instagram">
-                    <i class="fab fa-instagram social-icon-large" style="color: #E1306C;"></i>
-                    <span class="social-label">Instagram</span>
-                    <span class="social-handle">@cihanhartamaci</span>
+            <div class="hero-actions">
+                <a href="https://www.instagram.com/cihanhartamaci/" class="btn-follow instagram" rel="me noopener noreferrer"
+                    target="_blank">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                    <span data-i18n="social.followIg">Follow on Instagram</span>
                 </a>
-                <a href="https://tiktok.com/@cihanhartamaci" target="_blank" class="social-card" title="TikTok">
-                    <i class="fab fa-tiktok social-icon-large" style="color: #000000;"></i>
-                    <span class="social-label">TikTok</span>
-                    <span class="social-handle">@cihanhartamaci</span>
+                <a href="https://www.tiktok.com/@cihanhartamaci" class="btn-follow tiktok" rel="noopener noreferrer"
+                    target="_blank">
+                    <i class="fab fa-tiktok" aria-hidden="true"></i>
+                    <span data-i18n="social.followTt">TikTok</span>
                 </a>
             </div>
         </section>
 
-        <hr style="border:0; border-top:1px solid #eaeaea; margin-bottom:4rem;">
-
-        <!-- Recent Thoughts / Blog Preview -->
-        <section>
-            <h2 style="margin-bottom:2rem; text-align:center;" data-i18n="recentThoughts">Recent Thoughts</h2>
-            <div class="blog-grid">
-                <!-- Blog Post 1 - New -->
-                <article class="blog-card">
-                    <p class="blog-meta" data-i18n="blog.moments.date">December 22, 2025</p>
-                    <h3 class="blog-title"><a href="posts/moments-that-matter.html"
-                            data-i18n="blog.moments.title">Moments That Matter</a></h3>
-                    <p class="blog-excerpt" data-i18n="blog.moments.excerpt">
-                        Reflections on friendship, travel dreams, and finding balance in a fast-paced world.
-                        Sometimes the best moments happen when you're not optimizing anything at all.
-                    </p>
-                    <a href="posts/moments-that-matter.html" class="btn-read" data-i18n="readArticle">Read Article</a>
-                </article>
-
-                <!-- Blog Post 2 -->
-                <article class="blog-card">
-                    <p class="blog-meta" data-i18n="blog.welcome.date">December 17, 2025</p>
-                    <h3 class="blog-title"><a href="posts/welcome.html" data-i18n="blog.welcome.title">Welcome to the
-                            New Setup</a></h3>
-                    <p class="blog-excerpt" data-i18n="blog.welcome.excerpt">
-                        Separating my professional work from my personal interests was a necessary step.
-                        Here's why I decided to build a dual-mode website.
-                    </p>
-                    <a href="posts/welcome.html" class="btn-read" data-i18n="readArticle">Read Article</a>
-                </article>
-
-                <!-- Placeholder Post 2 -->
-                <article class="blog-card">
-                    <p class="blog-meta" data-i18n="blog.workflow.date">December 10, 2025</p>
-                    <h3 class="blog-title" data-i18n="blog.workflow.title">Workflow Optimization</h3>
-                    <p class="blog-excerpt" data-i18n="blog.workflow.excerpt">
-                        Finding the right balance between high-intensity coding sessions and unplugged life.
-                    </p>
-                    <span class="btn-read" style="color:#ccc; cursor:not-allowed;" data-i18n="comingSoon">Coming
-                        Soon</span>
-                </article>
+        <section id="photos" class="photos-section">
+            <div class="container">
+                <div class="section-head">
+                    <h2 data-i18n="photos.title">Moments</h2>
+                    <a href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank"
+                        data-i18n="photos.seeIg">Open Instagram</a>
+                </div>
+                <div class="photo-grid">
+                    <a class="photo-tile" href="posts/moments-that-matter.html">
+                        <img src="../assets/blog-moments-1.jpg" alt="Car-window selfie in denim and sunglasses">
+                        <span class="photo-caption" data-i18n="photos.cap1">Not too much.</span>
+                    </a>
+                    <a class="photo-tile" href="posts/moments-that-matter.html">
+                        <img src="../assets/blog-moments-2.jpg" alt="Wooden world map on a cafe wall">
+                        <span class="photo-caption" data-i18n="photos.cap2">The world is waiting.</span>
+                    </a>
+                    <a class="photo-tile" href="posts/moments-that-matter.html">
+                        <img src="../assets/blog-moments-3.jpg" alt="Friends in front of a Christmas tree">
+                        <span class="photo-caption" data-i18n="photos.cap3">The people who stay.</span>
+                    </a>
+                    <a class="photo-tile" href="posts/moments-that-matter.html">
+                        <img src="../assets/blog-moments-4.jpg" alt="At a marble cafe table">
+                        <span class="photo-caption" data-i18n="photos.cap4">Just being here.</span>
+                    </a>
+                </div>
             </div>
         </section>
 
+        <section class="journal-preview container">
+            <div class="section-head">
+                <h2 data-i18n="recentThoughts">Notebook</h2>
+                <a href="blog.html" data-i18n="nav.blog">Journal</a>
+            </div>
+            <div class="journal-grid">
+                <a class="journal-card" href="posts/moments-that-matter.html">
+                    <img src="../assets/blog-moments-3.jpg" alt="">
+                    <div class="journal-body">
+                        <p class="blog-meta" data-i18n="blog.moments.date">December 22, 2025</p>
+                        <h3 data-i18n="blog.moments.title">Moments That Matter</h3>
+                        <p data-i18n="blog.moments.excerpt">Friendship, travel, and the hours that are not a sprint.
+                        </p>
+                    </div>
+                </a>
+                <a class="journal-card" href="posts/welcome.html">
+                    <img src="../assets/cihan-profile.jpg" alt="">
+                    <div class="journal-body">
+                        <p class="blog-meta" data-i18n="blog.welcome.date">December 17, 2025</p>
+                        <h3 data-i18n="blog.welcome.title">Welcome to the New Setup</h3>
+                        <p data-i18n="blog.welcome.excerpt">Why this site has a personal mode at all.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
     </main>
 
-    <footer style="text-align:center; padding: 2rem 0; color:var(--text-muted); font-size:0.85rem;" data-i18n="footer">
-        &copy; 2025 Cihan Hartamaci.
+    <footer class="site-footer">
+        <p data-i18n="footer">&copy; 2026 Cihan Hartamacı</p>
+        <a href="https://www.instagram.com/cihanhartamaci/" rel="me noopener noreferrer" target="_blank">instagram.com/cihanhartamaci</a>
     </footer>
 
     <script src="../js/i18n.js"></script>
     <script>
-        // Initialize i18n
         i18n.init('en', 'translations/');
     </script>
 </body>

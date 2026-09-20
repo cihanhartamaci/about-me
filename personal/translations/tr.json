@@ -1,19 +1,30 @@
 {
     "nav": {
         "home": "Ana Sayfa",
-        "blog": "Blog",
+        "blog": "Not defteri",
+        "photos": "Fotoğraflar",
         "switchProfessional": "Profesyonel Siteye Geç"
     },
     "hero": {
-        "greeting": "Merhaba, ben Cihan.",
-        "subtitle": "Teknoloji, yaşam tarzı ve sürekli öğrenmenin kesiştiği noktayı keşfediyorum. Kişisel alanıma hoş geldiniz."
+        "greeting": "Cihan Hartamacı",
+        "subtitle": "İstanbul, dostlar, yol, bir kafe masası. Burası mesai dışı defter."
     },
     "social": {
         "instagram": "Instagram",
-        "tiktok": "TikTok"
+        "tiktok": "TikTok",
+        "followIg": "Instagram'da takip et",
+        "followTt": "TikTok"
     },
-    "recentThoughts": "Son Düşünceler",
-    "allArticles": "Tüm Yazılar",
+    "photos": {
+        "title": "Anlar",
+        "seeIg": "Instagram'ı aç",
+        "cap1": "Fazla değil.",
+        "cap2": "Dünya bekliyor.",
+        "cap3": "Kalanlar.",
+        "cap4": "Sadece burada olmak."
+    },
+    "recentThoughts": "Defter",
+    "allArticles": "Not defteri",
     "readArticle": "Yazıyı Oku",
     "comingSoon": "Yakında",
     "backToPosts": "← Tüm yazılara dön",
@@ -60,5 +71,5 @@
             "date": "10 Aralık 2025"
         }
     },
-    "footer": "© 2025 Cihan Hartamaci."
+    "footer": "© 2026 Cihan Hartamacı"
 }
