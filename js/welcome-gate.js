@@ -140,22 +140,32 @@
     }
 
     function init() {
+        // Always show the choice gate on load. Never auto-unlock from
+        // #hub, sessionStorage, or any other returning-visitor signal —
+        // hub entry requires an explicit pill click or Skip control.
+        document.body.classList.remove('gate-unlocked');
         document.body.classList.add('gate-locked');
+
+        var hub = document.getElementById('proHub');
+        if (hub) {
+            hub.setAttribute('aria-hidden', 'true');
+        }
+
+        // Drop a leftover #hub from a prior unlock so refresh/share URLs
+        // do not look like an already-chosen professional deep-link.
+        if ((window.location.hash || '').toLowerCase() === '#hub') {
+            if (window.history && window.history.replaceState) {
+                window.history.replaceState(
+                    null,
+                    '',
+                    window.location.pathname + window.location.search
+                );
+            }
+        }
 
         requestAnimationFrame(function () {
             gate.classList.add('is-ready');
         });
-
-        var hash = (window.location.hash || '').toLowerCase();
-        var saved = null;
-        try {
-            saved = sessionStorage.getItem(STORAGE_KEY);
-        } catch (e) { /* ignore */ }
-
-        if (hash === '#hub' || saved === 'pro') {
-            unlockHub(false);
-            return;
-        }
 
         if (proPanel) {
             proPanel.addEventListener('click', enterProfessional);
