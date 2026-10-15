@@ -30,6 +30,13 @@
 <body>
 
     <section class="welcome-gate" id="welcomeGate" aria-label="Welcome">
+        <canvas class="gate-rain" id="gateRain" aria-hidden="true"></canvas>
+        <div class="gate-atmosphere" aria-hidden="true">
+            <div class="gate-wash gate-wash--blue"></div>
+            <div class="gate-wash gate-wash--red"></div>
+            <div class="gate-vignette"></div>
+        </div>
+
         <div class="gate-chrome">
             <a href="#hub" class="gate-wordmark" data-gate-skip data-i18n="gate.brand">Cihan Hartamacı</a>
             <div class="gate-lang">
@@ -44,39 +51,44 @@
             </div>
         </div>
 
-        <div class="gate-panels" id="gatePanels">
-            <a href="#hub" class="gate-panel gate-panel--pro" id="gatePro" data-i18n-aria="gate.proAria">
-                <div class="gate-panel__media" aria-hidden="true">
-                    <img src="assets/cihan-profile.jpg?v=20261015" alt="" width="400" height="400">
-                </div>
-                <div class="gate-panel__veil" aria-hidden="true"></div>
-                <div class="gate-panel__grain" aria-hidden="true"></div>
-                <div class="gate-panel__content">
-                    <span class="gate-panel__label" data-i18n="gate.proLabel">Professional Cihan</span>
-                    <span class="gate-panel__hint" data-i18n="gate.proHint">EDI, APIs, resume, and the integration hub.</span>
-                    <span class="gate-panel__cta" data-i18n="gate.proCta">Enter the hub</span>
-                </div>
-            </a>
+        <div class="gate-stage">
+            <header class="gate-hero">
+                <p class="gate-kicker" data-i18n="gate.kicker">Two doors. One choice.</p>
+                <h1 class="gate-brand" data-i18n="gate.brand">Cihan Hartamacı</h1>
+                <p class="gate-question" data-i18n="gate.question">Which Cihan do you want to meet?</p>
+            </header>
 
-            <div class="gate-divider" aria-hidden="true"></div>
+            <div class="gate-choice" id="gateChoice" role="group" aria-label="Choose a path">
+                <a href="#hub" class="gate-pill gate-pill--blue" id="gatePro" data-i18n-aria="gate.proAria">
+                    <span class="gate-pill__portrait" aria-hidden="true">
+                        <img src="assets/cihan-profile.jpg?v=20261015" alt="" width="160" height="160">
+                    </span>
+                    <span class="gate-pill__capsule" aria-hidden="true">
+                        <span class="gate-pill__shine"></span>
+                    </span>
+                    <span class="gate-pill__copy">
+                        <span class="gate-pill__path" data-i18n="gate.proPath">Blue</span>
+                        <span class="gate-pill__label" data-i18n="gate.proLabel">Professional Cihan</span>
+                        <span class="gate-pill__hint" data-i18n="gate.proHint">EDI, APIs, resume, and the integration hub.</span>
+                        <span class="gate-pill__cta" data-i18n="gate.proCta">Enter the hub</span>
+                    </span>
+                </a>
 
-            <a href="personal/" class="gate-panel gate-panel--social" id="gateSocial" data-i18n-aria="gate.socialAria">
-                <div class="gate-panel__media" aria-hidden="true">
-                    <img src="assets/personal-seaside-bench.jpg" alt="" width="768" height="1024">
-                </div>
-                <div class="gate-panel__veil" aria-hidden="true"></div>
-                <div class="gate-panel__grain" aria-hidden="true"></div>
-                <div class="gate-panel__content">
-                    <span class="gate-panel__label" data-i18n="gate.socialLabel">Social Cihan</span>
-                    <span class="gate-panel__hint" data-i18n="gate.socialHint">Photos, friends, coasts, and off-the-clock notes.</span>
-                    <span class="gate-panel__cta" data-i18n="gate.socialCta">Meet the lifestyle</span>
-                </div>
-            </a>
-        </div>
-
-        <div class="gate-center">
-            <h1 class="gate-brand" data-i18n="gate.brand">Cihan Hartamacı</h1>
-            <p class="gate-question" data-i18n="gate.question">Which Cihan do you want to meet?</p>
+                <a href="personal/" class="gate-pill gate-pill--red" id="gateSocial" data-i18n-aria="gate.socialAria">
+                    <span class="gate-pill__portrait" aria-hidden="true">
+                        <img src="assets/personal-seaside-bench.jpg" alt="" width="160" height="160">
+                    </span>
+                    <span class="gate-pill__capsule" aria-hidden="true">
+                        <span class="gate-pill__shine"></span>
+                    </span>
+                    <span class="gate-pill__copy">
+                        <span class="gate-pill__path" data-i18n="gate.socialPath">Red</span>
+                        <span class="gate-pill__label" data-i18n="gate.socialLabel">Social Cihan</span>
+                        <span class="gate-pill__hint" data-i18n="gate.socialHint">Photos, friends, coasts, and off-the-clock notes.</span>
+                        <span class="gate-pill__cta" data-i18n="gate.socialCta">Meet the lifestyle</span>
+                    </span>
+                </a>
+            </div>
         </div>
 
         <button type="button" class="gate-skip-mobile" data-gate-skip data-i18n="gate.skipShort">Professional hub</button>

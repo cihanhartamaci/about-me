@@ -3,24 +3,14 @@
 
     var STORAGE_KEY = 'welcomeGateChoice';
     var gate = document.getElementById('welcomeGate');
-    var panels = document.getElementById('gatePanels');
     var proPanel = document.getElementById('gatePro');
     var socialPanel = document.getElementById('gateSocial');
     var skipButtons = document.querySelectorAll('[data-gate-skip]');
+    var rainCanvas = document.getElementById('gateRain');
 
-    if (!gate || !panels) return;
+    if (!gate) return;
 
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    var wideViewport = window.matchMedia('(min-width: 821px)').matches;
-
-    // Flex-expand seam: ratio where the visual split sits when one side is active
-    var SEAM_NEUTRAL = '50%';
-    var SEAM_PRO = ((1.28 / 2.28) * 100).toFixed(3) + '%';
-    var SEAM_SOCIAL = ((1 / 2.28) * 100).toFixed(3) + '%';
-    // Deadzone + hysteresis around center (normalized 0–1) prevents hover thrashing
-    var DEADZONE = 0.07;
-    var HYSTERESIS = 0.05;
 
     function unlockHub(persist) {
         document.body.classList.remove('gate-locked');
@@ -47,6 +37,7 @@
         if (window.history && window.history.replaceState) {
             window.history.replaceState(null, '', '#hub');
         }
+        stopRain();
     }
 
     function enterProfessional(event) {
@@ -60,152 +51,101 @@
         } catch (e) { /* ignore */ }
     }
 
-    function applyParallax(event) {
-        if (reduceMotion || !finePointer) return;
-        var rect = panels.getBoundingClientRect();
-        var x = (event.clientX - rect.left) / rect.width - 0.5;
-        var y = (event.clientY - rect.top) / rect.height - 0.5;
-        var imgs = panels.querySelectorAll('.gate-panel__media img');
-        imgs.forEach(function (img, index) {
-            var depth = index === 0 ? 8 : 14;
-            img.style.setProperty('--px', (x * depth * -1).toFixed(2) + 'px');
-            img.style.setProperty('--py', (y * depth * -1).toFixed(2) + 'px');
-        });
+    /* Soft glyph rain — decorative only, never affects hit targets */
+    var rainRaf = 0;
+    var rainRunning = false;
+
+    function stopRain() {
+        rainRunning = false;
+        if (rainRaf) {
+            window.cancelAnimationFrame(rainRaf);
+            rainRaf = 0;
+        }
     }
 
-    /**
-     * Stabilized panel expand: never use raw :hover for flex growth.
-     * Pointer near the center seam stays neutral; switching sides requires
-     * crossing the deadzone (+ hysteresis once a side is already expanded).
-     */
-    function initStabilizedExpand() {
-        if (!finePointer || !proPanel || !socialPanel) return;
+    function initRain() {
+        if (!rainCanvas || reduceMotion || typeof rainCanvas.getContext !== 'function') return;
 
-        var active = null; // 'pro' | 'social' | null
-        var pendingRatio = null;
-        var rafId = 0;
+        var ctx = rainCanvas.getContext('2d');
+        if (!ctx) return;
 
-        function setSeam(side) {
-            var seam = SEAM_NEUTRAL;
-            if (side === 'pro') seam = SEAM_PRO;
-            else if (side === 'social') seam = SEAM_SOCIAL;
-            panels.style.setProperty('--gate-seam', seam);
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        var cols = [];
+        var glyphs = '01アイウエオカキクケコサシスセソタチツテト<>[]{}/=+*#@$%';
+        var fontSize = 14;
+        var lastTs = 0;
+
+        function resize() {
+            var w = gate.clientWidth;
+            var h = gate.clientHeight;
+            rainCanvas.width = Math.floor(w * dpr);
+            rainCanvas.height = Math.floor(h * dpr);
+            rainCanvas.style.width = w + 'px';
+            rainCanvas.style.height = h + 'px';
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            var colCount = Math.max(12, Math.floor(w / fontSize));
+            cols = [];
+            for (var i = 0; i < colCount; i++) {
+                cols.push({
+                    y: Math.random() * h,
+                    speed: 0.35 + Math.random() * 0.85,
+                    hue: Math.random() > 0.55 ? 'blue' : 'red'
+                });
+            }
         }
 
-        function setExpanded(side) {
-            if (active === side) return;
-            active = side;
-            if (reduceMotion) {
-                // Still track intent for focus/keyboard parity, but skip size change
-                proPanel.classList.remove('is-expanded');
-                socialPanel.classList.remove('is-expanded');
-                setSeam(null);
+        function frame(ts) {
+            if (!rainRunning) return;
+            if (ts - lastTs < 40) {
+                rainRaf = window.requestAnimationFrame(frame);
                 return;
             }
-            proPanel.classList.toggle('is-expanded', side === 'pro');
-            socialPanel.classList.toggle('is-expanded', side === 'social');
-            setSeam(side);
+            lastTs = ts;
+
+            var w = gate.clientWidth;
+            var h = gate.clientHeight;
+            ctx.fillStyle = 'rgba(4, 7, 12, 0.12)';
+            ctx.fillRect(0, 0, w, h);
+            ctx.font = fontSize + 'px "Fira Code", monospace';
+
+            for (var i = 0; i < cols.length; i++) {
+                var col = cols[i];
+                var x = i * fontSize;
+                var ch = glyphs.charAt((Math.random() * glyphs.length) | 0);
+                if (col.hue === 'blue') {
+                    ctx.fillStyle = 'rgba(58, 160, 255, 0.55)';
+                } else {
+                    ctx.fillStyle = 'rgba(226, 61, 74, 0.42)';
+                }
+                ctx.fillText(ch, x, col.y);
+                col.y += fontSize * col.speed;
+                if (col.y > h + fontSize * 4) {
+                    col.y = -Math.random() * h * 0.3;
+                    col.speed = 0.35 + Math.random() * 0.85;
+                }
+            }
+
+            rainRaf = window.requestAnimationFrame(frame);
         }
 
-        function resolve(ratio) {
-            var leftExit = 0.5 - DEADZONE;
-            var rightExit = 0.5 + DEADZONE;
+        resize();
+        rainRunning = true;
+        rainRaf = window.requestAnimationFrame(frame);
 
-            if (active === null) {
-                if (ratio < leftExit) setExpanded('pro');
-                else if (ratio > rightExit) setExpanded('social');
-                return;
-            }
-
-            if (active === 'pro') {
-                // Must travel past center + deadzone + hysteresis before flipping
-                if (ratio > rightExit + HYSTERESIS) setExpanded('social');
-                return;
-            }
-
-            if (active === 'social') {
-                if (ratio < leftExit - HYSTERESIS) setExpanded('pro');
-            }
-        }
-
-        function flush() {
-            rafId = 0;
-            if (pendingRatio == null) return;
-            resolve(pendingRatio);
-            pendingRatio = null;
-        }
-
-        function onPointerMove(event) {
-            if (event.pointerType === 'touch') return;
-            var rect = panels.getBoundingClientRect();
-            if (rect.width <= 0) return;
-            pendingRatio = (event.clientX - rect.left) / rect.width;
-            if (!rafId) rafId = window.requestAnimationFrame(flush);
-        }
-
-        function clearExpand() {
-            pendingRatio = null;
-            if (rafId) {
-                window.cancelAnimationFrame(rafId);
-                rafId = 0;
-            }
-            setExpanded(null);
-        }
-
-        panels.addEventListener('pointermove', onPointerMove);
-        panels.addEventListener('pointerleave', clearExpand);
-        panels.addEventListener('pointercancel', clearExpand);
-
-        // Keyboard focus still expands via :focus-visible CSS; clear pointer class
-        proPanel.addEventListener('focus', function () {
-            socialPanel.classList.remove('is-expanded');
-            if (!reduceMotion) {
-                proPanel.classList.add('is-expanded');
-                setSeam('pro');
-                active = 'pro';
-            }
-        });
-        socialPanel.addEventListener('focus', function () {
-            proPanel.classList.remove('is-expanded');
-            if (!reduceMotion) {
-                socialPanel.classList.add('is-expanded');
-                setSeam('social');
-                active = 'social';
-            }
-        });
-        proPanel.addEventListener('blur', function () {
-            if (document.activeElement !== socialPanel) clearExpand();
-        });
-        socialPanel.addEventListener('blur', function () {
-            if (document.activeElement !== proPanel) clearExpand();
+        var resizeTimer = 0;
+        window.addEventListener('resize', function () {
+            window.clearTimeout(resizeTimer);
+            resizeTimer = window.setTimeout(resize, 120);
         });
     }
 
     function init() {
         document.body.classList.add('gate-locked');
-        if (finePointer && wideViewport) panels.classList.add('is-hoverable');
-
-        if (window.matchMedia) {
-            var widthQuery = window.matchMedia('(min-width: 821px)');
-            var syncHoverable = function () {
-                if (finePointer && widthQuery.matches) {
-                    panels.classList.add('is-hoverable');
-                } else {
-                    panels.classList.remove('is-hoverable');
-                }
-            };
-            if (widthQuery.addEventListener) {
-                widthQuery.addEventListener('change', syncHoverable);
-            } else if (widthQuery.addListener) {
-                widthQuery.addListener(syncHoverable);
-            }
-        }
 
         requestAnimationFrame(function () {
             gate.classList.add('is-ready');
         });
 
-        // Deep-link / returning in same session: skip straight to hub
         var hash = (window.location.hash || '').toLowerCase();
         var saved = null;
         try {
@@ -214,6 +154,7 @@
 
         if (hash === '#hub' || saved === 'pro') {
             unlockHub(false);
+            return;
         }
 
         if (proPanel) {
@@ -233,11 +174,7 @@
             btn.addEventListener('click', enterProfessional);
         });
 
-        initStabilizedExpand();
-
-        if (finePointer && !reduceMotion) {
-            panels.addEventListener('pointermove', applyParallax);
-        }
+        initRain();
     }
 
     if (document.readyState === 'loading') {

@@ -1,17 +1,17 @@
-/* Welcome gate — dual-path first impression */
+/* Welcome gate — mythic binary choice (stable layout, pill CTAs) */
 :root {
-    --gate-pro-ink: #0c1a24;
-    --gate-pro-mid: #163047;
-    --gate-pro-accent: #3d8bfd;
-    --gate-pro-mist: rgba(184, 212, 232, 0.92);
-    --gate-social-ink: #1a2e2a;
-    --gate-social-mid: #0f5c54;
-    --gate-social-accent: #e86a4a;
-    --gate-social-mist: rgba(244, 250, 248, 0.94);
-    --gate-brand: #f7f3eb;
-    --gate-muted: rgba(247, 243, 235, 0.72);
+    --gate-void: #04070c;
+    --gate-ink: #e8f4f2;
+    --gate-muted: rgba(232, 244, 242, 0.68);
+    --gate-blue: #3aa0ff;
+    --gate-blue-deep: #0a3d6e;
+    --gate-blue-glow: rgba(58, 160, 255, 0.55);
+    --gate-red: #e23d4a;
+    --gate-red-deep: #6b1218;
+    --gate-red-glow: rgba(226, 61, 74, 0.55);
     --font-gate-display: "Syne", system-ui, sans-serif;
     --font-gate-body: "Plus Jakarta Sans", system-ui, sans-serif;
+    --font-gate-mono: "Fira Code", ui-monospace, monospace;
     --gate-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -27,11 +27,9 @@ body.gate-unlocked .welcome-gate {
     pointer-events: none;
     opacity: 0;
     visibility: hidden;
-    transform: scale(1.02);
     transition:
         opacity 0.55s var(--gate-ease),
-        visibility 0.55s,
-        transform 0.7s var(--gate-ease);
+        visibility 0.55s;
 }
 
 .welcome-gate {
@@ -39,18 +37,68 @@ body.gate-unlocked .welcome-gate {
     inset: 0;
     z-index: 200;
     display: grid;
-    grid-template-rows: auto 1fr;
-    color: var(--gate-brand);
+    grid-template-rows: 1fr;
+    color: var(--gate-ink);
     font-family: var(--font-gate-body);
-    background: #0a1218;
+    background: var(--gate-void);
+    overflow: hidden;
     opacity: 1;
     visibility: visible;
     transition:
         opacity 0.55s var(--gate-ease),
-        visibility 0.55s,
-        transform 0.7s var(--gate-ease);
+        visibility 0.55s;
 }
 
+/* Full-bleed atmosphere — decorative only */
+.gate-rain {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.38;
+}
+
+.gate-atmosphere {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.gate-wash {
+    position: absolute;
+    top: -10%;
+    bottom: -10%;
+    width: 58%;
+    filter: blur(2px);
+}
+
+.gate-wash--blue {
+    left: -8%;
+    background:
+        radial-gradient(ellipse 70% 60% at 35% 45%, rgba(58, 160, 255, 0.22), transparent 62%),
+        radial-gradient(ellipse 50% 40% at 20% 80%, rgba(10, 61, 110, 0.45), transparent 70%);
+}
+
+.gate-wash--red {
+    right: -8%;
+    background:
+        radial-gradient(ellipse 70% 60% at 65% 50%, rgba(226, 61, 74, 0.2), transparent 62%),
+        radial-gradient(ellipse 50% 40% at 80% 78%, rgba(107, 18, 24, 0.42), transparent 70%);
+}
+
+.gate-vignette {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 75% 65% at 50% 42%, transparent 0%, rgba(4, 7, 12, 0.35) 55%, rgba(4, 7, 12, 0.88) 100%),
+        linear-gradient(180deg, rgba(4, 7, 12, 0.55) 0%, transparent 22%, transparent 70%, rgba(4, 7, 12, 0.75) 100%);
+}
+
+/* Chrome: only interactive strip; brand overlay elsewhere is pointer-events none */
 .gate-chrome {
     position: absolute;
     top: 0;
@@ -71,17 +119,17 @@ body.gate-unlocked .welcome-gate {
 .gate-wordmark {
     font-family: var(--font-gate-display);
     font-weight: 800;
-    font-size: clamp(1.35rem, 3.2vw, 2rem);
+    font-size: clamp(1.1rem, 2.4vw, 1.45rem);
     letter-spacing: -0.04em;
-    color: var(--gate-brand);
-    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+    color: var(--gate-ink);
     text-decoration: none;
     line-height: 1;
+    opacity: 0.88;
 }
 
 .gate-wordmark:hover {
     text-decoration: none;
-    opacity: 0.92;
+    opacity: 1;
 }
 
 .gate-lang {
@@ -95,9 +143,9 @@ body.gate-unlocked .welcome-gate {
 }
 
 .gate-lang #language-selector {
-    background: rgba(10, 18, 24, 0.45);
-    border: 1px solid rgba(247, 243, 235, 0.28);
-    color: var(--gate-brand);
+    background: rgba(4, 7, 12, 0.5);
+    border: 1px solid rgba(232, 244, 242, 0.28);
+    color: var(--gate-ink);
     font-family: var(--font-gate-body);
     font-weight: 600;
     font-size: 0.8rem;
@@ -106,13 +154,12 @@ body.gate-unlocked .welcome-gate {
 }
 
 .gate-lang #language-selector:hover {
-    border-color: rgba(247, 243, 235, 0.55);
-    background: rgba(10, 18, 24, 0.6);
+    border-color: rgba(232, 244, 242, 0.55);
 }
 
 .gate-lang #language-selector option {
-    background: #12202b;
-    color: #f7f3eb;
+    background: #0c1520;
+    color: #e8f4f2;
 }
 
 .gate-skip {
@@ -127,213 +174,60 @@ body.gate-unlocked .welcome-gate {
 }
 
 .gate-skip:hover {
-    color: var(--gate-brand);
+    color: var(--gate-ink);
 }
 
-.gate-panels {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 100vh;
-    min-height: 100dvh;
-    overflow: hidden;
-}
-
-.gate-panel {
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    justify-content: stretch;
-    min-height: 100%;
-    color: inherit;
-    text-decoration: none;
-    overflow: hidden;
-    isolation: isolate;
-    outline: none;
-    transition: flex 0.55s var(--gate-ease);
-}
-
-.gate-panel:hover,
-.gate-panel:focus-visible {
-    text-decoration: none;
-    color: inherit;
-}
-
-.gate-panel:focus-visible {
-    z-index: 3;
-    box-shadow: inset 0 0 0 3px rgba(247, 243, 235, 0.85);
-}
-
-.gate-panel__media {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
-}
-
-.gate-panel__media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: scale(1.06) translate3d(var(--px, 0), var(--py, 0), 0);
-    transition:
-        transform 0.9s var(--gate-ease),
-        filter 0.55s var(--gate-ease);
-    will-change: transform;
-}
-
-.gate-panel--pro .gate-panel__media {
-    background:
-        radial-gradient(ellipse 70% 55% at 50% 38%, rgba(61, 139, 253, 0.28), transparent 62%),
-        radial-gradient(ellipse 90% 70% at 20% 90%, rgba(22, 48, 71, 0.9), transparent 55%),
-        linear-gradient(165deg, #0c1a24 0%, #163047 48%, #0a1520 100%);
-}
-
-.gate-panel--pro .gate-panel__media img {
-    width: min(72%, 420px);
-    height: auto;
-    max-height: 62%;
-    aspect-ratio: 1;
-    object-fit: cover;
-    object-position: center 18%;
-    border-radius: 50%;
-    position: absolute;
-    left: 50%;
-    top: 42%;
-    transform: translate(-50%, -54%) scale(1.02) translate3d(var(--px, 0), var(--py, 0), 0);
-    filter: saturate(0.95) contrast(1.04);
-    box-shadow:
-        0 0 0 1px rgba(184, 212, 232, 0.18),
-        0 28px 60px rgba(0, 0, 0, 0.45);
-}
-
-.gate-panel--social .gate-panel__media img {
-    object-position: center 42%;
-    filter: saturate(1.05) contrast(1.02);
-}
-
-.gate-panel__veil {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-}
-
-.gate-panel--pro .gate-panel__veil {
-    background:
-        linear-gradient(180deg, rgba(12, 26, 36, 0.2) 0%, transparent 40%, rgba(12, 26, 36, 0.88) 100%),
-        linear-gradient(90deg, rgba(12, 26, 36, 0.35) 0%, transparent 55%);
-}
-
-.gate-panel--social .gate-panel__veil {
-    background:
-        linear-gradient(180deg, rgba(15, 36, 40, 0.28) 0%, rgba(15, 36, 40, 0.12) 38%, rgba(15, 36, 40, 0.8) 100%),
-        linear-gradient(270deg, rgba(15, 92, 84, 0.4) 0%, transparent 55%);
-}
-
-.gate-panel__grain {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    opacity: 0.22;
-    pointer-events: none;
-    mix-blend-mode: soft-light;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
-}
-
-.gate-panel__content {
+/* Stage: one composition — brand, question, two fixed pill CTAs */
+.gate-stage {
     position: relative;
     z-index: 3;
-    width: 100%;
-    padding: clamp(1.5rem, 4vw, 3rem);
-    padding-bottom: clamp(2rem, 6vh, 3.5rem);
     display: flex;
     flex-direction: column;
-    gap: 0.55rem;
-    transform: translateY(0);
-    transition: transform 0.45s var(--gate-ease);
-}
-
-.gate-panel__label {
-    font-family: var(--font-gate-display);
-    font-weight: 800;
-    font-size: clamp(1.75rem, 3.6vw, 2.75rem);
-    letter-spacing: -0.04em;
-    line-height: 1.05;
-}
-
-.gate-panel--pro .gate-panel__label {
-    color: var(--gate-pro-mist);
-}
-
-.gate-panel--social .gate-panel__label {
-    color: var(--gate-social-mist);
-}
-
-.gate-panel__hint {
-    max-width: 22rem;
-    font-size: clamp(0.92rem, 1.4vw, 1.05rem);
-    line-height: 1.45;
-    color: rgba(247, 243, 235, 0.78);
-}
-
-.gate-panel__cta {
-    display: inline-flex;
     align-items: center;
-    gap: 0.55rem;
-    margin-top: 0.65rem;
-    font-family: var(--font-gate-display);
-    font-weight: 700;
-    font-size: 0.95rem;
-    letter-spacing: -0.01em;
-    color: #fff;
-}
-
-.gate-panel__cta::after {
-    content: "";
-    width: 1.35rem;
-    height: 1px;
-    background: currentColor;
-    transition: width 0.35s var(--gate-ease), transform 0.35s var(--gate-ease);
-}
-
-.gate-panel--pro .gate-panel__cta {
-    color: #9ec5ff;
-}
-
-.gate-panel--social .gate-panel__cta {
-    color: #ffb39f;
-}
-
-.gate-center {
-    position: absolute;
-    left: 50%;
-    top: 42%;
-    transform: translate(-50%, -50%);
-    z-index: 4;
-    width: min(92vw, 34rem);
-    text-align: center;
+    justify-content: center;
+    gap: clamp(2rem, 6vh, 3.5rem);
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 5.5rem 1.25rem 4.5rem;
+    box-sizing: border-box;
+    /* Brand + question never steal clicks from pills */
     pointer-events: none;
-    padding: 0 1rem;
+}
+
+.gate-hero {
+    text-align: center;
+    width: min(92vw, 42rem);
+    pointer-events: none;
+}
+
+.gate-kicker {
+    font-family: var(--font-gate-mono);
+    font-size: clamp(0.72rem, 1.5vw, 0.85rem);
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gate-muted);
+    margin: 0 0 0.85rem;
 }
 
 .gate-brand {
     font-family: var(--font-gate-display);
     font-weight: 800;
-    font-size: clamp(2.6rem, 7.5vw, 4.6rem);
+    font-size: clamp(2.85rem, 9vw, 5.6rem);
     letter-spacing: -0.055em;
-    line-height: 0.95;
-    color: var(--gate-brand);
+    line-height: 0.92;
+    color: var(--gate-ink);
     text-shadow:
-        0 2px 28px rgba(0, 0, 0, 0.55),
-        0 0 1px rgba(0, 0, 0, 0.4);
-    margin-bottom: 0.85rem;
+        0 2px 32px rgba(0, 0, 0, 0.65),
+        0 0 60px rgba(58, 160, 255, 0.12),
+        0 0 60px rgba(226, 61, 74, 0.1);
+    margin: 0 0 0.9rem;
 }
 
 .gate-question {
     font-family: var(--font-gate-body);
     font-weight: 500;
-    font-size: clamp(1rem, 2.2vw, 1.25rem);
+    font-size: clamp(1rem, 2.2vw, 1.28rem);
     line-height: 1.4;
     color: var(--gate-muted);
     text-shadow: 0 2px 18px rgba(0, 0, 0, 0.5);
@@ -341,95 +235,252 @@ body.gate-unlocked .welcome-gate {
     margin: 0 auto;
 }
 
-.gate-divider {
+/* Choice row: FIXED widths — hover never resizes layout or hit targets */
+.gate-choice {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(1rem, 4vw, 2.75rem);
+    width: min(92vw, 52rem);
+    align-items: start;
+    pointer-events: auto;
+}
+
+.gate-pill {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    padding: 0.5rem;
+    /* Fixed footprint so hover cannot thrash neighbors */
+    min-height: 17.5rem;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.gate-pill:hover,
+.gate-pill:focus-visible {
+    text-decoration: none;
+    color: inherit;
+}
+
+.gate-pill:focus-visible .gate-pill__capsule {
+    box-shadow:
+        0 0 0 3px rgba(232, 244, 242, 0.85),
+        0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+.gate-pill__portrait {
+    width: 4.75rem;
+    height: 4.75rem;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid rgba(232, 244, 242, 0.22);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+    /* No transform on hover — keeps hit geometry stable */
+}
+
+.gate-pill__portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gate-pill--blue .gate-pill__portrait {
+    border-color: rgba(58, 160, 255, 0.45);
+}
+
+.gate-pill--blue .gate-pill__portrait img {
+    object-position: center 18%;
+    filter: saturate(0.92) contrast(1.05);
+}
+
+.gate-pill--red .gate-pill__portrait {
+    border-color: rgba(226, 61, 74, 0.45);
+}
+
+.gate-pill--red .gate-pill__portrait img {
+    object-position: center 40%;
+    filter: saturate(1.05) contrast(1.02);
+}
+
+/* The pill itself — hover affects ONLY this capsule (scale + glow), not grid */
+.gate-pill__capsule {
+    position: relative;
+    width: 5.5rem;
+    height: 2.35rem;
+    border-radius: 999px;
+    flex-shrink: 0;
+    transform: translateZ(0);
+    transition:
+        transform 0.35s var(--gate-ease),
+        box-shadow 0.35s var(--gate-ease),
+        filter 0.35s var(--gate-ease);
+    will-change: transform;
+}
+
+.gate-pill--blue .gate-pill__capsule {
+    background:
+        linear-gradient(145deg, #7ec4ff 0%, var(--gate-blue) 38%, var(--gate-blue-deep) 100%);
+    box-shadow:
+        0 8px 28px var(--gate-blue-glow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45),
+        inset 0 -6px 12px rgba(0, 30, 60, 0.35);
+}
+
+.gate-pill--red .gate-pill__capsule {
+    background:
+        linear-gradient(145deg, #ff7a84 0%, var(--gate-red) 40%, var(--gate-red-deep) 100%);
+    box-shadow:
+        0 8px 28px var(--gate-red-glow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -6px 12px rgba(60, 0, 10, 0.35);
+}
+
+.gate-pill__shine {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 1px;
-    transform: translateX(-50%);
-    z-index: 3;
-    background: linear-gradient(
-        180deg,
-        transparent 0%,
-        rgba(247, 243, 235, 0.35) 18%,
-        rgba(247, 243, 235, 0.55) 50%,
-        rgba(247, 243, 235, 0.35) 82%,
-        transparent 100%
-    );
+    top: 18%;
+    left: 14%;
+    right: 28%;
+    height: 38%;
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent);
     pointer-events: none;
 }
 
-/* Hover expand — desktop
-   Expansion is driven by .is-expanded (JS hysteresis + center deadzone),
-   not raw :hover, so the seam cannot thrash under the cursor. */
 @media (hover: hover) and (pointer: fine) {
-    .gate-panels.is-hoverable {
-        display: flex;
+    .gate-pill:hover .gate-pill__capsule,
+    .gate-pill:focus-visible .gate-pill__capsule {
+        transform: scale(1.08);
     }
 
-    .gate-panels.is-hoverable .gate-panel {
-        flex: 1 1 50%;
+    .gate-pill--blue:hover .gate-pill__capsule,
+    .gate-pill--blue:focus-visible .gate-pill__capsule {
+        box-shadow:
+            0 12px 36px rgba(58, 160, 255, 0.75),
+            0 0 28px rgba(58, 160, 255, 0.35),
+            inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        filter: brightness(1.08);
     }
 
-    .gate-panels.is-hoverable .gate-panel.is-expanded,
-    .gate-panels.is-hoverable .gate-panel:focus-visible {
-        flex: 1.28 1 0;
+    .gate-pill--red:hover .gate-pill__capsule,
+    .gate-pill--red:focus-visible .gate-pill__capsule {
+        box-shadow:
+            0 12px 36px rgba(226, 61, 74, 0.75),
+            0 0 28px rgba(226, 61, 74, 0.35),
+            inset 0 1px 0 rgba(255, 255, 255, 0.45);
+        filter: brightness(1.08);
     }
 
-    .gate-panels.is-hoverable .gate-panel--social.is-expanded .gate-panel__media img,
-    .gate-panels.is-hoverable .gate-panel--social:focus-visible .gate-panel__media img {
-        transform: scale(1.12) translate3d(var(--px, 0), var(--py, 0), 0);
-    }
-
-    .gate-panels.is-hoverable .gate-panel--pro.is-expanded .gate-panel__media img,
-    .gate-panels.is-hoverable .gate-panel--pro:focus-visible .gate-panel__media img {
-        transform: translate(-50%, -54%) scale(1.08) translate3d(var(--px, 0), var(--py, 0), 0);
-    }
-
-    .gate-panels.is-hoverable .gate-panel.is-expanded .gate-panel__content,
-    .gate-panels.is-hoverable .gate-panel:focus-visible .gate-panel__content {
-        transform: translateY(-0.35rem);
-    }
-
-    .gate-panels.is-hoverable .gate-panel.is-expanded .gate-panel__cta::after,
-    .gate-panels.is-hoverable .gate-panel:focus-visible .gate-panel__cta::after {
-        width: 2.25rem;
-        transform: translateX(0.2rem);
-    }
-
-    /* Keep the visual seam aligned with the flex split while expanded */
-    .gate-panels.is-hoverable .gate-divider {
-        left: var(--gate-seam, 50%);
-        transition: left 0.55s var(--gate-ease);
+    .gate-pill:hover .gate-pill__cta,
+    .gate-pill:focus-visible .gate-pill__cta {
+        opacity: 1;
+        letter-spacing: 0.04em;
     }
 }
 
-/* Entrance */
+.gate-pill__copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    max-width: 16rem;
+}
+
+.gate-pill__path {
+    font-family: var(--font-gate-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.gate-pill--blue .gate-pill__path {
+    color: #9ecfff;
+}
+
+.gate-pill--red .gate-pill__path {
+    color: #ff9aa3;
+}
+
+.gate-pill__label {
+    font-family: var(--font-gate-display);
+    font-weight: 800;
+    font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+}
+
+.gate-pill__hint {
+    font-size: 0.88rem;
+    line-height: 1.4;
+    color: var(--gate-muted);
+}
+
+.gate-pill__cta {
+    margin-top: 0.35rem;
+    font-family: var(--font-gate-display);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    opacity: 0.85;
+    transition: opacity 0.3s var(--gate-ease), letter-spacing 0.3s var(--gate-ease);
+}
+
+.gate-pill--blue .gate-pill__cta {
+    color: #9ecfff;
+}
+
+.gate-pill--red .gate-pill__cta {
+    color: #ff9aa3;
+}
+
+.gate-skip-mobile {
+    display: none;
+}
+
+/* Entrance — brand / question / pills only (no layout morph) */
+.welcome-gate.is-ready .gate-kicker {
+    animation: gateRise 0.8s var(--gate-ease) both;
+}
+
 .welcome-gate.is-ready .gate-brand {
-    animation: gateRise 0.9s var(--gate-ease) both;
+    animation: gateRise 0.9s var(--gate-ease) 0.08s both;
 }
 
 .welcome-gate.is-ready .gate-question {
-    animation: gateRise 0.9s var(--gate-ease) 0.12s both;
+    animation: gateRise 0.9s var(--gate-ease) 0.16s both;
 }
 
-.welcome-gate.is-ready .gate-panel--pro {
-    animation: gatePanelIn 0.85s var(--gate-ease) 0.05s both;
+.welcome-gate.is-ready .gate-pill--blue {
+    animation: gateRise 0.85s var(--gate-ease) 0.28s both;
 }
 
-.welcome-gate.is-ready .gate-panel--social {
-    animation: gatePanelIn 0.85s var(--gate-ease) 0.18s both;
+.welcome-gate.is-ready .gate-pill--red {
+    animation: gateRise 0.85s var(--gate-ease) 0.38s both;
 }
 
 .welcome-gate.is-ready .gate-chrome {
-    animation: gateFade 0.7s var(--gate-ease) 0.25s both;
+    animation: gateFade 0.7s var(--gate-ease) 0.2s both;
+}
+
+.welcome-gate.is-ready .gate-wash--blue {
+    animation: gateWashIn 1.2s var(--gate-ease) both;
+}
+
+.welcome-gate.is-ready .gate-wash--red {
+    animation: gateWashIn 1.2s var(--gate-ease) 0.1s both;
 }
 
 @keyframes gateRise {
     from {
         opacity: 0;
-        transform: translateY(1.1rem);
+        transform: translateY(1rem);
     }
     to {
         opacity: 1;
@@ -437,27 +488,17 @@ body.gate-unlocked .welcome-gate {
     }
 }
 
-@keyframes gatePanelIn {
-    from {
-        opacity: 0;
-        clip-path: inset(0 8% 0 8%);
-    }
-    to {
-        opacity: 1;
-        clip-path: inset(0 0 0 0);
-    }
-}
-
 @keyframes gateFade {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* Hub content under gate */
+@keyframes gateWashIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Hub under gate */
 .pro-hub {
     display: none;
 }
@@ -478,89 +519,60 @@ body.gate-unlocked .pro-hub {
     }
 }
 
-/* Mobile: stacked panels */
-@media (max-width: 820px) {
+/* Mobile */
+@media (max-width: 720px) {
     .gate-chrome {
         padding: 0.9rem 1rem;
     }
 
-    .gate-panels,
-    .gate-panels.is-hoverable {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-    }
-
-    .gate-panels.is-hoverable .gate-panel,
-    .gate-panels.is-hoverable .gate-panel--pro:hover,
-    .gate-panels.is-hoverable .gate-panel--pro:focus-visible,
-    .gate-panels.is-hoverable .gate-panel--social:hover,
-    .gate-panels.is-hoverable .gate-panel--social:focus-visible {
-        flex: none;
-    }
-
-    .gate-divider {
-        top: 50%;
-        left: 0;
-        right: 0;
-        bottom: auto;
-        width: auto;
-        height: 1px;
-        transform: none;
-        background: linear-gradient(
-            90deg,
-            transparent 0%,
-            rgba(247, 243, 235, 0.4) 20%,
-            rgba(247, 243, 235, 0.55) 50%,
-            rgba(247, 243, 235, 0.4) 80%,
-            transparent 100%
-        );
-    }
-
-    .gate-center {
-        top: 50%;
-        width: min(92vw, 22rem);
-        padding: 0.65rem 0.85rem;
-        border-radius: 0;
-        background: linear-gradient(
-            180deg,
-            transparent 0%,
-            rgba(10, 18, 24, 0.42) 28%,
-            rgba(10, 18, 24, 0.42) 72%,
-            transparent 100%
-        );
+    .gate-stage {
+        justify-content: flex-start;
+        padding-top: 4.75rem;
+        gap: 1.75rem;
     }
 
     .gate-brand {
-        font-size: clamp(1.85rem, 9vw, 2.45rem);
-        margin-bottom: 0.45rem;
+        font-size: clamp(2.35rem, 11vw, 3.1rem);
     }
 
     .gate-question {
-        font-size: 0.95rem;
+        font-size: 0.98rem;
     }
 
-    .gate-panel__content {
-        padding: 1.25rem 1.25rem 1.5rem;
+    .gate-choice {
+        grid-template-columns: 1fr;
+        gap: 1.35rem;
+        width: min(92vw, 22rem);
     }
 
-    .gate-panel__label {
-        font-size: clamp(1.45rem, 6vw, 1.85rem);
+    .gate-pill {
+        min-height: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem 1rem;
+        padding: 0.85rem 0.5rem;
+        border-radius: 1rem;
+        background: rgba(4, 7, 12, 0.28);
+        border: 1px solid rgba(232, 244, 242, 0.08);
     }
 
-    .gate-panel__hint {
-        font-size: 0.88rem;
-        max-width: 18rem;
+    .gate-pill__portrait {
+        width: 3.5rem;
+        height: 3.5rem;
+        order: 1;
     }
 
-    .gate-panel--pro .gate-panel__media img {
-        width: min(42%, 180px);
-        top: 34%;
-        object-position: center 18%;
+    .gate-pill__capsule {
+        width: 4.5rem;
+        height: 1.95rem;
+        order: 2;
     }
 
-    .gate-panel--social .gate-panel__media img {
-        object-position: center 38%;
+    .gate-pill__copy {
+        width: 100%;
+        order: 3;
+        max-width: none;
     }
 
     .gate-skip {
@@ -570,23 +582,24 @@ body.gate-unlocked .pro-hub {
     .gate-skip-mobile {
         display: block;
         position: absolute;
-        bottom: 0.65rem;
+        bottom: 0.75rem;
         left: 50%;
         transform: translateX(-50%);
         z-index: 5;
         font-size: 0.72rem;
         font-weight: 600;
-        color: rgba(247, 243, 235, 0.7);
-        background: rgba(10, 18, 24, 0.35);
-        border: 1px solid rgba(247, 243, 235, 0.2);
+        color: rgba(232, 244, 242, 0.7);
+        background: rgba(4, 7, 12, 0.45);
+        border: 1px solid rgba(232, 244, 242, 0.2);
         border-radius: 999px;
         padding: 0.35rem 0.8rem;
         backdrop-filter: blur(8px);
         cursor: pointer;
+        pointer-events: auto;
     }
 }
 
-@media (min-width: 821px) {
+@media (min-width: 721px) {
     .gate-skip-mobile {
         display: none;
     }
@@ -600,11 +613,12 @@ body.gate-unlocked .pro-hub {
         transition: none !important;
     }
 
-    .gate-panel--social .gate-panel__media img {
+    .gate-pill__capsule {
         transform: none !important;
+        filter: none !important;
     }
 
-    .gate-panel--pro .gate-panel__media img {
-        transform: translate(-50%, -54%) !important;
+    .gate-rain {
+        display: none;
     }
 }
