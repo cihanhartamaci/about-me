@@ -61,8 +61,20 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
+    const markInView = () => {
+        reveals.forEach((el) => {
+            if (el.classList.contains('is-visible')) return;
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.95 && rect.bottom > 0) {
+                el.classList.add('is-visible');
+                observer.unobserve(el);
+            }
+        });
+    };
+
+    requestAnimationFrame(markInView);
     // Fallback so content is never stuck invisible (e.g. odd viewport/IO cases)
     window.setTimeout(() => {
         reveals.forEach((el) => el.classList.add('is-visible'));
-    }, 1800);
+    }, 600);
 });

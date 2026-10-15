@@ -812,9 +812,9 @@ a:hover {
     }
 
     .hero-title {
-        font-size: clamp(2.15rem, 11vw, 2.85rem);
-        word-break: break-word;
-        hyphens: auto;
+        font-size: clamp(2.05rem, 10vw, 2.65rem);
+        letter-spacing: -0.045em;
+        overflow-wrap: anywhere;
     }
 
     .photo-mosaic {
