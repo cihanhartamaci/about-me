@@ -53,11 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 observer.unobserve(entry.target);
             });
         },
-        { rootMargin: '0px 0px -8% 0px', threshold: 0.12 }
+        { rootMargin: '0px 0px -6% 0px', threshold: 0.08 }
     );
 
     reveals.forEach((el, index) => {
         el.style.transitionDelay = `${Math.min(index % 6, 5) * 0.06}s`;
         observer.observe(el);
     });
+
+    // Fallback so content is never stuck invisible (e.g. odd viewport/IO cases)
+    window.setTimeout(() => {
+        reveals.forEach((el) => el.classList.add('is-visible'));
+    }, 1800);
 });

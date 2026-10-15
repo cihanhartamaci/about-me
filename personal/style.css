@@ -182,8 +182,8 @@ a:hover {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(180deg, rgba(8, 22, 26, 0.25) 0%, rgba(8, 22, 26, 0.15) 35%, rgba(8, 22, 26, 0.78) 78%, rgba(8, 22, 26, 0.92) 100%),
-        linear-gradient(90deg, rgba(8, 22, 26, 0.55) 0%, transparent 55%);
+        linear-gradient(180deg, rgba(8, 22, 26, 0.35) 0%, rgba(8, 22, 26, 0.28) 32%, rgba(8, 22, 26, 0.82) 72%, rgba(8, 22, 26, 0.94) 100%),
+        linear-gradient(105deg, rgba(8, 22, 26, 0.72) 0%, rgba(8, 22, 26, 0.45) 42%, transparent 72%);
 }
 
 .hero-copy {
@@ -206,11 +206,12 @@ a:hover {
 }
 
 .hero-title {
-    font-size: clamp(2.8rem, 9vw, 5.4rem);
+    font-size: clamp(2.55rem, 8.2vw, 5.2rem);
     font-weight: 800;
     color: #fff;
     margin-bottom: 1rem;
     text-wrap: balance;
+    text-shadow: 0 2px 28px rgba(0, 0, 0, 0.45), 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
 .hero-subtitle {
@@ -807,10 +808,13 @@ a:hover {
 @media (max-width: 768px) {
     .hero-copy {
         padding-bottom: 4.5rem;
+        max-width: 100%;
     }
 
     .hero-title {
-        font-size: clamp(2.4rem, 12vw, 3.2rem);
+        font-size: clamp(2.15rem, 11vw, 2.85rem);
+        word-break: break-word;
+        hyphens: auto;
     }
 
     .photo-mosaic {
