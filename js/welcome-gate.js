@@ -14,6 +14,14 @@
     var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     var wideViewport = window.matchMedia('(min-width: 821px)').matches;
 
+    // Flex-expand seam: ratio where the visual split sits when one side is active
+    var SEAM_NEUTRAL = '50%';
+    var SEAM_PRO = ((1.28 / 2.28) * 100).toFixed(3) + '%';
+    var SEAM_SOCIAL = ((1 / 2.28) * 100).toFixed(3) + '%';
+    // Deadzone + hysteresis around center (normalized 0–1) prevents hover thrashing
+    var DEADZONE = 0.07;
+    var HYSTERESIS = 0.05;
+
     function unlockHub(persist) {
         document.body.classList.remove('gate-locked');
         document.body.classList.add('gate-unlocked');
@@ -62,6 +70,114 @@
             var depth = index === 0 ? 8 : 14;
             img.style.setProperty('--px', (x * depth * -1).toFixed(2) + 'px');
             img.style.setProperty('--py', (y * depth * -1).toFixed(2) + 'px');
+        });
+    }
+
+    /**
+     * Stabilized panel expand: never use raw :hover for flex growth.
+     * Pointer near the center seam stays neutral; switching sides requires
+     * crossing the deadzone (+ hysteresis once a side is already expanded).
+     */
+    function initStabilizedExpand() {
+        if (!finePointer || !proPanel || !socialPanel) return;
+
+        var active = null; // 'pro' | 'social' | null
+        var pendingRatio = null;
+        var rafId = 0;
+
+        function setSeam(side) {
+            var seam = SEAM_NEUTRAL;
+            if (side === 'pro') seam = SEAM_PRO;
+            else if (side === 'social') seam = SEAM_SOCIAL;
+            panels.style.setProperty('--gate-seam', seam);
+        }
+
+        function setExpanded(side) {
+            if (active === side) return;
+            active = side;
+            if (reduceMotion) {
+                // Still track intent for focus/keyboard parity, but skip size change
+                proPanel.classList.remove('is-expanded');
+                socialPanel.classList.remove('is-expanded');
+                setSeam(null);
+                return;
+            }
+            proPanel.classList.toggle('is-expanded', side === 'pro');
+            socialPanel.classList.toggle('is-expanded', side === 'social');
+            setSeam(side);
+        }
+
+        function resolve(ratio) {
+            var leftExit = 0.5 - DEADZONE;
+            var rightExit = 0.5 + DEADZONE;
+
+            if (active === null) {
+                if (ratio < leftExit) setExpanded('pro');
+                else if (ratio > rightExit) setExpanded('social');
+                return;
+            }
+
+            if (active === 'pro') {
+                // Must travel past center + deadzone + hysteresis before flipping
+                if (ratio > rightExit + HYSTERESIS) setExpanded('social');
+                return;
+            }
+
+            if (active === 'social') {
+                if (ratio < leftExit - HYSTERESIS) setExpanded('pro');
+            }
+        }
+
+        function flush() {
+            rafId = 0;
+            if (pendingRatio == null) return;
+            resolve(pendingRatio);
+            pendingRatio = null;
+        }
+
+        function onPointerMove(event) {
+            if (event.pointerType === 'touch') return;
+            var rect = panels.getBoundingClientRect();
+            if (rect.width <= 0) return;
+            pendingRatio = (event.clientX - rect.left) / rect.width;
+            if (!rafId) rafId = window.requestAnimationFrame(flush);
+        }
+
+        function clearExpand() {
+            pendingRatio = null;
+            if (rafId) {
+                window.cancelAnimationFrame(rafId);
+                rafId = 0;
+            }
+            setExpanded(null);
+        }
+
+        panels.addEventListener('pointermove', onPointerMove);
+        panels.addEventListener('pointerleave', clearExpand);
+        panels.addEventListener('pointercancel', clearExpand);
+
+        // Keyboard focus still expands via :focus-visible CSS; clear pointer class
+        proPanel.addEventListener('focus', function () {
+            socialPanel.classList.remove('is-expanded');
+            if (!reduceMotion) {
+                proPanel.classList.add('is-expanded');
+                setSeam('pro');
+                active = 'pro';
+            }
+        });
+        socialPanel.addEventListener('focus', function () {
+            proPanel.classList.remove('is-expanded');
+            if (!reduceMotion) {
+                socialPanel.classList.add('is-expanded');
+                setSeam('social');
+                active = 'social';
+            }
+        });
+        proPanel.addEventListener('blur', function () {
+            if (document.activeElement !== socialPanel) clearExpand();
+        });
+        socialPanel.addEventListener('blur', function () {
+            if (document.activeElement !== proPanel) clearExpand();
         });
     }
 
@@ -116,6 +232,8 @@
         skipButtons.forEach(function (btn) {
             btn.addEventListener('click', enterProfessional);
         });
+
+        initStabilizedExpand();
 
         if (finePointer && !reduceMotion) {
             panels.addEventListener('pointermove', applyParallax);

@@ -360,7 +360,9 @@ body.gate-unlocked .welcome-gate {
     pointer-events: none;
 }
 
-/* Hover expand — desktop */
+/* Hover expand — desktop
+   Expansion is driven by .is-expanded (JS hysteresis + center deadzone),
+   not raw :hover, so the seam cannot thrash under the cursor. */
 @media (hover: hover) and (pointer: fine) {
     .gate-panels.is-hoverable {
         display: flex;
@@ -370,37 +372,36 @@ body.gate-unlocked .welcome-gate {
         flex: 1 1 50%;
     }
 
-    .gate-panels.is-hoverable:has(.gate-panel--pro:hover),
-    .gate-panels.is-hoverable:has(.gate-panel--pro:focus-visible) {
-        /* pro expands */
-    }
-
-    .gate-panels.is-hoverable .gate-panel--pro:hover,
-    .gate-panels.is-hoverable .gate-panel--pro:focus-visible,
-    .gate-panels.is-hoverable .gate-panel--social:hover,
-    .gate-panels.is-hoverable .gate-panel--social:focus-visible {
+    .gate-panels.is-hoverable .gate-panel.is-expanded,
+    .gate-panels.is-hoverable .gate-panel:focus-visible {
         flex: 1.28 1 0;
     }
 
-    .gate-panels.is-hoverable .gate-panel--social:hover .gate-panel__media img,
+    .gate-panels.is-hoverable .gate-panel--social.is-expanded .gate-panel__media img,
     .gate-panels.is-hoverable .gate-panel--social:focus-visible .gate-panel__media img {
         transform: scale(1.12) translate3d(var(--px, 0), var(--py, 0), 0);
     }
 
-    .gate-panels.is-hoverable .gate-panel--pro:hover .gate-panel__media img,
+    .gate-panels.is-hoverable .gate-panel--pro.is-expanded .gate-panel__media img,
     .gate-panels.is-hoverable .gate-panel--pro:focus-visible .gate-panel__media img {
         transform: translate(-50%, -54%) scale(1.08) translate3d(var(--px, 0), var(--py, 0), 0);
     }
 
-    .gate-panels.is-hoverable .gate-panel:hover .gate-panel__content,
+    .gate-panels.is-hoverable .gate-panel.is-expanded .gate-panel__content,
     .gate-panels.is-hoverable .gate-panel:focus-visible .gate-panel__content {
         transform: translateY(-0.35rem);
     }
 
-    .gate-panels.is-hoverable .gate-panel:hover .gate-panel__cta::after,
+    .gate-panels.is-hoverable .gate-panel.is-expanded .gate-panel__cta::after,
     .gate-panels.is-hoverable .gate-panel:focus-visible .gate-panel__cta::after {
         width: 2.25rem;
         transform: translateX(0.2rem);
+    }
+
+    /* Keep the visual seam aligned with the flex split while expanded */
+    .gate-panels.is-hoverable .gate-divider {
+        left: var(--gate-seam, 50%);
+        transition: left 0.55s var(--gate-ease);
     }
 }
 
@@ -519,14 +520,24 @@ body.gate-unlocked .pro-hub {
     .gate-center {
         top: 50%;
         width: min(92vw, 22rem);
+        padding: 0.65rem 0.85rem;
+        border-radius: 0;
+        background: linear-gradient(
+            180deg,
+            transparent 0%,
+            rgba(10, 18, 24, 0.42) 28%,
+            rgba(10, 18, 24, 0.42) 72%,
+            transparent 100%
+        );
     }
 
     .gate-brand {
-        font-size: clamp(2.2rem, 11vw, 3.1rem);
+        font-size: clamp(1.85rem, 9vw, 2.45rem);
+        margin-bottom: 0.45rem;
     }
 
     .gate-question {
-        font-size: 0.98rem;
+        font-size: 0.95rem;
     }
 
     .gate-panel__content {
@@ -543,8 +554,8 @@ body.gate-unlocked .pro-hub {
     }
 
     .gate-panel--pro .gate-panel__media img {
-        width: min(48%, 220px);
-        top: 38%;
+        width: min(42%, 180px);
+        top: 34%;
         object-position: center 18%;
     }
 
