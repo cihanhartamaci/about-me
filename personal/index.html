@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/lang-switcher.css">
@@ -21,7 +21,7 @@
     <script src="script.js" defer></script>
 </head>
 
-<body>
+<body class="personal-home">
 
     <nav class="top-nav">
         <div class="container nav-container">
@@ -53,77 +53,84 @@
     </nav>
 
     <main>
-        <section class="hero container">
-            <img src="../assets/cihan-profile.jpg?v=20261015" alt="Cihan Hartamacı" class="profile-img" width="168" height="168">
-            <p class="hero-motto">Temet nosce</p>
-            <h1 class="hero-title" data-i18n="hero.greeting">Cihan Hartamacı</h1>
-            <p class="hero-handle">@cihanhartamaci</p>
-            <p class="hero-subtitle" data-i18n="hero.subtitle">
-                Ordu shores, Istanbul nights, friends who stay, a table at a cafe. This page is the off-the-clock notebook.
-            </p>
-            <div class="place-chips" aria-label="Places">
-                <span class="place-chip">Ordu</span>
-                <span class="place-chip">İstanbul</span>
-                <span class="place-chip">Karadeniz</span>
+        <section class="hero-bleed" aria-label="Intro">
+            <div class="hero-media" aria-hidden="true">
+                <img class="hero-bg" src="../assets/blog-moments-1.jpg" alt="" width="576" height="1024">
+                <div class="hero-veil"></div>
             </div>
-            <div class="hero-actions">
-                <a href="https://www.instagram.com/cihanhartamaci/" class="btn-follow instagram" rel="me noopener noreferrer"
-                    target="_blank">
-                    <i class="fab fa-instagram" aria-hidden="true"></i>
-                    <span data-i18n="social.followIg">Follow on Instagram</span>
-                </a>
-                <a href="https://www.tiktok.com/@cihanhartamaci" class="btn-follow tiktok" rel="noopener noreferrer"
-                    target="_blank">
-                    <i class="fab fa-tiktok" aria-hidden="true"></i>
-                    <span data-i18n="social.followTt">TikTok</span>
-                </a>
+            <div class="hero-copy reveal">
+                <p class="hero-motto">Temet nosce</p>
+                <h1 class="hero-title" data-i18n="hero.greeting">Cihan Hartamacı</h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">
+                    Ordu shores, Istanbul nights, friends who stay, a table at a cafe. Off the clock — and a little extra.
+                </p>
+                <div class="hero-actions">
+                    <a href="https://www.instagram.com/cihanhartamaci/" class="btn-follow instagram" rel="me noopener noreferrer"
+                        target="_blank">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                        <span data-i18n="social.followIg">Follow on Instagram</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@cihanhartamaci" class="btn-follow tiktok" rel="noopener noreferrer"
+                        target="_blank">
+                        <i class="fab fa-tiktok" aria-hidden="true"></i>
+                        <span data-i18n="social.followTt">TikTok</span>
+                    </a>
+                </div>
+                <p class="hero-handle">@cihanhartamaci</p>
             </div>
+            <a href="#photos" class="hero-scroll" aria-label="Scroll to photos">
+                <span data-i18n="hero.scroll">Moments below</span>
+            </a>
         </section>
 
         <section id="photos" class="photos-section">
             <div class="container">
-                <div class="section-head">
-                    <h2 data-i18n="photos.title">Moments</h2>
+                <div class="section-head reveal">
+                    <div>
+                        <p class="section-kicker" data-i18n="photos.kicker">Film roll</p>
+                        <h2 data-i18n="photos.title">Moments</h2>
+                        <p class="section-lead" data-i18n="photos.lead">Snapshots from Ordu, Istanbul, cafes, and the people who stay.</p>
+                    </div>
                     <a href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank"
                         data-i18n="photos.seeIg">Open Instagram</a>
                 </div>
-                <div class="photo-grid">
-                    <a class="photo-tile" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
-                        <img src="../assets/blog-moments-1.jpg" alt="Car-window selfie in denim and sunglasses">
+                <div class="photo-mosaic">
+                    <a class="photo-tile tall reveal" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                        <img src="../assets/blog-moments-1.jpg" alt="Car-window selfie in denim and sunglasses" loading="lazy">
                         <span class="photo-meta">
                             <span class="photo-place">Ordu</span>
                             <span class="photo-caption" data-i18n="photos.cap1">Fazla değil.</span>
                         </span>
                     </a>
-                    <a class="photo-tile" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
-                        <img src="../assets/blog-moments-2.jpg" alt="Wooden world map on a cafe wall">
+                    <a class="photo-tile reveal" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                        <img src="../assets/blog-moments-2.jpg" alt="Wooden world map on a cafe wall" loading="lazy">
                         <span class="photo-meta">
                             <span class="photo-place">Cafe</span>
                             <span class="photo-caption" data-i18n="photos.cap2">Dünya bekliyor.</span>
                         </span>
                     </a>
-                    <a class="photo-tile" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
-                        <img src="../assets/blog-moments-3.jpg" alt="Friends in front of a Christmas tree">
-                        <span class="photo-meta">
-                            <span class="photo-place">Ordu · Akyazı</span>
-                            <span class="photo-caption" data-i18n="photos.cap3">Kalanlar önemli.</span>
-                        </span>
-                    </a>
-                    <a class="photo-tile" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
-                        <img src="../assets/blog-moments-4.jpg" alt="At a marble cafe table">
+                    <a class="photo-tile reveal" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                        <img src="../assets/blog-moments-4.jpg" alt="At a marble cafe table" loading="lazy">
                         <span class="photo-meta">
                             <span class="photo-place">Cafe</span>
                             <span class="photo-caption" data-i18n="photos.cap4">Sadece burada olmak.</span>
                         </span>
                     </a>
-                    <a class="photo-tile photo-tile-wide" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
-                        <img src="../assets/cihan-profile.jpg?v=20261015" alt="Portrait of Cihan Hartamacı">
+                    <a class="photo-tile wide reveal" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                        <img src="../assets/blog-moments-3.jpg" alt="Friends in front of a Christmas tree" loading="lazy">
+                        <span class="photo-meta">
+                            <span class="photo-place">Ordu · Akyazı</span>
+                            <span class="photo-caption" data-i18n="photos.cap3">Kalanlar önemli.</span>
+                        </span>
+                    </a>
+                    <a class="photo-tile portrait reveal" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                        <img src="../assets/cihan-profile.jpg?v=20261015" alt="Portrait of Cihan Hartamacı" loading="lazy">
                         <span class="photo-meta">
                             <span class="photo-place">@cihanhartamaci</span>
                             <span class="photo-caption" data-i18n="photos.cap5">Temet nosce.</span>
                         </span>
                     </a>
-                    <a class="photo-tile photo-tile-cta" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                    <a class="photo-tile cta reveal" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
                         <span class="cta-inner">
                             <i class="fab fa-instagram" aria-hidden="true"></i>
                             <strong data-i18n="photos.moreTitle">More on Instagram</strong>
@@ -134,51 +141,61 @@
             </div>
         </section>
 
-        <section id="notes" class="notes-section container">
-            <div class="section-head">
-                <h2 data-i18n="notes.title">Short notes</h2>
-                <a href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank"
-                    data-i18n="photos.seeIg">Open Instagram</a>
-            </div>
-            <div class="notes-grid">
-                <blockquote class="note-card">
-                    <p data-i18n="notes.n1">I'll use this place as a notebook.</p>
-                </blockquote>
-                <blockquote class="note-card">
-                    <p data-i18n="notes.n2">Not too much.</p>
-                </blockquote>
-                <blockquote class="note-card">
-                    <p data-i18n="notes.n3">Everything is not okay, but I'm fine.</p>
-                </blockquote>
-                <blockquote class="note-card">
-                    <p data-i18n="notes.n4">The road is long, but beautiful.</p>
-                </blockquote>
+        <section id="notes" class="notes-section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div>
+                        <p class="section-kicker" data-i18n="notes.kicker">Captions</p>
+                        <h2 data-i18n="notes.title">Short notes</h2>
+                        <p class="section-lead" data-i18n="notes.lead">The same energy as the stories — short, honest, a little playful.</p>
+                    </div>
+                </div>
+                <div class="notes-strip">
+                    <blockquote class="note-line reveal">
+                        <p data-i18n="notes.n1">I'll use this place as a notebook.</p>
+                    </blockquote>
+                    <blockquote class="note-line reveal">
+                        <p data-i18n="notes.n2">Not too much.</p>
+                    </blockquote>
+                    <blockquote class="note-line reveal">
+                        <p data-i18n="notes.n3">Everything is not okay, but I'm fine.</p>
+                    </blockquote>
+                    <blockquote class="note-line reveal">
+                        <p data-i18n="notes.n4">The road is long, but beautiful.</p>
+                    </blockquote>
+                </div>
             </div>
         </section>
 
-        <section class="journal-preview container">
-            <div class="section-head">
-                <h2 data-i18n="recentThoughts">Notebook</h2>
-                <a href="blog.html" data-i18n="nav.blog">Journal</a>
-            </div>
-            <div class="journal-grid">
-                <a class="journal-card" href="posts/moments-that-matter.html">
-                    <img src="../assets/blog-moments-3.jpg" alt="">
-                    <div class="journal-body">
-                        <p class="blog-meta" data-i18n="blog.moments.date">December 22, 2025</p>
-                        <h3 data-i18n="blog.moments.title">Moments That Matter</h3>
-                        <p data-i18n="blog.moments.excerpt">Friendship, travel, and the hours that are not a sprint.
-                        </p>
+        <section class="journal-preview">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div>
+                        <p class="section-kicker" data-i18n="journal.kicker">Longer reads</p>
+                        <h2 data-i18n="recentThoughts">Notebook</h2>
+                        <p class="section-lead" data-i18n="journal.lead">When a caption needs a little more room.</p>
                     </div>
-                </a>
-                <a class="journal-card" href="posts/welcome.html">
-                    <img src="../assets/cihan-profile.jpg?v=20261015" alt="">
-                    <div class="journal-body">
-                        <p class="blog-meta" data-i18n="blog.welcome.date">December 17, 2025</p>
-                        <h3 data-i18n="blog.welcome.title">Welcome to the New Setup</h3>
-                        <p data-i18n="blog.welcome.excerpt">Why this site has a personal mode at all.</p>
-                    </div>
-                </a>
+                    <a href="blog.html" data-i18n="nav.blog">Journal</a>
+                </div>
+                <div class="journal-grid">
+                    <a class="journal-card reveal" href="posts/moments-that-matter.html">
+                        <img src="../assets/blog-moments-3.jpg" alt="" loading="lazy">
+                        <div class="journal-body">
+                            <p class="blog-meta" data-i18n="blog.moments.date">December 22, 2025</p>
+                            <h3 data-i18n="blog.moments.title">Moments That Matter</h3>
+                            <p data-i18n="blog.moments.excerpt">Friendship, travel, and the hours that are not a sprint.
+                            </p>
+                        </div>
+                    </a>
+                    <a class="journal-card reveal" href="posts/welcome.html">
+                        <img src="../assets/cihan-profile.jpg?v=20261015" alt="" loading="lazy">
+                        <div class="journal-body">
+                            <p class="blog-meta" data-i18n="blog.welcome.date">December 17, 2025</p>
+                            <h3 data-i18n="blog.welcome.title">Welcome to the New Setup</h3>
+                            <p data-i18n="blog.welcome.excerpt">Why this site has a personal mode at all.</p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
     </main>

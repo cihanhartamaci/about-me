@@ -8,7 +8,8 @@
     },
     "hero": {
         "greeting": "Cihan Hartamacı",
-        "subtitle": "Ordu sahili, İstanbul geceleri, kalan dostlar, bir kafe masası. Burası mesai dışı defter."
+        "subtitle": "Ordu sahili, İstanbul geceleri, kalan dostlar, bir kafe masası. Mesai dışı — biraz da eğlence.",
+        "scroll": "Aşağıda anlar"
     },
     "social": {
         "instagram": "Instagram",
@@ -17,7 +18,9 @@
         "followTt": "TikTok"
     },
     "photos": {
+        "kicker": "Film rulosu",
         "title": "Anlar",
+        "lead": "Ordu, İstanbul, kafeler ve kalan insanlardan kareler.",
         "seeIg": "Instagram'ı aç",
         "cap1": "Fazla değil.",
         "cap2": "Dünya bekliyor.",
@@ -28,11 +31,17 @@
         "moreDesc": "Ordu, İstanbul geceleri, orman yürüyüşleri, dostlar."
     },
     "notes": {
+        "kicker": "Altyazılar",
         "title": "Kısa notlar",
+        "lead": "Hikayelerdeki enerji — kısa, dürüst, biraz eğlenceli.",
         "n1": "Burayı not defteri olarak kullanacağım.",
         "n2": "Fazla değil.",
         "n3": "Her şey yolunda değil, ama ben iyiyim.",
         "n4": "Yol uzun, ama güzel."
+    },
+    "journal": {
+        "kicker": "Uzun okumalar",
+        "lead": "Bir altyazının biraz daha yere ihtiyacı olduğunda."
     },
     "recentThoughts": "Defter",
     "allArticles": "Not defteri",

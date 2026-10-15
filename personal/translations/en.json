@@ -8,7 +8,8 @@
     },
     "hero": {
         "greeting": "Cihan Hartamacı",
-        "subtitle": "Ordu shores, Istanbul nights, friends who stay, a table at a cafe. This page is the off-the-clock notebook."
+        "subtitle": "Ordu shores, Istanbul nights, friends who stay, a table at a cafe. Off the clock — and a little extra.",
+        "scroll": "Moments below"
     },
     "social": {
         "instagram": "Instagram",
@@ -17,7 +18,9 @@
         "followTt": "TikTok"
     },
     "photos": {
+        "kicker": "Film roll",
         "title": "Moments",
+        "lead": "Snapshots from Ordu, Istanbul, cafes, and the people who stay.",
         "seeIg": "Open Instagram",
         "cap1": "Not too much.",
         "cap2": "The world is waiting.",
@@ -28,11 +31,17 @@
         "moreDesc": "Ordu, Istanbul nights, forest walks, friends."
     },
     "notes": {
+        "kicker": "Captions",
         "title": "Short notes",
+        "lead": "The same energy as the stories — short, honest, a little playful.",
         "n1": "I'll use this place as a notebook.",
         "n2": "Not too much.",
         "n3": "Everything is not okay, but I'm fine.",
         "n4": "The road is long, but beautiful."
+    },
+    "journal": {
+        "kicker": "Longer reads",
+        "lead": "When a caption needs a little more room."
     },
     "recentThoughts": "Notebook",
     "allArticles": "Journal",
