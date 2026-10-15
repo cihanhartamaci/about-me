@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /dashboard.html
 Disallow: /admin/
-Sitemap: https://edi-developer-hub.netlify.app/sitemap.xml
+Sitemap: https://cihanhartamaci.github.io/about-me/sitemap.xml

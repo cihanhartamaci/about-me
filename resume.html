@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
     <title>Cihan Hartamacı - Professional Resume</title>
     <meta name="description" content="Professional Resume of Cihan Hartamacı">
     
@@ -39,6 +40,68 @@
             line-height: 1.6;
             padding: 50px 20px;
             margin-top: 60px; /* Space for the fixed nav */
+        }
+
+        .cv-download-bar {
+            max-width: 1100px;
+            margin: 0 auto 1.25rem;
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .cv-download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.65rem 1.1rem;
+            border-radius: 8px;
+            background: var(--cv-accent-color);
+            color: #fff !important;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            text-decoration: none !important;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .cv-download-btn:hover {
+            background: var(--cv-accent-hover);
+            opacity: 1;
+        }
+
+        .cv-download-btn-secondary {
+            background: #fff;
+            color: var(--cv-main-text) !important;
+            border: 1px solid var(--cv-border-color);
+        }
+
+        .cv-download-btn-secondary:hover {
+            border-color: var(--cv-accent-color);
+            color: var(--cv-accent-color) !important;
+            background: #fff;
+        }
+
+        @media print {
+            .top-nav,
+            .no-print,
+            .cv-download-bar {
+                display: none !important;
+            }
+
+            .cv-wrapper {
+                margin: 0;
+                padding: 0;
+                background: #fff;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                border-radius: 0;
+                max-width: none;
+            }
         }
 
         .cv-wrapper * {
@@ -311,6 +374,7 @@
             }
         }
     </style>
+    <link rel="canonical" href="https://cihanhartamaci.github.io/about-me/resume.html">
 </head>
 <body>
 
@@ -347,6 +411,16 @@
 
     <!-- CV Content Wrapper -->
     <div class="cv-wrapper">
+        <div class="cv-download-bar no-print">
+            <a class="cv-download-btn" href="assets/cihan-hartamaci-resume.pdf" download="Cihan-Hartamaci-Resume.pdf">
+                <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+                Download PDF
+            </a>
+            <button type="button" class="cv-download-btn cv-download-btn-secondary" onclick="window.print()">
+                <i class="fa-solid fa-print" aria-hidden="true"></i>
+                Print
+            </button>
+        </div>
         <div class="cv-container">
             
             <!-- LEFT SIDEBAR -->
