@@ -483,9 +483,19 @@ body.gate-unlocked .pro-hub {
         padding: 0.9rem 1rem;
     }
 
-    .gate-panels {
+    .gate-panels,
+    .gate-panels.is-hoverable {
+        display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
+    }
+
+    .gate-panels.is-hoverable .gate-panel,
+    .gate-panels.is-hoverable .gate-panel--pro:hover,
+    .gate-panels.is-hoverable .gate-panel--pro:focus-visible,
+    .gate-panels.is-hoverable .gate-panel--social:hover,
+    .gate-panels.is-hoverable .gate-panel--social:focus-visible {
+        flex: none;
     }
 
     .gate-divider {
