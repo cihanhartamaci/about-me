@@ -12,6 +12,7 @@
 
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    var wideViewport = window.matchMedia('(min-width: 821px)').matches;
 
     // Flex-expand seam: ratio where the visual split sits when one side is active
     var SEAM_NEUTRAL = '50%';
@@ -182,7 +183,23 @@
 
     function init() {
         document.body.classList.add('gate-locked');
-        if (finePointer) panels.classList.add('is-hoverable');
+        if (finePointer && wideViewport) panels.classList.add('is-hoverable');
+
+        if (window.matchMedia) {
+            var widthQuery = window.matchMedia('(min-width: 821px)');
+            var syncHoverable = function () {
+                if (finePointer && widthQuery.matches) {
+                    panels.classList.add('is-hoverable');
+                } else {
+                    panels.classList.remove('is-hoverable');
+                }
+            };
+            if (widthQuery.addEventListener) {
+                widthQuery.addEventListener('change', syncHoverable);
+            } else if (widthQuery.addListener) {
+                widthQuery.addListener(syncHoverable);
+            }
+        }
 
         requestAnimationFrame(function () {
             gate.classList.add('is-ready');
