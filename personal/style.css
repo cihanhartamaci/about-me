@@ -330,12 +330,60 @@ a:hover {
     white-space: nowrap;
 }
 
+/* Mosaic filters — editorial underlines, not pill clusters */
+.mosaic-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15rem 1.35rem;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--accent-line);
+}
+
+.mosaic-filter {
+    appearance: none;
+    background: none;
+    border: none;
+    padding: 0.2rem 0;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text-muted);
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.mosaic-filter::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.9rem;
+    height: 2px;
+    background: transparent;
+    transition: background 0.2s ease;
+}
+
+.mosaic-filter:hover {
+    color: var(--text-primary);
+}
+
+.mosaic-filter.is-active {
+    color: var(--accent-teal);
+}
+
+.mosaic-filter.is-active::after {
+    background: var(--accent-teal);
+}
+
 /* Photo mosaic */
 .photo-mosaic {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: minmax(150px, 22vw);
-    gap: 0.65rem;
+    grid-auto-rows: minmax(160px, 28vw);
+    gap: 0.7rem;
 }
 
 .photo-tile {
@@ -344,7 +392,12 @@ a:hover {
     border-radius: var(--radius-media);
     background: var(--bg-deep);
     opacity: 1;
-    min-height: 180px;
+    min-height: 190px;
+    transition: opacity 0.35s var(--ease-out), transform 0.35s var(--ease-out);
+}
+
+.photo-tile.is-hidden {
+    display: none;
 }
 
 .photo-tile img {
@@ -359,13 +412,17 @@ a:hover {
     transform: scale(1.05);
 }
 
+.photo-tile:hover {
+    opacity: 1;
+}
+
 .photo-tile.tall {
     grid-row: span 2;
 }
 
 .photo-tile.wide {
     grid-column: 1 / -1;
-    min-height: 220px;
+    min-height: 240px;
 }
 
 .photo-meta {
@@ -373,20 +430,27 @@ a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 2.4rem 1rem 0.9rem;
-    background: linear-gradient(transparent, rgba(8, 22, 26, 0.82));
+    padding: 2.6rem 1rem 0.95rem;
+    background: linear-gradient(transparent, rgba(8, 22, 26, 0.86));
     color: #fff;
     display: flex;
     flex-direction: column;
-    gap: 0.15rem;
+    gap: 0.18rem;
+    transform: translateY(4px);
+    transition: transform 0.35s var(--ease-out);
+}
+
+.photo-tile:hover .photo-meta {
+    transform: translateY(0);
 }
 
 .photo-place {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    opacity: 0.8;
+    opacity: 0.78;
+    color: var(--accent-honey);
 }
 
 .photo-caption {
@@ -434,8 +498,9 @@ a:hover {
 
 @media (min-width: 800px) {
     .photo-mosaic {
-        grid-template-columns: 1.15fr 1fr 1fr;
-        grid-auto-rows: minmax(180px, 240px);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-auto-rows: minmax(200px, 260px);
+        gap: 0.85rem;
     }
 
     .photo-tile.tall {
@@ -443,17 +508,13 @@ a:hover {
     }
 
     .photo-tile.wide {
-        grid-column: 2 / 4;
+        grid-column: span 2;
         grid-row: span 1;
         min-height: 0;
     }
 
-    .photo-tile.portrait {
-        grid-column: 2 / 3;
-    }
-
     .photo-tile.cta {
-        grid-column: 3 / 4;
+        min-height: 0;
     }
 }
 
@@ -818,11 +879,29 @@ a:hover {
     }
 
     .photo-mosaic {
-        grid-auto-rows: minmax(140px, 42vw);
+        grid-auto-rows: minmax(150px, 44vw);
+        gap: 0.55rem;
     }
 
     .photo-tile.tall {
         grid-row: span 2;
+    }
+
+    .mosaic-filters {
+        gap: 0.1rem 1rem;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .mosaic-filters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .mosaic-filter {
+        flex: 0 0 auto;
+        font-size: 0.9rem;
     }
 
     .journal-card {

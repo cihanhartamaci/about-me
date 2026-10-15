@@ -1,5 +1,5 @@
 /**
- * Personal site: mobile menu + reveal motion
+ * Personal site: mobile menu + mosaic filters + reveal motion
  */
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
@@ -32,6 +32,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') setOpen(false);
+        });
+    }
+
+    const filters = document.querySelectorAll('.mosaic-filter');
+    const tiles = document.querySelectorAll('#photoMosaic .photo-tile');
+
+    if (filters.length && tiles.length) {
+        const applyFilter = (group) => {
+            tiles.forEach((tile) => {
+                const tileGroup = tile.getAttribute('data-group') || 'all';
+                const show = group === 'all' || tileGroup === group || tileGroup === 'all';
+                tile.classList.toggle('is-hidden', !show);
+            });
+        };
+
+        filters.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const group = btn.getAttribute('data-filter') || 'all';
+                filters.forEach((b) => {
+                    const active = b === btn;
+                    b.classList.toggle('is-active', active);
+                    b.setAttribute('aria-selected', active ? 'true' : 'false');
+                });
+                applyFilter(group);
+            });
         });
     }
 

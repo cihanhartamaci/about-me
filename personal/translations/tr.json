@@ -8,7 +8,7 @@
     },
     "hero": {
         "greeting": "Cihan Hartamacı",
-        "subtitle": "Ordu sahili, İstanbul geceleri, kalan dostlar, bir kafe masası. Mesai dışı — biraz da eğlence.",
+        "subtitle": "Ordu sahili, İstanbul geceleri, Kapadokya taşı, kalan dostlar. Mesai dışı — biraz da eğlence.",
         "scroll": "Aşağıda anlar"
     },
     "social": {
@@ -20,7 +20,7 @@
     "photos": {
         "kicker": "Film rulosu",
         "title": "Anlar",
-        "lead": "Ordu, İstanbul, kafeler ve kalan insanlardan kareler.",
+        "lead": "Yollar, kalan dostlar, Ordu'dan İstanbul'a sessiz kareler.",
         "seeIg": "Instagram'ı aç",
         "cap1": "Fazla değil.",
         "cap2": "Dünya bekliyor.",
@@ -28,7 +28,28 @@
         "cap4": "Sadece burada olmak.",
         "cap5": "Temet nosce.",
         "moreTitle": "Daha fazlası Instagram'da",
-        "moreDesc": "Ordu, İstanbul geceleri, orman yürüyüşleri, dostlar."
+        "moreDesc": "Ordu, İstanbul, Kapadokya, orman yürüyüşleri, dostlar.",
+        "filterAll": "Tümü",
+        "filterTravel": "Seyahat",
+        "filterFriends": "Dostlar",
+        "filterMoments": "Anlar",
+        "capOrduFriends": "Kalanlar.",
+        "capClouds": "Bulutların üstünde.",
+        "capKizKulesi": "Su üzerindeki şehir.",
+        "capFresco": "Taşın hafızası.",
+        "capForest": "Ayak altında yapraklar.",
+        "capWaterfall": "Yağmur ve arkadaşlık.",
+        "capBench": "Saati yavaşlat.",
+        "capBreakfast": "Manzaralı sofra.",
+        "capBoat": "Suda.",
+        "capChurch": "Dostlarla tarih.",
+        "capTwilight": "Gün yumuşayınca.",
+        "capFlag": "Tepelerin üstünde yuva.",
+        "capCafe": "Buzlu filtre. Sessiz saat.",
+        "capDome": "Yukarı bak.",
+        "capMusic": "Sesi aç.",
+        "capNightFriends": "Geç yollar, iyi şirket.",
+        "capFresco2": "Kalıcı renkler."
     },
     "notes": {
         "kicker": "Altyazılar",
@@ -37,7 +58,8 @@
         "n1": "Burayı not defteri olarak kullanacağım.",
         "n2": "Fazla değil.",
         "n3": "Her şey yolunda değil, ama ben iyiyim.",
-        "n4": "Yol uzun, ama güzel."
+        "n4": "Yol uzun, ama güzel.",
+        "n5": "Temet nosce — yolda kendini tanı."
     },
     "journal": {
         "kicker": "Uzun okumalar",

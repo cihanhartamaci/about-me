@@ -55,14 +55,14 @@
     <main>
         <section class="hero-bleed" aria-label="Intro">
             <div class="hero-media" aria-hidden="true">
-                <img class="hero-bg" src="../assets/blog-moments-1.jpg" alt="" width="576" height="1024">
+                <img class="hero-bg" src="../assets/personal-mountain-doorway.jpg" alt="" width="768" height="1024">
                 <div class="hero-veil"></div>
             </div>
             <div class="hero-copy reveal">
                 <p class="hero-motto">Temet nosce</p>
                 <h1 class="hero-title" data-i18n="hero.greeting">Cihan Hartamacı</h1>
                 <p class="hero-subtitle" data-i18n="hero.subtitle">
-                    Ordu shores, Istanbul nights, friends who stay, a table at a cafe. Off the clock — and a little extra.
+                    Ordu shores, Istanbul nights, Cappadocia stone, friends who stay. Off the clock — and a little extra.
                 </p>
                 <div class="hero-actions">
                     <a href="https://www.instagram.com/cihanhartamaci/" class="btn-follow instagram" rel="me noopener noreferrer"
@@ -89,52 +89,144 @@
                     <div>
                         <p class="section-kicker" data-i18n="photos.kicker">Film roll</p>
                         <h2 data-i18n="photos.title">Moments</h2>
-                        <p class="section-lead" data-i18n="photos.lead">Snapshots from Ordu, Istanbul, cafes, and the people who stay.</p>
+                        <p class="section-lead" data-i18n="photos.lead">Travel roads, friends who stay, quiet frames from Ordu to Istanbul.</p>
                     </div>
                     <a href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank"
                         data-i18n="photos.seeIg">Open Instagram</a>
                 </div>
-                <div class="photo-mosaic">
-                    <a class="photo-tile tall reveal" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
-                        <img src="../assets/blog-moments-1.jpg" alt="Car-window selfie in denim and sunglasses" loading="lazy">
+
+                <div class="mosaic-filters reveal" role="tablist" aria-label="Photo groups">
+                    <button type="button" class="mosaic-filter is-active" data-filter="all" role="tab" aria-selected="true" data-i18n="photos.filterAll">All</button>
+                    <button type="button" class="mosaic-filter" data-filter="travel" role="tab" aria-selected="false" data-i18n="photos.filterTravel">Travel</button>
+                    <button type="button" class="mosaic-filter" data-filter="friends" role="tab" aria-selected="false" data-i18n="photos.filterFriends">Friends</button>
+                    <button type="button" class="mosaic-filter" data-filter="moments" role="tab" aria-selected="false" data-i18n="photos.filterMoments">Moments</button>
+                </div>
+
+                <div class="photo-mosaic" id="photoMosaic">
+                    <a class="photo-tile tall reveal" data-group="friends" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                        <img src="../assets/personal-ordu-friends.jpg" alt="Friends selfie overlooking the Ordu coast" loading="lazy" width="768" height="1024">
                         <span class="photo-meta">
-                            <span class="photo-place">Ordu</span>
-                            <span class="photo-caption" data-i18n="photos.cap1">Not too much.</span>
+                            <span class="photo-place">Ordu · Coast</span>
+                            <span class="photo-caption" data-i18n="photos.capOrduFriends">The ones who stay.</span>
                         </span>
                     </a>
-                    <a class="photo-tile reveal" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
-                        <img src="../assets/blog-moments-2.jpg" alt="Wooden world map on a cafe wall" loading="lazy">
+                    <a class="photo-tile reveal" data-group="travel" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                        <img src="../assets/personal-clouds.jpg" alt="Sea of clouds over mountain valleys" loading="lazy" width="768" height="1024">
                         <span class="photo-meta">
-                            <span class="photo-place">Cafe</span>
-                            <span class="photo-caption" data-i18n="photos.cap2">The world is waiting.</span>
+                            <span class="photo-place">Mountains</span>
+                            <span class="photo-caption" data-i18n="photos.capClouds">Above the clouds.</span>
                         </span>
                     </a>
-                    <a class="photo-tile reveal" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
-                        <img src="../assets/blog-moments-4.jpg" alt="At a marble cafe table" loading="lazy">
+                    <a class="photo-tile reveal" data-group="travel" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                        <img src="../assets/personal-kiz-kulesi.jpg" alt="Maiden's Tower on the Bosphorus" loading="lazy" width="1050" height="1400">
                         <span class="photo-meta">
-                            <span class="photo-place">Cafe</span>
-                            <span class="photo-caption" data-i18n="photos.cap4">Just being here.</span>
+                            <span class="photo-place">Istanbul · Kız Kulesi</span>
+                            <span class="photo-caption" data-i18n="photos.capKizKulesi">City on the water.</span>
                         </span>
                     </a>
-                    <a class="photo-tile wide reveal" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
-                        <img src="../assets/blog-moments-3.jpg" alt="Friends in front of a Christmas tree" loading="lazy">
+                    <a class="photo-tile wide reveal" data-group="travel" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                        <img src="../assets/personal-cappadocia-fresco.jpg" alt="Byzantine fresco in a Cappadocia rock church" loading="lazy" width="614" height="819">
                         <span class="photo-meta">
-                            <span class="photo-place">Ordu · Akyazı</span>
-                            <span class="photo-caption" data-i18n="photos.cap3">The ones who stay matter.</span>
+                            <span class="photo-place">Cappadocia</span>
+                            <span class="photo-caption" data-i18n="photos.capFresco">Stone that remembers.</span>
                         </span>
                     </a>
-                    <a class="photo-tile portrait reveal" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
-                        <img src="../assets/cihan-profile.jpg?v=20261015" alt="Portrait of Cihan Hartamacı" loading="lazy">
+                    <a class="photo-tile reveal" data-group="moments" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                        <img src="../assets/personal-forest.jpg" alt="Autumn forest path portrait" loading="lazy" width="614" height="819">
                         <span class="photo-meta">
-                            <span class="photo-place">@cihanhartamaci</span>
-                            <span class="photo-caption" data-i18n="photos.cap5">Temet nosce.</span>
+                            <span class="photo-place">Forest</span>
+                            <span class="photo-caption" data-i18n="photos.capForest">Leaves underfoot.</span>
                         </span>
                     </a>
-                    <a class="photo-tile cta reveal" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                    <a class="photo-tile reveal" data-group="friends" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                        <img src="../assets/personal-waterfall-friends.jpg" alt="Friends in rain ponchos at a waterfall" loading="lazy" width="1050" height="1400">
+                        <span class="photo-meta">
+                            <span class="photo-place">Waterfall</span>
+                            <span class="photo-caption" data-i18n="photos.capWaterfall">Rain and company.</span>
+                        </span>
+                    </a>
+                    <a class="photo-tile tall reveal" data-group="moments" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                        <img src="../assets/personal-seaside-bench.jpg" alt="Reclining on a seaside bench overlooking the coast" loading="lazy" width="768" height="1024">
+                        <span class="photo-meta">
+                            <span class="photo-place">Black Sea</span>
+                            <span class="photo-caption" data-i18n="photos.capBench">Slow the clock.</span>
+                        </span>
+                    </a>
+                    <a class="photo-tile reveal" data-group="friends" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                        <img src="../assets/personal-ordu-breakfast.jpg" alt="Turkish breakfast with friends overlooking Ordu" loading="lazy" width="768" height="1024">
+                        <span class="photo-meta">
+                            <span class="photo-place">Ordu · Kahvaltı</span>
+                            <span class="photo-caption" data-i18n="photos.capBreakfast">Table with a view.</span>
+                        </span>
+                    </a>
+                    <a class="photo-tile reveal" data-group="travel" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                        <img src="../assets/personal-boat.jpg" alt="Wooden excursion boat on open sea" loading="lazy" width="768" height="1024">
+                        <span class="photo-meta">
+                            <span class="photo-place">Sea</span>
+                            <span class="photo-caption" data-i18n="photos.capBoat">On the water.</span>
+                        </span>
+                    </a>
+                    <a class="photo-tile reveal" data-group="friends" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                        <img src="../assets/personal-cappadocia-church.jpg" alt="Friends inside a Byzantine stone church" loading="lazy" width="768" height="1024">
+                        <span class="photo-meta">
+                            <span class="photo-place">Cappadocia</span>
+                            <span class="photo-caption" data-i18n="photos.capChurch">History with friends.</span>
+                        </span>
+                    </a>
+                    <a class="photo-tile reveal" data-group="moments" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                        <img src="../assets/personal-twilight-coast.jpg" alt="Twilight over the coastal skyline" loading="lazy" width="1050" height="1400">
+                        <span class="photo-meta">
+                            <span class="photo-place">Ordu · Twilight</span>
+                            <span class="photo-caption" data-i18n="photos.capTwilight">When the day softens.</span>
+                        </span>
+                    </a>
+                    <a class="photo-tile reveal" data-group="friends" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                        <img src="../assets/personal-mountain-flag.jpg" alt="Family at a mountain lookout with Turkish flag" loading="lazy" width="768" height="1024">
+                        <span class="photo-meta">
+                            <span class="photo-place">Mountains</span>
+                            <span class="photo-caption" data-i18n="photos.capFlag">Home above the hills.</span>
+                        </span>
+                    </a>
+                    <a class="photo-tile reveal" data-group="moments" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                        <img src="../assets/personal-cafe-night.jpg" alt="Night portrait at a cafe with iced coffee" loading="lazy" width="768" height="1024">
+                        <span class="photo-meta">
+                            <span class="photo-place">Cafe · Night</span>
+                            <span class="photo-caption" data-i18n="photos.capCafe">Iced filtre. Quiet hour.</span>
+                        </span>
+                    </a>
+                    <a class="photo-tile reveal" data-group="travel" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                        <img src="../assets/personal-cappadocia-dome.jpg" alt="Looking up at a Byzantine stone dome" loading="lazy" width="1050" height="1400">
+                        <span class="photo-meta">
+                            <span class="photo-place">Cappadocia</span>
+                            <span class="photo-caption" data-i18n="photos.capDome">Look up.</span>
+                        </span>
+                    </a>
+                    <a class="photo-tile reveal" data-group="friends" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                        <img src="../assets/personal-music-venue.jpg" alt="Singing with a friend at a music venue" loading="lazy" width="1158" height="1400">
+                        <span class="photo-meta">
+                            <span class="photo-place">Live music</span>
+                            <span class="photo-caption" data-i18n="photos.capMusic">Turn it up.</span>
+                        </span>
+                    </a>
+                    <a class="photo-tile reveal" data-group="friends" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                        <img src="../assets/personal-night-friends.jpg" alt="Fist bump with a friend over a car at night" loading="lazy" width="768" height="1024">
+                        <span class="photo-meta">
+                            <span class="photo-place">Night drive</span>
+                            <span class="photo-caption" data-i18n="photos.capNightFriends">Late roads, good company.</span>
+                        </span>
+                    </a>
+                    <a class="photo-tile reveal" data-group="travel" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
+                        <img src="../assets/personal-cappadocia-fresco-throne.jpg" alt="Byzantine fresco of Mary enthroned" loading="lazy" width="1050" height="1400">
+                        <span class="photo-meta">
+                            <span class="photo-place">Cappadocia</span>
+                            <span class="photo-caption" data-i18n="photos.capFresco2">Colors that endure.</span>
+                        </span>
+                    </a>
+                    <a class="photo-tile cta reveal" data-group="all" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
                         <span class="cta-inner">
                             <i class="fab fa-instagram" aria-hidden="true"></i>
                             <strong data-i18n="photos.moreTitle">More on Instagram</strong>
-                            <span data-i18n="photos.moreDesc">Ordu, Istanbul nights, forest walks, friends.</span>
+                            <span data-i18n="photos.moreDesc">Ordu, Istanbul, Cappadocia, forest walks, friends.</span>
                         </span>
                     </a>
                 </div>
@@ -163,6 +255,9 @@
                     <blockquote class="note-line reveal">
                         <p data-i18n="notes.n4">The road is long, but beautiful.</p>
                     </blockquote>
+                    <blockquote class="note-line reveal">
+                        <p data-i18n="notes.n5">Temet nosce — know yourself on the way.</p>
+                    </blockquote>
                 </div>
             </div>
         </section>
@@ -179,7 +274,7 @@
                 </div>
                 <div class="journal-grid">
                     <a class="journal-card reveal" href="posts/moments-that-matter.html">
-                        <img src="../assets/blog-moments-3.jpg" alt="" loading="lazy">
+                        <img src="../assets/personal-ordu-friends.jpg" alt="" loading="lazy" width="768" height="1024">
                         <div class="journal-body">
                             <p class="blog-meta" data-i18n="blog.moments.date">December 22, 2025</p>
                             <h3 data-i18n="blog.moments.title">Moments That Matter</h3>
@@ -188,7 +283,7 @@
                         </div>
                     </a>
                     <a class="journal-card reveal" href="posts/welcome.html">
-                        <img src="../assets/cihan-profile.jpg?v=20261015" alt="" loading="lazy">
+                        <img src="../assets/personal-cafe-night.jpg" alt="" loading="lazy" width="768" height="1024">
                         <div class="journal-body">
                             <p class="blog-meta" data-i18n="blog.welcome.date">December 17, 2025</p>
                             <h3 data-i18n="blog.welcome.title">Welcome to the New Setup</h3>

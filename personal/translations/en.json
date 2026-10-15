@@ -8,7 +8,7 @@
     },
     "hero": {
         "greeting": "Cihan Hartamacı",
-        "subtitle": "Ordu shores, Istanbul nights, friends who stay, a table at a cafe. Off the clock — and a little extra.",
+        "subtitle": "Ordu shores, Istanbul nights, Cappadocia stone, friends who stay. Off the clock — and a little extra.",
         "scroll": "Moments below"
     },
     "social": {
@@ -20,7 +20,7 @@
     "photos": {
         "kicker": "Film roll",
         "title": "Moments",
-        "lead": "Snapshots from Ordu, Istanbul, cafes, and the people who stay.",
+        "lead": "Travel roads, friends who stay, quiet frames from Ordu to Istanbul.",
         "seeIg": "Open Instagram",
         "cap1": "Not too much.",
         "cap2": "The world is waiting.",
@@ -28,7 +28,28 @@
         "cap4": "Just being here.",
         "cap5": "Temet nosce.",
         "moreTitle": "More on Instagram",
-        "moreDesc": "Ordu, Istanbul nights, forest walks, friends."
+        "moreDesc": "Ordu, Istanbul, Cappadocia, forest walks, friends.",
+        "filterAll": "All",
+        "filterTravel": "Travel",
+        "filterFriends": "Friends",
+        "filterMoments": "Moments",
+        "capOrduFriends": "The ones who stay.",
+        "capClouds": "Above the clouds.",
+        "capKizKulesi": "City on the water.",
+        "capFresco": "Stone that remembers.",
+        "capForest": "Leaves underfoot.",
+        "capWaterfall": "Rain and company.",
+        "capBench": "Slow the clock.",
+        "capBreakfast": "Table with a view.",
+        "capBoat": "On the water.",
+        "capChurch": "History with friends.",
+        "capTwilight": "When the day softens.",
+        "capFlag": "Home above the hills.",
+        "capCafe": "Iced filtre. Quiet hour.",
+        "capDome": "Look up.",
+        "capMusic": "Turn it up.",
+        "capNightFriends": "Late roads, good company.",
+        "capFresco2": "Colors that endure."
     },
     "notes": {
         "kicker": "Captions",
@@ -37,7 +58,8 @@
         "n1": "I'll use this place as a notebook.",
         "n2": "Not too much.",
         "n3": "Everything is not okay, but I'm fine.",
-        "n4": "The road is long, but beautiful."
+        "n4": "The road is long, but beautiful.",
+        "n5": "Temet nosce — know yourself on the way."
     },
     "journal": {
         "kicker": "Longer reads",
