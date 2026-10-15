@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="favicon.png">
-    <title>Cihan Hartamaci | API-First Integration Architect</title>
+    <title>Cihan Hartamaci | Which Cihan do you want to meet?</title>
     <meta name="description"
-        content="EDI Developer Hub. Expert Integration Architect specializing in SAP, NetSuite, and EDIFACT/ANSI X12 standards. Building the bridge between legacy systems and modern APIs.">
-    <meta property="og:title" content="EDI.HUB // Cihan Hartamaci">
-    <meta property="og:description" content="Integration Architect Portfolio. SAP, NetSuite, EDI Developer Hub.">
+        content="Choose your path: Professional Cihan — Integration Architect & EDI Hub — or Social Cihan — lifestyle, photos, and off-the-clock notes.">
+    <meta property="og:title" content="Cihan Hartamaci — Professional or Social?">
+    <meta property="og:description" content="Which Cihan do you want to meet? Pick Professional or Social.">
     <meta property="og:image" content="https://cihanhartamaci.github.io/about-me/assets/social-preview.png">
     <meta property="og:url" content="https://cihanhartamaci.github.io/about-me/">
     <link rel="canonical" href="https://cihanhartamaci.github.io/about-me/">
@@ -19,36 +19,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Inter:wght@300;400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/lang-switcher.css">
+    <link rel="stylesheet" href="css/welcome-gate.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
-    <nav class="top-nav">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">CH.integrate()</a>
-            <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"
-                aria-controls="navLinks">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="nav-links" id="navLinks">
-                <a href="index.html" class="nav-link active" data-i18n="nav.home">Home</a>
-                <a href="patterns.html" class="nav-link" data-i18n="nav.patterns">Patterns</a>
-                <a href="tools.html" class="nav-link" data-i18n="nav.tools">Tools</a>
-                <a href="insights.html" class="nav-link" data-i18n="nav.insights">Insights</a>
-                <a href="expertise.html" class="nav-link" data-i18n="nav.expertise">Expertise</a>
-                <a href="resume.html" class="nav-link" data-i18n="nav.resume">Resume</a>
-                <a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
-                <a href="personal/index.html" class="nav-btn-switch" data-i18n="nav.switchPersonal">Switch to
-                    Personal</a>
+    <section class="welcome-gate" id="welcomeGate" aria-label="Welcome">
+        <div class="gate-chrome">
+            <a href="#hub" class="gate-wordmark" data-gate-skip data-i18n="gate.brand">Cihan Hartamacı</a>
+            <div class="gate-lang">
+                <button type="button" class="gate-skip" data-gate-skip data-i18n="gate.skip">Skip to professional hub</button>
                 <div class="lang-switcher">
-                    <label class="visually-hidden" for="language-selector">Language</label>
+                    <label class="visually-hidden" for="language-selector" data-i18n="common.language">Language</label>
                     <select id="language-selector">
                         <option value="en">EN</option>
                         <option value="tr">TR</option>
@@ -56,60 +43,138 @@
                 </div>
             </div>
         </div>
-    </nav>
 
-    <main class="container">
-        <!-- Hero Terminal Effect -->
-        <section class="page-header hero-header">
-            <p class="mono-tag hero-status"><span id="typing-text">> INITIALIZING SYSTEM...</span></p>
-            <h1 class="page-title hero-name" data-i18n="hero.name">Cihan Hartamaci</h1>
-            <h2 class="hero-role" data-i18n="hero.title">Integration Architect & Developer</h2>
-            <p class="page-subtitle hero-lead" data-i18n-html="hero.subtitle">
-                Architecting high-performance <span class="accent-green">EDI</span> bridges and
-                <span class="accent-blue">RESTful APIs</span> for global enterprises.
-            </p>
-            <div class="hero-actions">
-                <a href="patterns.html" class="btn btn-primary" data-i18n="hero.btnDocs">Read Documentation</a>
-                <a href="contact.html" class="btn btn-outline" data-i18n="hero.btnContact">Start Project</a>
+        <div class="gate-panels" id="gatePanels">
+            <a href="#hub" class="gate-panel gate-panel--pro" id="gatePro" data-i18n-aria="gate.proAria">
+                <div class="gate-panel__media" aria-hidden="true">
+                    <img src="assets/cihan-profile.jpg?v=20261015" alt="" width="400" height="400">
+                </div>
+                <div class="gate-panel__veil" aria-hidden="true"></div>
+                <div class="gate-panel__grain" aria-hidden="true"></div>
+                <div class="gate-panel__content">
+                    <span class="gate-panel__label" data-i18n="gate.proLabel">Professional Cihan</span>
+                    <span class="gate-panel__hint" data-i18n="gate.proHint">EDI, APIs, resume, and the integration hub.</span>
+                    <span class="gate-panel__cta" data-i18n="gate.proCta">Enter the hub</span>
+                </div>
+            </a>
+
+            <div class="gate-divider" aria-hidden="true"></div>
+
+            <a href="personal/" class="gate-panel gate-panel--social" id="gateSocial" data-i18n-aria="gate.socialAria">
+                <div class="gate-panel__media" aria-hidden="true">
+                    <img src="assets/personal-seaside-bench.jpg" alt="" width="768" height="1024">
+                </div>
+                <div class="gate-panel__veil" aria-hidden="true"></div>
+                <div class="gate-panel__grain" aria-hidden="true"></div>
+                <div class="gate-panel__content">
+                    <span class="gate-panel__label" data-i18n="gate.socialLabel">Social Cihan</span>
+                    <span class="gate-panel__hint" data-i18n="gate.socialHint">Photos, friends, coasts, and off-the-clock notes.</span>
+                    <span class="gate-panel__cta" data-i18n="gate.socialCta">Meet the lifestyle</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="gate-center">
+            <h1 class="gate-brand" data-i18n="gate.brand">Cihan Hartamacı</h1>
+            <p class="gate-question" data-i18n="gate.question">Which Cihan do you want to meet?</p>
+        </div>
+
+        <button type="button" class="gate-skip-mobile" data-gate-skip data-i18n="gate.skipShort">Professional hub</button>
+    </section>
+
+    <div class="pro-hub" id="proHub" aria-hidden="true">
+        <nav class="top-nav">
+            <div class="container nav-container">
+                <a href="index.html" class="logo">CH.integrate()</a>
+                <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"
+                    aria-controls="navLinks">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html#hub" class="nav-link active" data-i18n="nav.home">Home</a>
+                    <a href="patterns.html" class="nav-link" data-i18n="nav.patterns">Patterns</a>
+                    <a href="tools.html" class="nav-link" data-i18n="nav.tools">Tools</a>
+                    <a href="insights.html" class="nav-link" data-i18n="nav.insights">Insights</a>
+                    <a href="expertise.html" class="nav-link" data-i18n="nav.expertise">Expertise</a>
+                    <a href="resume.html" class="nav-link" data-i18n="nav.resume">Resume</a>
+                    <a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
+                    <a href="personal/index.html" class="nav-btn-switch" data-i18n="nav.switchPersonal">Switch to
+                        Personal</a>
+                    <div class="lang-switcher">
+                        <label class="visually-hidden" for="language-selector-hub">Language</label>
+                        <select id="language-selector-hub">
+                            <option value="en">EN</option>
+                            <option value="tr">TR</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-        </section>
+        </nav>
 
-        <hr style="border:0; border-top:1px solid var(--border-color); margin-bottom:4rem;">
+        <main class="container">
+            <section class="page-header hero-header">
+                <p class="mono-tag hero-status"><span id="typing-text">> INITIALIZING SYSTEM...</span></p>
+                <h1 class="page-title hero-name" data-i18n="hero.name">Cihan Hartamaci</h1>
+                <h2 class="hero-role" data-i18n="hero.title">Integration Architect & Developer</h2>
+                <p class="page-subtitle hero-lead" data-i18n-html="hero.subtitle">
+                    Architecting high-performance <span class="accent-green">EDI</span> bridges and
+                    <span class="accent-blue">RESTful APIs</span> for global enterprises.
+                </p>
+                <div class="hero-actions">
+                    <a href="patterns.html" class="btn btn-primary" data-i18n="hero.btnDocs">Read Documentation</a>
+                    <a href="contact.html" class="btn btn-outline" data-i18n="hero.btnContact">Start Project</a>
+                </div>
+            </section>
 
-        <!-- Quick Links Grid -->
-        <section>
-            <h3 class="mono-font" style="margin-bottom:2rem;" data-i18n="home.selectModule">> SELECT_MODULE</h3>
-            <div class="grid-cards">
-                <a href="patterns.html" class="tech-card">
-                    <h3 data-i18n="home.integrationTitle">Integration Patterns</h3>
-                    <p data-i18n="home.integrationDesc">Standardized specs for ANSI X12, EDIFACT, and Hybrid Cloud
-                        architectures.</p>
-                </a>
-                <a href="tools.html" class="tech-card">
-                    <h3 data-i18n="home.toolsTitle">Developer Tools</h3>
-                    <p data-i18n="home.toolsDesc">Browser-based EDI parser, API tester, regex, and cron utilities.</p>
-                </a>
-                <a href="insights.html" class="tech-card">
-                    <h3 data-i18n="home.insightsTitle">Technical Insights</h3>
-                    <p data-i18n="home.insightsDesc">Deep dives into Netsuite SuiteScript, SAP IDOCs, and API
-                        Security.</p>
-                </a>
-                <a href="expertise.html" class="tech-card">
-                    <h3 data-i18n="home.systemStatsTitle">Expertise</h3>
-                    <p data-i18n="home.systemStatsDesc">6+ years of EDI, SAP, and NetSuite work across Logiwa and Beko.</p>
-                </a>
-            </div>
-        </section>
-    </main>
+            <hr style="border:0; border-top:1px solid var(--border-color); margin-bottom:4rem;">
 
-    <!-- Netlify Identity (Needed for Auth Callbacks) -->
+            <section>
+                <h3 class="mono-font" style="margin-bottom:2rem;" data-i18n="home.selectModule">> SELECT_MODULE</h3>
+                <div class="grid-cards">
+                    <a href="patterns.html" class="tech-card">
+                        <h3 data-i18n="home.integrationTitle">Integration Patterns</h3>
+                        <p data-i18n="home.integrationDesc">Standardized specs for ANSI X12, EDIFACT, and Hybrid Cloud
+                            architectures.</p>
+                    </a>
+                    <a href="tools.html" class="tech-card">
+                        <h3 data-i18n="home.toolsTitle">Developer Tools</h3>
+                        <p data-i18n="home.toolsDesc">Browser-based EDI parser, API tester, regex, and cron utilities.</p>
+                    </a>
+                    <a href="insights.html" class="tech-card">
+                        <h3 data-i18n="home.insightsTitle">Technical Insights</h3>
+                        <p data-i18n="home.insightsDesc">Deep dives into Netsuite SuiteScript, SAP IDOCs, and API
+                            Security.</p>
+                    </a>
+                    <a href="expertise.html" class="tech-card">
+                        <h3 data-i18n="home.systemStatsTitle">Expertise</h3>
+                        <p data-i18n="home.systemStatsDesc">6+ years of EDI, SAP, and NetSuite work across Logiwa and Beko.</p>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <!-- Command Palette -->
     <script src="js/i18n.js"></script>
     <script src="js/mobile-nav.js" defer></script>
+    <script src="js/welcome-gate.js"></script>
     <script>
-        // Initialize i18n
-        i18n.init('en', 'translations/');
+        i18n.init('en', 'translations/').then(function () {
+            var hubSelect = document.getElementById('language-selector-hub');
+            if (hubSelect) {
+                hubSelect.value = i18n.getCurrentLanguage();
+                hubSelect.addEventListener('change', function (e) {
+                    i18n.changeLanguage(e.target.value);
+                    var gateSelect = document.getElementById('language-selector');
+                    if (gateSelect) gateSelect.value = e.target.value;
+                });
+            }
+            window.addEventListener('languageChanged', function (e) {
+                if (hubSelect) hubSelect.value = e.detail.lang;
+            });
+        });
     </script>
     <script src="js/cmd-palette.js"></script>
     <script src="js/typewriter.js"></script>

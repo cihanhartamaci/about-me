@@ -15,6 +15,20 @@
         "title": "System Statistics",
         "subtitle": "Monitoring visitor traffic and geographic distribution."
     },
+    "gate": {
+        "brand": "Cihan Hartamacı",
+        "question": "Which Cihan do you want to meet?",
+        "proLabel": "Professional Cihan",
+        "proHint": "EDI, APIs, resume, and the integration hub.",
+        "proCta": "Enter the hub",
+        "proAria": "Meet Professional Cihan — open the integration hub",
+        "socialLabel": "Social Cihan",
+        "socialHint": "Photos, friends, coasts, and off-the-clock notes.",
+        "socialCta": "Meet the lifestyle",
+        "socialAria": "Meet Social Cihan — open the personal site",
+        "skip": "Skip to professional hub",
+        "skipShort": "Professional hub"
+    },
     "hero": {
         "typing": "> INITIALIZING SYSTEM...",
         "typing_phrases": [
