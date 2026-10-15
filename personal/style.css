@@ -172,8 +172,8 @@ a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Anchor lower so Cihan’s face stays in the first viewport (was 22% — only crown visible) */
-    object-position: center 72%;
+    /* Anchor mid-lower so Cihan’s face sits in the upper-middle of the first viewport (was 22% — only crown visible) */
+    object-position: center 60%;
     transform: scale(1.08);
     animation: kenBurns 18s var(--ease-out) infinite alternate;
     display: block;
@@ -868,9 +868,9 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-    /* Keep face in frame on tall phone viewports (cover crops less vertically) */
+    /* Tall phones show more of the portrait; keep face above the large title block */
     .hero-bg {
-        object-position: center 58%;
+        object-position: center 70%;
     }
 
     .hero-copy {
