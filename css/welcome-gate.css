@@ -551,10 +551,10 @@ body.gate-unlocked .pro-hub {
         flex-wrap: wrap;
         justify-content: center;
         gap: 0.75rem 1rem;
-        padding: 0.85rem 0.5rem;
-        border-radius: 1rem;
-        background: rgba(4, 7, 12, 0.28);
-        border: 1px solid rgba(232, 244, 242, 0.08);
+        padding: 0.65rem 0.25rem 0.85rem;
+        /* Interaction target only — no card chrome */
+        background: transparent;
+        border: 0;
     }
 
     .gate-pill__portrait {
