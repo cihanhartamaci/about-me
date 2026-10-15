@@ -36,7 +36,7 @@
             this.currentLang = lang;
             this.syncSelector(); // Sync UI immediately
 
-            const url = this.basePath + lang + '.json?v=1.0.2';
+            const url = this.basePath + lang + '.json?v=1.0.3';
             return fetch(url)
                 .then(response => {
                     if (!response.ok) throw new Error(`Translation file not found: ${url}`);

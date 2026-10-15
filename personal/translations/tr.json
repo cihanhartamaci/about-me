@@ -3,11 +3,12 @@
         "home": "Ana Sayfa",
         "blog": "Not defteri",
         "photos": "Fotoğraflar",
+        "notes": "Notlar",
         "switchProfessional": "Profesyonel Siteye Geç"
     },
     "hero": {
         "greeting": "Cihan Hartamacı",
-        "subtitle": "İstanbul, dostlar, yol, bir kafe masası. Burası mesai dışı defter."
+        "subtitle": "Ordu sahili, İstanbul geceleri, kalan dostlar, bir kafe masası. Burası mesai dışı defter."
     },
     "social": {
         "instagram": "Instagram",
@@ -20,8 +21,18 @@
         "seeIg": "Instagram'ı aç",
         "cap1": "Fazla değil.",
         "cap2": "Dünya bekliyor.",
-        "cap3": "Kalanlar.",
-        "cap4": "Sadece burada olmak."
+        "cap3": "Kalanlar önemli.",
+        "cap4": "Sadece burada olmak.",
+        "cap5": "Temet nosce.",
+        "moreTitle": "Daha fazlası Instagram'da",
+        "moreDesc": "Ordu, İstanbul geceleri, orman yürüyüşleri, dostlar."
+    },
+    "notes": {
+        "title": "Kısa notlar",
+        "n1": "Burayı not defteri olarak kullanacağım.",
+        "n2": "Fazla değil.",
+        "n3": "Her şey yolunda değil, ama ben iyiyim.",
+        "n4": "Yol uzun, ama güzel."
     },
     "recentThoughts": "Defter",
     "allArticles": "Not defteri",

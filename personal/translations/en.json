@@ -3,11 +3,12 @@
         "home": "Home",
         "blog": "Journal",
         "photos": "Photos",
+        "notes": "Notes",
         "switchProfessional": "Switch to Professional"
     },
     "hero": {
         "greeting": "Cihan Hartamacı",
-        "subtitle": "Istanbul, friends, the road, a table at a cafe. This page is the off-the-clock notebook."
+        "subtitle": "Ordu shores, Istanbul nights, friends who stay, a table at a cafe. This page is the off-the-clock notebook."
     },
     "social": {
         "instagram": "Instagram",
@@ -20,8 +21,18 @@
         "seeIg": "Open Instagram",
         "cap1": "Not too much.",
         "cap2": "The world is waiting.",
-        "cap3": "The people who stay.",
-        "cap4": "Just being here."
+        "cap3": "The ones who stay matter.",
+        "cap4": "Just being here.",
+        "cap5": "Temet nosce.",
+        "moreTitle": "More on Instagram",
+        "moreDesc": "Ordu, Istanbul nights, forest walks, friends."
+    },
+    "notes": {
+        "title": "Short notes",
+        "n1": "I'll use this place as a notebook.",
+        "n2": "Not too much.",
+        "n3": "Everything is not okay, but I'm fine.",
+        "n4": "The road is long, but beautiful."
     },
     "recentThoughts": "Notebook",
     "allArticles": "Journal",
