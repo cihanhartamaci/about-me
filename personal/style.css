@@ -96,7 +96,8 @@ a:hover {
 .top-nav {
     background: var(--bg-nav);
     backdrop-filter: blur(14px) saturate(1.2);
-    height: var(--nav-height);
+    min-height: var(--nav-height);
+    height: auto;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -107,7 +108,10 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1.25rem;
+    min-height: var(--nav-height);
     height: 100%;
+    padding-block: 0.35rem;
 }
 
 .logo {
@@ -115,18 +119,28 @@ a:hover {
     font-weight: 800;
     font-size: 1.35rem;
     letter-spacing: -0.04em;
+    flex-shrink: 0;
+    white-space: nowrap;
+    margin-inline-end: 0.35rem;
 }
 
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 1.15rem;
+    justify-content: flex-end;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    gap: 0.55rem 0.95rem;
+    min-width: 0;
+    row-gap: 0.45rem;
 }
 
 .nav-link {
     font-weight: 600;
     font-size: 0.92rem;
     color: var(--text-secondary);
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .nav-link:hover,
@@ -140,12 +154,23 @@ a:hover {
     color: var(--accent-teal);
 }
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    gap: 0.65rem;
+    margin-inline-start: 0.15rem;
+}
+
 .mode-switch {
     font-size: 0.82rem;
     padding: 0.45rem 0.95rem;
     border: 1.5px solid var(--text-primary);
     border-radius: 999px;
     font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .mode-switch:hover {
@@ -160,11 +185,52 @@ a:hover {
     color: var(--text-muted);
     text-decoration: underline;
     text-underline-offset: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .nav-path-reset:hover {
     color: var(--text-primary);
     opacity: 1;
+}
+
+/* Tablet / mid desktop: drop secondary link before CTAs wrap */
+@media (max-width: 1180px) and (min-width: 769px) {
+    .nav-instagram {
+        display: none;
+    }
+
+    .nav-links {
+        gap: 0.45rem 0.75rem;
+    }
+
+    .nav-link {
+        font-size: 0.86rem;
+    }
+
+    .mode-switch {
+        font-size: 0.78rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .nav-actions {
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 980px) and (min-width: 769px) {
+    .nav-link[data-i18n="nav.notes"],
+    .nav-link[data-i18n="about.kicker"] {
+        display: none;
+    }
+
+    .nav-container {
+        gap: 1rem;
+    }
+
+    .nav-path-reset {
+        font-size: 0.72rem;
+    }
 }
 
 .nav-overlay {
@@ -1462,7 +1528,8 @@ body.nav-open .top-nav {
 }
 
 .lang-switcher {
-    margin-left: 0.5rem;
+    margin-left: 0;
+    flex-shrink: 0;
 }
 
 #language-selector {
@@ -1793,6 +1860,16 @@ body.nav-open .top-nav {
         pointer-events: auto;
     }
 
+    .nav-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 0;
+        margin: 0;
+        flex-wrap: nowrap;
+    }
+
     .nav-link,
     .mode-switch,
     .nav-path-reset {
@@ -1807,6 +1884,7 @@ body.nav-open .top-nav {
         z-index: 1;
         pointer-events: auto;
         -webkit-tap-highlight-color: transparent;
+        white-space: normal;
     }
 
     .mode-switch {
