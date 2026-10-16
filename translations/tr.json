@@ -37,7 +37,10 @@
         "socialCta": "Kırmızı hapı al",
         "socialAria": "Sosyal Cihan ile tanış — kişisel siteyi aç",
         "skip": "Profesyonel merkeze geç",
-        "skipShort": "Profesyonel merkez"
+        "skipShort": "Profesyonel merkez",
+        "welcomeAria": "Hoş geldiniz",
+        "choiceAria": "Bir yol seçin",
+        "logoAria": "Cihan Hartamacı — Teknoloji / Ürün / Etki"
     },
     "hero": {
         "typing": "> SİSTEM BAŞLATILIYOR...",
@@ -62,7 +65,7 @@
         "systemStatsTitle": "Uzmanlık",
         "systemStatsDesc": "Logiwa ve Beko'da 6+ yıllık EDI, SAP ve NetSuite deneyimi.",
         "toolsTitle": "Geliştirici Araçları",
-        "toolsDesc": "Tarayıcı tabanlı EDI parser, API tester, regex ve cron araçları."
+        "toolsDesc": "Tarayıcı tabanlı EDI ayrıştırıcı, API test aracı, regex ve cron araçları."
     },
     "patterns": {
         "title": "> ENTEGRASYON_DESENLERI",
@@ -219,6 +222,8 @@
     },
     "common": {
         "language": "Dil",
-        "loading": "Yükleniyor..."
+        "loading": "Yükleniyor...",
+        "toggleMenu": "Menüyü aç veya kapat",
+        "clickToExpand": "Büyütmek için tıkla"
     }
 }

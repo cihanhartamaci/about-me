@@ -7,6 +7,16 @@
         "switchProfessional": "Profesyonel Siteye Geç",
         "chooseAgain": "Yolu yeniden seç"
     },
+    "common": {
+        "language": "Dil",
+        "toggleMenu": "Menüyü aç veya kapat"
+    },
+    "aria": {
+        "intro": "Giriş",
+        "scrollPhotos": "Fotoğraflara kaydır",
+        "photoGroups": "Fotoğraf grupları",
+        "whatsapp": "WhatsApp @cihanhartamaci"
+    },
     "hero": {
         "greeting": "Cihan Hartamacı",
         "subtitle": "Ordu sahili, İstanbul geceleri, Sümela Manastırı taşı, kalan dostlar. Mesai dışı — biraz da eğlence.",
@@ -17,8 +27,8 @@
         "tiktok": "TikTok",
         "whatsapp": "WhatsApp",
         "followIg": "Instagram'da takip et",
-        "followTt": "TikTok",
-        "followWa": "WhatsApp"
+        "followTt": "TikTok'ta takip et",
+        "followWa": "WhatsApp'ta yaz"
     },
     "photos": {
         "kicker": "Film rulosu",

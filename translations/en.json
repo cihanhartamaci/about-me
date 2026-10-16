@@ -37,7 +37,10 @@
         "socialCta": "Take the red pill",
         "socialAria": "Meet Social Cihan — open the personal site",
         "skip": "Skip to professional hub",
-        "skipShort": "Professional hub"
+        "skipShort": "Professional hub",
+        "welcomeAria": "Welcome",
+        "choiceAria": "Choose a path",
+        "logoAria": "Cihan Hartamacı — Tech / Product / Impact"
     },
     "hero": {
         "typing": "> INITIALIZING SYSTEM...",
@@ -219,6 +222,8 @@
     },
     "common": {
         "language": "Language",
-        "loading": "Loading..."
+        "loading": "Loading...",
+        "toggleMenu": "Toggle menu",
+        "clickToExpand": "Click to expand"
     }
 }

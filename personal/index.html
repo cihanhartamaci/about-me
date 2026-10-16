@@ -26,7 +26,7 @@
     <nav class="top-nav">
         <div class="container nav-container">
             <a href="index.html" class="logo">Cihan</a>
-            <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"
+            <button class="hamburger" id="hamburger" type="button" data-i18n-aria="common.toggleMenu" aria-label="Toggle menu" aria-expanded="false"
                 aria-controls="navLinks">
                 <span></span>
                 <span></span>
@@ -43,7 +43,7 @@
                     Professional</a>
                 <a href="../index.html" class="nav-path-reset" data-i18n="nav.chooseAgain">Choose path again</a>
                 <div class="lang-switcher">
-                    <label class="visually-hidden" for="language-selector">Language</label>
+                    <label class="visually-hidden" for="language-selector" data-i18n="common.language">Language</label>
                     <select id="language-selector">
                         <option value="en">EN</option>
                         <option value="tr">TR</option>
@@ -54,7 +54,7 @@
     </nav>
 
     <main>
-        <section class="hero-bleed" aria-label="Intro">
+        <section class="hero-bleed" data-i18n-aria="aria.intro" aria-label="Intro">
             <div class="hero-media hero-slideshow" aria-hidden="true">
                 <img class="hero-bg hero-slide is-active" src="../assets/personal-sumela-hero.jpg" alt="" width="640" height="640">
                 <img class="hero-bg hero-slide" src="../assets/personal-twilight-coast.jpg" alt="" width="1050" height="1400">
@@ -78,18 +78,18 @@
                     <a href="https://www.tiktok.com/@cihanhartamaci" class="btn-follow tiktok" rel="noopener noreferrer"
                         target="_blank">
                         <i class="fab fa-tiktok" aria-hidden="true"></i>
-                        <span data-i18n="social.followTt">TikTok</span>
+                        <span data-i18n="social.followTt">Follow on TikTok</span>
                     </a>
                     <a href="https://wa.me/905352552149" class="btn-follow whatsapp" rel="noopener noreferrer"
-                        target="_blank" aria-label="WhatsApp @cihanhartamaci">
+                        target="_blank" data-i18n-aria="aria.whatsapp" aria-label="WhatsApp @cihanhartamaci">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                        <span data-i18n="social.followWa">WhatsApp</span>
+                        <span data-i18n="social.followWa">Message on WhatsApp</span>
                         <span class="btn-follow__handle">@cihanhartamaci</span>
                     </a>
                 </div>
                 <p class="hero-handle">@cihanhartamaci</p>
             </div>
-            <a href="#photos" class="hero-scroll" aria-label="Scroll to photos">
+            <a href="#photos" class="hero-scroll" data-i18n-aria="aria.scrollPhotos" aria-label="Scroll to photos">
                 <span data-i18n="hero.scroll">Moments below</span>
             </a>
         </section>
@@ -106,7 +106,7 @@
                         data-i18n="photos.seeIg">Open Instagram</a>
                 </div>
 
-                <div class="mosaic-filters reveal" role="tablist" aria-label="Photo groups">
+                <div class="mosaic-filters reveal" role="tablist" data-i18n-aria="aria.photoGroups" aria-label="Photo groups">
                     <button type="button" class="mosaic-filter is-active" data-filter="all" role="tab" aria-selected="true" data-i18n="photos.filterAll">All</button>
                     <button type="button" class="mosaic-filter" data-filter="travel" role="tab" aria-selected="false" data-i18n="photos.filterTravel">Travel</button>
                     <button type="button" class="mosaic-filter" data-filter="friends" role="tab" aria-selected="false" data-i18n="photos.filterFriends">Friends</button>
@@ -131,7 +131,7 @@
                     <a class="photo-tile reveal" data-group="travel" href="https://www.instagram.com/cihanhartamaci/" rel="noopener noreferrer" target="_blank">
                         <img src="../assets/personal-kiz-kulesi.jpg" alt="Maiden's Tower on the Bosphorus" loading="lazy" width="1050" height="1400">
                         <span class="photo-meta">
-                            <span class="photo-place" data-i18n="photos.placeKizKulesi">Istanbul · Kız Kulesi</span>
+                            <span class="photo-place" data-i18n="photos.placeKizKulesi">Istanbul · Maiden's Tower</span>
                             <span class="photo-caption" data-i18n="photos.capKizKulesi">City on the water.</span>
                         </span>
                     </a>
@@ -289,8 +289,7 @@
                         <div class="journal-body">
                             <p class="blog-meta" data-i18n="blog.moments.date">December 22, 2025</p>
                             <h3 data-i18n="blog.moments.title">Moments That Matter</h3>
-                            <p data-i18n="blog.moments.excerpt">Friendship, travel, and the hours that are not a sprint.
-                            </p>
+                            <p data-i18n="blog.moments.excerpt">Reflections on friendship, travel dreams, and finding balance in a fast-paced world.</p>
                         </div>
                     </a>
                     <a class="journal-card reveal" href="posts/welcome.html">
@@ -298,7 +297,7 @@
                         <div class="journal-body">
                             <p class="blog-meta" data-i18n="blog.welcome.date">December 17, 2025</p>
                             <h3 data-i18n="blog.welcome.title">Welcome to the New Setup</h3>
-                            <p data-i18n="blog.welcome.excerpt">Why this site has a personal mode at all.</p>
+                            <p data-i18n="blog.welcome.excerpt">Separating my professional work from my personal interests was a necessary step. Here's why I decided to build a dual-mode website.</p>
                         </div>
                     </a>
                 </div>

@@ -24,7 +24,7 @@
     <nav class="top-nav">
         <div class="container nav-container">
             <a href="hub.html" class="logo">CH.integrate()</a>
-            <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"
+            <button class="hamburger" id="hamburger" type="button" data-i18n-aria="common.toggleMenu" aria-label="Toggle menu" aria-expanded="false"
                 aria-controls="navLinks">
                 <span></span>
                 <span></span>
@@ -42,7 +42,7 @@
                     Personal</a>
                 <a href="index.html" class="nav-path-reset" data-i18n="nav.chooseAgain">Choose path again</a>
                 <div class="lang-switcher">
-                    <label class="visually-hidden" for="language-selector">Language</label>
+                    <label class="visually-hidden" for="language-selector" data-i18n="common.language">Language</label>
                     <select id="language-selector">
                         <option value="en">EN</option>
                         <option value="tr">TR</option>
@@ -71,7 +71,7 @@
 
         <div class="grid-cards">
             <!-- Pattern 1: EDI Interaction -->
-            <div class="tech-card" style="cursor: zoom-in;" onclick="openLightbox(this)" title="Click to Expand">
+            <div class="tech-card" style="cursor: zoom-in;" onclick="openLightbox(this)" data-i18n-title="common.clickToExpand" title="Click to expand">
                 <div
                     style="margin-bottom:1rem; font-family:var(--font-mono); color:var(--text-secondary); font-size:0.8rem;">
                     REF: EDI-STD-01 // ORDER-TO-CASH FLOW</div>
@@ -100,7 +100,7 @@
             </div>
 
             <!-- Pattern 2: API Gateway -->
-            <div class="tech-card" style="cursor: zoom-in;" onclick="openLightbox(this)" title="Click to Expand">
+            <div class="tech-card" style="cursor: zoom-in;" onclick="openLightbox(this)" data-i18n-title="common.clickToExpand" title="Click to expand">
                 <div
                     style="margin-bottom:1rem; font-family:var(--font-mono); color:var(--text-secondary); font-size:0.8rem;">
                     REF: API-GW-02</div>
@@ -126,7 +126,7 @@
             </div>
 
             <!-- Pattern 3: Hybrid Connectivity -->
-            <div class="tech-card" style="cursor: zoom-in;" onclick="openLightbox(this)" title="Click to Expand">
+            <div class="tech-card" style="cursor: zoom-in;" onclick="openLightbox(this)" data-i18n-title="common.clickToExpand" title="Click to expand">
                 <div
                     style="margin-bottom:1rem; font-family:var(--font-mono); color:var(--text-secondary); font-size:0.8rem;">
                     REF: HYB-SYNC-03</div>
@@ -163,8 +163,7 @@
             <article class="tech-card" style="margin-bottom: 2rem;">
                 <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
                     <h3 style="color: var(--accent-blue); font-size: 1.3rem;"
-                        data-i18n="patterns.articles.design.title">EDI Transaction Set Design: Best Practices
-                        for X12 and EDIFACT</h3>
+                        data-i18n="patterns.articles.design.title">EDI Transaction Set Design: Best Practices for X12 &amp; EDIFACT</h3>
                     <span class="mono-tag">STANDARDS</span>
                 </div>
 
@@ -176,8 +175,7 @@
                 </p>
 
                 <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;"
-                    data-i18n="patterns.articles.design.h1">
-                    1. Standardization Over Customization</h4>
+                    data-i18n="patterns.articles.design.h1">1. Standardize Over Customize</h4>
                 <p style="line-height: 1.7; margin-bottom: 1rem;" data-i18n="patterns.articles.design.p2">
                     While X12 and EDIFACT standards allow for optional segments and elements, resist the temptation to
                     create

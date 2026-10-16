@@ -7,6 +7,16 @@
         "switchProfessional": "Switch to Professional",
         "chooseAgain": "Choose path again"
     },
+    "common": {
+        "language": "Language",
+        "toggleMenu": "Toggle menu"
+    },
+    "aria": {
+        "intro": "Intro",
+        "scrollPhotos": "Scroll to photos",
+        "photoGroups": "Photo groups",
+        "whatsapp": "WhatsApp @cihanhartamaci"
+    },
     "hero": {
         "greeting": "Cihan Hartamacı",
         "subtitle": "Ordu shores, Istanbul nights, Sumela Monastery stone, friends who stay. Off the clock — and a little extra.",
@@ -17,8 +27,8 @@
         "tiktok": "TikTok",
         "whatsapp": "WhatsApp",
         "followIg": "Follow on Instagram",
-        "followTt": "TikTok",
-        "followWa": "WhatsApp"
+        "followTt": "Follow on TikTok",
+        "followWa": "Message on WhatsApp"
     },
     "photos": {
         "kicker": "Film roll",

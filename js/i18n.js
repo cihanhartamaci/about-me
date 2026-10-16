@@ -36,7 +36,7 @@
             this.currentLang = lang;
             this.syncSelector(); // Sync UI immediately
 
-            const url = this.basePath + lang + '.json?v=1.0.5';
+            const url = this.basePath + lang + '.json?v=1.0.6';
             return fetch(url)
                 .then(response => {
                     if (!response.ok) throw new Error(`Translation file not found: ${url}`);
@@ -134,6 +134,12 @@
             document.querySelectorAll('[data-i18n-aria]').forEach(elem => {
                 const key = elem.getAttribute('data-i18n-aria');
                 elem.setAttribute('aria-label', this.t(key));
+            });
+
+            // Translate alt attribute
+            document.querySelectorAll('[data-i18n-alt]').forEach(elem => {
+                const key = elem.getAttribute('data-i18n-alt');
+                elem.setAttribute('alt', this.t(key));
             });
         },
 
