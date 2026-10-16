@@ -837,12 +837,11 @@ body.nav-open .top-nav {
 }
 
 .besiktas-mark {
-    width: 64px;
+    width: 68px;
     height: auto;
     flex-shrink: 0;
-    filter: invert(1);
-    opacity: 0.95;
-    transform: translateY(0.15rem);
+    opacity: 0.96;
+    transform: translateY(0.1rem);
 }
 
 .besiktas-kicker {

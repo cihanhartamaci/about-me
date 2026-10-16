@@ -1,23 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" role="img" aria-labelledby="bjkTitle bjkDesc">
-  <title id="bjkTitle">Be_ikta_ fan mark</title>
-  <desc id="bjkDesc">Original black-and-white eagle silhouette with Be_ikta_ wordmark for personal fan identity. Not an official club crest.</desc>
-  <!-- Original geometric eagle  inspired by black/white club colors, not a scraped trademark crest -->
-  <g fill="#111111">
-    <!-- body -->
-    <ellipse cx="60" cy="62" rx="16" ry="22"/>
-    <!-- head -->
-    <path d="M60 28c-7 0-12 5-13 12 4-2 8-3 13-3s9 1 13 3c-1-7-6-12-13-12z"/>
-    <!-- beak -->
-    <path d="M72 42l14 3-14 5z"/>
-    <!-- left wing -->
-    <path d="M46 48C28 42 14 52 8 68c10-6 20-8 30-4 4 2 7 6 8 10-2-10-2-18 0-26z"/>
-    <!-- right wing -->
-    <path d="M74 48c18-6 32 4 38 20-10-6-20-8-30-4-4 2-7 6-8 10 2-10 2-18 0-26z"/>
-    <!-- tail -->
-    <path d="M48 82c2 14 6 24 12 34 6-10 10-20 12-34-8 4-16 4-24 0z"/>
-    <!-- chest stripe accent -->
-    <rect x="52" y="54" width="16" height="3" rx="1" fill="#f7f7f7"/>
-    <rect x="52" y="61" width="16" height="3" rx="1" fill="#f7f7f7"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 148" width="120" height="148" role="img" aria-labelledby="bjkTitle bjkDesc">
+  <title id="bjkTitle">Beşiktaş fan mark</title>
+  <desc id="bjkDesc">Original black-and-white eagle silhouette with Beşiktaş wordmark for personal fan identity. Not an official club crest.</desc>
+  <!-- Original geometric eagle — inspired by black/white club colors, not a scraped trademark crest -->
+  <g fill="#f5f5f5">
+    <ellipse cx="60" cy="58" rx="17" ry="23"/>
+    <path d="M60 22c-8 0-13 6-14 13 4-2 9-3 14-3s10 1 14 3c-1-7-6-13-14-13z"/>
+    <path d="M73 39l16 4-16 6z"/>
+    <path d="M45 45C26 38 12 49 5 66c11-7 22-9 33-5 4 2 8 7 9 11-2-11-2-19-2-27z"/>
+    <path d="M75 45c19-7 33 4 40 21-11-7-22-9-33-5-4 2-8 7-9 11 2-11 2-19 2-27z"/>
+    <path d="M47 80c2 15 7 26 13 36 6-10 11-21 13-36-9 4-17 4-26 0z"/>
+    <rect x="51" y="50" width="18" height="3.5" rx="1" fill="#111"/>
+    <rect x="51" y="58" width="18" height="3.5" rx="1" fill="#111"/>
   </g>
-  <text x="60" y="132" text-anchor="middle" font-family="Syne, Plus Jakarta Sans, sans-serif" font-size="14" font-weight="700" letter-spacing="0.18em" fill="#111111">BE^0KTA^</text>
+  <text x="60" y="140" text-anchor="middle" font-family="Syne, Plus Jakarta Sans, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.2em" fill="#f5f5f5">BEŞİKTAŞ</text>
 </svg>
