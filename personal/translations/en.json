@@ -240,5 +240,12 @@
         "kicker": "About",
         "title": "Notes from off the clock",
         "lead": "A little about me, evenings, places, and the things that make ordinary days feel lighter."
+    },
+    "philosophy": {
+        "kicker": "Philosophy",
+        "title": "Know thyself",
+        "p1": "Temet nosce is Latin for “know thyself” — ancient Delphic wisdom once carved at Apollo’s temple in Delphi.",
+        "p2": "It is a reminder to look inward before chasing the road ahead: stay honest about who you are, what you need, and what you leave behind.",
+        "p3": "For me it is less a slogan than a quiet compass — on Ordu shores, Istanbul nights, Sumela stone, and every stretch in between."
     }
 }
