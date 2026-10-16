@@ -200,21 +200,22 @@ body.nav-open .top-nav {
     z-index: 0;
 }
 
-.hero-slideshow .hero-bg {
+.hero-slideshow .hero-slide {
     position: absolute;
     inset: 0;
     opacity: 0;
-    transform: scale(1.06);
     transition: opacity 1.4s var(--ease-out);
     animation: none;
+    overflow: hidden;
 }
 
-.hero-slideshow .hero-bg.is-active {
+.hero-slideshow .hero-slide.is-active {
     opacity: 1;
     z-index: 1;
     animation: kenBurns 18s var(--ease-out) infinite alternate;
 }
 
+.hero-slideshow .hero-slide img,
 .hero-bg {
     width: 100%;
     height: 100%;
@@ -223,24 +224,75 @@ body.nav-open .top-nav {
     display: block;
 }
 
-.hero-slideshow .hero-slide:nth-child(1) {
+.hero-slideshow .hero-slide img.pos-face {
     object-position: center 28%;
 }
 
-.hero-slideshow .hero-slide:nth-child(2) {
+.hero-slideshow .hero-slide img.pos-face-mid {
+    object-position: center 42%;
+}
+
+.hero-slideshow .hero-slide img.pos-group {
+    object-position: center 58%;
+}
+
+/* Square Sumela portrait: face-aware cover; desktop uses contain+cover hybrid */
+.hero-slideshow .hero-slide--sumela .hero-slide__focus {
+    object-position: center 58%;
+}
+
+.hero-slideshow .hero-slide--sumela .hero-slide__bleed {
+    display: none;
+}
+
+.hero-slideshow .hero-slide:nth-child(2) img {
     object-position: center 55%;
 }
 
-.hero-slideshow .hero-slide:nth-child(3) {
-    object-position: center 35%;
+.hero-slideshow .hero-slide:nth-child(3) img {
+    object-position: center 58%;
 }
 
-.hero-slideshow .hero-slide:nth-child(4) {
+.hero-slideshow .hero-slide:nth-child(4) img {
     object-position: center 45%;
 }
 
-.hero-slideshow .hero-slide:nth-child(5) {
-    object-position: center 55%;
+.hero-slideshow .hero-slide:nth-child(5) img {
+    object-position: center 52%;
+}
+
+/* Desktop: avoid extreme crop/zoom on the square Sumela still */
+@media (min-width: 900px) {
+    .hero-slideshow .hero-slide--sumela .hero-slide__bleed {
+        display: block;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 55%;
+        filter: blur(36px) saturate(1.08) brightness(0.72);
+        transform: scale(1.18);
+        z-index: 0;
+    }
+
+    .hero-slideshow .hero-slide--sumela .hero-slide__focus {
+        position: relative;
+        z-index: 1;
+        object-fit: contain;
+        object-position: center center;
+    }
+
+    /* No Ken Burns on Sumela — keeps the upscaled portrait sharp */
+    .hero-slideshow .hero-slide--sumela.is-active {
+        animation: none;
+        transform: none;
+    }
+
+    /* Milder motion on other slides so faces stay sharp */
+    .hero-slideshow .hero-slide:not(.hero-slide--sumela).is-active {
+        animation-name: kenBurnsDesktop;
+    }
 }
 
 .hero-veil {
@@ -513,13 +565,42 @@ body.nav-open .top-nav {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center center;
     display: block;
     z-index: 0;
     transition: transform 0.55s var(--ease-out);
 }
 
+/* Keep faces in frame when cover crops mosaic tiles */
+.photo-tile img.pos-face {
+    object-position: center 28%;
+}
+
+.photo-tile img.pos-face-mid {
+    object-position: center 40%;
+}
+
+.photo-tile img.pos-upper {
+    object-position: center 22%;
+}
+
+.photo-tile img.pos-lower {
+    object-position: center 68%;
+}
+
+/* Group shots with faces in the lower half of tall frames */
+.photo-tile img.pos-group {
+    object-position: center 62%;
+}
+
 .photo-tile:hover img {
-    transform: scale(1.04);
+    transform: scale(1.03);
+}
+
+@media (min-width: 800px) {
+    .photo-tile:hover img {
+        transform: scale(1.02);
+    }
 }
 
 .photo-tile:hover {
@@ -622,7 +703,8 @@ body.nav-open .top-nav {
     .photo-mosaic {
         /* 12-col track keeps tall/wide spans aligned with even gutters */
         grid-template-columns: repeat(12, minmax(0, 1fr));
-        grid-auto-rows: 228px;
+        /* Taller tracks = less vertical cover-crop on portrait JPEGs */
+        grid-auto-rows: 268px;
         gap: 1.05rem;
         grid-auto-flow: row;
     }
@@ -727,6 +809,7 @@ body.nav-open .top-nav {
     height: 100%;
     min-height: 140px;
     object-fit: cover;
+    object-position: center 36%;
 }
 
 .journal-body {
@@ -963,10 +1046,19 @@ body.nav-open .top-nav {
 
 @keyframes kenBurns {
     from {
-        transform: scale(1.08) translate3d(0, 0, 0);
+        transform: scale(1.0) translate3d(0, 0, 0);
     }
     to {
-        transform: scale(1.16) translate3d(-1.5%, -1%, 0);
+        transform: scale(1.04) translate3d(-0.6%, -0.4%, 0);
+    }
+}
+
+@keyframes kenBurnsDesktop {
+    from {
+        transform: scale(1.0) translate3d(0, 0, 0);
+    }
+    to {
+        transform: scale(1.025) translate3d(-0.35%, -0.2%, 0);
     }
 }
 
@@ -1012,8 +1104,14 @@ body.nav-open .top-nav {
 }
 
 @media (max-width: 768px) {
-    .hero-slideshow .hero-slide:nth-child(1) {
-        object-position: center 22%;
+    /* Preserve mobile face crop (~60–70%) — subject above the title block */
+    .hero-slideshow .hero-slide--sumela .hero-slide__focus {
+        object-fit: cover;
+        object-position: center 68%;
+    }
+
+    .hero-slideshow .hero-slide:nth-child(3) img {
+        object-position: center 60%;
     }
 
     .hero-copy {
@@ -1200,8 +1298,8 @@ body.nav-open .top-nav {
     }
 
     .hero-bg,
-    .hero-slideshow .hero-bg,
-    .hero-slideshow .hero-bg.is-active,
+    .hero-slideshow .hero-slide,
+    .hero-slideshow .hero-slide.is-active,
     .hero-motto,
     .hero-scroll,
     .reveal {
@@ -1211,8 +1309,12 @@ body.nav-open .top-nav {
         transform: none;
     }
 
-    .hero-slideshow .hero-bg:not(.is-active) {
+    .hero-slideshow .hero-slide:not(.is-active) {
         opacity: 0;
+    }
+
+    .hero-slideshow .hero-slide--sumela .hero-slide__bleed {
+        transform: scale(1.12);
     }
 }
 
@@ -1300,6 +1402,7 @@ body.nav-open .top-nav {
     width: 100%;
     height: clamp(220px, 42vw, 360px);
     object-fit: cover;
+    object-position: center 40%;
     transition: transform 0.55s ease;
 }
 
