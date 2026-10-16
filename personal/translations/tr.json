@@ -19,6 +19,7 @@
     },
     "hero": {
         "greeting": "Cihan Hartamacı",
+        "mottoGloss": "Kendini tanı",
         "subtitle": "Ordu sahili, İstanbul geceleri, Sümela Manastırı, kalan dostlar. Mesai dışı — biraz da eğlence.",
         "scroll": "Aşağıda anlar"
     },
@@ -85,7 +86,7 @@
         "n2": "Fazla değil.",
         "n3": "Her şey yolunda değil, ama ben iyiyim.",
         "n4": "Yol uzun, ama güzel.",
-        "n5": "Temet nosce — yolda kendini tanı.",
+        "n5": "<span class=\"motto-inline\">Temet nosce</span> — yolda kendini tanı.",
         "n6": "Ordu alacakaranlığı sprint saatini sıfırlar.",
         "n7": "Sümela taşı hatırlar; dinlemeye çalışırım.",
         "n8": "İş günleri EDI haritalarıyla akar — ve döngüde bir kod asistanı."
@@ -222,5 +223,12 @@
         "kicker": "Hakkında",
         "title": "Mesai dışı notlar",
         "lead": "Biraz kendimden, akşamlardan, yerlerden ve sıradan günleri hafifleten şeylerden."
+    },
+    "philosophy": {
+        "kicker": "Felsefe",
+        "title": "Kendini tanı",
+        "p1": "Temet nosce, Latince “kendini tanı” demektir — bir zamanlar Delfi’deki Apollon tapınağına kazınmış antik Delfi bilgeliği.",
+        "p2": "Yola çıkmadan önce içe bakmaya dair bir hatırlatmadır: kim olduğuna, neye ihtiyacın olduğuna ve geride ne bıraktığına dürüst kal.",
+        "p3": "Benim için bir slogan değil, sessiz bir pusula — Ordu sahilinde, İstanbul gecelerinde, Sümela taşında ve aradaki her yolda."
     }
 }

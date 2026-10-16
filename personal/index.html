@@ -43,7 +43,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/lang-switcher.css">
@@ -97,7 +97,10 @@
                 <div class="hero-veil"></div>
             </div>
             <div class="hero-copy reveal">
-                <p class="hero-motto">Temet nosce</p>
+                <p class="hero-motto">
+                    <span class="hero-motto__latin">Temet nosce</span>
+                    <span class="hero-motto__gloss" data-i18n="hero.mottoGloss">Know yourself</span>
+                </p>
                 <h1 class="hero-title" data-i18n="hero.greeting">Cihan Hartamacı</h1>
                 <p class="hero-subtitle" data-i18n="hero.subtitle">
                     Ordu shores, Istanbul nights, Sumela Monastery, friends who stay. Off the clock — and a little extra.
@@ -277,6 +280,25 @@
             </div>
         </section>
 
+        <section id="philosophy" class="philosophy-strip" aria-labelledby="philosophy-heading">
+            <div class="container">
+                <div class="philosophy-panel reveal">
+                    <p class="section-kicker" data-i18n="philosophy.kicker">Philosophy</p>
+                    <p class="philosophy-latin" aria-hidden="true">Temet nosce</p>
+                    <h2 id="philosophy-heading" data-i18n="philosophy.title">Know thyself</h2>
+                    <p class="philosophy-body" data-i18n="philosophy.p1">
+                        Temet nosce is Latin for “know thyself” — ancient Delphic wisdom once carved at Apollo’s temple in Delphi.
+                    </p>
+                    <p class="philosophy-body" data-i18n="philosophy.p2">
+                        It is a reminder to look inward before chasing the road ahead: stay honest about who you are, what you need, and what you leave behind.
+                    </p>
+                    <p class="philosophy-body" data-i18n="philosophy.p3">
+                        For me it is less a slogan than a quiet compass — on Ordu shores, Istanbul nights, Sumela stone, and every stretch in between.
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <section id="notes" class="notes-section">
             <div class="container">
                 <div class="section-head reveal">
@@ -299,8 +321,8 @@
                     <blockquote class="note-line reveal">
                         <p data-i18n="notes.n4">The road is long, but beautiful.</p>
                     </blockquote>
-                    <blockquote class="note-line reveal">
-                        <p data-i18n="notes.n5">Temet nosce — know yourself on the way.</p>
+                    <blockquote class="note-line note-line--motto reveal">
+                        <p data-i18n-html="notes.n5"><span class="motto-inline">Temet nosce</span> — know yourself on the way.</p>
                     </blockquote>
                     <blockquote class="note-line reveal">
                         <p data-i18n="notes.n6">Ordu twilight resets the sprint clock.</p>

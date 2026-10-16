@@ -16,6 +16,8 @@
 
     --font-display: 'Syne', system-ui, sans-serif;
     --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-motto: 'Cormorant Garamond', 'Times New Roman', serif;
+    --accent-honey-deep: #c9921a;
 
     --nav-height: 72px;
     --container-width: 1080px;
@@ -259,15 +261,70 @@ body.nav-open .top-nav {
 }
 
 .hero-motto {
-    font-family: var(--font-display);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    margin: 0 0 1.25rem;
+    max-width: 26rem;
+    padding: 0.15rem 0 0.2rem;
+}
+
+.hero-motto::before {
+    content: "";
+    position: absolute;
+    left: -0.65rem;
+    top: -0.55rem;
+    width: min(12rem, 72%);
+    height: 3.4rem;
+    background: radial-gradient(ellipse at 20% 40%, rgba(240, 180, 41, 0.34), transparent 68%);
+    pointer-events: none;
+    z-index: -1;
+    animation: mottoAura 5.5s ease-in-out infinite;
+}
+
+.hero-motto__latin {
+    font-family: var(--font-motto);
     font-weight: 600;
     font-style: italic;
-    letter-spacing: 0.08em;
+    font-size: clamp(1.45rem, 4.4vw, 2.2rem);
+    line-height: 1.08;
+    letter-spacing: 0.32em;
     text-transform: uppercase;
-    font-size: 0.85rem;
-    color: var(--accent-honey);
-    margin-bottom: 0.85rem;
-    animation: mottoGlow 3.5s ease-in-out infinite;
+    color: #ffd56a;
+    background: linear-gradient(105deg, #ffe7a3 0%, #f0b429 42%, #fff1c2 58%, #d4a017 100%);
+    background-size: 220% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 18px rgba(240, 180, 41, 0.45)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+    animation:
+        mottoEnter 1.15s var(--ease-out) both,
+        mottoShimmer 5.5s ease-in-out 1.15s infinite,
+        mottoGlow 4.2s ease-in-out 1.15s infinite;
+}
+
+.hero-motto__gloss {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: clamp(0.74rem, 1.7vw, 0.86rem);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255, 232, 176, 0.82);
+    padding-left: 0.08em;
+    animation: mottoGlossEnter 1s var(--ease-out) 0.32s both;
+}
+
+.hero-motto__gloss::before {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 1px;
+    margin: 0 0 0.5rem;
+    background: linear-gradient(90deg, #ffd56a, rgba(240, 180, 41, 0.15), transparent);
+    opacity: 0.95;
+    animation: mottoRule 2.8s ease-in-out 0.6s infinite;
 }
 
 .hero-title {
@@ -375,8 +432,66 @@ body.nav-open .top-nav {
 /* Sections */
 .photos-section,
 .notes-section,
-.journal-preview {
+.journal-preview,
+.philosophy-strip {
     padding: clamp(3.5rem, 8vw, 5.5rem) 0;
+}
+
+.philosophy-strip {
+    padding-top: clamp(2.5rem, 6vw, 4rem);
+    padding-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+
+.philosophy-panel {
+    position: relative;
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: clamp(1.75rem, 4vw, 2.6rem) clamp(1.35rem, 4vw, 2.4rem);
+    border-top: 1px solid rgba(201, 146, 26, 0.35);
+    border-bottom: 1px solid rgba(201, 146, 26, 0.28);
+    background:
+        radial-gradient(ellipse 70% 80% at 8% 20%, rgba(240, 180, 41, 0.14), transparent 55%),
+        radial-gradient(ellipse 55% 70% at 92% 80%, rgba(15, 138, 128, 0.08), transparent 50%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.18));
+    text-align: left;
+}
+
+.philosophy-panel .section-kicker {
+    color: var(--accent-honey-deep);
+}
+
+.philosophy-latin {
+    font-family: var(--font-motto);
+    font-weight: 600;
+    font-style: italic;
+    font-size: clamp(1.55rem, 3.6vw, 2.05rem);
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--accent-honey-deep);
+    margin: 0.35rem 0 0.55rem;
+    line-height: 1.15;
+    animation: mottoGlowSoft 5s ease-in-out infinite;
+}
+
+.philosophy-panel h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.45rem, 3vw, 1.85rem);
+    font-weight: 700;
+    margin: 0 0 1rem;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.philosophy-body {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 38rem;
+    margin: 0 0 0.85rem;
+}
+
+.philosophy-body:last-child {
+    margin-bottom: 0;
 }
 
 .section-head {
@@ -696,6 +811,21 @@ body.nav-open .top-nav {
     color: var(--accent-coral);
 }
 
+.note-line--motto p {
+    max-width: 30ch;
+    color: var(--text-primary);
+}
+
+.note-line--motto .motto-inline {
+    font-family: var(--font-motto);
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-honey-deep);
+    font-size: 0.92em;
+}
+
 /* Journal cards — interaction containers */
 .journal-grid {
     display: grid;
@@ -970,15 +1100,83 @@ body.nav-open .top-nav {
     }
 }
 
+@keyframes mottoEnter {
+    from {
+        opacity: 0;
+        transform: translateY(0.65rem) scale(0.97);
+        filter: blur(2px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+        filter: none;
+    }
+}
+
+@keyframes mottoGlossEnter {
+    from {
+        opacity: 0;
+        transform: translateY(0.4rem);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
 @keyframes mottoGlow {
     0%,
     100% {
-        opacity: 0.85;
-        filter: brightness(1);
+        filter: drop-shadow(0 0 14px rgba(240, 180, 41, 0.28)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+    }
+    50% {
+        filter: drop-shadow(0 0 28px rgba(240, 180, 41, 0.55)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+    }
+}
+
+@keyframes mottoShimmer {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes mottoAura {
+    0%,
+    100% {
+        opacity: 0.55;
+        transform: scale(0.96);
     }
     50% {
         opacity: 1;
-        filter: brightness(1.15);
+        transform: scale(1.05);
+    }
+}
+
+@keyframes mottoRule {
+    0%,
+    100% {
+        width: 2.4rem;
+        opacity: 0.75;
+    }
+    50% {
+        width: 3.4rem;
+        opacity: 1;
+    }
+}
+
+@keyframes mottoGlowSoft {
+    0%,
+    100% {
+        filter: brightness(1);
+        opacity: 0.92;
+    }
+    50% {
+        filter: brightness(1.08);
+        opacity: 1;
     }
 }
 
@@ -1021,10 +1219,29 @@ body.nav-open .top-nav {
         max-width: 100%;
     }
 
+    .hero-motto {
+        margin-bottom: 1rem;
+        max-width: 100%;
+    }
+
+    .hero-motto__latin {
+        font-size: clamp(1.28rem, 5.6vw, 1.55rem);
+        letter-spacing: 0.24em;
+    }
+
+    .hero-motto__gloss {
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+    }
+
     .hero-title {
         font-size: clamp(2.05rem, 10vw, 2.65rem);
         letter-spacing: -0.045em;
         overflow-wrap: anywhere;
+    }
+
+    .philosophy-latin {
+        letter-spacing: 0.2em;
     }
 
     .hero-subtitle {
@@ -1203,12 +1420,17 @@ body.nav-open .top-nav {
     .hero-slideshow .hero-bg,
     .hero-slideshow .hero-bg.is-active,
     .hero-motto,
+    .hero-motto::before,
+    .hero-motto__latin,
+    .hero-motto__gloss,
+    .philosophy-latin,
     .hero-scroll,
     .reveal {
         animation: none !important;
         transition: none !important;
         opacity: 1;
         transform: none;
+        filter: none;
     }
 
     .hero-slideshow .hero-bg:not(.is-active) {

@@ -19,6 +19,7 @@
     },
     "hero": {
         "greeting": "Cihan Hartamacı",
+        "mottoGloss": "Know yourself",
         "subtitle": "Ordu shores, Istanbul nights, Sumela Monastery, friends who stay. Off the clock — and a little extra.",
         "scroll": "Moments below"
     },
@@ -85,7 +86,7 @@
         "n2": "Not too much.",
         "n3": "Everything is not okay, but I'm fine.",
         "n4": "The road is long, but beautiful.",
-        "n5": "Temet nosce — know yourself on the way.",
+        "n5": "<span class=\"motto-inline\">Temet nosce</span> — know yourself on the way.",
         "n6": "Ordu twilight resets the sprint clock.",
         "n7": "Sümela stone remembers; I try to listen.",
         "n8": "Workdays run on EDI maps — and a coding assistant in the loop."
@@ -222,5 +223,12 @@
         "kicker": "About",
         "title": "Notes from off the clock",
         "lead": "A little about me, evenings, places, and the things that make ordinary days feel lighter."
+    },
+    "philosophy": {
+        "kicker": "Philosophy",
+        "title": "Know thyself",
+        "p1": "Temet nosce is Latin for “know thyself” — ancient Delphic wisdom once carved at Apollo’s temple in Delphi.",
+        "p2": "It is a reminder to look inward before chasing the road ahead: stay honest about who you are, what you need, and what you leave behind.",
+        "p3": "For me it is less a slogan than a quiet compass — on Ordu shores, Istanbul nights, Sumela stone, and every stretch in between."
     }
 }
