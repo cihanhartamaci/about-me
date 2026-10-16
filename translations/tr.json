@@ -67,6 +67,50 @@
         "toolsTitle": "Geliştirici Araçları",
         "toolsDesc": "Tarayıcı tabanlı EDI ayrıştırıcı, API test aracı, regex ve cron araçları."
     },
+    "ai": {
+        "kicker": "> IS_VE_HAYATTA_YZ",
+        "title": "İş ve hayatta yapay zekâ",
+        "lead": "Entegrasyon Mimarı olarak yapay zekâyı her gün kullanıyorum — gösteriş için değil; EDI eşlemeleri, API’ler, NetSuite SuiteScript ve iş ortaklarını hizada tutan dokümanlar için pratik bir ortak olarak.",
+        "cta": "YZ ile nasıl çalışıyorum",
+        "pageTitle": "YZ ile nasıl çalışıyorum",
+        "pageLead": "Bir Entegrasyon Mimarı masasından günlük pratik — EDI köprüleri, RESTful API’ler, NetSuite SuiteScript ve projeler ile öğrenmeyi ilerleten alışkanlıklar.",
+        "storyTitle": "Pratik, tiyatro değil",
+        "storyP1": "Günlük işim entegrasyon: iş ortağı akışlarını eşlemek, API sözleşmelerini şekillendirmek, WMS ve ERP sistemlerinin temiz konuşmasını sağlamak. Yapay zekâ bu döngüde, bir yazarın yanındaki keskin editör gibi durur — taslakları hızlandırır, varsayımları zorlar; üretim davranışı üzerinde kararı asla ele geçirmez.",
+        "storyP2": "Mimariyi dışarıya devretmem. Asistanları fikirden çalışan taslağa daha hızlı geçmek için kullanır, sonra gerçek yükler, partner kılavuzları ve canlı EDI ile API platformlarının kısıtlarına göre doğrularım.",
+        "closing": "YZ, zaten sahip olduğum zanaatı çoğaltır — EDI, API’ler ve ortaklar izlerken güvenilir kalması gereken sistemler.",
+        "ctaExpertise": "Uzmanlığa bak",
+        "ctaBack": "Merkeze dön",
+        "build": {
+            "label": "Üret",
+            "title": "Kod asistanları hat üzerinde",
+            "desc": "SuiteScript, Python ve SQL’i daha hızlı taslaklarım — kenar durumları, partner tuhaflıkları ve üretim güvenliğini ise kendim sahiplenirim.",
+            "long": "Entegrasyon işlerinde SuiteScript, Python veya SQL’e gömüldüğümde kod asistanları şablon taslaklar, test senaryoları önerir ve gözden kaçabilecek kenar koşulları çıkarır. Yine de her eşlemeyi, her yeniden deneme yolunu ve her partnere özel tuhaflığı göndermeden önce ben gözden geçiririm."
+        },
+        "design": {
+            "label": "Tasarla",
+            "title": "Daha net EDI ve API biçimleri",
+            "desc": "WMS ve ERP bağlantısını şekillendirirken varsayımları stres testinden geçiririm — X12, EDIFACT, REST sözleşmeleri ve hibrit senkron yolları.",
+            "long": "Order-to-Cash X12 kümeleri, EDIFACT akışları veya REST ağ geçitleri tasarlarken “saat 02:00’de ne kırılır?” diye soran ikinci bir ses faydalıdır. Yaklaşımları karşılaştırmak, arayüz sözleşmelerini sıkılaştırmak ve hibrit senkron tasarımlarını gecikme ile idempotency konusunda dürüst tutmak için YZ kullanırım."
+        },
+        "docs": {
+            "label": "Doküman",
+            "title": "Spesifikasyonlar, runbook’lar, öğrenme",
+            "desc": "Desen notları ve partnere dönük yazılar daha hızlı netleşir. Yeni API’ler ve standartlar etkileşimli ikinci bir geçişle daha iyi oturur.",
+            "long": "Net dokümantasyon entegrasyonun parçasıdır. Asistanlar kaba notları partnere okunur spesifikasyonlara ve iç runbook’lara çevirmeye yardım eder. Aynı döngü yeni bir API öğrenmeyi veya aylardır dokunmadığım bir standardı yeniden hatırlamayı hızlandırır."
+        },
+        "life": {
+            "label": "Hayat",
+            "title": "Mesai dışında aynı alışkanlık",
+            "desc": "Yan öğrenmeler, kişisel projeler ve bağlam değişimleri aynı pratik döngüyle daha temiz ilerler.",
+            "long": "Mesai dışında alışkanlık pratik kalır: kişisel projeler, dil pratiği, seyahat notları veya haftanın yapışkan bir problemini çözmek. Daha az tiyatro, daha çok kaldıraç — sonra dostlara, kıyılara ve sessiz karelere dönüş."
+        },
+        "roster": {
+            "title": "Günlük kullandığım araçlar",
+            "buildThink": "Üret / düşün",
+            "create": "Yarat",
+            "note": "Kişisel araç deneyimi — şirket bağlantısı veya işveren iddiası değil."
+        }
+    },
     "patterns": {
         "title": "> ENTEGRASYON_DESENLERI",
         "subtitle": "Kurumsal bağlantı için standartlaştırılmış görsel taslaklar.",

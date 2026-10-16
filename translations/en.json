@@ -67,6 +67,50 @@
         "toolsTitle": "Developer Tools",
         "toolsDesc": "Browser-based EDI parser, API tester, regex, and cron utilities."
     },
+    "ai": {
+        "kicker": "> AI_IN_WORK_AND_LIFE",
+        "title": "AI in work & life",
+        "lead": "As an Integration Architect, I use AI every day — not as a gimmick, but as a practical partner across EDI maps, APIs, NetSuite SuiteScript, and the docs that keep trading partners aligned.",
+        "cta": "How I work with AI",
+        "pageTitle": "How I work with AI",
+        "pageLead": "Daily practice from an Integration Architect’s desk — EDI bridges, RESTful APIs, NetSuite SuiteScript, and the habits that keep projects and learning moving.",
+        "storyTitle": "Practical, not theatrical",
+        "storyP1": "My day job is integration: mapping trading-partner flows, shaping API contracts, and keeping WMS and ERP systems talking cleanly. AI sits in that loop the same way a sharp editor sits next to a writer — accelerating drafts, challenging assumptions, never replacing judgment on production behavior.",
+        "storyP2": "I do not outsource architecture. I use assistants to move from idea to working sketch faster, then verify against real payloads, partner guides, and the constraints of live EDI and API platforms.",
+        "closing": "AI is a multiplier on craft I already own — EDI, APIs, and systems that have to stay reliable when partners are watching.",
+        "ctaExpertise": "See expertise",
+        "ctaBack": "Back to hub",
+        "build": {
+            "label": "Build",
+            "title": "Coding assistants on the line",
+            "desc": "Draft SuiteScript, Python, and SQL faster — then own the edge cases, partner quirks, and production safety myself.",
+            "long": "When I am deep in SuiteScript, Python, or SQL for integration jobs, coding assistants help draft boilerplate, suggest test cases, and surface edge conditions I might skim past. I still review every mapping, every retry path, and every partner-specific quirk before anything ships."
+        },
+        "design": {
+            "label": "Design",
+            "title": "Clearer EDI & API shapes",
+            "desc": "Stress-test assumptions when shaping WMS and ERP connectivity — X12, EDIFACT, REST contracts, and hybrid sync paths.",
+            "long": "Designing Order-to-Cash X12 sets, EDIFACT flows, or REST gateways benefits from a second voice that asks “what fails at 2 a.m.?” I use AI to compare approaches, tighten interface contracts, and keep hybrid sync designs honest about latency and idempotency."
+        },
+        "docs": {
+            "label": "Docs",
+            "title": "Specs, runbooks, learning",
+            "desc": "Pattern notes and partner-facing write-ups get sharper faster. New APIs and standards stick with an interactive second pass.",
+            "long": "Clear documentation is part of the integration. Assistants help turn rough notes into partner-readable specs and internal runbooks. The same loop speeds up learning a new API or revisiting a standard I have not touched in months."
+        },
+        "life": {
+            "label": "Life",
+            "title": "Same habit off the clock",
+            "desc": "Side learning, personal projects, and context-switching all move cleaner with the same practical loop.",
+            "long": "Off the clock, the habit stays practical: personal projects, language practice, planning travel notes, or untangling a sticky problem from the week. Less theater, more leverage — then back to friends, coasts, and quiet frames."
+        },
+        "roster": {
+            "title": "Tools in daily use",
+            "buildThink": "Build / think",
+            "create": "Create",
+            "note": "Personal toolkit experience — not company affiliations or employer claims."
+        }
+    },
     "patterns": {
         "title": "> INTEGRATION_PATTERNS",
         "subtitle": "Standardized visual blueprints for enterprise connectivity.",

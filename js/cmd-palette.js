@@ -3,7 +3,8 @@
  */
 
 const SEARCH_INDEX = [
-    { title: "Home", url: "index.html", type: "Page", keywords: "home landing main" },
+    { title: "Home", url: "hub.html", type: "Page", keywords: "home landing main hub" },
+    { title: "AI in Practice", url: "ai-practice.html", type: "Page", keywords: "ai coding assistant cursor claude chatgpt gemini deepseek antigravity kling elevenlabs" },
     { title: "Integration Patterns", url: "patterns.html", type: "Page", keywords: "docs specs x12 edifact" },
     { title: "Technical Insights", url: "insights.html", type: "Page", keywords: "blog articles sap netsuite security" },
     { title: "Expertise & History", url: "expertise.html", type: "Page", keywords: "resume cv work history bio" },

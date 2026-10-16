@@ -1603,3 +1603,268 @@ body.theme-solar .tech-card:hover {
     background: rgba(47, 129, 247, 0.1);
     transform: translateY(-1px);
 }
+
+/* —— AI in the workflow (hub + dedicated page) —— */
+.pro-site {
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-display: 'Syne', system-ui, sans-serif;
+}
+
+.pro-site .hero-name,
+.pro-site .ai-practice-title,
+.pro-site .page-title {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+}
+
+.ai-practice {
+    position: relative;
+    padding: 0.5rem 0 0.25rem;
+    max-width: 46rem;
+}
+
+.ai-practice::before {
+    content: '';
+    position: absolute;
+    inset: -1.5rem -1.25rem -1rem;
+    border-radius: 18px;
+    background:
+        radial-gradient(ellipse 80% 60% at 0% 0%, rgba(47, 129, 247, 0.12), transparent 55%),
+        radial-gradient(ellipse 70% 50% at 100% 100%, rgba(63, 185, 80, 0.08), transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.ai-practice > * {
+    position: relative;
+    z-index: 1;
+}
+
+.ai-practice-kicker {
+    margin-bottom: 1rem;
+    animation: ai-fade-up 0.55s ease both;
+}
+
+.ai-practice-title {
+    font-size: clamp(1.65rem, 4vw, 2.35rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    animation: ai-fade-up 0.6s ease 0.06s both;
+}
+
+.ai-practice-lead {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2.25rem;
+    max-width: 38rem;
+    animation: ai-fade-up 0.65s ease 0.12s both;
+}
+
+.ai-practice-lanes {
+    list-style: none;
+    margin: 0 0 2rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.ai-lane {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: 1rem 1.25rem;
+    padding: 1.35rem 0;
+    border-bottom: 1px solid var(--border-color);
+    align-items: start;
+    animation: ai-fade-up 0.7s ease both;
+}
+
+.ai-lane:nth-child(1) { animation-delay: 0.16s; }
+.ai-lane:nth-child(2) { animation-delay: 0.22s; }
+.ai-lane:nth-child(3) { animation-delay: 0.28s; }
+.ai-lane:nth-child(4) { animation-delay: 0.34s; }
+
+.ai-lane-label {
+    color: var(--accent-green);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding-top: 0.2rem;
+}
+
+.ai-lane h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.4rem;
+    font-family: var(--font-sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+}
+
+.ai-lane p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin: 0;
+}
+
+.ai-practice-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    animation: ai-fade-up 0.7s ease 0.4s both;
+}
+
+.ai-page {
+    padding-bottom: 4rem;
+}
+
+.ai-page-header {
+    max-width: 42rem;
+}
+
+.ai-story {
+    max-width: 40rem;
+    margin-bottom: 3rem;
+}
+
+.ai-story-title {
+    font-family: var(--font-display, 'Syne', system-ui, sans-serif);
+    font-size: clamp(1.25rem, 3vw, 1.6rem);
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.ai-story p {
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    font-size: 1.02rem;
+}
+
+.ai-practice--page {
+    max-width: 46rem;
+    margin-bottom: 3rem;
+}
+
+.ai-practice--page::before {
+    inset: -0.5rem -0.75rem;
+}
+
+.ai-closing {
+    max-width: 40rem;
+    padding-top: 0.5rem;
+}
+
+.ai-closing-line {
+    font-family: var(--font-display, 'Syne', system-ui, sans-serif);
+    font-size: clamp(1.15rem, 2.8vw, 1.45rem);
+    line-height: 1.45;
+    color: var(--text-primary);
+    margin-bottom: 1.75rem;
+}
+
+@keyframes ai-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 640px) {
+    .ai-lane {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+        padding: 1.15rem 0;
+    }
+
+    .ai-lane-label {
+        padding-top: 0;
+    }
+
+    .ai-practice::before {
+        inset: -0.75rem -0.5rem;
+        border-radius: 12px;
+    }
+}
+
+
+
+.ai-roster {
+    margin: 0 0 2rem;
+    padding: 1.35rem 0 0.25rem;
+    border-top: 1px solid var(--border-color);
+    animation: ai-fade-up 0.7s ease 0.36s both;
+}
+
+.ai-roster-title {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin: 0 0 1.1rem;
+}
+
+.ai-roster-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+}
+
+.ai-roster-heading {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 0.65rem;
+    font-family: var(--font-sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+}
+
+.ai-roster-tags {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.55rem;
+}
+
+.ai-roster-tags .mono-tag {
+    display: inline-block;
+    padding: 0.35rem 0.65rem;
+    font-size: 0.85rem;
+    border: 1px solid rgba(126, 231, 135, 0.22);
+    background: rgba(126, 231, 135, 0.08);
+}
+
+.ai-roster-group--create .mono-tag {
+    color: var(--accent-blue);
+    background: rgba(47, 129, 247, 0.1);
+    border-color: rgba(47, 129, 247, 0.25);
+}
+
+.ai-roster-note {
+    margin: 1.15rem 0 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    max-width: 36rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ai-practice-kicker,
+    .ai-practice-title,
+    .ai-practice-lead,
+    .ai-lane,
+    .ai-practice-actions,
+    .ai-roster {
+        animation: none;
+    }
+}
