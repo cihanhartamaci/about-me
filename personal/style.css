@@ -1390,10 +1390,6 @@ body.nav-open .top-nav {
     transition: transform 0.55s ease;
 }
 
-.journal-card img {
-    object-position: center 36%;
-}
-
 .editorial-piece:hover .editorial-media img {
     transform: scale(1.03);
 }
