@@ -160,6 +160,53 @@
             "h2d": "What I keep",
             "p9": "This notebook is not a sprint board. It is the same energy as the stories: short when it can be, longer when a place deserves room. Ordu shores. İstanbul nights. Sümela stone. Temet nosce on the way.",
             "p10": "The road is long, but beautiful. I will keep using this place as a notebook — not too much, just enough."
+        },
+        "aboutMe": {
+            "title": "A Little About Me",
+            "excerpt": "Curiosity, balance, and a small corner of the internet for places and moments worth keeping.",
+            "date": "October 16, 2026",
+            "p1": "I'm someone who enjoys discovering new things, exploring different perspectives, and figuring out how the world works.",
+            "p2": "I appreciate a good balance between ambition and enjoying the moment. I like having goals to work toward, but I also believe that life is about the experiences, people, and little moments we collect along the way.",
+            "p3": "I'm drawn to things that spark curiosity, whether it's a new place, an interesting idea, a great conversation, or something I've never tried before.",
+            "p4": "This is my little corner of the internet — a place to share some of the things I enjoy, the places I discover, and the moments worth remembering."
+        },
+        "thingsIEnjoy": {
+            "title": "Things I Enjoy",
+            "excerpt": "Ordinary days made a little less ordinary — drives, design, curiosity, and joy without a productivity tax.",
+            "date": "October 16, 2026",
+            "p1": "I'm a fan of experiences that make ordinary days feel a little less ordinary.",
+            "p2": "A good drive, discovering a new place, a late-night conversation, exploring something unfamiliar, or simply taking some time to clear my mind — sometimes, the simplest things are the most enjoyable.",
+            "p3": "I also appreciate good design, technology, cars, and anything that reflects creativity and attention to detail.",
+            "p4": "I don't think every interest needs to become a passion or every moment needs to be productive. Sometimes, enjoying something just because it makes you happy is more than enough."
+        },
+        "evening": {
+            "title": "My Kind of Evening",
+            "excerpt": "Quieter hours, city lights, and evenings that don't need a plan.",
+            "date": "October 16, 2026",
+            "p1": "There's something special about the quieter hours of the day.",
+            "p2": "When the noise settles down, the city lights come on, and there's finally room to slow down and enjoy your own company.",
+            "p3": "Sometimes it's a good playlist, sometimes a drive, sometimes an interesting conversation that lasts longer than expected.",
+            "p4": "I like the idea that not every evening needs a plan. Some of the best moments happen spontaneously, without expectations or a schedule.",
+            "p5": "For me, a good evening is less about where I am and more about how it feels to be there."
+        },
+        "places": {
+            "title": "Places I Want to See",
+            "excerpt": "Travel as atmosphere — coastlines, architecture, scenic roads, and everyday life from another angle.",
+            "date": "October 16, 2026",
+            "p1": "For me, traveling is about more than visiting famous landmarks. It's about experiencing a different atmosphere, discovering local places, trying new food, and seeing everyday life from another perspective.",
+            "p2": "I'd love to explore cities with distinctive architecture, beautiful coastlines, scenic roads, and places where you can get lost for a while without worrying about the time.",
+            "p3": "Some trips are about adventure. Others are about slowing down and enjoying the surroundings.",
+            "p4": "My travel list is always evolving, and I hope to keep adding new destinations, unexpected discoveries, and stories worth telling."
+        },
+        "cars": {
+            "title": "A Soft Spot for Cars",
+            "excerpt": "Design, dynamics, and the details that make an ordinary drive feel like a journey.",
+            "date": "October 16, 2026",
+            "p1": "I've always found cars interesting for more than just getting from one place to another.",
+            "p2": "Design, proportions, driving dynamics, technology, and the character of a vehicle all make a difference. Some cars stand out because of their performance, others because of their presence on the road.",
+            "p3": "For me, the appeal is in the details — the way a car looks, feels, and makes an ordinary drive a little more enjoyable.",
+            "p4": "I enjoy comparing different models, discovering new designs, and thinking about what makes a car truly worth owning.",
+            "p5": "Because sometimes, the journey deserves just as much attention as the destination."
         }
     },
     "footer": "© 2026 Cihan Hartamacı",
@@ -170,5 +217,10 @@
         "kicker": "Stay close",
         "title": "@cihanhartamaci",
         "lead": "Same handle on Instagram, TikTok, and WhatsApp — the live reel lives there."
+    },
+    "about": {
+        "kicker": "About",
+        "title": "Notes from off the clock",
+        "lead": "A little about me, evenings, places, and the things that make ordinary days feel lighter."
     }
 }

@@ -62,7 +62,7 @@
         "integrationTitle": "Integration Patterns",
         "integrationDesc": "Standardized specs for ANSI X12, EDIFACT, and Hybrid Cloud architectures.",
         "insightsTitle": "Technical Insights",
-        "insightsDesc": "Deep dives into Netsuite SuiteScript, SAP IDOCs, and API Security.",
+        "insightsDesc": "Essays on scalable integrations and AI systems — plus NetSuite, SAP, and API notes.",
         "systemStatsTitle": "Expertise",
         "systemStatsDesc": "6+ years of EDI, SAP, and NetSuite work across Logiwa and Beko.",
         "toolsTitle": "Developer Tools",
@@ -238,7 +238,7 @@
     },
     "insights": {
         "title": "Technical Insights",
-        "subtitle": "Whitepapers, architectural decisions, and code snippets.",
+        "subtitle": "Essays on integrations and AI — plus technical notes on NetSuite, EDI, and B2B gateways.",
         "erp": {
             "title": "Netsuite ERP Integration",
             "desc": "Leveraging SuiteTalk (SOAP/REST) for external connectivity. Strategies for syncing Orders and Inventory using User Event Scripts and Map/Reduce jobs."
@@ -250,6 +250,78 @@
         "gateway": {
             "title": "Secure B2B Gateways",
             "desc": "Implementing robust AS2 and SFTP gateways. Advanced security protocols including mTLS and payload encryption for mission-critical data."
+        },
+        "essaysKicker": "> ESSAY",
+        "essaysTitle": "Essays",
+        "essaysLead": "Longer reads on integrations, AI systems, and the craft of connecting software to business reality.",
+        "referenceTitle": "Reference notes",
+        "referenceLead": "Shorter technical notes on NetSuite, EDI modernization, and B2B gateways.",
+        "back": "← Back to Insights",
+        "readEssay": "Read essay",
+        "essays": {
+            "beyondApis": {
+                "title": "Beyond APIs: Building Integrations That Scale",
+                "excerpt": "APIs connect endpoints. Reliable integrations survive production — failures, rate limits, and growth.",
+                "date": "October 16, 2026",
+                "p1": "APIs make it possible for systems to communicate. But building a reliable integration takes much more than connecting two endpoints.",
+                "p2": "In modern software ecosystems, integrations must handle unexpected responses, rate limits, authentication failures, duplicate requests, timeouts, and changes in external systems. What works perfectly with a few requests can behave very differently under production workloads.",
+                "p3": "I believe good integration engineering comes down to three fundamentals:",
+                "li1": "<strong>Reliability:</strong> Design for failures, not just the happy path.",
+                "li2": "<strong>Scalability:</strong> Understand how the system behaves as traffic and data volumes grow.",
+                "li3": "<strong>Observability:</strong> Make it easy to identify what went wrong, where it happened, and why.",
+                "p4": "An integration should not simply work. It should remain predictable, maintainable, and resilient as the business grows.",
+                "p5": "The real challenge isn't connecting systems. It's making sure they continue to work together when things get complicated."
+            },
+            "aiMoreThanChat": {
+                "title": "AI Is More Than a Chat Interface",
+                "excerpt": "The opportunity isn't better prompts alone — it's agents that act on real systems with guardrails.",
+                "date": "October 16, 2026",
+                "p1": "The most interesting opportunity in AI isn't just asking better questions. It's building systems that can take action.",
+                "p2": "We're moving from tools that generate text toward systems that can interpret context, interact with APIs, execute workflows, and help people complete real tasks.",
+                "p3": "Imagine an AI agent that investigates an integration failure, gathers relevant logs, identifies a likely root cause, and prepares a proposed solution. Or a workflow that transforms a business requirement into a technical specification and a test plan.",
+                "p4": "These ideas become valuable when AI is connected to real systems, reliable data, and well-defined processes.",
+                "p5": "Of course, autonomy alone isn't enough. Good AI systems also need guardrails, validation, observability, and clear boundaries around what they can change.",
+                "p6": "I'm particularly interested in exploring how AI agents and workflow automation can reduce repetitive work and make software systems easier to operate.",
+                "closing": "The goal isn't to add AI everywhere. It's to remove friction where it matters most."
+            },
+            "hiddenComplexity": {
+                "title": "The Hidden Complexity of Connecting Systems",
+                "excerpt": "On paper it's request, transform, respond. In practice the hard parts live between those steps.",
+                "date": "October 16, 2026",
+                "p1": "On paper, an integration often looks simple: receive a request, transform the data, call another API, and return a response.",
+                "p2": "In practice, the complexity lives between those steps.",
+                "p3": "What happens when the downstream service is unavailable? What if a request times out but the operation actually succeeds? What if the same event arrives twice? What if two systems interpret the same field differently?",
+                "p4": "These are not unusual edge cases. They are fundamental engineering problems.",
+                "p5": "Reliable integrations require thoughtful decisions around retries, idempotency, data validation, error handling, and system boundaries. They also require understanding the business process behind the data.",
+                "p6": "A technically valid API request can still produce the wrong business outcome.",
+                "p7": "That's why I believe integration engineering sits at the intersection of software architecture and business understanding. The best solutions don't merely move data between systems; they preserve the meaning and integrity of that data throughout the process.",
+                "closing": "Sometimes, the most important engineering work happens in the spaces between systems."
+            },
+            "engToProducts": {
+                "title": "From Engineering Problems to Products",
+                "excerpt": "Recurring friction is a product signal — solve it for everyone facing it.",
+                "date": "October 16, 2026",
+                "p1": "Some of the best product ideas begin with a problem that keeps appearing.",
+                "p2": "A repetitive manual task. A workflow that depends on too many tools. An integration that takes weeks to implement. A process that breaks whenever something unexpected happens.",
+                "p3": "As engineers, we often learn to solve these problems one at a time. But sometimes, the more interesting question is: what if we could build something that solves the problem for everyone facing it?",
+                "p4": "That's where engineering meets product thinking.",
+                "p5": "Building a useful product requires more than writing code. It means understanding the user, validating the problem, simplifying the experience, and making deliberate decisions about what not to build.",
+                "p6": "I'm interested in exploring this intersection through software products, automation, and AI-powered tools.",
+                "p7": "My long-term ambition is to turn practical engineering knowledge into solutions that help businesses work smarter and scale with less friction.",
+                "closing": "Solve a real problem. Build a useful solution. Improve it continuously."
+            },
+            "engMindset": {
+                "title": "Engineering Is a Mindset, Not Just a Job Title",
+                "excerpt": "Curiosity, perspectives, and asking one more question before the first line of code.",
+                "date": "October 16, 2026",
+                "p1": "For me, engineering has never been only about writing code or making systems work.",
+                "p2": "It's about understanding how things fit together, asking better questions, and finding practical ways to solve complex problems.",
+                "p3": "My background in computer engineering, control and automation, and engineering management has shaped how I approach technology. I enjoy looking at problems from different perspectives: technical architecture, operational efficiency, user experience, and business impact.",
+                "p4": "Working with integrations has reinforced one important lesson: the solution that looks best in isolation isn't always the solution that works best in the real world.",
+                "p5": "Sometimes the right answer is better architecture. Sometimes it's a simpler workflow. And sometimes it's asking one more question before writing a single line of code.",
+                "p6": "I'm continuously exploring software engineering, AI, automation, and product development, with a particular interest in turning complex processes into simpler, more reliable systems.",
+                "p7": "I see learning as an ongoing process, and I believe the best engineers remain curious long after they've found an answer."
+            }
         }
     },
     "expertise": {

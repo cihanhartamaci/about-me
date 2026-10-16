@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <title>Beyond APIs: Building Integrations That Scale | Cihan Hartamaci</title>
+    <meta name="description" content="APIs connect endpoints. Reliable integrations survive production — failures, rate limits, and growth.">
+    <link rel="canonical" href="https://cihanhartamaci.github.io/about-me/insights/beyond-apis.html">
+    <meta property="og:title" content="Beyond APIs: Building Integrations That Scale // EDI.HUB">
+    <meta property="og:description" content="APIs connect endpoints. Reliable integrations survive production — failures, rate limits, and growth.">
+    <meta property="og:image" content="https://cihanhartamaci.github.io/about-me/assets/social-preview.png">
+    <meta property="og:url" content="https://cihanhartamaci.github.io/about-me/insights/beyond-apis.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://cihanhartamaci.github.io/about-me/assets/social-preview.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/lang-switcher.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="pro-site">
+
+    <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Skip to content</a>
+
+    <nav class="top-nav">
+        <div class="container nav-container">
+            <a href="../hub.html" class="logo">CH.integrate()</a>
+            <button class="hamburger" id="hamburger" type="button" data-i18n-aria="common.toggleMenu" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="navLinks">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="../hub.html" class="nav-link" data-i18n="nav.home">Home</a>
+                <a href="../patterns.html" class="nav-link" data-i18n="nav.patterns">Patterns</a>
+                <a href="../tools.html" class="nav-link" data-i18n="nav.tools">Tools</a>
+                <a href="../insights.html" class="nav-link active" data-i18n="nav.insights">Insights</a>
+                <a href="../expertise.html" class="nav-link" data-i18n="nav.expertise">Expertise</a>
+                <a href="../resume.html" class="nav-link" data-i18n="nav.resume">Resume</a>
+                <a href="../contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
+                <a href="../personal/index.html" class="nav-btn-switch" data-i18n="nav.switchPersonal">Switch to
+                    Personal</a>
+                <a href="../index.html" class="nav-path-reset" data-i18n="nav.chooseAgain">Choose path again</a>
+                <div class="lang-switcher">
+                    <label class="visually-hidden" for="language-selector" data-i18n="common.language">Language</label>
+                    <select id="language-selector">
+                        <option value="en">EN</option>
+                        <option value="tr">TR</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content" class="container essay-page">
+        <article class="pro-essay">
+            <header class="pro-essay-header">
+                <p class="mono-tag" data-i18n="insights.essaysKicker">> ESSAY</p>
+                <p class="essay-meta" data-i18n="insights.essays.beyondApis.date">October 16, 2026</p>
+                <h1 class="page-title" data-i18n="insights.essays.beyondApis.title">Beyond APIs: Building Integrations That Scale</h1>
+                <div class="essay-tags">
+                    <span class="mono-tag">Integration</span>
+                    <span class="mono-tag">Reliability</span>
+                    <span class="mono-tag">Scale</span>
+                </div>
+            </header>
+            <figure class="pro-essay-hero">
+                <img src="../assets/social-preview.png" alt="Integration architecture preview" width="1200" height="630" loading="eager">
+            </figure>
+            <div class="pro-essay-body">
+                <p data-i18n="insights.essays.beyondApis.p1">APIs make it possible for systems to communicate. But building a reliable integration takes much more than connecting two endpoints.</p>
+                <p data-i18n="insights.essays.beyondApis.p2">In modern software ecosystems, integrations must handle unexpected responses, rate limits, authentication failures, duplicate requests, timeouts, and changes in external systems. What works perfectly with a few requests can behave very differently under production workloads.</p>
+                <p data-i18n="insights.essays.beyondApis.p3">I believe good integration engineering comes down to three fundamentals:</p>
+                <ul class="essay-fundamentals">
+                    <li data-i18n-html="insights.essays.beyondApis.li1"><strong>Reliability:</strong> Design for failures, not just the happy path.</li>
+                    <li data-i18n-html="insights.essays.beyondApis.li2"><strong>Scalability:</strong> Understand how the system behaves as traffic and data volumes grow.</li>
+                    <li data-i18n-html="insights.essays.beyondApis.li3"><strong>Observability:</strong> Make it easy to identify what went wrong, where it happened, and why.</li>
+                </ul>
+                <p data-i18n="insights.essays.beyondApis.p4">An integration should not simply work. It should remain predictable, maintainable, and resilient as the business grows.</p>
+                <p data-i18n="insights.essays.beyondApis.p5">The real challenge isn't connecting systems. It's making sure they continue to work together when things get complicated.</p>
+            </div>
+        </article>
+        <p class="essay-back">
+            <a href="../insights.html" data-i18n="insights.back">&larr; Back to Insights</a>
+        </p>
+    </main>
+
+    <script src="../js/cmd-palette.js"></script>
+    <script src="../js/theme-manager.js"></script>
+    <script type="module" src="../js/tracker.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/mobile-nav.js" defer></script>
+    <script>
+        i18n.init('en', '../translations/');
+    </script>
+</body>
+
+</html>

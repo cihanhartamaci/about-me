@@ -32,9 +32,39 @@
   </url>
   <url>
     <loc>https://cihanhartamaci.github.io/about-me/insights.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cihanhartamaci.github.io/about-me/insights/beyond-apis.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cihanhartamaci.github.io/about-me/insights/ai-more-than-chat.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cihanhartamaci.github.io/about-me/insights/hidden-complexity.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cihanhartamaci.github.io/about-me/insights/engineering-to-products.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cihanhartamaci.github.io/about-me/insights/engineering-mindset.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://cihanhartamaci.github.io/about-me/expertise.html</loc>
@@ -65,6 +95,36 @@
     <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://cihanhartamaci.github.io/about-me/personal/posts/a-little-about-me.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://cihanhartamaci.github.io/about-me/personal/posts/things-i-enjoy.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://cihanhartamaci.github.io/about-me/personal/posts/my-kind-of-evening.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://cihanhartamaci.github.io/about-me/personal/posts/places-i-want-to-see.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://cihanhartamaci.github.io/about-me/personal/posts/soft-spot-for-cars.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.55</priority>
   </url>
   <url>
     <loc>https://cihanhartamaci.github.io/about-me/personal/posts/stone-and-shore.html</loc>

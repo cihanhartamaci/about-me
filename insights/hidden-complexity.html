@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <title>The Hidden Complexity of Connecting Systems | Cihan Hartamaci</title>
+    <meta name="description" content="On paper it's request, transform, respond. In practice the hard parts live between those steps.">
+    <link rel="canonical" href="https://cihanhartamaci.github.io/about-me/insights/hidden-complexity.html">
+    <meta property="og:title" content="The Hidden Complexity of Connecting Systems // EDI.HUB">
+    <meta property="og:description" content="On paper it's request, transform, respond. In practice the hard parts live between those steps.">
+    <meta property="og:image" content="https://cihanhartamaci.github.io/about-me/assets/social-preview.png">
+    <meta property="og:url" content="https://cihanhartamaci.github.io/about-me/insights/hidden-complexity.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://cihanhartamaci.github.io/about-me/assets/social-preview.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/lang-switcher.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="pro-site">
+
+    <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Skip to content</a>
+
+    <nav class="top-nav">
+        <div class="container nav-container">
+            <a href="../hub.html" class="logo">CH.integrate()</a>
+            <button class="hamburger" id="hamburger" type="button" data-i18n-aria="common.toggleMenu" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="navLinks">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="../hub.html" class="nav-link" data-i18n="nav.home">Home</a>
+                <a href="../patterns.html" class="nav-link" data-i18n="nav.patterns">Patterns</a>
+                <a href="../tools.html" class="nav-link" data-i18n="nav.tools">Tools</a>
+                <a href="../insights.html" class="nav-link active" data-i18n="nav.insights">Insights</a>
+                <a href="../expertise.html" class="nav-link" data-i18n="nav.expertise">Expertise</a>
+                <a href="../resume.html" class="nav-link" data-i18n="nav.resume">Resume</a>
+                <a href="../contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
+                <a href="../personal/index.html" class="nav-btn-switch" data-i18n="nav.switchPersonal">Switch to
+                    Personal</a>
+                <a href="../index.html" class="nav-path-reset" data-i18n="nav.chooseAgain">Choose path again</a>
+                <div class="lang-switcher">
+                    <label class="visually-hidden" for="language-selector" data-i18n="common.language">Language</label>
+                    <select id="language-selector">
+                        <option value="en">EN</option>
+                        <option value="tr">TR</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content" class="container essay-page">
+        <article class="pro-essay">
+            <header class="pro-essay-header">
+                <p class="mono-tag" data-i18n="insights.essaysKicker">> ESSAY</p>
+                <p class="essay-meta" data-i18n="insights.essays.hiddenComplexity.date">October 16, 2026</p>
+                <h1 class="page-title" data-i18n="insights.essays.hiddenComplexity.title">The Hidden Complexity of Connecting Systems</h1>
+                <div class="essay-tags">
+                    <span class="mono-tag">Integration</span>
+                    <span class="mono-tag">Architecture</span>
+                    <span class="mono-tag">Idempotency</span>
+                </div>
+            </header>
+            <figure class="pro-essay-hero">
+                <img src="../assets/social-preview.png" alt="Systems connection visual" width="1200" height="630" loading="eager">
+            </figure>
+            <div class="pro-essay-body">
+                <p data-i18n="insights.essays.hiddenComplexity.p1">On paper, an integration often looks simple: receive a request, transform the data, call another API, and return a response.</p>
+                <p data-i18n="insights.essays.hiddenComplexity.p2">In practice, the complexity lives between those steps.</p>
+                <p data-i18n="insights.essays.hiddenComplexity.p3">What happens when the downstream service is unavailable? What if a request times out but the operation actually succeeds? What if the same event arrives twice? What if two systems interpret the same field differently?</p>
+                <p data-i18n="insights.essays.hiddenComplexity.p4">These are not unusual edge cases. They are fundamental engineering problems.</p>
+                <p data-i18n="insights.essays.hiddenComplexity.p5">Reliable integrations require thoughtful decisions around retries, idempotency, data validation, error handling, and system boundaries. They also require understanding the business process behind the data.</p>
+                <p data-i18n="insights.essays.hiddenComplexity.p6">A technically valid API request can still produce the wrong business outcome.</p>
+                <p data-i18n="insights.essays.hiddenComplexity.p7">That's why I believe integration engineering sits at the intersection of software architecture and business understanding. The best solutions don't merely move data between systems; they preserve the meaning and integrity of that data throughout the process.</p>
+                <p class="essay-closing" data-i18n="insights.essays.hiddenComplexity.closing"><strong>Sometimes, the most important engineering work happens in the spaces between systems.</strong></p>
+            </div>
+        </article>
+        <p class="essay-back">
+            <a href="../insights.html" data-i18n="insights.back">&larr; Back to Insights</a>
+        </p>
+    </main>
+
+    <script src="../js/cmd-palette.js"></script>
+    <script src="../js/theme-manager.js"></script>
+    <script type="module" src="../js/tracker.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/mobile-nav.js" defer></script>
+    <script>
+        i18n.init('en', '../translations/');
+    </script>
+</body>
+
+</html>

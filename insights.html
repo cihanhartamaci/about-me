@@ -7,9 +7,10 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <title>Technical Insights | Cihan Hartamaci</title>
     <meta name="description"
-        content="Deep dives into Netsuite SuiteScript, SAP IDOCs, and API Security. Integration technical insights.">
+        content="Essays on scalable integrations and AI systems — plus NetSuite SuiteScript, EDI modernization, and B2B gateway notes.">
     <meta property="og:title" content="Technical Insights // EDI.HUB">
-    <meta property="og:description" content="Deep dives into Netsuite SuiteScript, SAP IDOCs, and API Security.">
+    <meta property="og:description"
+        content="Essays on integrations and AI — plus technical notes on NetSuite, EDI, and B2B gateways.">
     <meta property="og:image" content="https://cihanhartamaci.github.io/about-me/assets/social-preview.png">
     <meta property="og:url" content="https://cihanhartamaci.github.io/about-me/insights.html">
     <link rel="canonical" href="https://cihanhartamaci.github.io/about-me/insights.html">
@@ -18,14 +19,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Inter:wght@300;400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/lang-switcher.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body>
+<body class="pro-site">
+
+    <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Skip to content</a>
 
     <nav class="top-nav">
         <div class="container nav-container">
@@ -58,78 +61,141 @@
         </div>
     </nav>
 
-    <main class="container">
-        <header class="page-header">
-            <h1 class="page-title" data-i18n="insights.title">Technical Insights</h1>
-            <p class="page-subtitle" data-i18n="insights.subtitle">Whitepapers, architectural decisions, and code
-                snippets.</p>
+    <main id="main-content" class="container insights-page">
+        <header class="page-header insights-hero">
+            <div class="insights-hero-copy">
+                <p class="mono-tag" data-i18n="insights.essaysKicker">> ESSAY</p>
+                <h1 class="page-title" data-i18n="insights.title">Technical Insights</h1>
+                <p class="page-subtitle" data-i18n="insights.subtitle">Essays on integrations and AI — plus technical
+                    notes on NetSuite, EDI, and B2B gateways.</p>
+            </div>
+            <figure class="insights-hero-visual">
+                <img src="assets/social-preview.png" alt="EDI Hub social preview" width="1200" height="630" loading="eager">
+            </figure>
         </header>
 
-        <div style="max-width: 800px;">
-            <!-- Article 1 -->
-            <div class="tech-card" style="margin-bottom: 2rem;">
-                <h3 style="font-size:1.5rem;" data-i18n="insights.erp.title">Netsuite ERP Integration</h3>
-                <div style="margin-bottom:1rem;">
-                    <span class="mono-tag">SuiteTalk</span>
-                    <span class="mono-tag">SuiteScript</span>
-                </div>
-                <p style="color:var(--text-secondary); margin-bottom:1rem;" data-i18n="insights.erp.desc">
-                    Leveraging SuiteTalk (SOAP/REST) for external connectivity. Strategies for syncing Orders and
-                    Inventory using User Event Scripts and Map/Reduce jobs.
-                </p>
-                <div
-                    style="background: #000; padding:1rem; border-radius:4px; font-family:var(--font-mono); font-size:0.8rem; color:#d29922; margin-top:1rem;">
-                    // Example: Syncing Order<br>
-                    function syncOrder(context) {<br>
-                    &nbsp;&nbsp;var record = context.newRecord;<br>
-                    &nbsp;&nbsp;log.audit('Sync Start', record.id);<br>
-                    }
+        <section class="essay-index" aria-labelledby="essays-title">
+            <div class="section-head essay-index-head">
+                <div>
+                    <h2 id="essays-title" data-i18n="insights.essaysTitle">Essays</h2>
+                    <p class="section-lead" data-i18n="insights.essaysLead">Longer reads on integrations, AI systems, and
+                        the craft of connecting software to business reality.</p>
                 </div>
             </div>
 
-            <!-- Article 2 -->
-            <div class="tech-card" style="margin-bottom: 2rem;">
-                <h3 style="font-size:1.5rem;" data-i18n="insights.modern.title">Modernizing Legacy EDI</h3>
-                <div style="margin-bottom:1rem;">
-                    <span class="mono-tag">EDIFACT</span>
-                    <span class="mono-tag">REST Wrapper</span>
+            <div class="essay-list">
+                <a class="essay-row" href="insights/beyond-apis.html">
+                    <span class="essay-row-meta" data-i18n="insights.essays.beyondApis.date">October 16, 2026</span>
+                    <span class="essay-row-body">
+                        <h3 data-i18n="insights.essays.beyondApis.title">Beyond APIs: Building Integrations That Scale</h3>
+                        <p data-i18n="insights.essays.beyondApis.excerpt">APIs connect endpoints. Reliable integrations survive production — failures, rate limits, and growth.</p>
+                    </span>
+                    <span class="essay-row-cta" data-i18n="insights.readEssay">Read essay</span>
+                </a>
+                <a class="essay-row" href="insights/ai-more-than-chat.html">
+                    <span class="essay-row-meta" data-i18n="insights.essays.aiMoreThanChat.date">October 16, 2026</span>
+                    <span class="essay-row-body">
+                        <h3 data-i18n="insights.essays.aiMoreThanChat.title">AI Is More Than a Chat Interface</h3>
+                        <p data-i18n="insights.essays.aiMoreThanChat.excerpt">The opportunity isn't better prompts alone — it's agents that act on real systems with guardrails.</p>
+                    </span>
+                    <span class="essay-row-cta" data-i18n="insights.readEssay">Read essay</span>
+                </a>
+                <a class="essay-row" href="insights/hidden-complexity.html">
+                    <span class="essay-row-meta" data-i18n="insights.essays.hiddenComplexity.date">October 16, 2026</span>
+                    <span class="essay-row-body">
+                        <h3 data-i18n="insights.essays.hiddenComplexity.title">The Hidden Complexity of Connecting Systems</h3>
+                        <p data-i18n="insights.essays.hiddenComplexity.excerpt">On paper it's request, transform, respond. In practice the hard parts live between those steps.</p>
+                    </span>
+                    <span class="essay-row-cta" data-i18n="insights.readEssay">Read essay</span>
+                </a>
+                <a class="essay-row" href="insights/engineering-to-products.html">
+                    <span class="essay-row-meta" data-i18n="insights.essays.engToProducts.date">October 16, 2026</span>
+                    <span class="essay-row-body">
+                        <h3 data-i18n="insights.essays.engToProducts.title">From Engineering Problems to Products</h3>
+                        <p data-i18n="insights.essays.engToProducts.excerpt">Recurring friction is a product signal — solve it for everyone facing it.</p>
+                    </span>
+                    <span class="essay-row-cta" data-i18n="insights.readEssay">Read essay</span>
+                </a>
+                <a class="essay-row" href="insights/engineering-mindset.html">
+                    <span class="essay-row-meta" data-i18n="insights.essays.engMindset.date">October 16, 2026</span>
+                    <span class="essay-row-body">
+                        <h3 data-i18n="insights.essays.engMindset.title">Engineering Is a Mindset, Not Just a Job Title</h3>
+                        <p data-i18n="insights.essays.engMindset.excerpt">Curiosity, perspectives, and asking one more question before the first line of code.</p>
+                    </span>
+                    <span class="essay-row-cta" data-i18n="insights.readEssay">Read essay</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="insights-reference" aria-labelledby="reference-title">
+            <div class="section-head">
+                <div>
+                    <h2 id="reference-title" data-i18n="insights.referenceTitle">Reference notes</h2>
+                    <p class="section-lead" data-i18n="insights.referenceLead">Shorter technical notes on NetSuite, EDI
+                        modernization, and B2B gateways.</p>
                 </div>
-                <p style="color:var(--text-secondary); margin-bottom:1rem;" data-i18n="insights.modern.desc">
-                    Strategies for wrapping legacy X12/EDIFACT systems with modern RESTful layers to allow microservices
-                    usage while properly handling translation.
-                </p>
             </div>
 
-            <!-- Article 3 -->
-            <div class="tech-card" style="margin-bottom: 2rem;">
-                <h3 style="font-size:1.5rem;">Secure B2B Gateways</h3>
-                <div style="margin-bottom:1rem;">
-                    <span class="mono-tag">AS2</span>
-                    <span class="mono-tag">mTLS</span>
-                </div>
-                <p style="color:var(--text-secondary); margin-bottom:1rem;">
-                    Implementing robust security protocols like AS2 encryption and Mutual TLS for sensitive financial
-                    data exchange over public networks.
-                </p>
-            </div>
+            <div class="reference-stack">
+                <article class="reference-note" id="netsuite">
+                    <h3 data-i18n="insights.erp.title">Netsuite ERP Integration</h3>
+                    <div class="essay-tags">
+                        <span class="mono-tag">SuiteTalk</span>
+                        <span class="mono-tag">SuiteScript</span>
+                    </div>
+                    <p data-i18n="insights.erp.desc">
+                        Leveraging SuiteTalk (SOAP/REST) for external connectivity. Strategies for syncing Orders and
+                        Inventory using User Event Scripts and Map/Reduce jobs.
+                    </p>
+                    <div class="code-snippet" aria-hidden="true">
+                        // Example: Syncing Order<br>
+                        function syncOrder(context) {<br>
+                        &nbsp;&nbsp;var record = context.newRecord;<br>
+                        &nbsp;&nbsp;log.audit('Sync Start', record.id);<br>
+                        }
+                    </div>
+                </article>
 
-            <!-- Article 4 -->
-            <div class="tech-card" style="margin-bottom: 2rem;">
-                <h3 style="font-size:1.5rem;">SAP Integration Patterns</h3>
-                <div style="margin-bottom:1rem;">
-                    <span class="mono-tag">SAP IDOC</span>
-                    <span class="mono-tag">RFC</span>
-                    <span class="mono-tag">Middleware</span>
-                </div>
-                <p style="color:var(--text-secondary); margin-bottom:1rem;">
-                    Best practices for routing IDOCs through middleware solutions (Mulesoft/Boomi) to ensure data
-                    integrity and decouple SAP from external systems.
-                </p>
+                <article class="reference-note">
+                    <h3 data-i18n="insights.modern.title">Modernizing Legacy EDI</h3>
+                    <div class="essay-tags">
+                        <span class="mono-tag">EDIFACT</span>
+                        <span class="mono-tag">REST Wrapper</span>
+                    </div>
+                    <p data-i18n="insights.modern.desc">
+                        Strategies for wrapping legacy X12/EDIFACT systems with modern RESTful layers to allow microservices
+                        usage while properly handling translation.
+                    </p>
+                </article>
+
+                <article class="reference-note">
+                    <h3 data-i18n="insights.gateway.title">Secure B2B Gateways</h3>
+                    <div class="essay-tags">
+                        <span class="mono-tag">AS2</span>
+                        <span class="mono-tag">mTLS</span>
+                    </div>
+                    <p>
+                        Implementing robust security protocols like AS2 encryption and Mutual TLS for sensitive financial
+                        data exchange over public networks.
+                    </p>
+                </article>
+
+                <article class="reference-note" id="sap">
+                    <h3>SAP Integration Patterns</h3>
+                    <div class="essay-tags">
+                        <span class="mono-tag">SAP IDOC</span>
+                        <span class="mono-tag">RFC</span>
+                        <span class="mono-tag">Middleware</span>
+                    </div>
+                    <p>
+                        Best practices for routing IDOCs through middleware solutions (Mulesoft/Boomi) to ensure data
+                        integrity and decouple SAP from external systems.
+                    </p>
+                </article>
             </div>
-        </div>
+        </section>
     </main>
 
-    <!-- Command Palette -->
     <script src="js/cmd-palette.js"></script>
     <script src="js/theme-manager.js"></script>
     <script type="module" src="js/tracker.js"></script>

@@ -88,7 +88,7 @@
         "n5": "Temet nosce — yolda kendini tanı.",
         "n6": "Ordu alacakaranlığı sprint saatini sıfırlar.",
         "n7": "Sümela taşı hatırlar; dinlemeye çalışırım.",
-        "n8": "İş günleri EDI eşlemeleriyle — ve döngüde bir kod asistanıyla akar."
+        "n8": "İş günleri EDI haritalarıyla akar — ve döngüde bir kod asistanı."
     },
     "journal": {
         "kicker": "Uzun okumalar",
@@ -160,6 +160,53 @@
             "h2d": "Ne tutuyorum",
             "p9": "Bu defter bir sprint panosu değil. Hikayelerdeki enerji: kısaysa kısa, bir yer yer istiyorsa uzun. Ordu sahilleri. İstanbul geceleri. Sümela taşı. Yolda Temet nosce.",
             "p10": "Yol uzun, ama güzel. Burayı not defteri olarak kullanmaya devam edeceğim — fazla değil, yeterince."
+        },
+        "aboutMe": {
+            "title": "Biraz Kendimden",
+            "excerpt": "Merak, denge ve hatırlamaya değer yerler ile anlar için internette küçük bir köşe.",
+            "date": "16 Ekim 2026",
+            "p1": "Yeni şeyler keşfetmeyi, farklı bakış açılarını araştırmayı ve dünyanın nasıl işlediğini çözmeyi seven biriyim.",
+            "p2": "Hırs ile anın tadını çıkarmak arasında iyi bir dengeyi önemsiyorum. Çalışılacak hedeflerim olsun isterim; ama hayatın yolda topladığımız deneyimler, insanlar ve küçük anlarla ilgili olduğuna da inanıyorum.",
+            "p3": "Merak uyandıran şeylere çekiliyorum — ister yeni bir yer, ister ilginç bir fikir, ister güzel bir sohbet, ister hiç denemediğim bir şey olsun.",
+            "p4": "Burası internetteki küçük köşem — sevdiğim şeyleri, keşfettiğim yerleri ve hatırlamaya değer anları paylaştığım bir yer."
+        },
+        "thingsIEnjoy": {
+            "title": "Hoşuma Giden Şeyler",
+            "excerpt": "Sıradan günleri biraz daha az sıradan kılan şeyler — sürüşler, tasarım, merak ve üretkenlik vergisi olmayan sevinç.",
+            "date": "16 Ekim 2026",
+            "p1": "Sıradan günleri biraz daha az sıradan hissettiren deneyimlerin hayranıyım.",
+            "p2": "İyi bir sürüş, yeni bir yer keşfetmek, gece geç saatte bir sohbet, bilinmeyeni araştırmak ya da yalnızca zihni dinlendirmek — bazen en basit şeyler en keyifli olanlardır.",
+            "p3": "İyi tasarımı, teknolojiyi, arabaları ve yaratıcılık ile detaya özeni yansıtan her şeyi de takdir ederim.",
+            "p4": "Her ilginin bir tutkuya dönüşmesi ya da her anın üretken olması gerektiğini düşünmüyorum. Bazen bir şeyi yalnızca mutlu ettiği için sevmek fazlasıyla yeterlidir."
+        },
+        "evening": {
+            "title": "Benim Akşamım",
+            "excerpt": "Daha sessiz saatler, şehir ışıkları ve plana ihtiyacı olmayan akşamlar.",
+            "date": "16 Ekim 2026",
+            "p1": "Günün daha sessiz saatlerinde özel bir şey vardır.",
+            "p2": "Gürültü yatışır, şehir ışıkları yanar ve sonunda yavaşlayıp kendi şirketinizin tadını çıkaracak yer açılır.",
+            "p3": "Bazen iyi bir çalma listesi, bazen bir sürüş, bazen beklenenden uzun süren ilginç bir sohbet.",
+            "p4": "Her akşamın bir plana ihtiyacı olmadığı fikrini severim. En güzel anların bazıları beklentisiz, programsız, kendiliğinden olur.",
+            "p5": "Benim için iyi bir akşam, nerede olduğumdan çok orada olmanın nasıl hissettirdiğidir."
+        },
+        "places": {
+            "title": "Görmek İstediğim Yerler",
+            "excerpt": "Seyahat bir atmosfer olarak — kıyılar, mimari, manzaralı yollar ve başka bir açıdan gündelik hayat.",
+            "date": "16 Ekim 2026",
+            "p1": "Benim için seyahat, ünlü yerleri ziyaret etmekten fazlasıdır. Farklı bir atmosferi yaşamak, yerel mekânları keşfetmek, yeni yemekler denemek ve gündelik hayata başka bir perspektiften bakmaktır.",
+            "p2": "Ayırt edici mimarisi olan şehirleri, güzel kıyıları, manzaralı yolları ve bir süre kaybolup saati umursamayacağınız yerleri keşfetmeyi çok isterim.",
+            "p3": "Bazı yolculuklar macera içindir. Bazıları yavaşlamak ve çevrenin tadını çıkarmak içindir.",
+            "p4": "Seyahat listem sürekli evriliyor; yeni destinasyonlar, beklenmedik keşifler ve anlatmaya değer hikâyeler eklemeyi umuyorum."
+        },
+        "cars": {
+            "title": "Arabalara Olan Zaaflım",
+            "excerpt": "Tasarım, dinamikler ve sıradan bir sürüşü yolculuğa çeviren detaylar.",
+            "date": "16 Ekim 2026",
+            "p1": "Arabaları her zaman yalnızca bir yerden bir yere gitmek için değil, daha fazlası için ilginç buldum.",
+            "p2": "Tasarım, oranlar, sürüş dinamikleri, teknoloji ve bir aracın karakteri fark yaratır. Bazı arabalar performanslarıyla, bazıları yoldaki duruşlarıyla öne çıkar.",
+            "p3": "Benim için çekicilik detaylardadır — bir arabanın görünüşü, hissi ve sıradan bir sürüşü biraz daha keyifli kılması.",
+            "p4": "Farklı modelleri karşılaştırmayı, yeni tasarımları keşfetmeyi ve bir arabayı gerçekten sahip olmaya değer kılan şeyin ne olduğunu düşünmeyi seviyorum.",
+            "p5": "Çünkü bazen yolculuk, varış noktası kadar dikkat hak eder."
         }
     },
     "footer": "© 2026 Cihan Hartamacı",
@@ -170,5 +217,10 @@
         "kicker": "Yakın dur",
         "title": "@cihanhartamaci",
         "lead": "Instagram, TikTok ve WhatsApp’ta aynı kullanıcı adı — canlı akış orada."
+    },
+    "about": {
+        "kicker": "Hakkında",
+        "title": "Mesai dışı notlar",
+        "lead": "Biraz kendimden, akşamlardan, yerlerden ve sıradan günleri hafifleten şeylerden."
     }
 }

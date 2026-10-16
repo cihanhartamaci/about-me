@@ -62,7 +62,7 @@
         "integrationTitle": "Entegrasyon Desenleri",
         "integrationDesc": "ANSI X12, EDIFACT ve Hibrit Bulut mimarileri için standartlaştırılmış özellikler.",
         "insightsTitle": "Teknik Bilgiler",
-        "insightsDesc": "Netsuite SuiteScript, SAP IDOC'ler ve API Güvenliği konularında derinlemesine incelemeler.",
+        "insightsDesc": "Ölçeklenen entegrasyonlar ve yapay zekâ sistemleri üzerine denemeler — NetSuite, SAP ve API notlarıyla.",
         "systemStatsTitle": "Uzmanlık",
         "systemStatsDesc": "Logiwa ve Beko'da 6+ yıllık EDI, SAP ve NetSuite deneyimi.",
         "toolsTitle": "Geliştirici Araçları",
@@ -238,7 +238,7 @@
     },
     "insights": {
         "title": "Teknik Bilgiler",
-        "subtitle": "Teknik dökümanlar, mimari kararlar ve kod parçacıkları.",
+        "subtitle": "Entegrasyonlar ve yapay zekâ üzerine denemeler — NetSuite, EDI ve B2B notlarıyla.",
         "erp": {
             "title": "Netsuite ERP Entegrasyonu",
             "desc": "Dış bağlantı için SuiteTalk (SOAP/REST) kullanımı. User Event Script'leri ve Map/Reduce işleri kullanarak Sipariş ve Envanter senkronizasyonu stratejileri."
@@ -250,6 +250,78 @@
         "gateway": {
             "title": "Güvenli B2B Ağ Geçitleri",
             "desc": "Güçlü AS2 ve SFTP ağ geçitlerinin uygulanması. Kritik veriler için mTLS ve yük şifreleme dahil gelişmiş güvenlik protokolleri."
+        },
+        "essaysKicker": "> DENEME",
+        "essaysTitle": "Denemeler",
+        "essaysLead": "Entegrasyonlar, yapay zekâ sistemleri ve yazılımı iş gerçekliğine bağlama sanatı üzerine daha uzun okumalar.",
+        "referenceTitle": "Referans notları",
+        "referenceLead": "NetSuite, EDI modernizasyonu ve B2B ağ geçitleri üzerine kısa teknik notlar.",
+        "back": "← Teknik Bilgilere Dön",
+        "readEssay": "Denemeyi oku",
+        "essays": {
+            "beyondApis": {
+                "title": "API'lerin Ötesinde: Ölçeklenen Entegrasyonlar Kurmak",
+                "excerpt": "API'ler uç noktaları bağlar. Güvenilir entegrasyonlar üretimde ayakta kalır — hatalar, hız sınırları ve büyüme.",
+                "date": "16 Ekim 2026",
+                "p1": "API'ler sistemlerin birbirleriyle konuşmasını mümkün kılar. Ancak güvenilir bir entegrasyon kurmak, iki uç noktayı birbirine bağlamakten çok daha fazlasını gerektirir.",
+                "p2": "Modern yazılım ekosistemlerinde entegrasyonlar beklenmedik yanıtları, hız sınırlarını, kimlik doğrulama hatalarını, yinelenen istekleri, zaman aşımlarını ve dış sistemlerdeki değişiklikleri yönetmelidir. Birkaç istekle mükemmel çalışan bir şey, üretim yükü altında çok farklı davranabilir.",
+                "p3": "İyi entegrasyon mühendisliğinin üç temel üzerinde yükseldiğine inanıyorum:",
+                "li1": "<strong>Güvenilirlik:</strong> Yalnızca mutlu yolu değil, hataları da tasarlayın.",
+                "li2": "<strong>Ölçeklenebilirlik:</strong> Trafik ve veri hacmi arttıkça sistemin nasıl davrandığını anlayın.",
+                "li3": "<strong>Gözlemlenebilirlik:</strong> Neyin yanlış gittiğini, nerede olduğunu ve nedenini kolayca bulmayı sağlayın.",
+                "p4": "Bir entegrasyon yalnızca çalışmamalıdır. İş büyüdükçe öngörülebilir, sürdürülebilir ve dayanıklı kalmalıdır.",
+                "p5": "Asıl zorluk sistemleri bağlamak değil. İşler karmaşıklaştığında birlikte çalışmaya devam etmelerini sağlamaktır."
+            },
+            "aiMoreThanChat": {
+                "title": "Yapay Zeka Sadece Bir Sohbet Arayüzünden İbaret Değil",
+                "excerpt": "Fırsat yalnızca daha iyi istemler değil — gerçek sistemlerde, sınırlarla hareket eden ajanlar.",
+                "date": "16 Ekim 2026",
+                "p1": "Yapay zekâdaki en ilginç fırsat yalnızca daha iyi sorular sormak değil. Eylem alabilen sistemler kurmaktır.",
+                "p2": "Metin üreten araçlardan; bağlamı yorumlayan, API'lerle etkileşen, iş akışlarını yürüten ve insanların gerçek işleri tamamlamasına yardımcı olan sistemlere doğru ilerliyoruz.",
+                "p3": "Bir entegrasyon hatasını araştıran, ilgili günlükleri toplayan, olası kök nedeni belirleyen ve bir çözüm önerisi hazırlayan bir yapay zekâ ajanı hayal edin. Ya da bir iş gereksinimini teknik spesifikasyona ve test planına dönüştüren bir iş akışı.",
+                "p4": "Bu fikirler, yapay zekâ gerçek sistemlere, güvenilir verilere ve iyi tanımlanmış süreçlere bağlandığında değer kazanır.",
+                "p5": "Elbette özerklik tek başına yeterli değildir. İyi yapay zekâ sistemleri aynı zamanda koruma sınırlarına, doğrulamaya, gözlemlenebilirliğe ve neyi değiştirebileceklerine dair net sınırlara ihtiyaç duyar.",
+                "p6": "Yapay zekâ ajanlarının ve iş akışı otomasyonunun tekrarlayan işi nasıl azaltabileceğini ve yazılım sistemlerini işletmeyi nasıl kolaylaştırabileceğini keşfetmekle özellikle ilgileniyorum.",
+                "closing": "Amaç her yere yapay zekâ eklemek değil. En çok önem taşıyan yerlerde sürtünmeyi kaldırmaktır."
+            },
+            "hiddenComplexity": {
+                "title": "Sistemleri Bağlamanın Gizli Karmaşıklığı",
+                "excerpt": "Kâğıt üzerinde istek, dönüştür, yanıtla. Pratikte zor kısım o adımların arasındadır.",
+                "date": "16 Ekim 2026",
+                "p1": "Kâğıt üzerinde bir entegrasyon çoğu zaman basit görünür: bir istek al, veriyi dönüştür, başka bir API'yi çağır ve yanıt döndür.",
+                "p2": "Pratikte karmaşıklık bu adımların arasında yaşar.",
+                "p3": "Aşağı akış hizmeti kullanılamaz olduğunda ne olur? İstek zaman aşımına uğrar ama işlem aslında başarılı olursa? Aynı olay iki kez gelirse? İki sistem aynı alanı farklı yorumlarsa?",
+                "p4": "Bunlar olağandışı uç durumlar değildir. Temel mühendislik problemleridir.",
+                "p5": "Güvenilir entegrasyonlar; yeniden denemeler, idempotency, veri doğrulama, hata yönetimi ve sistem sınırları konusunda düşünülmüş kararlar gerektirir. Verinin arkasındaki iş sürecini anlamayı da gerektirir.",
+                "p6": "Teknik olarak geçerli bir API isteği yine de yanlış bir iş sonucuna yol açabilir.",
+                "p7": "Bu yüzden entegrasyon mühendisliğinin yazılım mimarisi ile iş anlayışı kesişiminde durduğuna inanıyorum. En iyi çözümler veriyi sistemler arasında yalnızca taşımaz; süreç boyunca o verinin anlamını ve bütünlüğünü korur.",
+                "closing": "Bazen en önemli mühendislik işi, sistemlerin arasındaki boşluklarda olur."
+            },
+            "engToProducts": {
+                "title": "Mühendislik Problemlerinden Ürünlere",
+                "excerpt": "Tekrarlayan sürtünme bir ürün sinyalidir — aynı sorunu yaşayan herkes için çözün.",
+                "date": "16 Ekim 2026",
+                "p1": "En iyi ürün fikirlerinden bazıları, sürekli karşınıza çıkan bir problemle başlar.",
+                "p2": "Tekrarlayan bir manuel görev. Çok fazla araca bağımlı bir iş akışı. Uygulanması haftalar süren bir entegrasyon. Beklenmedik bir şey olduğunda kırılan bir süreç.",
+                "p3": "Mühendisler olarak çoğu zaman bu sorunları tek tek çözmeyi öğreniriz. Ama bazen daha ilginç soru şudur: ya bu sorunu yaşayan herkes için bir şey kursak?",
+                "p4": "Mühendislik ile ürün düşüncesinin buluştuğu yer burasıdır.",
+                "p5": "Faydalı bir ürün üretmek kod yazmaktan fazlasını gerektirir. Kullanıcıyı anlamak, sorunu doğrulamak, deneyimi sadeleştirmek ve neyi inşa etmeyeceğine dair bilinçli kararlar almak demektir.",
+                "p6": "Bu kesişimi yazılım ürünleri, otomasyon ve yapay zekâ destekli araçlar üzerinden keşfetmekle ilgileniyorum.",
+                "p7": "Uzun vadeli hedefim, pratik mühendislik bilgisini işletmelerin daha akıllı çalışmasına ve daha az sürtünmeyle ölçeklenmesine yardımcı olan çözümlere dönüştürmek.",
+                "closing": "Gerçek bir sorunu çöz. Faydalı bir çözüm kur. Sürekli iyileştir."
+            },
+            "engMindset": {
+                "title": "Mühendislik Bir Unvan Değil, Bir Zihniyettir",
+                "excerpt": "Merak, farklı bakış açıları ve ilk satır koddan önce bir soru daha sormak.",
+                "date": "16 Ekim 2026",
+                "p1": "Benim için mühendislik hiçbir zaman yalnızca kod yazmak veya sistemleri çalıştırmak olmadı.",
+                "p2": "Parçaların nasıl bir araya geldiğini anlamak, daha iyi sorular sormak ve karmaşık sorunlara pratik yollar bulmakla ilgilidir.",
+                "p3": "Bilgisayar mühendisliği, kontrol ve otomasyon ile mühendislik yönetimi geçmişim, teknolojiye yaklaşımımı şekillendirdi. Sorunlara farklı açılardan bakmayı seviyorum: teknik mimari, operasyonel verimlilik, kullanıcı deneyimi ve iş etkisi.",
+                "p4": "Entegrasyonlarla çalışmak önemli bir dersi pekiştirdi: tek başına en iyi görünen çözüm, gerçek dünyada her zaman en iyi çalışan çözüm değildir.",
+                "p5": "Bazen doğru cevap daha iyi mimaridir. Bazen daha sade bir iş akışıdır. Bazen de tek satır kod yazmadan önce bir soru daha sormaktır.",
+                "p6": "Yazılım mühendisliği, yapay zekâ, otomasyon ve ürün geliştirmeyi kesintisiz keşfediyorum; karmaşık süreçleri daha basit, daha güvenilir sistemlere dönüştürmekle özellikle ilgileniyorum.",
+                "p7": "Öğrenmeyi süregelen bir süreç olarak görüyorum ve en iyi mühendislerin bir cevap bulduktan uzun sonra da meraklı kaldığına inanıyorum."
+            }
         }
     },
     "expertise": {

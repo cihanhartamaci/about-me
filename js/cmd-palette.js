@@ -6,7 +6,12 @@ const SEARCH_INDEX = [
     { title: "Home", url: "hub.html", type: "Page", keywords: "home landing main hub" },
     { title: "AI in Practice", url: "ai-practice.html", type: "Page", keywords: "ai coding assistant cursor claude chatgpt gemini deepseek antigravity kling elevenlabs" },
     { title: "Integration Patterns", url: "patterns.html", type: "Page", keywords: "docs specs x12 edifact" },
-    { title: "Technical Insights", url: "insights.html", type: "Page", keywords: "blog articles sap netsuite security" },
+    { title: "Technical Insights", url: "insights.html", type: "Page", keywords: "blog articles sap netsuite security essays" },
+    { title: "Beyond APIs", url: "insights/beyond-apis.html", type: "Essay", keywords: "integration scale reliability observability" },
+    { title: "AI Is More Than a Chat Interface", url: "insights/ai-more-than-chat.html", type: "Essay", keywords: "ai agents automation workflows guardrails" },
+    { title: "Hidden Complexity of Connecting Systems", url: "insights/hidden-complexity.html", type: "Essay", keywords: "idempotency retries integration architecture" },
+    { title: "From Engineering Problems to Products", url: "insights/engineering-to-products.html", type: "Essay", keywords: "product thinking automation friction" },
+    { title: "Engineering Mindset", url: "insights/engineering-mindset.html", type: "Essay", keywords: "curiosity craft learning mindset" },
     { title: "Expertise & History", url: "expertise.html", type: "Page", keywords: "resume cv work history bio" },
     { title: "Contact", url: "contact.html", type: "Page", keywords: "email hire form message" },
     // Mocking Section Content for Deep Linking

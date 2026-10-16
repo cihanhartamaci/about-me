@@ -1250,3 +1250,110 @@ body.nav-open .top-nav {
         gap: 2rem;
     }
 }
+
+
+/* —— Editorial essay strips (about + journal) —— */
+.about-essays {
+    padding: 3.5rem 0 1rem;
+    background:
+        linear-gradient(180deg, rgba(15, 36, 40, 0.03), transparent 40%),
+        var(--bg, transparent);
+}
+
+.editorial-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2.75rem;
+    margin: 2rem 0 3rem;
+}
+
+.editorial-stack--home {
+    margin-bottom: 1rem;
+}
+
+.editorial-piece {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    align-items: center;
+}
+
+.editorial-media {
+    margin: 0;
+    overflow: hidden;
+    border-radius: var(--radius-media, 12px);
+    position: relative;
+}
+
+.editorial-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(15, 36, 40, 0.18));
+    pointer-events: none;
+}
+
+.editorial-media img {
+    display: block;
+    width: 100%;
+    height: clamp(220px, 42vw, 360px);
+    object-fit: cover;
+    transition: transform 0.55s ease;
+}
+
+.editorial-piece:hover .editorial-media img {
+    transform: scale(1.03);
+}
+
+.editorial-copy .blog-meta {
+    margin-bottom: 0.45rem;
+}
+
+.editorial-copy h2,
+.editorial-copy h3 {
+    font-family: var(--font-display);
+    font-size: clamp(1.45rem, 3.2vw, 2rem);
+    margin: 0 0 0.55rem;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+}
+
+.editorial-copy p:last-child {
+    margin: 0;
+    color: var(--text-secondary);
+    max-width: 34rem;
+    line-height: 1.6;
+}
+
+.journal-more {
+    margin-top: 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--accent-line);
+}
+
+@media (min-width: 860px) {
+    .editorial-piece {
+        grid-template-columns: 1.05fr 1fr;
+        gap: 2rem;
+    }
+
+    .editorial-piece--flip .editorial-media {
+        order: 2;
+    }
+
+    .editorial-piece--flip .editorial-copy {
+        order: 1;
+    }
+
+    .editorial-media img {
+        height: 320px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .editorial-piece:hover .editorial-media img {
+        transform: none;
+    }
+}
