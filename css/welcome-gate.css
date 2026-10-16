@@ -132,17 +132,15 @@ body.gate-unlocked .welcome-gate {
     align-items: center;
     text-decoration: none;
     line-height: 1;
-    padding: 0.28rem 0.55rem;
-    border-radius: 0.55rem;
-    background: rgba(255, 255, 255, 0.92);
-    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.28);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    padding: 0.1rem 0.15rem;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
 }
 
 .gate-wordmark:hover {
     text-decoration: none;
-    background: rgba(255, 255, 255, 0.98);
+    opacity: 0.92;
 }
 
 .gate-wordmark__logo {
@@ -243,15 +241,10 @@ body.gate-unlocked .welcome-gate {
     align-items: center;
     justify-content: center;
     max-width: 100%;
-    padding: clamp(0.65rem, 1.8vw, 1.1rem) clamp(0.85rem, 2.4vw, 1.5rem);
-    border-radius: clamp(0.85rem, 2vw, 1.25rem);
-    background: rgba(255, 255, 255, 0.94);
-    box-shadow:
-        0 12px 40px rgba(0, 0, 0, 0.45),
-        0 0 0 1px rgba(255, 255, 255, 0.35),
-        0 0 48px rgba(58, 160, 255, 0.16);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
 }
 
 .gate-brand__logo {
@@ -259,6 +252,7 @@ body.gate-unlocked .welcome-gate {
     width: min(84vw, 30rem);
     height: auto;
     margin: 0 auto;
+    filter: drop-shadow(0 4px 22px rgba(0, 0, 0, 0.4));
 }
 
 .gate-question {
@@ -736,13 +730,11 @@ body.gate-unlocked .welcome-gate {
     display: block;
     width: clamp(4.8rem, 16vw, 7.25rem);
     height: auto;
-    padding: 0.35rem 0.5rem;
-    border-radius: 0.55rem;
-    background: rgba(255, 255, 255, 0.94);
-    box-shadow:
-        0 4px 18px rgba(0, 0, 0, 0.45),
-        0 0 18px rgba(58, 160, 255, 0.22),
-        0 0 18px rgba(226, 61, 74, 0.16);
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.45));
 }
 
 .path-intro.is-playing .path-intro__lens--blue {
@@ -913,7 +905,7 @@ body.gate-page:not(.intro-playing) .welcome-gate {
     }
 
     .gate-brand__plate {
-        padding: 0.55rem 0.7rem;
+        padding: 0;
     }
 
     .gate-question {
