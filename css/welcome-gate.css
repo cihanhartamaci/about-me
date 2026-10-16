@@ -132,12 +132,17 @@ body.gate-unlocked .welcome-gate {
     align-items: center;
     text-decoration: none;
     line-height: 1;
-    opacity: 0.9;
+    padding: 0.28rem 0.55rem;
+    border-radius: 0.55rem;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .gate-wordmark:hover {
     text-decoration: none;
-    opacity: 1;
+    background: rgba(255, 255, 255, 0.98);
 }
 
 .gate-wordmark__logo {
@@ -233,14 +238,27 @@ body.gate-unlocked .welcome-gate {
     line-height: 0;
 }
 
+.gate-brand__plate {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    padding: clamp(0.65rem, 1.8vw, 1.1rem) clamp(0.85rem, 2.4vw, 1.5rem);
+    border-radius: clamp(0.85rem, 2vw, 1.25rem);
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(255, 255, 255, 0.35),
+        0 0 48px rgba(58, 160, 255, 0.16);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
 .gate-brand__logo {
     display: block;
-    width: min(92vw, 34rem);
+    width: min(84vw, 30rem);
     height: auto;
     margin: 0 auto;
-    filter:
-        drop-shadow(0 2px 28px rgba(0, 0, 0, 0.65))
-        drop-shadow(0 0 42px rgba(58, 160, 255, 0.18));
 }
 
 .gate-question {
@@ -718,10 +736,13 @@ body.gate-unlocked .welcome-gate {
     display: block;
     width: clamp(4.8rem, 16vw, 7.25rem);
     height: auto;
-    filter:
-        drop-shadow(0 0 14px rgba(58, 160, 255, 0.35))
-        drop-shadow(0 0 14px rgba(226, 61, 74, 0.25))
-        drop-shadow(0 2px 10px rgba(0, 0, 0, 0.7));
+    padding: 0.35rem 0.5rem;
+    border-radius: 0.55rem;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.45),
+        0 0 18px rgba(58, 160, 255, 0.22),
+        0 0 18px rgba(226, 61, 74, 0.16);
 }
 
 .path-intro.is-playing .path-intro__lens--blue {
@@ -888,7 +909,11 @@ body.gate-page:not(.intro-playing) .welcome-gate {
     }
 
     .gate-brand__logo {
-        width: min(94vw, 22rem);
+        width: min(86vw, 20rem);
+    }
+
+    .gate-brand__plate {
+        padding: 0.55rem 0.7rem;
     }
 
     .gate-question {
