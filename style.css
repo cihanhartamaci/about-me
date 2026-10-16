@@ -428,7 +428,9 @@ a.tech-card:hover {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 100;
+    /* Must stay BELOW .top-nav (z-index:100) so the drawer inside the nav
+       stacking context remains tappable — same-z + later DOM was eating clicks. */
+    z-index: 90;
     pointer-events: none;
 }
 
@@ -439,6 +441,10 @@ a.tech-card:hover {
 
 body.nav-open {
     overflow: hidden;
+}
+
+body.nav-open .top-nav {
+    z-index: 110;
 }
 
 /* Hamburger Menu Button */

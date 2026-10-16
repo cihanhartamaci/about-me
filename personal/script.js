@@ -22,16 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
             document.body.classList.toggle('nav-open', open);
             document.body.style.overflow = open ? 'hidden' : '';
-            if (open) {
-                navLinks.removeAttribute('inert');
-            } else {
-                navLinks.setAttribute('inert', '');
-            }
         };
-
-        if (window.matchMedia('(max-width: 768px)').matches) {
-            navLinks.setAttribute('inert', '');
-        }
 
         hamburger.addEventListener('click', (e) => {
             e.preventDefault();
@@ -44,13 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.querySelectorAll('a').forEach((link) => {
             link.addEventListener('click', (e) => {
                 const href = link.getAttribute('href') || '';
-                setOpen(false);
 
                 if (href.startsWith('#')) {
+                    e.preventDefault();
+                    setOpen(false);
                     const id = href.slice(1);
                     const target = id ? document.getElementById(id) : null;
                     if (target) {
-                        e.preventDefault();
                         window.setTimeout(() => {
                             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                             if (history.replaceState) {
@@ -58,7 +49,17 @@ document.addEventListener('DOMContentLoaded', () => {
                             }
                         }, 40);
                     }
+                    return;
                 }
+
+                // Real navigations: close drawer without canceling the click
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                overlay.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                overlay.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('nav-open');
+                document.body.style.overflow = '';
             });
         });
 
@@ -70,12 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                setOpen(false);
-                navLinks.removeAttribute('inert');
-            } else if (!navLinks.classList.contains('active')) {
-                navLinks.setAttribute('inert', '');
-            }
+            if (window.innerWidth > 768) setOpen(false);
         });
     }
 

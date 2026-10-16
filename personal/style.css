@@ -170,13 +170,18 @@ a:hover {
     position: fixed;
     inset: 0;
     background: rgba(8, 22, 26, 0.35);
-    z-index: 90;
+    /* Below .top-nav so drawer links stay above the dimmer */
+    z-index: 80;
     pointer-events: none;
 }
 
 .nav-overlay.active {
     display: block;
     pointer-events: auto;
+}
+
+body.nav-open .top-nav {
+    z-index: 120;
 }
 
 /* Full-bleed hero */
