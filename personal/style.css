@@ -152,6 +152,33 @@ a:hover {
     opacity: 1;
 }
 
+.nav-path-reset {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.nav-path-reset:hover {
+    color: var(--text-primary);
+    opacity: 1;
+}
+
+.nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 22, 26, 0.35);
+    z-index: 90;
+    pointer-events: none;
+}
+
+.nav-overlay.active {
+    display: block;
+    pointer-events: auto;
+}
+
 /* Full-bleed hero */
 .hero-bleed {
     position: relative;
@@ -168,15 +195,47 @@ a:hover {
     z-index: 0;
 }
 
+.hero-slideshow .hero-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: scale(1.06);
+    transition: opacity 1.4s var(--ease-out);
+    animation: none;
+}
+
+.hero-slideshow .hero-bg.is-active {
+    opacity: 1;
+    z-index: 1;
+    animation: kenBurns 18s var(--ease-out) infinite alternate;
+}
+
 .hero-bg {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Anchor mid-lower so Cihan’s face sits in the upper-middle of the first viewport (was 22% — only crown visible) */
-    object-position: center 60%;
-    transform: scale(1.08);
-    animation: kenBurns 18s var(--ease-out) infinite alternate;
+    object-position: center 42%;
     display: block;
+}
+
+.hero-slideshow .hero-slide:nth-child(1) {
+    object-position: center 28%;
+}
+
+.hero-slideshow .hero-slide:nth-child(2) {
+    object-position: center 55%;
+}
+
+.hero-slideshow .hero-slide:nth-child(3) {
+    object-position: center 35%;
+}
+
+.hero-slideshow .hero-slide:nth-child(4) {
+    object-position: center 45%;
+}
+
+.hero-slideshow .hero-slide:nth-child(5) {
+    object-position: center 55%;
 }
 
 .hero-veil {
@@ -383,8 +442,10 @@ a:hover {
 .photo-mosaic {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: minmax(160px, 28vw);
+    grid-auto-rows: auto;
+    grid-auto-flow: row dense;
     gap: 0.7rem;
+    align-items: stretch;
 }
 
 .photo-tile {
@@ -393,15 +454,20 @@ a:hover {
     border-radius: var(--radius-media);
     background: var(--bg-deep);
     opacity: 1;
-    min-height: 190px;
+    aspect-ratio: 4 / 5;
+    min-height: 0;
+    height: auto;
+    isolation: isolate;
     transition: opacity 0.35s var(--ease-out), transform 0.35s var(--ease-out);
 }
 
 .photo-tile.is-hidden {
-    display: none;
+    display: none !important;
 }
 
 .photo-tile img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -417,13 +483,17 @@ a:hover {
     opacity: 1;
 }
 
-.photo-tile.tall {
-    grid-row: span 2;
+/* Mobile: no row-spans — prevents tiles stacking/overlapping */
+.photo-tile.tall,
+.photo-tile.wide {
+    grid-row: auto;
+    grid-column: auto;
+    aspect-ratio: 4 / 5;
 }
 
 .photo-tile.wide {
     grid-column: 1 / -1;
-    min-height: 240px;
+    aspect-ratio: 16 / 10;
 }
 
 .photo-meta {
@@ -504,6 +574,12 @@ a:hover {
         gap: 0.85rem;
     }
 
+    .photo-tile {
+        aspect-ratio: auto;
+        min-height: 0;
+        height: auto;
+    }
+
     .photo-tile.tall {
         grid-row: span 2;
     }
@@ -511,11 +587,18 @@ a:hover {
     .photo-tile.wide {
         grid-column: span 2;
         grid-row: span 1;
+        aspect-ratio: auto;
         min-height: 0;
     }
 
     .photo-tile.cta {
         min-height: 0;
+        aspect-ratio: auto;
+    }
+
+    .photo-tile img {
+        position: absolute;
+        inset: 0;
     }
 }
 
@@ -868,9 +951,8 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-    /* Tall phones show more of the portrait; keep face above the large title block */
-    .hero-bg {
-        object-position: center 70%;
+    .hero-slideshow .hero-slide:nth-child(1) {
+        object-position: center 22%;
     }
 
     .hero-copy {
@@ -885,12 +967,28 @@ a:hover {
     }
 
     .photo-mosaic {
-        grid-auto-rows: minmax(150px, 44vw);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: auto;
         gap: 0.55rem;
     }
 
+    .photo-tile,
     .photo-tile.tall {
-        grid-row: span 2;
+        grid-row: auto;
+        grid-column: auto;
+        aspect-ratio: 4 / 5;
+        min-height: 0;
+    }
+
+    .photo-tile.wide {
+        grid-column: 1 / -1;
+        aspect-ratio: 3 / 2;
+    }
+
+    .photo-tile.cta {
+        grid-column: 1 / -1;
+        aspect-ratio: auto;
+        min-height: 160px;
     }
 
     .mosaic-filters {
@@ -916,6 +1014,11 @@ a:hover {
 
     .hamburger {
         display: flex;
+        z-index: 120;
+    }
+
+    .top-nav {
+        z-index: 110;
     }
 
     .nav-links {
@@ -924,6 +1027,9 @@ a:hover {
         top: var(--nav-height);
         left: 0;
         right: 0;
+        max-height: calc(100svh - var(--nav-height));
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
         background: var(--bg-nav);
         backdrop-filter: blur(14px);
         flex-direction: column;
@@ -933,22 +1039,33 @@ a:hover {
         box-shadow: 0 8px 24px rgba(15, 36, 40, 0.08);
         transform: translateY(-120%);
         opacity: 0;
-        transition: all 0.3s ease;
+        visibility: hidden;
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
         pointer-events: none;
-        z-index: 99;
+        z-index: 115;
     }
 
     .nav-links.active {
         transform: translateY(0);
         opacity: 1;
+        visibility: visible;
         pointer-events: auto;
     }
 
     .nav-link,
-    .mode-switch {
+    .mode-switch,
+    .nav-path-reset {
         padding: 1rem 1.5rem;
         text-align: left;
         border-bottom: 1px solid rgba(15, 36, 40, 0.05);
+        display: block;
+        width: 100%;
+        min-height: 48px;
+        box-sizing: border-box;
+        position: relative;
+        z-index: 1;
+        pointer-events: auto;
+        -webkit-tap-highlight-color: transparent;
     }
 
     .mode-switch {
@@ -973,6 +1090,8 @@ a:hover {
     }
 
     .hero-bg,
+    .hero-slideshow .hero-bg,
+    .hero-slideshow .hero-bg.is-active,
     .hero-motto,
     .hero-scroll,
     .reveal {
@@ -980,5 +1099,9 @@ a:hover {
         transition: none !important;
         opacity: 1;
         transform: none;
+    }
+
+    .hero-slideshow .hero-bg:not(.is-active) {
+        opacity: 0;
     }
 }

@@ -1,38 +1,98 @@
 /**
- * Personal site: mobile menu + mosaic filters + reveal motion
+ * Personal site: mobile menu + mosaic filters + hero slideshow + reveal motion
  */
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
 
     if (hamburger && navLinks) {
+        let overlay = document.querySelector('.nav-overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.className = 'nav-overlay';
+            overlay.setAttribute('aria-hidden', 'true');
+            document.body.appendChild(overlay);
+        }
+
         const setOpen = (open) => {
             hamburger.classList.toggle('active', open);
             navLinks.classList.toggle('active', open);
+            overlay.classList.toggle('active', open);
             hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+            overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+            document.body.classList.toggle('nav-open', open);
             document.body.style.overflow = open ? 'hidden' : '';
+            if (open) {
+                navLinks.removeAttribute('inert');
+            } else {
+                navLinks.setAttribute('inert', '');
+            }
         };
 
+        if (window.matchMedia('(max-width: 768px)').matches) {
+            navLinks.setAttribute('inert', '');
+        }
+
         hamburger.addEventListener('click', (e) => {
+            e.preventDefault();
             e.stopPropagation();
             setOpen(!navLinks.classList.contains('active'));
         });
 
-        navLinks.querySelectorAll('a').forEach((link) => {
-            link.addEventListener('click', () => setOpen(false));
-        });
+        overlay.addEventListener('click', () => setOpen(false));
 
-        document.addEventListener('click', (e) => {
-            if (navLinks.classList.contains('active') &&
-                !hamburger.contains(e.target) &&
-                !navLinks.contains(e.target)) {
+        navLinks.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href') || '';
                 setOpen(false);
-            }
+
+                if (href.startsWith('#')) {
+                    const id = href.slice(1);
+                    const target = id ? document.getElementById(id) : null;
+                    if (target) {
+                        e.preventDefault();
+                        window.setTimeout(() => {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            if (history.replaceState) {
+                                history.replaceState(null, '', href);
+                            }
+                        }, 40);
+                    }
+                }
+            });
         });
 
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') setOpen(false);
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                setOpen(false);
+                hamburger.focus();
+            }
         });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                setOpen(false);
+                navLinks.removeAttribute('inert');
+            } else if (!navLinks.classList.contains('active')) {
+                navLinks.setAttribute('inert', '');
+            }
+        });
+    }
+
+    /* Hero crossfade slideshow */
+    const slides = document.querySelectorAll('.hero-slideshow .hero-slide');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (slides.length > 1 && !reduceMotion) {
+        let index = 0;
+        slides[0].classList.add('is-active');
+        window.setInterval(() => {
+            slides[index].classList.remove('is-active');
+            index = (index + 1) % slides.length;
+            slides[index].classList.add('is-active');
+        }, 5200);
+    } else if (slides.length) {
+        slides[0].classList.add('is-active');
     }
 
     const filters = document.querySelectorAll('.mosaic-filter');
@@ -60,7 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const reveals = document.querySelectorAll('.reveal');
 
     if (!reveals.length) return;
@@ -98,7 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     requestAnimationFrame(markInView);
-    // Fallback so content is never stuck invisible (e.g. odd viewport/IO cases)
     window.setTimeout(() => {
         reveals.forEach((el) => el.classList.add('is-visible'));
     }, 600);

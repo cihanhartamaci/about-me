@@ -2,59 +2,65 @@
     'use strict';
 
     var STORAGE_KEY = 'welcomeGateChoice';
+    var INTRO_KEY = 'pathIntroSeen';
     var gate = document.getElementById('welcomeGate');
-    var proPanel = document.getElementById('gatePro');
-    var socialPanel = document.getElementById('gateSocial');
-    var skipButtons = document.querySelectorAll('[data-gate-skip]');
+    var intro = document.getElementById('pathIntro');
+    var introSkip = document.getElementById('introSkip');
+    var introCanvas = document.getElementById('introCanvas');
     var rainCanvas = document.getElementById('gateRain');
+    var socialPanel = document.getElementById('gateSocial');
 
     if (!gate) return;
 
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    function unlockHub(persist) {
-        document.body.classList.remove('gate-locked');
-        document.body.classList.add('gate-unlocked');
-        if (persist) {
-            try {
-                sessionStorage.setItem(STORAGE_KEY, 'pro');
-            } catch (e) { /* ignore */ }
-        }
-        var hub = document.getElementById('proHub');
-        if (hub) {
-            hub.removeAttribute('aria-hidden');
-            if (!reduceMotion) {
-                window.setTimeout(function () {
-                    hub.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 80);
-            }
-        }
-        var focusTarget = document.querySelector('#proHub .page-title, #proHub h1');
-        if (focusTarget) {
-            focusTarget.setAttribute('tabindex', '-1');
-            focusTarget.focus({ preventScroll: true });
-        }
-        if (window.history && window.history.replaceState) {
-            window.history.replaceState(null, '', '#hub');
-        }
-        stopRain();
-    }
-
-    function enterProfessional(event) {
-        if (event) event.preventDefault();
-        unlockHub(true);
-    }
-
-    function enterSocial() {
-        try {
-            sessionStorage.setItem(STORAGE_KEY, 'social');
-        } catch (e) { /* ignore */ }
-    }
-
-    /* Soft glyph rain — decorative only, never affects hit targets */
+    var introRaf = 0;
     var rainRaf = 0;
     var rainRunning = false;
 
+    function rememberChoice(choice) {
+        try {
+            sessionStorage.setItem(STORAGE_KEY, choice);
+        } catch (e) { /* ignore */ }
+    }
+
+    function markIntroSeen() {
+        try {
+            sessionStorage.setItem(INTRO_KEY, '1');
+        } catch (e) { /* ignore */ }
+    }
+
+    function hasSeenIntro() {
+        try {
+            return sessionStorage.getItem(INTRO_KEY) === '1';
+        } catch (e) {
+            return false;
+        }
+    }
+
+    function showGate() {
+        document.body.classList.add('intro-done');
+        if (intro) {
+            intro.classList.add('is-done');
+            intro.setAttribute('aria-hidden', 'true');
+        }
+        requestAnimationFrame(function () {
+            gate.classList.add('is-ready');
+        });
+        initRain();
+    }
+
+    function finishIntro(immediate) {
+        markIntroSeen();
+        stopIntroCanvas();
+        if (immediate) {
+            showGate();
+            return;
+        }
+        if (intro) intro.classList.add('is-exiting');
+        window.setTimeout(showGate, reduceMotion ? 0 : 520);
+    }
+
+    /* Soft glyph rain — decorative only */
     function stopRain() {
         rainRunning = false;
         if (rainRaf) {
@@ -65,6 +71,7 @@
 
     function initRain() {
         if (!rainCanvas || reduceMotion || typeof rainCanvas.getContext !== 'function') return;
+        if (rainRunning) return;
 
         var ctx = rainCanvas.getContext('2d');
         if (!ctx) return;
@@ -112,11 +119,9 @@
                 var col = cols[i];
                 var x = i * fontSize;
                 var ch = glyphs.charAt((Math.random() * glyphs.length) | 0);
-                if (col.hue === 'blue') {
-                    ctx.fillStyle = 'rgba(58, 160, 255, 0.55)';
-                } else {
-                    ctx.fillStyle = 'rgba(226, 61, 74, 0.42)';
-                }
+                ctx.fillStyle = col.hue === 'blue'
+                    ? 'rgba(58, 160, 255, 0.55)'
+                    : 'rgba(226, 61, 74, 0.42)';
                 ctx.fillText(ch, x, col.y);
                 col.y += fontSize * col.speed;
                 if (col.y > h + fontSize * 4) {
@@ -139,52 +144,146 @@
         });
     }
 
-    function init() {
-        // Always show the choice gate on load. Never auto-unlock from
-        // #hub, sessionStorage, or any other returning-visitor signal —
-        // hub entry requires an explicit pill click or Skip control.
-        document.body.classList.remove('gate-unlocked');
-        document.body.classList.add('gate-locked');
-
-        var hub = document.getElementById('proHub');
-        if (hub) {
-            hub.setAttribute('aria-hidden', 'true');
+    function stopIntroCanvas() {
+        if (introRaf) {
+            window.cancelAnimationFrame(introRaf);
+            introRaf = 0;
         }
+    }
 
-        // Drop a leftover #hub from a prior unlock so refresh/share URLs
-        // do not look like an already-chosen professional deep-link.
-        if ((window.location.hash || '').toLowerCase() === '#hub') {
-            if (window.history && window.history.replaceState) {
-                window.history.replaceState(
-                    null,
-                    '',
-                    window.location.pathname + window.location.search
-                );
+    function initIntroCanvas() {
+        if (!introCanvas || reduceMotion || typeof introCanvas.getContext !== 'function') return;
+        var ctx = introCanvas.getContext('2d');
+        if (!ctx) return;
+
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        var particles = [];
+        var start = performance.now();
+
+        function resize() {
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+            introCanvas.width = Math.floor(w * dpr);
+            introCanvas.height = Math.floor(h * dpr);
+            introCanvas.style.width = w + 'px';
+            introCanvas.style.height = h + 'px';
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            particles = [];
+            var count = Math.min(90, Math.floor((w * h) / 18000));
+            for (var i = 0; i < count; i++) {
+                particles.push({
+                    x: Math.random() * w,
+                    y: Math.random() * h,
+                    r: 0.6 + Math.random() * 1.8,
+                    vx: (Math.random() - 0.5) * 0.25,
+                    vy: 0.15 + Math.random() * 0.55,
+                    hue: Math.random() > 0.5 ? 'blue' : 'red',
+                    a: 0.15 + Math.random() * 0.45
+                });
             }
         }
 
-        requestAnimationFrame(function () {
-            gate.classList.add('is-ready');
-        });
+        function frame(ts) {
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+            var t = (ts - start) / 1000;
+            ctx.clearRect(0, 0, w, h);
 
-        if (proPanel) {
-            proPanel.addEventListener('click', enterProfessional);
-            proPanel.addEventListener('keydown', function (event) {
-                if (event.key === 'Enter' || event.key === ' ') {
-                    enterProfessional(event);
+            // Dual signal beams converging toward center
+            var cx = w * 0.5;
+            var cy = h * 0.48;
+            var pulse = 0.55 + Math.sin(t * 1.4) * 0.2;
+
+            var blue = ctx.createRadialGradient(cx - w * 0.22, cy, 0, cx - w * 0.22, cy, w * 0.42);
+            blue.addColorStop(0, 'rgba(58, 160, 255,' + (0.28 * pulse) + ')');
+            blue.addColorStop(1, 'rgba(58, 160, 255, 0)');
+            ctx.fillStyle = blue;
+            ctx.fillRect(0, 0, w, h);
+
+            var red = ctx.createRadialGradient(cx + w * 0.22, cy, 0, cx + w * 0.22, cy, w * 0.42);
+            red.addColorStop(0, 'rgba(226, 61, 74,' + (0.26 * pulse) + ')');
+            red.addColorStop(1, 'rgba(226, 61, 74, 0)');
+            ctx.fillStyle = red;
+            ctx.fillRect(0, 0, w, h);
+
+            for (var i = 0; i < particles.length; i++) {
+                var p = particles[i];
+                p.x += p.vx;
+                p.y += p.vy;
+                if (p.y > h + 4) {
+                    p.y = -4;
+                    p.x = Math.random() * w;
                 }
+                ctx.beginPath();
+                ctx.fillStyle = p.hue === 'blue'
+                    ? 'rgba(126, 196, 255,' + p.a + ')'
+                    : 'rgba(255, 122, 132,' + p.a + ')';
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            introRaf = window.requestAnimationFrame(frame);
+        }
+
+        resize();
+        introRaf = window.requestAnimationFrame(frame);
+        window.addEventListener('resize', resize);
+    }
+
+    function startIntro() {
+        if (!intro || reduceMotion || hasSeenIntro()) {
+            if (intro) {
+                intro.classList.add('is-done');
+                intro.setAttribute('aria-hidden', 'true');
+            }
+            document.body.classList.add('intro-done');
+            showGate();
+            return;
+        }
+
+        document.body.classList.add('intro-playing');
+        intro.classList.add('is-playing');
+        initIntroCanvas();
+
+        // Timed beats: lines stagger via CSS; auto-advance to gate
+        window.setTimeout(function () {
+            finishIntro(false);
+        }, 4200);
+
+        if (introSkip) {
+            introSkip.addEventListener('click', function () {
+                finishIntro(true);
             });
         }
 
+        document.addEventListener('keydown', function onKey(e) {
+            if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                document.removeEventListener('keydown', onKey);
+                finishIntro(true);
+            }
+        });
+    }
+
+    function init() {
+        document.body.classList.add('gate-locked');
+        document.body.classList.remove('gate-unlocked');
+
         if (socialPanel) {
-            socialPanel.addEventListener('click', enterSocial);
+            socialPanel.addEventListener('click', function () {
+                rememberChoice('social');
+            });
         }
 
-        skipButtons.forEach(function (btn) {
-            btn.addEventListener('click', enterProfessional);
+        var proLinks = document.querySelectorAll('#gatePro, .gate-skip, .gate-skip-mobile, .gate-wordmark');
+        proLinks.forEach(function (el) {
+            el.addEventListener('click', function () {
+                rememberChoice('pro');
+                stopRain();
+            });
         });
 
-        initRain();
+        startIntro();
     }
 
     if (document.readyState === 'loading') {

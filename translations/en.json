@@ -9,7 +9,14 @@
         "contact": "Contact",
         "dashboard": "Dashboard",
         "logout": "Logout",
-        "switchPersonal": "Switch to Personal"
+        "switchPersonal": "Switch to Personal",
+        "chooseAgain": "Choose path again"
+    },
+    "intro": {
+        "line1": "Wake up, traveler.",
+        "line2": "Two signals in the dark.",
+        "line3": "One choice shapes the room you enter.",
+        "skip": "Skip intro"
     },
     "dashboard": {
         "title": "System Statistics",

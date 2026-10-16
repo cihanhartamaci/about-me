@@ -4,7 +4,8 @@
         "blog": "Journal",
         "photos": "Photos",
         "notes": "Notes",
-        "switchProfessional": "Switch to Professional"
+        "switchProfessional": "Switch to Professional",
+        "chooseAgain": "Choose path again"
     },
     "hero": {
         "greeting": "Cihan Hartamacı",

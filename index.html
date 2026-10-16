@@ -21,13 +21,28 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/lang-switcher.css">
     <link rel="stylesheet" href="css/welcome-gate.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body>
+<body class="gate-page gate-locked">
+
+    <!-- Cinematic intro (original dual-path myth — not copyrighted franchise assets) -->
+    <div class="path-intro" id="pathIntro" aria-hidden="false">
+        <canvas class="path-intro__canvas" id="introCanvas" aria-hidden="true"></canvas>
+        <div class="path-intro__veil" aria-hidden="true"></div>
+        <div class="path-intro__copy">
+            <p class="path-intro__line path-intro__line--1" data-i18n="intro.line1">Wake up, traveler.</p>
+            <p class="path-intro__line path-intro__line--2" data-i18n="intro.line2">Two signals in the dark.</p>
+            <p class="path-intro__line path-intro__line--3" data-i18n="intro.line3">One choice shapes the room you enter.</p>
+        </div>
+        <div class="path-intro__orbs" aria-hidden="true">
+            <span class="path-intro__orb path-intro__orb--blue"></span>
+            <span class="path-intro__orb path-intro__orb--red"></span>
+        </div>
+        <button type="button" class="path-intro__skip" id="introSkip" data-i18n="intro.skip">Skip intro</button>
+    </div>
 
     <section class="welcome-gate" id="welcomeGate" aria-label="Welcome">
         <canvas class="gate-rain" id="gateRain" aria-hidden="true"></canvas>
@@ -38,9 +53,9 @@
         </div>
 
         <div class="gate-chrome">
-            <a href="#hub" class="gate-wordmark" data-gate-skip data-i18n="gate.brand">Cihan Hartamacı</a>
+            <a href="hub.html" class="gate-wordmark" data-i18n="gate.brand">Cihan Hartamacı</a>
             <div class="gate-lang">
-                <button type="button" class="gate-skip" data-gate-skip data-i18n="gate.skip">Skip to professional hub</button>
+                <a href="hub.html" class="gate-skip" data-i18n="gate.skip">Skip to professional hub</a>
                 <div class="lang-switcher">
                     <label class="visually-hidden" for="language-selector" data-i18n="common.language">Language</label>
                     <select id="language-selector">
@@ -59,7 +74,7 @@
             </header>
 
             <div class="gate-choice" id="gateChoice" role="group" aria-label="Choose a path">
-                <a href="#hub" class="gate-pill gate-pill--blue" id="gatePro" data-i18n-aria="gate.proAria">
+                <a href="hub.html" class="gate-pill gate-pill--blue" id="gatePro" data-i18n-aria="gate.proAria">
                     <span class="gate-pill__portrait" aria-hidden="true">
                         <img src="assets/cihan-profile.jpg?v=20261015" alt="" width="160" height="160">
                     </span>
@@ -76,7 +91,7 @@
 
                 <a href="personal/" class="gate-pill gate-pill--red" id="gateSocial" data-i18n-aria="gate.socialAria">
                     <span class="gate-pill__portrait" aria-hidden="true">
-                        <img src="assets/personal-seaside-bench.jpg" alt="" width="160" height="160">
+                        <img src="assets/personal-sumela-portrait.jpg" alt="" width="160" height="160">
                     </span>
                     <span class="gate-pill__capsule" aria-hidden="true">
                         <span class="gate-pill__shine"></span>
@@ -91,107 +106,14 @@
             </div>
         </div>
 
-        <button type="button" class="gate-skip-mobile" data-gate-skip data-i18n="gate.skipShort">Professional hub</button>
+        <a href="hub.html" class="gate-skip-mobile" data-i18n="gate.skipShort">Professional hub</a>
     </section>
 
-    <div class="pro-hub" id="proHub" aria-hidden="true">
-        <nav class="top-nav">
-            <div class="container nav-container">
-                <a href="index.html" class="logo">CH.integrate()</a>
-                <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false"
-                    aria-controls="navLinks">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <div class="nav-links" id="navLinks">
-                    <a href="index.html" class="nav-link active" data-i18n="nav.home">Home</a>
-                    <a href="patterns.html" class="nav-link" data-i18n="nav.patterns">Patterns</a>
-                    <a href="tools.html" class="nav-link" data-i18n="nav.tools">Tools</a>
-                    <a href="insights.html" class="nav-link" data-i18n="nav.insights">Insights</a>
-                    <a href="expertise.html" class="nav-link" data-i18n="nav.expertise">Expertise</a>
-                    <a href="resume.html" class="nav-link" data-i18n="nav.resume">Resume</a>
-                    <a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
-                    <a href="personal/index.html" class="nav-btn-switch" data-i18n="nav.switchPersonal">Switch to
-                        Personal</a>
-                    <div class="lang-switcher">
-                        <label class="visually-hidden" for="language-selector-hub">Language</label>
-                        <select id="language-selector-hub">
-                            <option value="en">EN</option>
-                            <option value="tr">TR</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
-        <main class="container">
-            <section class="page-header hero-header">
-                <p class="mono-tag hero-status"><span id="typing-text">> INITIALIZING SYSTEM...</span></p>
-                <h1 class="page-title hero-name" data-i18n="hero.name">Cihan Hartamaci</h1>
-                <h2 class="hero-role" data-i18n="hero.title">Integration Architect & Developer</h2>
-                <p class="page-subtitle hero-lead" data-i18n-html="hero.subtitle">
-                    Architecting high-performance <span class="accent-green">EDI</span> bridges and
-                    <span class="accent-blue">RESTful APIs</span> for global enterprises.
-                </p>
-                <div class="hero-actions">
-                    <a href="patterns.html" class="btn btn-primary" data-i18n="hero.btnDocs">Read Documentation</a>
-                    <a href="contact.html" class="btn btn-outline" data-i18n="hero.btnContact">Start Project</a>
-                </div>
-            </section>
-
-            <hr style="border:0; border-top:1px solid var(--border-color); margin-bottom:4rem;">
-
-            <section>
-                <h3 class="mono-font" style="margin-bottom:2rem;" data-i18n="home.selectModule">> SELECT_MODULE</h3>
-                <div class="grid-cards">
-                    <a href="patterns.html" class="tech-card">
-                        <h3 data-i18n="home.integrationTitle">Integration Patterns</h3>
-                        <p data-i18n="home.integrationDesc">Standardized specs for ANSI X12, EDIFACT, and Hybrid Cloud
-                            architectures.</p>
-                    </a>
-                    <a href="tools.html" class="tech-card">
-                        <h3 data-i18n="home.toolsTitle">Developer Tools</h3>
-                        <p data-i18n="home.toolsDesc">Browser-based EDI parser, API tester, regex, and cron utilities.</p>
-                    </a>
-                    <a href="insights.html" class="tech-card">
-                        <h3 data-i18n="home.insightsTitle">Technical Insights</h3>
-                        <p data-i18n="home.insightsDesc">Deep dives into Netsuite SuiteScript, SAP IDOCs, and API
-                            Security.</p>
-                    </a>
-                    <a href="expertise.html" class="tech-card">
-                        <h3 data-i18n="home.systemStatsTitle">Expertise</h3>
-                        <p data-i18n="home.systemStatsDesc">6+ years of EDI, SAP, and NetSuite work across Logiwa and Beko.</p>
-                    </a>
-                </div>
-            </section>
-        </main>
-    </div>
-
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script src="js/i18n.js"></script>
-    <script src="js/mobile-nav.js" defer></script>
     <script src="js/welcome-gate.js"></script>
     <script>
-        i18n.init('en', 'translations/').then(function () {
-            var hubSelect = document.getElementById('language-selector-hub');
-            if (hubSelect) {
-                hubSelect.value = i18n.getCurrentLanguage();
-                hubSelect.addEventListener('change', function (e) {
-                    i18n.changeLanguage(e.target.value);
-                    var gateSelect = document.getElementById('language-selector');
-                    if (gateSelect) gateSelect.value = e.target.value;
-                });
-            }
-            window.addEventListener('languageChanged', function (e) {
-                if (hubSelect) hubSelect.value = e.detail.lang;
-            });
-        });
+        i18n.init('en', 'translations/');
     </script>
-    <script src="js/cmd-palette.js"></script>
-    <script src="js/typewriter.js"></script>
-    <script src="js/theme-manager.js"></script>
-    <script type="module" src="js/tracker.js"></script>
 </body>
 
 </html>

@@ -9,7 +9,14 @@
         "contact": "İletişim",
         "dashboard": "Panel",
         "logout": "Çıkış Yap",
-        "switchPersonal": "Kişisel Siteye Geç"
+        "switchPersonal": "Kişisel Siteye Geç",
+        "chooseAgain": "Yolu yeniden seç"
+    },
+    "intro": {
+        "line1": "Uyan, yolcu.",
+        "line2": "Karanlıkta iki sinyal.",
+        "line3": "Tek bir seçim, girdiğin odayı belirler.",
+        "skip": "İntroyu geç"
     },
     "dashboard": {
         "title": "Sistem İstatistikleri",
