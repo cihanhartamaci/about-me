@@ -289,21 +289,23 @@ body.nav-open .top-nav {
 
 .hero-actions {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.65rem;
     flex-wrap: wrap;
-    margin-bottom: 1rem;
+    margin-bottom: 0.85rem;
+    align-items: center;
 }
 
 .btn-follow {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.8rem 1.2rem;
+    gap: 0.45rem;
+    padding: 0.72rem 1.1rem;
     border-radius: 999px;
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     opacity: 1;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    min-height: 44px;
 }
 
 .btn-follow.instagram {
@@ -323,8 +325,9 @@ body.nav-open .top-nav {
 
 .btn-follow__handle {
     font-weight: 600;
-    font-size: 0.88em;
-    opacity: 0.92;
+    font-size: 0.86em;
+    opacity: 0.9;
+    letter-spacing: 0.01em;
 }
 
 .btn-follow:hover {
@@ -332,10 +335,16 @@ body.nav-open .top-nav {
     transform: translateY(-2px);
 }
 
+.btn-follow:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
 .hero-handle {
-    color: rgba(244, 250, 248, 0.65);
+    color: rgba(244, 250, 248, 0.62);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
 }
 
 .hero-scroll {
@@ -446,6 +455,12 @@ body.nav-open .top-nav {
     color: var(--text-primary);
 }
 
+.mosaic-filter:focus-visible {
+    outline: 2px solid var(--accent-teal);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
 .mosaic-filter.is-active {
     color: var(--accent-teal);
 }
@@ -530,19 +545,25 @@ body.nav-open .top-nav {
     right: 0;
     bottom: 0;
     z-index: 1;
-    padding: 2.6rem 1rem 0.95rem;
-    background: linear-gradient(transparent, rgba(8, 22, 26, 0.86));
+    padding: 2.4rem 0.95rem 0.9rem;
+    background: linear-gradient(transparent, rgba(8, 22, 26, 0.88));
     color: #fff;
     display: flex;
     flex-direction: column;
-    gap: 0.18rem;
-    transform: translateY(4px);
-    transition: transform 0.35s var(--ease-out);
+    gap: 0.15rem;
+    transform: none;
+    transition: background 0.35s var(--ease-out);
     pointer-events: none;
 }
 
-.photo-tile:hover .photo-meta {
-    transform: translateY(0);
+.photo-tile:hover .photo-meta,
+.photo-tile:focus-visible .photo-meta {
+    background: linear-gradient(transparent, rgba(8, 22, 26, 0.94));
+}
+
+.photo-tile:focus-visible {
+    outline: 2px solid var(--accent-teal);
+    outline-offset: 3px;
 }
 
 .photo-place {
@@ -601,8 +622,8 @@ body.nav-open .top-nav {
     .photo-mosaic {
         /* 12-col track keeps tall/wide spans aligned with even gutters */
         grid-template-columns: repeat(12, minmax(0, 1fr));
-        grid-auto-rows: 220px;
-        gap: 1rem;
+        grid-auto-rows: 228px;
+        gap: 1.05rem;
         grid-auto-flow: row;
     }
 
@@ -650,18 +671,19 @@ body.nav-open .top-nav {
 
 .note-line {
     margin: 0;
-    padding: 1.35rem 0;
+    padding: 1.5rem 0;
     border-bottom: 1px solid var(--accent-line);
 }
 
 .note-line p {
     font-family: var(--font-display);
-    font-size: clamp(1.35rem, 3vw, 1.85rem);
+    font-size: clamp(1.4rem, 3.1vw, 1.9rem);
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
     color: var(--text-primary);
-    line-height: 1.3;
-    max-width: 28ch;
+    line-height: 1.28;
+    max-width: 26ch;
+    text-wrap: balance;
 }
 
 .note-line:nth-child(even) p {
@@ -1003,6 +1025,48 @@ body.nav-open .top-nav {
         font-size: clamp(2.05rem, 10vw, 2.65rem);
         letter-spacing: -0.045em;
         overflow-wrap: anywhere;
+    }
+
+    .hero-subtitle {
+        font-size: 1.02rem;
+        margin-bottom: 1.35rem;
+    }
+
+    .hero-actions {
+        gap: 0.55rem;
+    }
+
+    .btn-follow {
+        padding: 0.68rem 0.95rem;
+        font-size: 0.88rem;
+        flex: 1 1 auto;
+        justify-content: center;
+        min-width: calc(50% - 0.35rem);
+    }
+
+    .btn-follow.whatsapp {
+        flex: 1 1 100%;
+        min-width: 100%;
+    }
+
+    .btn-follow__handle {
+        display: none;
+    }
+
+    .hero-handle {
+        margin-top: 0.15rem;
+    }
+
+    .photo-meta {
+        padding: 2rem 0.75rem 0.75rem;
+    }
+
+    .photo-caption {
+        font-size: 0.95rem;
+    }
+
+    .note-line {
+        padding: 1.25rem 0;
     }
 
     .photo-mosaic {
