@@ -1104,12 +1104,10 @@ body.nav-open .top-nav {
     from {
         opacity: 0;
         transform: translateY(0.65rem) scale(0.97);
-        filter: blur(2px);
     }
     to {
         opacity: 1;
         transform: none;
-        filter: none;
     }
 }
 
