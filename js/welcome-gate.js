@@ -189,22 +189,39 @@
             var t = (ts - start) / 1000;
             ctx.clearRect(0, 0, w, h);
 
-            // Dual signal beams converging toward center
+            // Soft dual-lens washes (original geometry — not a film still)
             var cx = w * 0.5;
-            var cy = h * 0.48;
+            var cy = h * 0.42;
             var pulse = 0.55 + Math.sin(t * 1.4) * 0.2;
+            var lensR = Math.min(w, h) * 0.18;
+            var leftX = cx - Math.min(w * 0.18, 140);
+            var rightX = cx + Math.min(w * 0.18, 140);
 
-            var blue = ctx.createRadialGradient(cx - w * 0.22, cy, 0, cx - w * 0.22, cy, w * 0.42);
-            blue.addColorStop(0, 'rgba(58, 160, 255,' + (0.28 * pulse) + ')');
+            var blue = ctx.createRadialGradient(leftX, cy, 0, leftX, cy, lensR * 2.4);
+            blue.addColorStop(0, 'rgba(58, 160, 255,' + (0.32 * pulse) + ')');
             blue.addColorStop(1, 'rgba(58, 160, 255, 0)');
             ctx.fillStyle = blue;
             ctx.fillRect(0, 0, w, h);
 
-            var red = ctx.createRadialGradient(cx + w * 0.22, cy, 0, cx + w * 0.22, cy, w * 0.42);
-            red.addColorStop(0, 'rgba(226, 61, 74,' + (0.26 * pulse) + ')');
+            var red = ctx.createRadialGradient(rightX, cy, 0, rightX, cy, lensR * 2.4);
+            red.addColorStop(0, 'rgba(226, 61, 74,' + (0.3 * pulse) + ')');
             red.addColorStop(1, 'rgba(226, 61, 74, 0)');
             ctx.fillStyle = red;
             ctx.fillRect(0, 0, w, h);
+
+            // Faint circular rim outlines behind the CSS lenses
+            ctx.save();
+            ctx.globalAlpha = 0.22 + pulse * 0.12;
+            ctx.lineWidth = 1.5;
+            ctx.strokeStyle = 'rgba(126, 196, 255, 0.7)';
+            ctx.beginPath();
+            ctx.arc(leftX, cy, lensR * 1.15, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.strokeStyle = 'rgba(255, 122, 132, 0.7)';
+            ctx.beginPath();
+            ctx.arc(rightX, cy, lensR * 1.15, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.restore();
 
             for (var i = 0; i < particles.length; i++) {
                 var p = particles[i];
@@ -245,10 +262,10 @@
         intro.classList.add('is-playing');
         initIntroCanvas();
 
-        // Timed beats: lines stagger via CSS; auto-advance to gate
+        // Timed beats: lenses → brand bridge → lines; auto-advance to gate
         window.setTimeout(function () {
             finishIntro(false);
-        }, 4200);
+        }, 4800);
 
         if (introSkip) {
             introSkip.addEventListener('click', function () {
