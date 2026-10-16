@@ -19,6 +19,7 @@
     },
     "hero": {
         "greeting": "Cihan Hartamacı",
+        "mottoGloss": "Kendini tanı",
         "subtitle": "Ordu sahili, İstanbul geceleri, Sümela Manastırı, kalan dostlar. Mesai dışı — biraz da eğlence.",
         "scroll": "Aşağıda anlar"
     },
@@ -85,7 +86,7 @@
         "n2": "Fazla değil.",
         "n3": "Her şey yolunda değil, ama ben iyiyim.",
         "n4": "Yol uzun, ama güzel.",
-        "n5": "Temet nosce — yolda kendini tanı.",
+        "n5": "<span class=\"motto-inline\">Temet nosce</span> — yolda kendini tanı.",
         "n6": "Ordu alacakaranlığı sprint saatini sıfırlar.",
         "n7": "Sümela taşı hatırlar; dinlemeye çalışırım.",
         "n8": "İş günleri EDI haritalarıyla akar — ve döngüde bir kod asistanı."

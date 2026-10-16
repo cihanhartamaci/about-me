@@ -19,6 +19,7 @@
     },
     "hero": {
         "greeting": "Cihan Hartamacı",
+        "mottoGloss": "Know yourself",
         "subtitle": "Ordu shores, Istanbul nights, Sumela Monastery, friends who stay. Off the clock — and a little extra.",
         "scroll": "Moments below"
     },
@@ -85,7 +86,7 @@
         "n2": "Not too much.",
         "n3": "Everything is not okay, but I'm fine.",
         "n4": "The road is long, but beautiful.",
-        "n5": "Temet nosce — know yourself on the way.",
+        "n5": "<span class=\"motto-inline\">Temet nosce</span> — know yourself on the way.",
         "n6": "Ordu twilight resets the sprint clock.",
         "n7": "Sümela stone remembers; I try to listen.",
         "n8": "Workdays run on EDI maps — and a coding assistant in the loop."
