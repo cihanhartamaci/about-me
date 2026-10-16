@@ -3,6 +3,7 @@
         "home": "Ana Sayfa",
         "blog": "Not defteri",
         "photos": "Fotoğraflar",
+        "besiktas": "Beşiktaş",
         "notes": "Notlar",
         "switchProfessional": "Profesyonel Siteye Geç",
         "chooseAgain": "Yolu yeniden seç"
@@ -20,7 +21,7 @@
     "hero": {
         "greeting": "Cihan Hartamacı",
         "mottoGloss": "Kendini tanı",
-        "subtitle": "Ordu sahili, İstanbul geceleri, Sümela Manastırı, kalan dostlar. Mesai dışı — biraz da eğlence.",
+        "subtitle": "Ordu sahili, İstanbul geceleri, Beşiktaş maç günleri, Sümela Manastırı, kalan dostlar. Mesai dışı — biraz da eğlence.",
         "scroll": "Aşağıda anlar"
     },
     "social": {
@@ -47,6 +48,7 @@
         "filterTravel": "Seyahat",
         "filterFriends": "Dostlar",
         "filterMoments": "Anlar",
+        "filterBesiktas": "Beşiktaş",
         "capOrduFriends": "Kalanlar.",
         "capClouds": "Bulutların üstünde.",
         "capKizKulesi": "Su üzerindeki şehir.",
@@ -89,7 +91,22 @@
         "n5": "<span class=\"motto-inline\">Temet nosce</span> — yolda kendini tanı.",
         "n6": "Ordu alacakaranlığı sprint saatini sıfırlar.",
         "n7": "Sümela taşı hatırlar; dinlemeye çalışırım.",
-        "n8": "İş günleri EDI haritalarıyla akar — ve döngüde bir kod asistanı."
+        "n8": "İş günleri EDI haritalarıyla akar — ve döngüde bir kod asistanı.",
+        "n9": "Beşiktaşlı — siyah beyaz, her zaman."
+    },
+    "besiktas": {
+        "kicker": "Siyah beyaz",
+        "title": "Beşiktaş",
+        "lead": "Beşiktaşlı — Vodafone Park geceleri, tezahürat, eve dönüşte hâlâ çınlayan ses.",
+        "seeIg": "Instagram'da aç",
+        "downloadNote": "Stadyum hikâyeleri şimdilik Instagram'da — izlemek için bir ana dokunun. Yerel videolar sonra eklenebilir.",
+        "placePark": "Vodafone Park",
+        "placeBesiktas": "Beşiktaş · İstanbul",
+        "m1Title": "Maç gecesi giriş",
+        "m2Title": "Işıkların altında",
+        "m3Title": "Tribün enerjisi",
+        "m4Title": "Eve hâlâ çınlayarak",
+        "watchStory": "Hikâyeyi izle"
     },
     "journal": {
         "kicker": "Uzun okumalar",

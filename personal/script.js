@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         slides[0].classList.add('is-active');
     }
 
-    const filters = document.querySelectorAll('.mosaic-filter');
+    const filters = document.querySelectorAll('.mosaic-filter[data-filter]');
     const tiles = document.querySelectorAll('#photoMosaic .photo-tile');
 
     if (filters.length && tiles.length) {

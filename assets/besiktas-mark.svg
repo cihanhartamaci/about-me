@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" role="img" aria-labelledby="bjkTitle bjkDesc">
+  <title id="bjkTitle">Be_ikta_ fan mark</title>
+  <desc id="bjkDesc">Original black-and-white eagle silhouette with Be_ikta_ wordmark for personal fan identity. Not an official club crest.</desc>
+  <!-- Original geometric eagle  inspired by black/white club colors, not a scraped trademark crest -->
+  <g fill="#111111">
+    <!-- body -->
+    <ellipse cx="60" cy="62" rx="16" ry="22"/>
+    <!-- head -->
+    <path d="M60 28c-7 0-12 5-13 12 4-2 8-3 13-3s9 1 13 3c-1-7-6-12-13-12z"/>
+    <!-- beak -->
+    <path d="M72 42l14 3-14 5z"/>
+    <!-- left wing -->
+    <path d="M46 48C28 42 14 52 8 68c10-6 20-8 30-4 4 2 7 6 8 10-2-10-2-18 0-26z"/>
+    <!-- right wing -->
+    <path d="M74 48c18-6 32 4 38 20-10-6-20-8-30-4-4 2-7 6-8 10 2-10 2-18 0-26z"/>
+    <!-- tail -->
+    <path d="M48 82c2 14 6 24 12 34 6-10 10-20 12-34-8 4-16 4-24 0z"/>
+    <!-- chest stripe accent -->
+    <rect x="52" y="54" width="16" height="3" rx="1" fill="#f7f7f7"/>
+    <rect x="52" y="61" width="16" height="3" rx="1" fill="#f7f7f7"/>
+  </g>
+  <text x="60" y="132" text-anchor="middle" font-family="Syne, Plus Jakarta Sans, sans-serif" font-size="14" font-weight="700" letter-spacing="0.18em" fill="#111111">BE^0KTA^</text>
+</svg>
