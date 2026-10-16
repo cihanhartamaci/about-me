@@ -703,7 +703,8 @@ body.nav-open .top-nav {
     .photo-mosaic {
         /* 12-col track keeps tall/wide spans aligned with even gutters */
         grid-template-columns: repeat(12, minmax(0, 1fr));
-        grid-auto-rows: 228px;
+        /* Taller tracks = less vertical cover-crop on portrait JPEGs */
+        grid-auto-rows: 268px;
         gap: 1.05rem;
         grid-auto-flow: row;
     }
