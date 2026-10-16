@@ -232,6 +232,10 @@ body.nav-open .top-nav {
     object-position: center 42%;
 }
 
+.hero-slideshow .hero-slide img.pos-group {
+    object-position: center 58%;
+}
+
 /* Square Sumela portrait: face-aware cover; desktop uses contain+cover hybrid */
 .hero-slideshow .hero-slide--sumela .hero-slide__focus {
     object-position: center 58%;
@@ -246,7 +250,7 @@ body.nav-open .top-nav {
 }
 
 .hero-slideshow .hero-slide:nth-child(3) img {
-    object-position: center 32%;
+    object-position: center 58%;
 }
 
 .hero-slideshow .hero-slide:nth-child(4) img {
@@ -279,8 +283,14 @@ body.nav-open .top-nav {
         object-position: center center;
     }
 
-    /* Milder motion on wide viewports so faces stay sharp */
-    .hero-slideshow .hero-slide.is-active {
+    /* No Ken Burns on Sumela — keeps the upscaled portrait sharp */
+    .hero-slideshow .hero-slide--sumela.is-active {
+        animation: none;
+        transform: none;
+    }
+
+    /* Milder motion on other slides so faces stay sharp */
+    .hero-slideshow .hero-slide:not(.hero-slide--sumela).is-active {
         animation-name: kenBurnsDesktop;
     }
 }
@@ -576,6 +586,11 @@ body.nav-open .top-nav {
 
 .photo-tile img.pos-lower {
     object-position: center 68%;
+}
+
+/* Group shots with faces in the lower half of tall frames */
+.photo-tile img.pos-group {
+    object-position: center 62%;
 }
 
 .photo-tile:hover img {
@@ -1095,7 +1110,7 @@ body.nav-open .top-nav {
     }
 
     .hero-slideshow .hero-slide:nth-child(3) img {
-        object-position: center 30%;
+        object-position: center 60%;
     }
 
     .hero-copy {
