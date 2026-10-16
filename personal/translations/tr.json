@@ -85,7 +85,9 @@
         "n2": "Fazla değil.",
         "n3": "Her şey yolunda değil, ama ben iyiyim.",
         "n4": "Yol uzun, ama güzel.",
-        "n5": "Temet nosce — yolda kendini tanı."
+        "n5": "Temet nosce — yolda kendini tanı.",
+        "n6": "Ordu alacakaranlığı sprint saatini sıfırlar.",
+        "n7": "Sümela taşı hatırlar; dinlemeye çalışırım."
     },
     "journal": {
         "kicker": "Uzun okumalar",
@@ -137,7 +139,35 @@
             "title": "İş Akışı Optimizasyonu",
             "excerpt": "Tükenmişlik yaşamadan üretken kalmak için kullandığım araçlar.",
             "date": "10 Aralık 2025"
+        },
+        "stone": {
+            "title": "Taş ve Sahil",
+            "subtitle": "Ordu, İstanbul, Sümela — ve sessiz bir motto",
+            "excerpt": "Ordu sahilleri, İstanbul geceleri ve Sümela taşı arasında Temet nosce.",
+            "date": "16 Ekim 2026",
+            "p1": "Temet nosce. Kendini tanı. Zaten seni tanıyan bir yolda söyleyene kadar ağır gelir — Ordu’da Karadeniz rüzgârı, arkadaşlarla geç bir masa, durum güncellemesi istemeyen bir gece.",
+            "p2": "Bu cümleyi yakın tutuyorum çünkü gündüz işi haritalar ve mesajlar: EDI hatları, API’ler, anlaşması gereken sistemler. Mesai bitince harita daha sade. Sahil. Taş. Kalan insanlar.",
+            "h2a": "Ordu — saati sıfırlayan sahil",
+            "p3": "Ordu, sahnelediğim bir kartpostal değil. Manzaralı kahvaltı, denize bakan bank, günün yumuşadığı alacakaranlık. Sahil sessizken ben de sessiz olabilirim diye hatırlıyorum.",
+            "p4": "Buradaki arkadaşlar özgeçmiş versiyonuma ihtiyaç duymaz. Gece sürüşünden sonra yumruk tokuşturma. Şelalede yağmurluklar. Kendi kendini dolduran bir masa. Güvendiğim kanıt bu.",
+            "h2b": "İstanbul — suyun üstündeki şehir",
+            "p5": "İstanbul daha hızlı akar. Kız Kulesi akıntıda bir virgül gibi durur — bakarsan fark ettiğin bir durak. Biraz gürültü, biraz iced filtre; şehir yakın ama kafanın içinde kalabalık değil.",
+            "p6": "Her kareye altyazı gerekmez. Bazıları sadece o saatte orada olduğunun kanıtı.",
+            "h2c": "Sümela — hatırlayan taş",
+            "p7": "Sümela Manastırı acele ettirmez. Uçurum taşında fresk rengi. Yukarı bakmanı isteyen bir kubbe. Arkadaşlarla yürümek tarihi sohbete çevirir — ders değil, bizden fazla kış görmüş duvarlarla paylaşılmış bir sessizlik.",
+            "p8": "Hatırlayan taş iyi bir ayna. Bırakırsan daha hafif çıkarsın.",
+            "h2d": "Ne tutuyorum",
+            "p9": "Bu defter bir sprint panosu değil. Hikayelerdeki enerji: kısaysa kısa, bir yer yer istiyorsa uzun. Ordu sahilleri. İstanbul geceleri. Sümela taşı. Yolda Temet nosce.",
+            "p10": "Yol uzun, ama güzel. Burayı not defteri olarak kullanmaya devam edeceğim — fazla değil, yeterince."
         }
     },
-    "footer": "© 2026 Cihan Hartamacı"
+    "footer": "© 2026 Cihan Hartamacı",
+    "a11y": {
+        "skip": "İçeriğe geç"
+    },
+    "follow": {
+        "kicker": "Yakın dur",
+        "title": "@cihanhartamaci",
+        "lead": "Instagram, TikTok ve WhatsApp’ta aynı kullanıcı adı — canlı akış orada."
+    }
 }

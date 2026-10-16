@@ -15,6 +15,23 @@
     <link rel="canonical" href="https://cihanhartamaci.github.io/about-me/hub.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://cihanhartamaci.github.io/about-me/assets/social-preview.png">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Cihan Hartamacı",
+        "url": "https://cihanhartamaci.github.io/about-me/hub.html",
+        "image": "https://cihanhartamaci.github.io/about-me/assets/cihan-profile.jpg",
+        "jobTitle": "Integration Architect",
+        "worksFor": {"@type": "Organization", "name": "Logiwa"},
+        "sameAs": [
+            "https://github.com/cihanhartamaci",
+            "https://www.instagram.com/cihanhartamaci/",
+            "https://www.tiktok.com/@cihanhartamaci"
+        ],
+        "knowsAbout": ["EDI", "SAP", "NetSuite", "SuiteScript", "REST APIs", "EDIFACT", "ANSI X12"]
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +44,8 @@
 </head>
 
 <body class="pro-site">
+
+    <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Skip to content</a>
 
     <nav class="top-nav">
         <div class="container nav-container">
@@ -59,7 +78,7 @@
         </div>
     </nav>
 
-    <main class="container">
+    <main id="main-content" class="container">
         <section class="page-header hero-header">
             <p class="mono-tag hero-status"><span id="typing-text">> INITIALIZING SYSTEM...</span></p>
             <h1 class="page-title hero-name" data-i18n="hero.name">Cihan Hartamaci</h1>
@@ -70,7 +89,8 @@
             </p>
             <div class="hero-actions">
                 <a href="patterns.html" class="btn btn-primary" data-i18n="hero.btnDocs">Read Documentation</a>
-                <a href="contact.html" class="btn btn-outline" data-i18n="hero.btnContact">Start Project</a>
+                <a href="resume.html" class="btn btn-outline" data-i18n="hero.btnResume">View Resume</a>
+                <a href="contact.html" class="btn btn-ghost" data-i18n="hero.btnContact">Start Project</a>
             </div>
         </section>
 
@@ -142,6 +162,42 @@
             </div>
             <div class="ai-practice-actions">
                 <a href="ai-practice.html" class="btn btn-outline" data-i18n="ai.cta">How I work with AI</a>
+            </div>
+        </section>
+
+        
+        <section class="value-props" aria-labelledby="value-props-title">
+            <p class="mono-tag" data-i18n="home.valueKicker">> FOCUS_AREAS</p>
+            <h2 class="value-props-title" id="value-props-title" data-i18n="home.valueTitle">What I bring to the line</h2>
+            <p class="value-props-lead" data-i18n="home.valueLead">Clear teasers — not a dashboard. Dive into patterns, tools, or the printable resume when you need depth.</p>
+            <ul class="value-props-list">
+                <li class="value-prop">
+                    <span class="value-prop-tag mono-font" data-i18n="home.vp1.tag">EDI</span>
+                    <h3 data-i18n="home.vp1.title">Trading-partner bridges</h3>
+                    <p data-i18n="home.vp1.desc">X12 / EDIFACT maps, B2B gateways, and flows that survive real partner quirks.</p>
+                </li>
+                <li class="value-prop">
+                    <span class="value-prop-tag mono-font" data-i18n="home.vp2.tag">ERP</span>
+                    <h3 data-i18n="home.vp2.title">SAP &amp; NetSuite connectivity</h3>
+                    <p data-i18n="home.vp2.desc">SuiteScript, IDocs, and hybrid sync between WMS and ERP without foggy ownership.</p>
+                </li>
+                <li class="value-prop">
+                    <span class="value-prop-tag mono-font" data-i18n="home.vp3.tag">API</span>
+                    <h3 data-i18n="home.vp3.title">RESTful integration craft</h3>
+                    <p data-i18n="home.vp3.desc">Contracts, security, and browser tools to test the path before production.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="resume-strip" aria-labelledby="resume-strip-title">
+            <div class="resume-strip-copy">
+                <p class="mono-tag" data-i18n="home.resumeKicker">> RESUME</p>
+                <h2 id="resume-strip-title" data-i18n="home.resumeTitle">Printable CV, ready to share</h2>
+                <p data-i18n="home.resumeLead">Open the on-site resume for print, or download the PDF — same Logiwa / Beko track, no fluff.</p>
+            </div>
+            <div class="resume-strip-actions">
+                <a href="resume.html" class="btn btn-primary" data-i18n="home.resumeOpen">Open resume</a>
+                <a href="assets/cihan-hartamaci-resume.pdf" class="btn btn-outline" download data-i18n="home.resumePdf">Download PDF</a>
             </div>
         </section>
 

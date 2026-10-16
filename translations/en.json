@@ -54,7 +54,8 @@
         "title": "Integration Architect & Developer",
         "subtitle": "Architecting high-performance <span class=\"accent-green\">EDI</span> bridges and <span class=\"accent-blue\">RESTful APIs</span> for global enterprises.",
         "btnDocs": "Read Documentation",
-        "btnContact": "Start Project"
+        "btnContact": "Start Project",
+        "btnResume": "View Resume"
     },
     "home": {
         "selectModule": "> SELECT_MODULE",
@@ -65,7 +66,30 @@
         "systemStatsTitle": "Expertise",
         "systemStatsDesc": "6+ years of EDI, SAP, and NetSuite work across Logiwa and Beko.",
         "toolsTitle": "Developer Tools",
-        "toolsDesc": "Browser-based EDI parser, API tester, regex, and cron utilities."
+        "toolsDesc": "Browser-based EDI parser, API tester, regex, and cron utilities.",
+        "valueKicker": "> FOCUS_AREAS",
+        "valueTitle": "What I bring to the line",
+        "valueLead": "Clear teasers — not a dashboard. Dive into patterns, tools, or the printable resume when you need depth.",
+        "vp1": {
+            "tag": "EDI",
+            "title": "Trading-partner bridges",
+            "desc": "X12 / EDIFACT maps, B2B gateways, and flows that survive real partner quirks."
+        },
+        "vp2": {
+            "tag": "ERP",
+            "title": "SAP & NetSuite connectivity",
+            "desc": "SuiteScript, IDocs, and hybrid sync between WMS and ERP without foggy ownership."
+        },
+        "vp3": {
+            "tag": "API",
+            "title": "RESTful integration craft",
+            "desc": "Contracts, security, and browser tools to test the path before production."
+        },
+        "resumeKicker": "> RESUME",
+        "resumeTitle": "Printable CV, ready to share",
+        "resumeLead": "Open the on-site resume for print, or download the PDF — same Logiwa / Beko track, no fluff.",
+        "resumeOpen": "Open resume",
+        "resumePdf": "Download PDF"
     },
     "ai": {
         "kicker": "> AI_IN_WORK_AND_LIFE",
@@ -269,5 +293,8 @@
         "loading": "Loading...",
         "toggleMenu": "Toggle menu",
         "clickToExpand": "Click to expand"
+    },
+    "a11y": {
+        "skip": "Skip to content"
     }
 }

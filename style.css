@@ -1868,3 +1868,103 @@ body.theme-solar .tech-card:hover {
         animation: none;
     }
 }
+
+
+/* Skip link + hub value/resume strips (site enrich) */
+.skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -100px;
+    z-index: 1000;
+    padding: 0.65rem 1rem;
+    background: var(--accent-blue);
+    color: #061018;
+    font-weight: 600;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    transition: top 0.2s ease;
+}
+.skip-link:focus {
+    top: 1rem;
+    outline: 2px solid var(--accent-green);
+    outline-offset: 2px;
+}
+.btn-ghost {
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text-secondary);
+    padding: 0.75rem 1.25rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+.btn-ghost:hover {
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+.value-props { margin: 0 0 3rem; }
+.value-props-title {
+    font-family: var(--font-display, 'Syne', sans-serif);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin: 0.75rem 0 0.5rem;
+    letter-spacing: -0.02em;
+}
+.value-props-lead {
+    color: var(--text-secondary);
+    max-width: 42rem;
+    margin-bottom: 1.75rem;
+}
+.value-props-list {
+    list-style: none;
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--border-color);
+    padding: 0;
+    margin: 0;
+}
+.value-prop {
+    display: grid;
+    grid-template-columns: 4.5rem 1fr;
+    gap: 0.35rem 1.25rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border-color);
+    align-items: start;
+}
+.value-prop h3 { grid-column: 2; margin: 0; font-size: 1.1rem; }
+.value-prop p {
+    grid-column: 2;
+    margin: 0;
+    color: var(--text-secondary);
+    max-width: 40rem;
+}
+.value-prop-tag {
+    color: var(--accent-green);
+    font-size: 0.8rem;
+    padding-top: 0.25rem;
+}
+.resume-strip {
+    display: grid;
+    gap: 1.25rem;
+    padding: 1.75rem 0 2.5rem;
+    margin-bottom: 2.5rem;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+.resume-strip-copy h2 {
+    font-family: var(--font-display, 'Syne', sans-serif);
+    font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+    margin: 0.5rem 0;
+    letter-spacing: -0.02em;
+}
+.resume-strip-copy p:last-child {
+    color: var(--text-secondary);
+    max-width: 36rem;
+    margin: 0;
+}
+.resume-strip-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+@media (min-width: 800px) {
+    .resume-strip {
+        grid-template-columns: 1.4fr auto;
+        align-items: center;
+    }
+}

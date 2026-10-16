@@ -85,7 +85,9 @@
         "n2": "Not too much.",
         "n3": "Everything is not okay, but I'm fine.",
         "n4": "The road is long, but beautiful.",
-        "n5": "Temet nosce — know yourself on the way."
+        "n5": "Temet nosce — know yourself on the way.",
+        "n6": "Ordu twilight resets the sprint clock.",
+        "n7": "Sümela stone remembers; I try to listen."
     },
     "journal": {
         "kicker": "Longer reads",
@@ -137,7 +139,35 @@
             "title": "Workflow Optimization",
             "excerpt": "Tools I use to stay productive without burning out.",
             "date": "December 10, 2025"
+        },
+        "stone": {
+            "title": "Stone & Shore",
+            "subtitle": "Ordu, İstanbul, Sümela — and a quiet motto",
+            "excerpt": "Temet nosce between Ordu shores, Istanbul nights, and Sumela stone.",
+            "date": "October 16, 2026",
+            "p1": "Temet nosce. Know yourself. It sounds heavy until you say it on a road that already knows you — Black Sea wind in Ordu, a late table with friends, the kind of night that does not ask for a status update.",
+            "p2": "I keep that line close because the day job is all maps and messages: EDI lanes, APIs, systems that must agree. Off the clock, the map is simpler. Shore. Stone. People who stay.",
+            "h2a": "Ordu — the shore that resets the clock",
+            "p3": "Ordu is not a postcard I perform for. It is breakfast with a view, a bench that faces the water, twilight when the day softens. When the coast is quiet, I remember I am allowed to be quiet too.",
+            "p4": "Friends here do not need the résumé version of me. Fist bumps after a night drive. Rain ponchos at a waterfall. A table that fills itself. That is the proof I trust.",
+            "h2b": "İstanbul — the city on the water",
+            "p5": "İstanbul moves faster. Kız Kulesi sits in the current like a comma — a pause you notice only if you look. I like nights that keep a little noise and a little iced filtre, when the city feels close but not crowded inside your head.",
+            "p6": "Not every frame needs a caption. Some are just proof that I showed up for the hour.",
+            "h2c": "Sümela — stone that remembers",
+            "p7": "Sümela Monastery does not rush you. Fresco color on cliff stone. A dome that asks you to look up. Walking through with friends turns history into company — not a lecture, a shared silence with walls that have seen more winters than we will.",
+            "p8": "Stone that remembers is a good mirror. You leave lighter if you let it.",
+            "h2d": "What I keep",
+            "p9": "This notebook is not a sprint board. It is the same energy as the stories: short when it can be, longer when a place deserves room. Ordu shores. İstanbul nights. Sümela stone. Temet nosce on the way.",
+            "p10": "The road is long, but beautiful. I will keep using this place as a notebook — not too much, just enough."
         }
     },
-    "footer": "© 2026 Cihan Hartamacı"
+    "footer": "© 2026 Cihan Hartamacı",
+    "a11y": {
+        "skip": "Skip to content"
+    },
+    "follow": {
+        "kicker": "Stay close",
+        "title": "@cihanhartamaci",
+        "lead": "Same handle on Instagram, TikTok, and WhatsApp — the live reel lives there."
+    }
 }

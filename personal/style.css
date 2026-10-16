@@ -1215,3 +1215,38 @@ body.nav-open .top-nav {
         opacity: 0;
     }
 }
+
+
+/* Skip link + follow strip (site enrich) */
+.skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -100px;
+    z-index: 1000;
+    padding: 0.65rem 1rem;
+    background: var(--bg-deep);
+    color: var(--text-on-dark);
+    font-weight: 600;
+    border-radius: 8px;
+    transition: top 0.2s ease;
+}
+.skip-link:focus {
+    top: 1rem;
+    outline: 2px solid var(--accent-honey);
+    outline-offset: 2px;
+}
+.follow-section { padding: 3.5rem 0 1rem; }
+.follow-strip {
+    display: grid;
+    gap: 1.5rem;
+    padding: 1.75rem 0 0;
+    border-top: 1px solid var(--accent-line);
+}
+.follow-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+@media (min-width: 768px) {
+    .follow-strip {
+        grid-template-columns: 1.2fr 1fr;
+        align-items: end;
+        gap: 2rem;
+    }
+}

@@ -56,15 +56,21 @@
   </url>
   <url>
     <loc>https://cihanhartamaci.github.io/about-me/personal/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://cihanhartamaci.github.io/about-me/personal/blog.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://cihanhartamaci.github.io/about-me/personal/posts/stone-and-shore.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.55</priority>
   </url>
   <url>
     <loc>https://cihanhartamaci.github.io/about-me/personal/posts/moments-that-matter.html</loc>

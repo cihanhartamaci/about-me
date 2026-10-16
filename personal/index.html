@@ -9,6 +9,36 @@
     <meta name="description"
         content="Off-the-clock notes from Cihan Hartamacı — Ordu, Istanbul, friends, the road. Temet nosce. @cihanhartamaci">
     <link rel="canonical" href="https://cihanhartamaci.github.io/about-me/personal/">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Cihan Hartamacı | Personal">
+    <meta property="og:description"
+        content="Ordu shores, Istanbul nights, Sumela Monastery stone, friends who stay. Temet nosce. @cihanhartamaci">
+    <meta property="og:image" content="https://cihanhartamaci.github.io/about-me/assets/personal-sumela-hero.jpg">
+    <meta property="og:url" content="https://cihanhartamaci.github.io/about-me/personal/">
+    <meta property="og:site_name" content="Cihan Hartamacı">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cihan Hartamacı | Personal">
+    <meta name="twitter:description"
+        content="Ordu shores, Istanbul nights, Sumela Monastery stone. Temet nosce. @cihanhartamaci">
+    <meta name="twitter:image" content="https://cihanhartamaci.github.io/about-me/assets/personal-sumela-hero.jpg">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Cihan Hartamacı",
+        "alternateName": "cihanhartamaci",
+        "url": "https://cihanhartamaci.github.io/about-me/personal/",
+        "image": "https://cihanhartamaci.github.io/about-me/assets/personal-sumela-portrait.jpg",
+        "sameAs": [
+            "https://www.instagram.com/cihanhartamaci/",
+            "https://www.tiktok.com/@cihanhartamaci",
+            "https://github.com/cihanhartamaci"
+        ],
+        "jobTitle": "Integration Architect",
+        "description": "Ordu shores, Istanbul nights, Sumela Monastery stone, friends who stay. Off the clock — and a little extra."
+    }
+    </script>
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +52,8 @@
 </head>
 
 <body class="personal-home">
+
+    <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Skip to content</a>
 
     <nav class="top-nav">
         <div class="container nav-container">
@@ -53,7 +85,7 @@
         </div>
     </nav>
 
-    <main>
+    <main id="main-content">
         <section class="hero-bleed" data-i18n-aria="aria.intro" aria-label="Intro">
             <div class="hero-media hero-slideshow" aria-hidden="true">
                 <img class="hero-bg hero-slide is-active" src="../assets/personal-sumela-hero.jpg" alt="" width="640" height="640">
@@ -269,6 +301,42 @@
                     <blockquote class="note-line reveal">
                         <p data-i18n="notes.n5">Temet nosce — know yourself on the way.</p>
                     </blockquote>
+                    <blockquote class="note-line reveal">
+                        <p data-i18n="notes.n6">Ordu twilight resets the sprint clock.</p>
+                    </blockquote>
+                    <blockquote class="note-line reveal">
+                        <p data-i18n="notes.n7">Sümela stone remembers; I try to listen.</p>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <section id="follow" class="follow-section" aria-labelledby="follow-heading">
+            <div class="container">
+                <div class="follow-strip reveal">
+                    <div class="follow-copy">
+                        <p class="section-kicker" data-i18n="follow.kicker">Stay close</p>
+                        <h2 id="follow-heading" data-i18n="follow.title">@cihanhartamaci</h2>
+                        <p class="section-lead" data-i18n="follow.lead">Same handle on Instagram, TikTok, and WhatsApp — the live reel lives there.</p>
+                    </div>
+                    <div class="follow-actions" role="list">
+                        <a href="https://www.instagram.com/cihanhartamaci/" class="btn-follow instagram" rel="me noopener noreferrer"
+                            target="_blank" role="listitem">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span data-i18n="social.followIg">Follow on Instagram</span>
+                        </a>
+                        <a href="https://www.tiktok.com/@cihanhartamaci" class="btn-follow tiktok" rel="noopener noreferrer"
+                            target="_blank" role="listitem">
+                            <i class="fab fa-tiktok" aria-hidden="true"></i>
+                            <span data-i18n="social.followTt">Follow on TikTok</span>
+                        </a>
+                        <a href="https://wa.me/905352552149" class="btn-follow whatsapp" rel="noopener noreferrer"
+                            target="_blank" role="listitem" data-i18n-aria="aria.whatsapp" aria-label="WhatsApp @cihanhartamaci">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            <span data-i18n="social.followWa">Message on WhatsApp</span>
+                            <span class="btn-follow__handle">@cihanhartamaci</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -284,8 +352,16 @@
                     <a href="blog.html" data-i18n="nav.blog">Journal</a>
                 </div>
                 <div class="journal-grid">
+                    <a class="journal-card reveal" href="posts/stone-and-shore.html">
+                        <img src="../assets/personal-sumela-hero.jpg" alt="Portrait at Sumela Monastery" loading="lazy" width="640" height="640">
+                        <div class="journal-body">
+                            <p class="blog-meta" data-i18n="blog.stone.date">October 16, 2026</p>
+                            <h3 data-i18n="blog.stone.title">Stone &amp; Shore</h3>
+                            <p data-i18n="blog.stone.excerpt">Temet nosce between Ordu shores, Istanbul nights, and Sumela stone.</p>
+                        </div>
+                    </a>
                     <a class="journal-card reveal" href="posts/moments-that-matter.html">
-                        <img src="../assets/personal-ordu-friends.jpg" alt="" loading="lazy" width="768" height="1024">
+                        <img src="../assets/personal-ordu-friends.jpg" alt="Friends overlooking the Ordu coast" loading="lazy" width="768" height="1024">
                         <div class="journal-body">
                             <p class="blog-meta" data-i18n="blog.moments.date">December 22, 2025</p>
                             <h3 data-i18n="blog.moments.title">Moments That Matter</h3>
@@ -293,7 +369,7 @@
                         </div>
                     </a>
                     <a class="journal-card reveal" href="posts/welcome.html">
-                        <img src="../assets/personal-cafe-night.jpg" alt="" loading="lazy" width="768" height="1024">
+                        <img src="../assets/personal-cafe-night.jpg" alt="Night cafe portrait with iced coffee" loading="lazy" width="768" height="1024">
                         <div class="journal-body">
                             <p class="blog-meta" data-i18n="blog.welcome.date">December 17, 2025</p>
                             <h3 data-i18n="blog.welcome.title">Welcome to the New Setup</h3>
