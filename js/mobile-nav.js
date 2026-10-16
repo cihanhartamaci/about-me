@@ -25,18 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
         document.body.classList.toggle('nav-open', open);
         document.body.style.overflow = open ? 'hidden' : '';
-        if (open) {
-            navLinks.removeAttribute('inert');
-        } else {
-            // Keep drawer out of hit-testing when closed (iOS Safari quirks)
-            navLinks.setAttribute('inert', '');
-        }
     };
-
-    // Start closed / non-interactive when in drawer mode
-    if (window.matchMedia('(max-width: 1200px)').matches) {
-        navLinks.setAttribute('inert', '');
-    }
 
     hamburger.addEventListener('click', (e) => {
         e.preventDefault();
@@ -49,15 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.querySelectorAll('a').forEach((link) => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href') || '';
-            // Close drawer first so it cannot intercept the next paint
-            setOpen(false);
 
-            // Same-page hash: ensure scroll after drawer closes
+            // Same-page hash: close drawer, then scroll (don't cancel navigation with inert)
             if (href.startsWith('#')) {
+                e.preventDefault();
+                setOpen(false);
                 const id = href.slice(1);
                 const target = id ? document.getElementById(id) : null;
                 if (target) {
-                    e.preventDefault();
                     window.setTimeout(() => {
                         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         if (history.replaceState) {
@@ -65,8 +53,18 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     }, 40);
                 }
+                return;
             }
-            // External / other-page links: allow default navigation
+
+            // Page navigations: close drawer visually but do NOT block the default
+            // click — synchronous inert/pointer-events on the parent can cancel nav.
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+            overlay.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('nav-open');
+            document.body.style.overflow = '';
         });
     });
 
@@ -78,11 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('resize', () => {
-        if (window.innerWidth > 1200) {
-            setOpen(false);
-            navLinks.removeAttribute('inert');
-        } else if (!navLinks.classList.contains('active')) {
-            navLinks.setAttribute('inert', '');
-        }
+        if (window.innerWidth > 1200) setOpen(false);
     });
 });
