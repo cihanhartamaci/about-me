@@ -15,8 +15,10 @@
     "social": {
         "instagram": "Instagram",
         "tiktok": "TikTok",
+        "whatsapp": "WhatsApp",
         "followIg": "Instagram'da takip et",
-        "followTt": "TikTok"
+        "followTt": "TikTok",
+        "followWa": "WhatsApp"
     },
     "photos": {
         "kicker": "Film rulosu",

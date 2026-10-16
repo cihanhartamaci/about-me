@@ -316,6 +316,17 @@ body.nav-open .top-nav {
     color: var(--bg-deep);
 }
 
+.btn-follow.whatsapp {
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    color: #fff;
+}
+
+.btn-follow__handle {
+    font-weight: 600;
+    font-size: 0.88em;
+    opacity: 0.92;
+}
+
 .btn-follow:hover {
     opacity: 1;
     transform: translateY(-2px);
