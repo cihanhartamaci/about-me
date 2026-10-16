@@ -9,6 +9,7 @@
     var introCanvas = document.getElementById('introCanvas');
     var rainCanvas = document.getElementById('gateRain');
     var socialPanel = document.getElementById('gateSocial');
+    var proPanel = document.getElementById('gatePro');
 
     if (!gate) return;
 
@@ -16,6 +17,7 @@
     var introRaf = 0;
     var rainRaf = 0;
     var rainRunning = false;
+    var introTimer = 0;
 
     function rememberChoice(choice) {
         try {
@@ -38,6 +40,7 @@
     }
 
     function showGate() {
+        document.body.classList.remove('intro-playing');
         document.body.classList.add('intro-done');
         if (intro) {
             intro.classList.add('is-done');
@@ -47,17 +50,22 @@
             gate.classList.add('is-ready');
         });
         initRain();
+        bindChoiceSync();
     }
 
     function finishIntro(immediate) {
         markIntroSeen();
         stopIntroCanvas();
+        if (introTimer) {
+            window.clearTimeout(introTimer);
+            introTimer = 0;
+        }
         if (immediate) {
             showGate();
             return;
         }
         if (intro) intro.classList.add('is-exiting');
-        window.setTimeout(showGate, reduceMotion ? 0 : 520);
+        window.setTimeout(showGate, reduceMotion ? 0 : 620);
     }
 
     /* Soft glyph rain — decorative only */
@@ -158,6 +166,7 @@
 
         var dpr = Math.min(window.devicePixelRatio || 1, 2);
         var particles = [];
+        var drops = [];
         var start = performance.now();
 
         function resize() {
@@ -169,16 +178,27 @@
             introCanvas.style.height = h + 'px';
             ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
             particles = [];
-            var count = Math.min(90, Math.floor((w * h) / 18000));
+            drops = [];
+            var count = Math.min(100, Math.floor((w * h) / 16000));
             for (var i = 0; i < count; i++) {
                 particles.push({
                     x: Math.random() * w,
                     y: Math.random() * h,
-                    r: 0.6 + Math.random() * 1.8,
-                    vx: (Math.random() - 0.5) * 0.25,
-                    vy: 0.15 + Math.random() * 0.55,
+                    r: 0.55 + Math.random() * 1.7,
+                    vx: (Math.random() - 0.5) * 0.22,
+                    vy: 0.12 + Math.random() * 0.5,
                     hue: Math.random() > 0.5 ? 'blue' : 'red',
-                    a: 0.15 + Math.random() * 0.45
+                    a: 0.12 + Math.random() * 0.42
+                });
+            }
+            var dropCount = Math.min(48, Math.floor(w / 28));
+            for (var d = 0; d < dropCount; d++) {
+                drops.push({
+                    x: Math.random() * w,
+                    y: Math.random() * h,
+                    len: 8 + Math.random() * 18,
+                    speed: 0.8 + Math.random() * 1.6,
+                    a: 0.06 + Math.random() * 0.12
                 });
             }
         }
@@ -189,38 +209,64 @@
             var t = (ts - start) / 1000;
             ctx.clearRect(0, 0, w, h);
 
-            // Soft dual-lens washes (original geometry — not a film still)
-            var cx = w * 0.5;
-            var cy = h * 0.42;
-            var pulse = 0.55 + Math.sin(t * 1.4) * 0.2;
-            var lensR = Math.min(w, h) * 0.18;
-            var leftX = cx - Math.min(w * 0.18, 140);
-            var rightX = cx + Math.min(w * 0.18, 140);
+            // Soft green digital mist (original atmosphere — not a film still)
+            var mistPulse = 0.45 + Math.sin(t * 0.7) * 0.15;
+            var mist = ctx.createRadialGradient(w * 0.5, h * 0.42, 0, w * 0.5, h * 0.42, Math.min(w, h) * 0.55);
+            mist.addColorStop(0, 'rgba(52, 180, 120,' + (0.07 * mistPulse) + ')');
+            mist.addColorStop(1, 'rgba(52, 180, 120, 0)');
+            ctx.fillStyle = mist;
+            ctx.fillRect(0, 0, w, h);
 
-            var blue = ctx.createRadialGradient(leftX, cy, 0, leftX, cy, lensR * 2.4);
-            blue.addColorStop(0, 'rgba(58, 160, 255,' + (0.32 * pulse) + ')');
+            // Soft dual-lens washes (original geometry)
+            var cx = w * 0.5;
+            var cy = h * 0.4;
+            var pulse = 0.55 + Math.sin(t * 1.35) * 0.22;
+            var lensR = Math.min(w, h) * 0.2;
+            var leftX = cx - Math.min(w * 0.19, 155);
+            var rightX = cx + Math.min(w * 0.19, 155);
+
+            var blue = ctx.createRadialGradient(leftX, cy, 0, leftX, cy, lensR * 2.5);
+            blue.addColorStop(0, 'rgba(58, 160, 255,' + (0.36 * pulse) + ')');
             blue.addColorStop(1, 'rgba(58, 160, 255, 0)');
             ctx.fillStyle = blue;
             ctx.fillRect(0, 0, w, h);
 
-            var red = ctx.createRadialGradient(rightX, cy, 0, rightX, cy, lensR * 2.4);
-            red.addColorStop(0, 'rgba(226, 61, 74,' + (0.3 * pulse) + ')');
+            var red = ctx.createRadialGradient(rightX, cy, 0, rightX, cy, lensR * 2.5);
+            red.addColorStop(0, 'rgba(226, 61, 74,' + (0.34 * pulse) + ')');
             red.addColorStop(1, 'rgba(226, 61, 74, 0)');
             ctx.fillStyle = red;
             ctx.fillRect(0, 0, w, h);
 
             // Faint circular rim outlines behind the CSS lenses
             ctx.save();
-            ctx.globalAlpha = 0.22 + pulse * 0.12;
+            ctx.globalAlpha = 0.2 + pulse * 0.14;
             ctx.lineWidth = 1.5;
-            ctx.strokeStyle = 'rgba(126, 196, 255, 0.7)';
+            ctx.strokeStyle = 'rgba(126, 196, 255, 0.75)';
             ctx.beginPath();
-            ctx.arc(leftX, cy, lensR * 1.15, 0, Math.PI * 2);
+            ctx.arc(leftX, cy, lensR * 1.12, 0, Math.PI * 2);
             ctx.stroke();
-            ctx.strokeStyle = 'rgba(255, 122, 132, 0.7)';
+            ctx.strokeStyle = 'rgba(255, 122, 132, 0.75)';
             ctx.beginPath();
-            ctx.arc(rightX, cy, lensR * 1.15, 0, Math.PI * 2);
+            ctx.arc(rightX, cy, lensR * 1.12, 0, Math.PI * 2);
             ctx.stroke();
+            ctx.restore();
+
+            // Soft green rain streaks
+            ctx.save();
+            for (var di = 0; di < drops.length; di++) {
+                var drop = drops[di];
+                drop.y += drop.speed;
+                if (drop.y > h + drop.len) {
+                    drop.y = -drop.len;
+                    drop.x = Math.random() * w;
+                }
+                ctx.strokeStyle = 'rgba(72, 200, 140,' + drop.a + ')';
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(drop.x, drop.y);
+                ctx.lineTo(drop.x, drop.y + drop.len);
+                ctx.stroke();
+            }
             ctx.restore();
 
             for (var i = 0; i < particles.length; i++) {
@@ -247,6 +293,41 @@
         window.addEventListener('resize', resize);
     }
 
+    function clearChoiceFocus() {
+        gate.classList.remove('is-focus-blue', 'is-focus-red');
+    }
+
+    function bindChoiceSync() {
+        if (!proPanel && !socialPanel) return;
+
+        function onEnter(side) {
+            clearChoiceFocus();
+            gate.classList.add(side === 'blue' ? 'is-focus-blue' : 'is-focus-red');
+        }
+
+        function onLeave() {
+            clearChoiceFocus();
+        }
+
+        if (proPanel) {
+            proPanel.addEventListener('mouseenter', function () { onEnter('blue'); });
+            proPanel.addEventListener('focusin', function () { onEnter('blue'); });
+            proPanel.addEventListener('mouseleave', onLeave);
+            proPanel.addEventListener('focusout', function (e) {
+                if (!proPanel.contains(e.relatedTarget)) onLeave();
+            });
+        }
+
+        if (socialPanel) {
+            socialPanel.addEventListener('mouseenter', function () { onEnter('red'); });
+            socialPanel.addEventListener('focusin', function () { onEnter('red'); });
+            socialPanel.addEventListener('mouseleave', onLeave);
+            socialPanel.addEventListener('focusout', function (e) {
+                if (!socialPanel.contains(e.relatedTarget)) onLeave();
+            });
+        }
+    }
+
     function startIntro() {
         if (!intro || reduceMotion || hasSeenIntro()) {
             if (intro) {
@@ -262,10 +343,10 @@
         intro.classList.add('is-playing');
         initIntroCanvas();
 
-        // Timed beats: lenses → brand bridge → lines; auto-advance to gate
-        window.setTimeout(function () {
+        // Timed beats: lenses → reflections → brand bridge → pills → lines; then gate
+        introTimer = window.setTimeout(function () {
             finishIntro(false);
-        }, 4800);
+        }, 5600);
 
         if (introSkip) {
             introSkip.addEventListener('click', function () {
