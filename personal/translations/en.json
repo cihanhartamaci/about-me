@@ -110,7 +110,8 @@
     },
     "journal": {
         "kicker": "Longer reads",
-        "lead": "When a caption needs a little more room."
+        "lead": "When a caption needs a little more room.",
+        "moreTitle": "More from the notebook"
     },
     "recentThoughts": "Notebook",
     "allArticles": "Journal",
@@ -126,8 +127,8 @@
             "p2": "But that's not all of who I am. I have interests in lifestyle, technology trends, and social media that don't always fit into a 'Developer Portal' aesthetic.",
             "h2": "The Dual Mode Solution",
             "p3": "So, I decided to split the difference. Or rather, split the site.",
-            "p4": "Mode 1: Professional remains my digital CV and technical documentation hub. It's dark, monospaced, and focused on code.",
-            "p5": "Mode 2: Personal (where you are right now) is for everything else. It's light, readable, and open to broader topics.",
+            "p4": "<strong>Mode 1: Professional</strong> remains my digital CV and technical documentation hub. It's dark, monospaced, and focused on code.",
+            "p5": "<strong>Mode 2: Personal</strong> (where you are right now) is for everything else. It's light, readable, and open to broader topics.",
             "p6": "Feel free to toggle between them using the button in the navigation bar. I hope this gives you a better picture of the whole person behind the code."
         },
         "moments": {
@@ -148,7 +149,7 @@
             "h2c": "Finding Balance",
             "p9": "I used to think 'work-life balance' was about dividing your time equally between work and everything else. But I've realized it's more nuanced than that.",
             "p10": "It's about being intentional. When I'm working on an integration project, I'm fully present, solving problems and pushing systems to their limits. But when I'm with friends, exploring new places, or simply unwinding at a café, I'm equally present in those moments.",
-            "p11": "The key isn't splitting time 50/50. It's about ensuring that when you're living your life outside of work, you're actually living it – not mentally debugging code or planning your next sprint.",
+            "p11": "The key isn't splitting time 50/50. It's about ensuring that when you're living your life outside of work, you're <strong>actually living it</strong> – not mentally debugging code or planning your next sprint.",
             "h2d": "Moving Forward",
             "p12": "As we close out this year, I'm reflecting on what really matters. Yes, I'm proud of the technical challenges I've overcome and the systems I've built. But I'm equally proud of the friendships I've maintained, the experiences I've created, and the balance I'm still figuring out.",
             "p13": "Here's to more spontaneous moments, more travel plans turning into actual trips, and more time with the people who make it all worthwhile.",

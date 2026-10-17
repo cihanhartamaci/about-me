@@ -176,14 +176,8 @@
 
                 <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;"
                     data-i18n="patterns.articles.design.h1">1. Standardize Over Customize</h4>
-                <p style="line-height: 1.7; margin-bottom: 1rem;" data-i18n="patterns.articles.design.p2">
-                    While X12 and EDIFACT standards allow for optional segments and elements, resist the temptation to
-                    create
-                    heavily customized transaction sets. <strong>Stick to industry-standard implementation
-                        guides</strong>
-                    (like VICS for retail or CIDX for chemical industry) whenever possible. Custom fields should be
-                    documented
-                    in detailed implementation guides and shared with all trading partners.
+                <p style="line-height: 1.7; margin-bottom: 1rem;" data-i18n-html="patterns.articles.design.p2">
+                    While X12 and EDIFACT standards allow for optional segments and elements, resist the urge to create highly customized transaction sets. <strong>Stick to industry-standard implementation guides</strong> (like VICS for retail or CIDX for chemical industry) whenever possible. Custom fields should be documented in detailed implementation guides and shared with all trading partners.
                 </p>
 
                 <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;">
@@ -252,7 +246,8 @@ DELETE /api/v1/orders/{orderId}
 POST /api/v1/createOrder  ❌
 GET  /api/v1/getOrder    ❌</code></pre>
 
-                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                <h4 style="color: var(--accent-orange); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem;"
+                    data-i18n="patterns.articles.api.h2">
                     Pagination & Filtering</h4>
                 <p style="line-height: 1.7; margin-bottom: 1rem;">
                     For large datasets, implement cursor-based pagination for better performance than offset-based

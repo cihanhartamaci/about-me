@@ -153,7 +153,7 @@
                 "title": "EDI İşlem Kümesi Tasarımı: X12 ve EDIFACT için En İyi Uygulamalar",
                 "p1": "Doğru EDI işlem kümesi tasarımı, ticari ortaklar arasında birlikte çalışabilirliği sağlamak için kritiktir. İşte sağlam EDI uygulamaları oluşturmak için kanıtlanmış stratejiler.",
                 "h1": "1. Özelleştirme Yerine Standartlaştırma",
-                "p2": "X12 ve EDIFACT standartları isteğe bağlı segmentlere ve öğelere izin verirken, yoğun şekilde özelleştirilmiş işlem kümeleri oluşturma isteğine direnin. Mümkün olduğunda sektör standardı uygulama kılavuzlarına sadık kalın.",
+                "p2": "X12 ve EDIFACT standartları isteğe bağlı segmentlere ve öğelere izin verirken, yoğun şekilde özelleştirilmiş işlem kümeleri oluşturma isteğine direnin. <strong>Mümkün olduğunda sektör standardı uygulama kılavuzlarına</strong> (perakende için VICS veya kimya sektörü için CIDX gibi) sadık kalın. Özel alanlar ayrıntılı uygulama kılavuzlarında belgelenmeli ve tüm ticari ortaklarla paylaşılmalıdır.",
                 "h3": "4. Hata Yönetimi En İyi Uygulamaları"
             },
             "api": {
@@ -250,6 +250,10 @@
         "gateway": {
             "title": "Güvenli B2B Ağ Geçitleri",
             "desc": "Güçlü AS2 ve SFTP ağ geçitlerinin uygulanması. Kritik veriler için mTLS ve yük şifreleme dahil gelişmiş güvenlik protokolleri."
+        },
+        "sap": {
+            "title": "SAP Entegrasyon Desenleri",
+            "desc": "Veri bütünlüğünü sağlamak ve SAP'yi dış sistemlerden ayırmak için IDOC'ları ara katman çözümleri (Mulesoft/Boomi) üzerinden yönlendirme en iyi uygulamaları."
         },
         "essaysKicker": "> DENEME",
         "essaysTitle": "Denemeler",
@@ -358,7 +362,11 @@
     },
     "contact": {
         "title": "> PROTOKOLU_BAŞLAT",
-        "subtitle": "Yeni bir güvenli iletişim kanalı başlatın."
+        "subtitle": "Yeni bir güvenli iletişim kanalı başlatın.",
+        "linkedin": "LinkedIn",
+        "linkedinDesc": "Profesyonel fırsatlar için bağlantı kurun",
+        "email": "E-posta",
+        "emailDesc": "Doğrudan sorular ve danışmanlık"
     },
     "common": {
         "language": "Dil",

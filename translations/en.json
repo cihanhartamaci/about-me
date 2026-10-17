@@ -153,7 +153,7 @@
                 "title": "EDI Transaction Set Design: Best Practices for X12 & EDIFACT",
                 "p1": "Proper EDI transaction set design is critical for ensuring interoperability between trading partners. Here are proven strategies for building robust EDI implementations.",
                 "h1": "1. Standardize Over Customize",
-                "p2": "While X12 and EDIFACT standards allow for optional segments and elements, resist the urge to create highly customized transaction sets. Stick to industry-standard implementation guides whenever possible.",
+                "p2": "While X12 and EDIFACT standards allow for optional segments and elements, resist the urge to create highly customized transaction sets. <strong>Stick to industry-standard implementation guides</strong> (like VICS for retail or CIDX for chemical industry) whenever possible. Custom fields should be documented in detailed implementation guides and shared with all trading partners.",
                 "h3": "4. Error Handling Best Practices"
             },
             "api": {
@@ -250,6 +250,10 @@
         "gateway": {
             "title": "Secure B2B Gateways",
             "desc": "Implementing robust AS2 and SFTP gateways. Advanced security protocols including mTLS and payload encryption for mission-critical data."
+        },
+        "sap": {
+            "title": "SAP Integration Patterns",
+            "desc": "Best practices for routing IDOCs through middleware solutions (Mulesoft/Boomi) to ensure data integrity and decouple SAP from external systems."
         },
         "essaysKicker": "> ESSAY",
         "essaysTitle": "Essays",
@@ -358,7 +362,11 @@
     },
     "contact": {
         "title": "> INITIALIZE_PROTOCOL",
-        "subtitle": "Start a new secure communication channel."
+        "subtitle": "Start a new secure communication channel.",
+        "linkedin": "LinkedIn",
+        "linkedinDesc": "Connect for professional opportunities",
+        "email": "Email",
+        "emailDesc": "Direct inquiries and consulting"
     },
     "common": {
         "language": "Language",

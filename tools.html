@@ -331,9 +331,8 @@
                         <div style="display: flex; gap: 1rem; align-items: center;">
                             <span class="editor-title" id="detected-format" data-i18n="tools.edi.format_unknown">FORMAT:
                                 UNKNOWN</span>
-                            <button id="btn-humanize" class="btn btn-outline btn-sm" onclick="toggleHumanize()"
-                                data-i18n="tools.edi.btn_humanize">
-                                <i class="fas fa-magic"></i> Humanize
+                            <button id="btn-humanize" class="btn btn-outline btn-sm" onclick="toggleHumanize()">
+                                <i class="fas fa-magic"></i> <span data-i18n="tools.edi.btn_humanize">Humanize</span>
                             </button>
                         </div>
                     </div>
@@ -539,8 +538,8 @@ Authorization: Bearer token123"></textarea>
         <!-- Webhook Inspector Tool -->
         <div id="webhook-inspector" class="tool-panel">
             <div class="info-card">
-                <h4 data-i18n="tools.webhook.title"><i class="fas fa-info-circle"></i> Webhook Inspector - Server
-                    Required</h4>
+                <h4><i class="fas fa-info-circle"></i> <span data-i18n="tools.webhook.title">Webhook Inspector - Server
+                    Required</span></h4>
                 <p style="color: var(--text-secondary); line-height: 1.7;" data-i18n="tools.webhook.desc">
                     A webhook inspector requires a backend server to receive and store HTTP requests.
                     Since this is a static site, this tool is not available in the browser.
