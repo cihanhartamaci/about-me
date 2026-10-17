@@ -70,6 +70,7 @@
         "placeCafe": "Cafe · Night",
         "placeMusic": "Live music",
         "placeNightDrive": "Night drive",
+        "placeCoastalDrive": "Coastal drive",
         "capBoat": "On the water.",
         "capChurch": "History with friends.",
         "capTwilight": "When the day softens.",
@@ -78,7 +79,9 @@
         "capDome": "Look up.",
         "capMusic": "Turn it up.",
         "capNightFriends": "Late roads, good company.",
-        "capFresco2": "Colors that endure."
+        "capCoastalDrive": "Windows down. Road ahead.",
+        "capFresco2": "Colors that endure.",
+        "ariaCoastalDrive": "Coastal drive from the driver's seat"
     },
     "notes": {
         "kicker": "Captions",
@@ -99,9 +102,12 @@
         "title": "Beşiktaş",
         "lead": "Besiktas Fan — Vodafone Park nights, the roar, the walk home still humming.",
         "seeIg": "Open on Instagram",
-        "downloadNote": "Stadium stories live on Instagram for now — tap a moment to watch there. Local video files can be dropped in later.",
+        "downloadNote": "Watch a match-day clip from Vodafone Park below — more stadium stories also live on Instagram.",
         "placePark": "Vodafone Park",
         "placeBesiktas": "Beşiktaş · Istanbul",
+        "videoTitle": "From the stands",
+        "videoCaption": "Black & white packed in — pitch edge, floodlights, the roar.",
+        "ariaStadium": "Beşiktaş match day from the stands at Vodafone Park",
         "m1Title": "Match night walk-in",
         "m2Title": "Under the lights",
         "m3Title": "Terrace energy",

@@ -70,6 +70,7 @@
         "placeCafe": "Kafe · Gece",
         "placeMusic": "Canlı müzik",
         "placeNightDrive": "Gece yolculuğu",
+        "placeCoastalDrive": "Sahil sürüşü",
         "capBoat": "Suda.",
         "capChurch": "Dostlarla tarih.",
         "capTwilight": "Gün yumuşayınca.",
@@ -78,7 +79,9 @@
         "capDome": "Yukarı bak.",
         "capMusic": "Sesi aç.",
         "capNightFriends": "Geç yollar, iyi şirket.",
-        "capFresco2": "Kalıcı renkler."
+        "capCoastalDrive": "Camlar açık. Yol önünde.",
+        "capFresco2": "Kalıcı renkler.",
+        "ariaCoastalDrive": "Sürücü koltuğundan sahil sürüşü"
     },
     "notes": {
         "kicker": "Altyazılar",
@@ -99,9 +102,12 @@
         "title": "Beşiktaş",
         "lead": "Beşiktaşlı — Vodafone Park geceleri, tezahürat, eve dönüşte hâlâ çınlayan ses.",
         "seeIg": "Instagram'da aç",
-        "downloadNote": "Stadyum hikâyeleri şimdilik Instagram'da — izlemek için bir ana dokunun. Yerel videolar sonra eklenebilir.",
+        "downloadNote": "Aşağıda Vodafone Park'tan bir maç günü klibi var — daha fazla stadyum hikâyesi Instagram'da.",
         "placePark": "Vodafone Park",
         "placeBesiktas": "Beşiktaş · İstanbul",
+        "videoTitle": "Tribünden",
+        "videoCaption": "Siyah beyaz dolu — saha kenarı, projektörler, tezahürat.",
+        "ariaStadium": "Vodafone Park tribünlerinden Beşiktaş maç günü",
         "m1Title": "Maç gecesi giriş",
         "m2Title": "Işıkların altında",
         "m3Title": "Tribün enerjisi",
