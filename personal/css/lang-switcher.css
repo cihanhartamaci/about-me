@@ -1,4 +1,9 @@
 .lang-switcher {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
+}
+
+#language-selector {
+    cursor: pointer;
 }
