@@ -1038,7 +1038,9 @@ body.nav-open .top-nav {
 
 .besiktas-feature {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 0.85rem;
     margin: 0 0 1.75rem;
     padding: 0.85rem;
     border-radius: var(--radius-media);
@@ -1048,6 +1050,7 @@ body.nav-open .top-nav {
 
 .besiktas-feature__video {
     display: block;
+    flex: 1 1 200px;
     width: 100%;
     max-width: 280px;
     max-height: min(70vh, 520px);
