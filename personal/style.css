@@ -925,7 +925,7 @@ body.nav-open .top-nav {
     }
 }
 
-/* Beşiktaş — stadium lifestyle strip with IG deep-links */
+/* Beşiktaş — stadium video strip */
 .besiktas-section {
     position: relative;
     padding: clamp(3.5rem, 8vw, 5.5rem) 0;
@@ -1040,19 +1040,26 @@ body.nav-open .top-nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.85rem;
-    margin: 0 0 1.75rem;
+    gap: 1.15rem 0.85rem;
+    margin: 0;
     padding: 0.85rem;
     border-radius: var(--radius-media);
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.besiktas-clip {
+    margin: 0;
+    flex: 1 1 200px;
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
 .besiktas-feature__video {
     display: block;
-    flex: 1 1 200px;
     width: 100%;
-    max-width: 280px;
     max-height: min(70vh, 520px);
     aspect-ratio: 9 / 16;
     object-fit: cover;
@@ -1060,10 +1067,12 @@ body.nav-open .top-nav {
     background: #000;
 }
 
-.besiktas-moments {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.85rem;
+.besiktas-clip__caption {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: rgba(244, 244, 244, 0.72);
+    text-align: center;
 }
 
 .photo-tile--video {
@@ -1086,92 +1095,6 @@ body.nav-open .top-nav {
     padding-bottom: 2.75rem;
 }
 
-.besiktas-moment {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-height: 220px;
-    border-radius: var(--radius-media);
-    overflow: hidden;
-    color: #fff;
-    background: #111;
-    isolation: isolate;
-    transition: transform 0.35s var(--ease-out);
-}
-
-.besiktas-moment:hover {
-    opacity: 1;
-    transform: translateY(-3px);
-}
-
-.besiktas-moment:focus-visible {
-    outline: 2px solid #fff;
-    outline-offset: 3px;
-}
-
-.besiktas-moment__stage {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background:
-        linear-gradient(160deg, rgba(255, 255, 255, 0.08), transparent 45%),
-        linear-gradient(180deg, #1c1c1c 0%, #0d0d0d 100%);
-}
-
-.besiktas-moment__flood {
-    position: absolute;
-    inset: -20% 10% auto;
-    height: 55%;
-    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.22), transparent 70%);
-    animation: besiktas-pulse 4.5s ease-in-out infinite alternate;
-}
-
-.besiktas-moment:nth-child(2) .besiktas-moment__flood { animation-delay: 0.6s; }
-.besiktas-moment:nth-child(3) .besiktas-moment__flood { animation-delay: 1.2s; }
-.besiktas-moment:nth-child(4) .besiktas-moment__flood { animation-delay: 1.8s; }
-
-@keyframes besiktas-pulse {
-    from { opacity: 0.45; transform: scale(0.96); }
-    to { opacity: 1; transform: scale(1.04); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .besiktas-moment__flood {
-        animation: none;
-        opacity: 0.7;
-    }
-
-    .besiktas-moment:hover {
-        transform: none;
-    }
-}
-
-.besiktas-moment__play {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 52px;
-    height: 52px;
-    margin: -26px 0 0 -26px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.55);
-    background: rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(6px);
-    transition: transform 0.3s var(--ease-out), background 0.3s ease;
-}
-
-.besiktas-moment__play i {
-    font-size: 0.95rem;
-    margin-left: 2px;
-}
-
-.besiktas-moment:hover .besiktas-moment__play {
-    transform: scale(1.08);
-    background: rgba(255, 255, 255, 0.16);
-}
-
 .mosaic-filter--link {
     text-decoration: none;
     display: inline-flex;
@@ -1184,29 +1107,12 @@ body.nav-open .top-nav {
 }
 
 @media (min-width: 800px) {
-    .besiktas-moments {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 1.05rem;
-    }
-
-    .besiktas-moment {
-        min-height: 280px;
-    }
-
     .besiktas-mark {
         width: 72px;
     }
 }
 
 @media (max-width: 520px) {
-    .besiktas-moments {
-        grid-template-columns: 1fr;
-    }
-
-    .besiktas-moment {
-        min-height: 200px;
-    }
-
     .besiktas-brand {
         gap: 0.75rem;
     }
