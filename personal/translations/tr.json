@@ -71,6 +71,8 @@
         "placeMusic": "Canlı müzik",
         "placeNightDrive": "Gece yolculuğu",
         "placeCoastalDrive": "Sahil sürüşü",
+        "placeSeaBreakfast": "Ordu · Sabah",
+        "placeGymSession": "Spor",
         "capBoat": "Suda.",
         "capChurch": "Dostlarla tarih.",
         "capTwilight": "Gün yumuşayınca.",
@@ -80,8 +82,12 @@
         "capMusic": "Sesi aç.",
         "capNightFriends": "Geç yollar, iyi şirket.",
         "capCoastalDrive": "Camlar açık. Yol önünde.",
+        "capSeaBreakfast": "Deniz manzarası, sonra güneş.",
+        "capGymSession": "Ağırlık ve odak.",
         "capFresco2": "Kalıcı renkler.",
-        "ariaCoastalDrive": "Sürücü koltuğundan sahil sürüşü"
+        "ariaCoastalDrive": "Sürücü koltuğundan sahil sürüşü",
+        "ariaSeaBreakfast": "Çatılar üzerinden deniz manzaralı kahvaltı sofrası",
+        "ariaGymSession": "Yukarıdan dambıl ile spor salonu antrenmanı"
     },
     "notes": {
         "kicker": "Altyazılar",
