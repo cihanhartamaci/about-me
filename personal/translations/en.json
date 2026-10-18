@@ -102,17 +102,13 @@
         "title": "Beşiktaş",
         "lead": "Besiktas Fan — Vodafone Park nights, the roar, the walk home still humming.",
         "seeIg": "Open on Instagram",
-        "downloadNote": "Watch a match-day clip from Vodafone Park below — more stadium stories also live on Instagram.",
-        "placePark": "Vodafone Park",
-        "placeBesiktas": "Beşiktaş · Istanbul",
-        "videoTitle": "From the stands",
-        "videoCaption": "Black & white packed in — pitch edge, floodlights, the roar.",
+        "downloadNote": "Watch match-day clips from Vodafone Park below — more stadium stories also live on Instagram.",
         "ariaStadium": "Beşiktaş match day from the stands at Vodafone Park",
-        "m1Title": "Match night walk-in",
-        "m2Title": "Under the lights",
-        "m3Title": "Terrace energy",
-        "m4Title": "Still humming home",
-        "watchStory": "Watch story"
+        "ariaStadium2": "Beşiktaş match day at Vodafone Park — second clip from the stands",
+        "m1Aria": "Watch Instagram story: Match night walk-in at Vodafone Park",
+        "m2Aria": "Watch Instagram story: Under the lights at Vodafone Park",
+        "m3Aria": "Watch Instagram story: Terrace energy in Beşiktaş, Istanbul",
+        "m4Aria": "Watch Instagram story: Still humming home in Beşiktaş, Istanbul"
     },
     "journal": {
         "kicker": "Longer reads",

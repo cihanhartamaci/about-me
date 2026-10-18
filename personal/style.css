@@ -1037,10 +1037,10 @@ body.nav-open .top-nav {
 }
 
 .besiktas-feature {
-    display: grid;
-    grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
-    gap: 1.25rem 1.75rem;
-    align-items: end;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.85rem;
     margin: 0 0 1.75rem;
     padding: 0.85rem;
     border-radius: var(--radius-media);
@@ -1050,34 +1050,14 @@ body.nav-open .top-nav {
 
 .besiktas-feature__video {
     display: block;
+    flex: 1 1 200px;
     width: 100%;
+    max-width: 280px;
     max-height: min(70vh, 520px);
     aspect-ratio: 9 / 16;
     object-fit: cover;
     border-radius: calc(var(--radius-media) - 4px);
     background: #000;
-}
-
-.besiktas-feature__meta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-    padding: 0.25rem 0.35rem 0.5rem 0;
-}
-
-.besiktas-feature__title {
-    font-family: var(--font-display);
-    font-size: clamp(1.45rem, 3vw, 1.85rem);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: #fff;
-}
-
-.besiktas-feature__caption {
-    max-width: 28rem;
-    font-size: 0.95rem;
-    line-height: 1.55;
-    color: rgba(244, 244, 244, 0.72);
 }
 
 .besiktas-moments {
@@ -1192,39 +1172,6 @@ body.nav-open .top-nav {
     background: rgba(255, 255, 255, 0.16);
 }
 
-.besiktas-moment__meta {
-    position: relative;
-    z-index: 1;
-    margin-top: auto;
-    padding: 1.15rem 1rem 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.88));
-}
-
-.besiktas-moment__place {
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.65);
-}
-
-.besiktas-moment__title {
-    font-family: var(--font-display);
-    font-size: 1.15rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-}
-
-.besiktas-moment__cta {
-    margin-top: 0.35rem;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.78);
-}
-
 .mosaic-filter--link {
     text-decoration: none;
     display: inline-flex;
@@ -1248,24 +1195,6 @@ body.nav-open .top-nav {
 
     .besiktas-mark {
         width: 72px;
-    }
-}
-
-@media (max-width: 720px) {
-    .besiktas-feature {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        text-align: center;
-    }
-
-    .besiktas-feature__video {
-        max-width: 280px;
-        margin-inline: auto;
-    }
-
-    .besiktas-feature__meta {
-        align-items: center;
-        padding-inline: 0.25rem;
     }
 }
 
