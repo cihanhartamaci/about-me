@@ -71,6 +71,8 @@
         "placeMusic": "Live music",
         "placeNightDrive": "Night drive",
         "placeCoastalDrive": "Coastal drive",
+        "placeSeaBreakfast": "Ordu · Morning",
+        "placeGymSession": "Gym",
         "capBoat": "On the water.",
         "capChurch": "History with friends.",
         "capTwilight": "When the day softens.",
@@ -80,8 +82,12 @@
         "capMusic": "Turn it up.",
         "capNightFriends": "Late roads, good company.",
         "capCoastalDrive": "Windows down. Road ahead.",
+        "capSeaBreakfast": "Sea view, then sun.",
+        "capGymSession": "Weights and focus.",
         "capFresco2": "Colors that endure.",
-        "ariaCoastalDrive": "Coastal drive from the driver's seat"
+        "ariaCoastalDrive": "Coastal drive from the driver's seat",
+        "ariaSeaBreakfast": "Breakfast table with a sea view over rooftops",
+        "ariaGymSession": "Gym session with a dumbbell from above"
     },
     "notes": {
         "kicker": "Captions",
